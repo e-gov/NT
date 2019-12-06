@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8bd328d8.chunk.css",
+    "main.js": "./static/js/main.f8a92c4f.chunk.js",
+    "main.js.map": "./static/js/main.f8a92c4f.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.89186ddc.js",
+    "runtime-main.js.map": "./static/js/runtime-main.89186ddc.js.map",
+    "static/js/2.b03b7613.chunk.js": "./static/js/2.b03b7613.chunk.js",
+    "static/js/2.b03b7613.chunk.js.map": "./static/js/2.b03b7613.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.0abd7052b51663bf186a7be4ee794e59.js": "./precache-manifest.0abd7052b51663bf186a7be4ee794e59.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.8bd328d8.chunk.css.map": "./static/css/main.8bd328d8.chunk.css.map",
+    "static/media/login.svg": "./static/media/login.9f370677.svg",
+    "static/media/logo-est.png": "./static/media/logo-est.bca08fff.png",
+    "static/media/logo.svg": "./static/media/logo.25bf045c.svg",
+    "static/media/tara-logo-et.png": "./static/media/tara-logo-et.5947b56d.png",
+    "static/media/user-icon.svg": "./static/media/user-icon.bdeaa261.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89186ddc.js",
+    "static/js/2.b03b7613.chunk.js",
+    "static/css/main.8bd328d8.chunk.css",
+    "static/js/main.f8a92c4f.chunk.js"
+  ]
+}

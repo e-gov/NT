@@ -1,0 +1,32 @@
+{
+  "msg-log": {
+    "title": "Message log",
+    "empty": "Waiting for input actions"
+  },
+  "sd": {
+    "title": "Service Declaration"
+  },
+  "pd": {
+    "title": "Purpose Declaration"
+  },
+  "ca": {
+    "title": "End User Application"
+  },
+  "sp": {
+    "services-defined": "services defined.",
+    "requests-to-be-responded": "requests to be responded.",
+    "records-in-db": "records in db."
+  },
+  "cs": {
+    "active-user": "Active user",
+    "no-active-user": "No active user",
+    "service-declarations": "service declarations",
+    "purpose-declarations": "purpose declarations",
+    "active-consents": "active consents",
+    "total-consents": "total consents",
+    "open-end-user-view": "Open end user view"
+  },
+  "register": "Register",
+  "continue": "Continue",
+  "declare": "Declare"
+}

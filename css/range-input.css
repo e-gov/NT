@@ -1,0 +1,23 @@
+div[class*='col-'].range--from::after {
+  bottom: 0;
+  content: '\2014';
+  line-height: 31.5px;
+  position: absolute;
+  top: 0; }
+@media (max-width: 599px) {
+  div[class*='col-'].range--from::after {
+    line-height: 30px;
+    position: relative;
+    top: 0;
+    text-align: center;
+    display: block; } }
+@media (min-width: 600px) {
+  div[class*='col-'].range--from {
+    padding-right: 10px; }
+  div[class*='col-'].range--to {
+    padding-left: 10px; }
+  div[class*='col-'].range--from::after {
+    right: -5px; } }
+@media (min-width: 900px) {
+  div[class*='col-'].range--from::after {
+    right: -5px; } }

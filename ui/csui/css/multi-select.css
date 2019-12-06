@@ -1,0 +1,35 @@
+.Select--multi .Select-control::after {
+  color: #5d6071;
+  content: '\e910';
+  float: right;
+  font-family: 'iconfont';
+  margin: 4px 7px 0 0;
+}
+
+.Select--multi.is-open .Select-control::after {
+  color: #0083ba;
+}
+
+.Select--multi .Select-arrow-zone {
+  display: none;
+}
+
+.Select--multi.has-value .Select-clear-zone {
+  display: table-cell;
+}
+
+.Select--multi .Select-value {
+  background-color: rgba(170, 225, 248, 0.5);
+  border-color: #aae1f8;
+  margin-top: 0;
+}
+
+.Select--multi .Select-value-icon {
+  border-color: #aae1f8;
+  color: #0083ba;
+}
+
+.Select--multi .Select-value-icon,
+.Select--multi .Select-value-label {
+  padding: 0 5px;
+}

@@ -1,0 +1,117 @@
+{
+  "msg-log": {
+    "title": "Sõnumite logi",
+    "empty": "Ootab kasutaja sisendit"
+  },
+  
+  "person": {
+    "47302200234": {
+      "name": "Mari-Liis Männik",
+      "tel": "5555 5555"
+    },
+
+    "default": {
+      "name": "Külaline [ISIKUKOOD]",
+      "tel": "5ISIKUKOOD"
+    }
+
+  },
+
+  "business": {
+    "EE/COM/10112345": {
+      "name": "HealthStartup OÜ",
+      "ntr": "10112345",
+      "appname" : "HealthStartup"
+    },
+    "EE/GOV/70009770": {
+      "name": "Tervise ja Heaolu Infosüsteemide Keskus",
+      "ntr": "70009770"
+    }
+  },
+
+  "register": "Registreeri",
+  "continue": "Edasi",
+  "declare": "Deklareeri",
+  "login": "Logi sisse",
+  "logout": "Logi välja",
+  "close": "Sule",
+  "no-log-lines": "Logis ei ole veel ridu.",
+  "log": "Logi",
+  "return": "Tagasi",
+
+  "demo": {
+    "EE/COM/10112345/healthstartup": {
+      "title": "HealthStartup\u2122",
+      "stylename": "healthstartup",
+      "service": {
+        "tervisepaevik_vaktsineerimised": {
+          "name": "Vaktsineerimiste meeldetuletused",
+          "consent-header": "Meeldetuletuste aktiveerimiseks on meil vaja Sinu immuniseerimiste andmeid Tervise Infosüsteemist.",
+          "consent-intro": "Enne nõusoleku andmist veendu, et oled tutvunud meie privaatsuspoliitika ja kasutustingimustega, mis on leitavad <a href=\"JavaScript:void(0);\">siin</a>. Nõusoleku andmiseks suuname Sind e-Tervise nõusolekute keskkonda, mida haldab Tervise- ja Heaolu Infosüsteemide Keskus."
+        },
+        "tervisepaevik_visualiseerimine": {
+          "name": "Terviseandmete visualiseerimine",
+          "consent-header": "Terviseandmete visualiseerimiseks on meil vaja Sinu uuringute ja diagnooside andmeid Tervise Infosüsteemist.",
+          "consent-intro": "Enne nõusoleku andmist veendu, et oled tutvunud meie privaatsuspoliitika ja kasutustingimustega, mis on leitavad <a href=\"JavaScript:void(0);\">siin</a>. Nõusoleku andmiseks suuname Sind e-Tervise nõusolekute keskkonda, mida haldab Tervise- ja Heaolu Infosüsteemide Keskus."
+        }
+      }
+    },
+    "EE/GOV/70009770/digilugu": {
+      "title": "Tervise Infosüsteem",
+      "stylename": "tis"
+    },
+    "EE/GOV/70009770/nt": {
+      "title": "Nõusolekuteenus TEHIKus",
+      "stylename": "consentservice"
+    }
+  },
+
+  "ClientIS": {
+    "please_login": "Tere! Teenuse kasutamiseks logi palun sisse.",
+    "hello": "TERE, USERNAME",
+    "choose_service": "Vali teenus mida soovid kasutada:",
+    "checking_consent": "Kontrollin nõusoleku olemasolu",
+    "retry_if_timed_out": "Kui vastus automaatselt ei tule, vajuta allolevat nuppu.",
+    "consented_data": "Nõusolek saadud.",
+
+    "active-user":"Sisselogitud kasutaja",
+    "no-active-user": "Sisselogitud kasutajat pole",
+    "open-end-user-view": "Ava lõppkasutaja vaade",
+    "retry-fetch": "Korda päringut",
+    "load-consented-data": "Küsi nõusoleku alusel andmed",
+    "dump-consent-ref-cache": "(unusta kõik viited)",
+    "dump-response-cache": "(unusta kõik vastused)",
+    "purpose-decl-intro": "Eesmärgideklaratsioon kirjeldab andmesubjektile pakutavat teenust, mille pakkumiseks on vaja andmesubjekti nõusolekul küsida andmesubjekti andmeid andmekogu(de)st. Muuhulgas esitatakse deklaratsioonis andmed, mida andmesubjektil on vaja teada nõusoleku andmiseks. Eesmärgideklaratsioone saab tulevikus registreerida Eesti.ee portaalis, MISP süsteemis või kasutades otse vastavat X-tee teenust",
+    "declarer": "Deklareerija:",
+    "clear": "Kustuta kõik teenuseviited",
+    "services-configured": "kirjeldatud teenust,",
+    "consent-refs-cached": "nõusolekuviidet puhvris,",
+    "responses-cached": "vastust puhvris.",
+    "consent-ref": "Nõusolekuviide: ",
+    "consent-ref-not-asked": "/pole teada/",
+    "consent-ref-not-found": "/pole kehtivat nõusolekut/",
+    "response-has-no-data": "Vastust pole",
+    "data-items-returned": " rida"
+  },
+
+  "ServiceProviderIS": {
+    "database": "Andmebaas",
+    "services-defined": "defineeritud (kaitstud) teenust.",
+    "records-in-db": "kirjet andmebaasis.",
+    "service-decl-intro": "Teenusedeklaratsioon kirjeldab andmekogu teenust, mille kasutamiseks on vajalik andmesubjekti nõusolek. Muuhulgas esitatakse deklaratsioonis andmed, mida andmesubjektil on vaja teada nõusoleku andmiseks. Teenusedeklaratsioone saab tulevikus registreerida Eesti.ee portaalis, MISP süsteemis või kasutades otse vastavat X-tee teenust",
+    "declarer": "Deklareerija:",
+    "year": "aastat",
+    "month": "kuud",
+    "day": "paeva"
+  },
+
+  "ConsentService": {
+    "active-user":"Sisselogitud kasutaja",
+    "no-active-user": "Sisselogitud kasutajat pole",
+    "service-declarations": "teenusedeklaratsiooni",
+    "purpose-declarations": "eesmärgideklaratsiooni",
+    "active-consents": "kehtivat nõusolekut",
+    "total-consents": "nõusolekut kokku",
+    "open-end-user-view": "Ava lõppkasutaja vaade"
+  }
+}

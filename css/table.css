@@ -1,0 +1,22 @@
+table [class^='col-'] {
+  position: static;
+}
+
+.icon-delete {
+  margin-left: 5px;
+  margin-right: -19px;
+  padding-right: 19px;
+}
+
+.icon-edit {
+  margin-right: -19px;
+  padding-right: 19px;
+}
+
+.no-arrow .table-row::after,
+.first-no-arrow .table-row:first-child::after,
+.last-no-arrow .table-row:last-child::after,
+.first-no-arrow li:first-child::after,
+.last-no-arrow li:last-child::after {
+  display: none;
+}

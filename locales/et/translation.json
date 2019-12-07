@@ -38,6 +38,7 @@
   "no-log-lines": "Logis ei ole veel ridu.",
   "log": "Logi",
   "return": "Tagasi",
+  "internal-state": "Olek",
 
   "demo": {
     "EE/COM/10112345/healthstartup": {

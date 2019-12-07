@@ -1,2 +1,0 @@
-# NT
-Nõusolekuteenus / Consent Service

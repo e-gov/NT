@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "./static/css/main.030bcd46.chunk.css",
-    "main.js": "./static/js/main.c7c14b66.chunk.js",
-    "main.js.map": "./static/js/main.c7c14b66.chunk.js.map",
+    "main.js": "./static/js/main.3c685695.chunk.js",
+    "main.js.map": "./static/js/main.3c685695.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.89186ddc.js",
     "runtime-main.js.map": "./static/js/runtime-main.89186ddc.js.map",
     "static/js/2.6908999e.chunk.js": "./static/js/2.6908999e.chunk.js",
     "static/js/2.6908999e.chunk.js.map": "./static/js/2.6908999e.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.34aac9a0d822dd3f16ae5bca9e433b41.js": "./precache-manifest.34aac9a0d822dd3f16ae5bca9e433b41.js",
+    "precache-manifest.34fa2feea0ff031637a4bae9f6e86a58.js": "./precache-manifest.34fa2feea0ff031637a4bae9f6e86a58.js",
     "service-worker.js": "./service-worker.js",
     "static/css/main.030bcd46.chunk.css.map": "./static/css/main.030bcd46.chunk.css.map",
     "static/media/arena-logo.png": "./static/media/arena-logo.03f46566.png",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.89186ddc.js",
     "static/js/2.6908999e.chunk.js",
     "static/css/main.030bcd46.chunk.css",
-    "static/js/main.c7c14b66.chunk.js"
+    "static/js/main.3c685695.chunk.js"
   ]
 }

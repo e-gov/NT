@@ -4,7 +4,7 @@ Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab
 
 ## Prototüüp
 
-Prototüüp demonstreerib nõusolekuteenuse arhitektuuri ja protokolli toimimist, kasutades selleks kahte tõenäolist kasutusjuhtu tervisesektorist. Prorotüübis on realiseeritud nii lõppkasutajavaated kui visualiseeritud osapoolte vahel liikuvad sõnumid, mis aitavad kaasa protokolli mõistmisele.
+Prototüüp demonstreerib nõusolekuteenuse arhitektuuri ja protokolli toimimist, kasutades selleks kahte tõenäolist kasutusjuhtu tervisesektorist. Prototüübis on realiseeritud nii lõppkasutajavaated kui visualiseeritud osapoolte vahel liikuvad sõnumid, mis aitavad kaasa protokolli mõistmisele.
 
 Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (andmekogu), TEHIKu poolt käitatavat nõusolekuteenust (nõusolekuteenus) ning fiktiivset ettevõtet HealthStartup (klientrakendus), mille vahel on realiseeritud nõusolekupõhine andmevahetus. Kasutajal on võimalik stsenaariumid läbi mängida eeldefineeritud valikuid kasutades nii lõppkasutaja (andmesubjekti) kui teiste eelmainitud skeemis osalevate osapoolte vaatest.
 

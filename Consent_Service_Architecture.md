@@ -2,17 +2,18 @@
 
 **Architecture specification**
 
-Version: 1.0
+Version: 1.1
 
-2019-12-09
+2019-12-16
 
 Y-1341-1
 
 ---
 
-| Date       | Ver | Description 
+| Date       | Ver | Description
 | ---------- | --- | -----------
 | 2019-12-09 | 1.0 | Initial public version
+| 2019-12-16 | 1.1 | Minimally edited, converted to markdown.
 
 <!-- markdownlint-disable MD033 -->
 
@@ -78,43 +79,43 @@ Y-1341-1
     - [8.1.2. Data types](#812-data-types)
     - [8.1.3. Errors](#813-errors)
   - [8.2. Service Declaration API](#82-service-declaration-api)
-    - [8.2.1. addServiceDeclaration](#821-addservicedeclaration)
+    - [8.2.1. `addServiceDeclaration`](#821-addservicedeclaration)
       - [8.2.1.1. Request](#8211-request)
       - [8.2.1.2. Response](#8212-response)
       - [8.2.1.3. Errors](#8213-errors)
-    - [8.2.2. updateServiceDeclarationValidUntil](#822-updateservicedeclarationvaliduntil)
+    - [8.2.2. `updateServiceDeclarationValidUntil`](#822-updateservicedeclarationvaliduntil)
       - [8.2.2.1. Request](#8221-request)
       - [8.2.2.2. Response](#8222-response)
       - [8.2.2.3. Errors](#8223-errors)
-    - [8.2.3. listServiceDeclarations](#823-listservicedeclarations)
+    - [8.2.3. `listServiceDeclarations`](#823-listservicedeclarations)
       - [8.2.3.1. Request](#8231-request)
       - [8.2.3.2. Response](#8232-response)
       - [8.2.3.3. Errors](#8233-errors)
   - [8.3. Purpose Declaration API](#83-purpose-declaration-api)
-    - [8.3.1. addPurposeDeclaration](#831-addpurposedeclaration)
+    - [8.3.1. `addPurposeDeclaration`](#831-addpurposedeclaration)
       - [8.3.1.1. Request](#8311-request)
-    - [8.3.2. updatePurposeDeclarationValidUntil](#832-updatepurposedeclarationvaliduntil)
+    - [8.3.2. `updatePurposeDeclarationValidUntil`](#832-updatepurposedeclarationvaliduntil)
       - [8.3.2.1. Request](#8321-request)
-    - [8.3.3. listPurposeDeclarations](#833-listpurposedeclarations)
+    - [8.3.3. `listPurposeDeclarations`](#833-listpurposedeclarations)
       - [8.3.3.1. Request](#8331-request)
       - [8.3.3.2. Response](#8332-response)
       - [8.3.3.3. Errors](#8333-errors)
   - [8.4. Consent Reference API](#84-consent-reference-api)
-    - [8.4.1. getConsentReference](#841-getconsentreference)
+    - [8.4.1. `getConsentReference`](#841-getconsentreference)
       - [8.4.1.1. Request](#8411-request)
       - [8.4.1.2. Response](#8412-response)
       - [8.4.1.3. Errors](#8413-errors)
       - [8.4.1.4. Using UI redirects](#8414-using-ui-redirects)
-    - [8.4.2. getAllConsentsFor](#842-getallconsentsfor)
+    - [8.4.2. `getAllConsentsFor`](#842-getallconsentsfor)
       - [8.4.2.1. Request](#8421-request)
       - [8.4.2.2. Response](#8422-response)
       - [8.4.2.3. Errors](#8423-errors)
   - [8.5. Validation API](#85-validation-api)
-    - [8.5.1. validateConsentReference](#851-validateconsentreference)
+    - [8.5.1. `validateConsentReference`](#851-validateconsentreference)
       - [8.5.1.1. Request](#8511-request)
       - [8.5.1.2. Response](#8512-response)
   - [8.6. Reporting API](#86-reporting-api)
-    - [8.6.1. reportServiceUse](#861-reportserviceuse)
+    - [8.6.1. `reportServiceUse`](#861-reportserviceuse)
       - [8.6.1.1. Request](#8611-request)
       - [8.6.1.2. Response](#8612-response)
   - [8.7. Protected Service](#87-protected-service)
@@ -165,8 +166,8 @@ Republic.
 
 - Consent – a permission to transfer the Protected Data from the Service
   Provider to the Client to process the Protected Data with some specific
-  purpose. For some of the Protected Services it must be in a form of a
-  digitally signed document. For others it may be sufficient if the Consent
+  purpose. For some of the Protected Services, it must be in a form of a
+  digitally signed document. For others, it may be sufficient if the Consent
   Service can show that the Data Subject actually did give the Consent in some
   other form.
 
@@ -176,13 +177,13 @@ Republic.
   general “something useful for the Client that it needs the Consent for”.
 
 - Service Declaration – description of the Protected Service and related
-  Protected Data. Declares which actual Protected Data and how exactly are
-  involved in the service.  Declared by the Service Provider as it consists of
-  Service Provider’s promises and obligations it takes.
+  Protected Data. Service Declaration explains which actual Protected Data and
+  how exactly are involved in the service. Declared by the Service Provider as
+  it consists of Service Provider’s promises and obligations it takes.
 
-- Purpose – reason why a Client needs to access the Protected Data. Usually a
-  service the Client wants to offer or a Data Subject wants to receive. Exact
-  meaning is defined by the Client, in general “something meaningful for the
+- Purpose – reason why a Client needs to access the Protected Data. Usually, a
+  service the Client wants to offer or a Data Subject wants to receive. The exact
+  meaning is defined by the Client, in general, “something meaningful for the
   Data Subjects that they want to give consents for”.
 
 - Purpose Declaration – description of the purpose of processing the Protected
@@ -201,8 +202,8 @@ Republic.
   the Consent in transport. May be used as OAuth 2.0 (bearer) token.
 
 - Consent Request – a derivation from Purpose Declaration and Service
-  Declarations the Purpose Declaration uses. Contains the texts that the Data
-  Subject gives Consent to.
+  Declarations the Purpose Declaration uses. Contains the text to which the Data
+  Subject gives Consent.
 
 ### 1.4. References
 <a id="markdown-14-references" name="14-references"></a>
@@ -228,11 +229,11 @@ Republic.
 ### 2.1. Problem
 <a id="markdown-21-problem" name="21-problem"></a>
 
-Information systems deal with data that belong to natural persons. Usually such
-data are exchanged and processed because of the requirements from the law and
-therefore there is no need for explicit permission from the owner of the data.
+Information systems deal with data that belong to natural persons. Usually, such
+data is exchanged and processed because of the requirements from the law, and
+therefore, there is no need for explicit permission from the owner of the data.
 
-Increasingly the use cases that improve user experience somewhere or enable some
+Increasingly, the use cases that improve user experience somewhere or enable some
 academic or commercial advancement are found. These use cases require the owner
 of the data to express explicit consent that their data may be processed for
 this particular purpose.
@@ -267,23 +268,23 @@ The shared Consent Service should:
 <a id="markdown-221-data-subject" name="221-data-subject"></a>
 
 Natural or legal person who owns the Protected Data. In this version of the
-protocol we support only natural persons.
+protocol, we support only natural persons.
 
-Does not have its own information system but uses systems provided by other
+Does not have its own information system, but uses systems provided by other
 parties.
 
 Wants to:
 
-- control access to the Protected Data
+- Control access to the Protected Data
 
-- have an overview of the given Consents and the actual Protected Data usage
+- Have an overview of the given Consents and the actual Protected Data usage
 
-- have an overview of the Consent proposals (Purpose Declarations that the Data
+- Have an overview of the Consent proposals (Purpose Declarations that the Data
   Subject has not given Consent for yet)
 
 Has to:
 
-- give and withdraw Consents
+- Give and withdraw Consents
 
 #### 2.2.2. Service Provider
 <a id="markdown-222-service-provider" name="222-service-provider"></a>
@@ -312,7 +313,7 @@ Has to:
 An organization (a legal person) that needs to access data kept in the system of
 the Service Provider. The purpose of such an access does not come from the laws
 and therefore needs an explicit consent from the owner of the data. In some
-cases the Client and the Service Provider may be the same organization – if it
+cases, the Client and the Service Provider may be the same organization – if it
 wants to extend the data usage to some use case that is not sanctioned by the
 law (re-purposing of the Protected Data). In those cases, the combined
 Client-Service Provider does not have to actually transfer the data (from itself
@@ -364,9 +365,9 @@ Has to:
 
 Most of the communication between Service Providers and Clients happens through
 the X-Road data exchange layer. This gives some helpful properties to the
-communication but also possibly hinders the use of existing standard protocols.
+communication, but also possibly hinders the use of existing standard protocols.
 
-Some of the communication, especially in the cases where the usage that needs a
+Some of the communication, especially in the cases where the usage that needs
 consent happens in one organization, may use some other transport protocol or
 may need no transport protocol at all.
 
@@ -394,13 +395,13 @@ of going wrong in many ways unless the rules and limits are clearly spelled out.
 
 The Consent Service Provider should only have access to the information that is
 in its scope. It does have to see the consents – who gave whom what permissions.
-For that it also needs a Consent from the Data Subject.
+For that, it also needs a Consent from the Data Subject.
 
 The Consent Service explicitly should not be able to see (or be able to consent
 itself to see) the actual Protected Data.
 
-It should be considered to have independent instances of Consent Service and
-perhaps even independent Consent Service Providers for sensitive consents and
+It should be considered to have independent instances of Consent Service, and
+perhaps, even independent Consent Service Providers for sensitive consents and
 for situations where combined existence of some consents may be sensitive.
 
 #### 2.3.4. Development complexity
@@ -424,13 +425,13 @@ more sense to build the decision point into the actual information system.
 ### 3.1. Data Subject
 <a id="markdown-31-data-subject" name="31-data-subject"></a>
 
-Subject (owner) of the Protected Data, can sign (or confirm by some other
+The subject (owner) of the Protected Data, can sign (or confirm by some other
 provable way) the Consent to allow the Service Provider to return the Protected
 Data to the Client and the Client to process the Protected Data.
 
-Data Subject has a public identifier, is able to authenticate claiming that
-identity and to create digital signatures where the signer is identified by the
-same identifier. Both the Service Provider and the Client must be able to
+The Data Subject has a public identifier, and is able to authenticate claiming
+that identity and to create digital signatures where the signer is identified by
+the same identifier. Both the Service Provider and the Client must be able to
 identify the Data Subject using the same identifier.
 
 ### 3.2. Service Provider
@@ -443,7 +444,7 @@ by its X-Road identifier.
 A Service Provider may also have attributes (name, registry number, contacts of
 data protection officer) that must be available to the Data Subject before
 giving a Consent and which may end up in the actual signed document (if
-applicable) but which are not part of the Consent Service protocols. That data
+applicable), but which are not part of the Consent Service protocols. That data
 reaches the system of the Consent Service by other means (from the trade
 registry, from the agreement of the use of the Consent Service or from somewhere
 else), if it needs to use it.
@@ -488,11 +489,11 @@ Service Declaration has:
 
   - What data (and for which time period, if applicable) is returned
 
-- Validity (the moment until which this declaration is valid and the Service
-  Provider still offers the Protected Service as declared in this declaration).
-  Validity can not be extended, only shortened. A Consent can only be valid as
-  long as all the Service Declarations used in the corresponding Purpose
-  Declaration are valid.
+- End of validity. The moment until which this declaration is valid and the
+  Service Provider still offers the Protected Service as declared in this 
+  declaration. Validity can not be extended, only shortened. A Consent can only 
+  be valid as long as all the Service Declarations used in the corresponding
+  Purpose Declaration are valid.
 
 - Maximal allowed cache time for the validation response for that service. For
   cases where online validation of every request is not possible. Also means
@@ -529,8 +530,8 @@ A Purpose Declaration has:
 
   - For what the Client needs the data
 
-  - What data exactly does the Client need from the Service Providers and from
-    which Service Providers. Especially if the Service Provider returns more
+  - Exactly what data does the Client need from the Service Providers and from
+    which Service Providers. Especially, if the Service Provider returns more
     data than the Client actually needs.
 
   - What the Client will do with the Protected Data (or data derived from it)
@@ -539,12 +540,12 @@ A Purpose Declaration has:
 - References to Service Declarations of the Protected Services that the Client
   needs for this particular purpose
 
-- Validity (the moment until which this declaration is valid and the Client
-  still has the Purpose as declared in this declaration). Validity can not be
+- End of validity. The moment until which this declaration is valid and the Client
+  still has the Purpose as declared in this declaration. Validity can not be
   extended, only shortened. A Consent can only be valid as long as the
   corresponding Purpose Declaration is valid.
 
-- additional fields for Consent Service UI. To be specified during the
+- Additional fields for Consent Service UI. To be specified during the
   implementation of the Consent Service. Extendable by the specific
   implementation. For example, Purpose Declaration may be applicable only for a
   set of Data Subjects (a scientific research project with a limited set of
@@ -587,7 +588,7 @@ that these are those exact same texts.
 <a id="markdown-37-consent-reference" name="37-consent-reference"></a>
 
 Consent Reference is an opaque token used in actual communication between the
-Consent Service, the Client and the Service Provider. It is an hard to guess
+Consent Service, the Client and the Service Provider. It is hard to guess
 identifier for a Consent.
 
 It is meant to be used in communication and it is designed to hide the details
@@ -620,20 +621,20 @@ to a Service Declaration from that Service Provider.
 
 Response contains:
 
-- a boolean validity flag – if this Consent Reference corresponds to a currently
+- A boolean validity flag – if this Consent Reference corresponds to a currently
   valid and relevant Consent. If there is no matching and valid Consent, the
   other fields will not be present
 
-- expiration timestamp of the Consent
+- Expiration timestamp of the Consent
 
-- expiration timestamp of this response (if missing, this is “one time”
+- Expiration timestamp of this response (if missing, this is “one time”
   permission and for the next operation, a new validation should be acquired)
 
 - Data Subject(s) that have consented the purpose
 
 - Purpose Declaration identifier (only shown for the Client)
 
-- set of Service Declaration identifiers (only shown to the Service Provider,
+- Set of Service Declaration identifiers (only shown to the Service Provider,
   only those it declared itself)
 
 ## 4. Assumed Agreements
@@ -748,7 +749,7 @@ Steps explained:
    may happen automatically, for example if the Client has set up a callback
    endpoint and requested that the user should be sent to the callback URL after
    the Consent has been given. It is possible to extend the protocol so that the
-   Consent Service pushes notifications directly to the Client. For now it is up
+   Consent Service pushes notifications directly to the Client. For now, it is up
    to the Consent Service and the Client to agree on such a push mechanism.
 
 9. The Client asks for a Consent Reference for this Data Subject and this
@@ -792,7 +793,7 @@ Normal usage steps:
    provider also submits a Request Reference with the validation request.
 
 4. The Consent Reference corresponds to a valid Consent. Consent Service returns
-   the details relevant to the Service Provider. Alternatively the Consent is
+   the details relevant to the Service Provider. Alternatively, the Consent is
    not valid – continue on step 11.
 
 5. Service Provider checks if it can offer the service on the consented terms
@@ -819,7 +820,7 @@ Normal usage steps:
 10. The Service Provider submits a usage report to the Consent Service. The
     report says that the request failed.
 
-11. Consent Service says that the Consent Reference is not associated with a
+11. The Consent Service says that the Consent Reference is not associated with a
     valid Consent that allows this Service Provider to provide any services.
 
 12. The Service Provider returns error to the Client
@@ -905,7 +906,7 @@ or a combination of Protected Services.
 
 The Consent Server has the right to not publish the submitted new declaration
 immediately but to apply some validation procedure before publishing. For
-example it may include checking the translated parts of the declaration or
+example, it may include checking the translated parts of the declaration or
 consulting with the Service Providers to get confirmation for the Purpose.
 
 Access to this API is authorized by the Consent Server. Every party with access
@@ -913,7 +914,7 @@ can see their own Purpose Declarations. All the parties can submit Purpose
 Declarations and become Clients. Only the Client itself can invalidate a Purpose
 Declaration.
 
-Using X-Road provides encrypted transport, mutual authentication of the parties
+Using X-Road provides encrypted transport, mutual authentication of the parties,
 and provable message log that helps to show from where the declaration actually
 came. Alternative implementations of the API have to take care of these
 properties by themselves.
@@ -929,7 +930,7 @@ Data Subject identifiers as input and returns a valid Consent Reference or an
 error.
 
 As an extension, the Client can submit a callback URL with the rest of the
-request and in case there is no valid Consent, the Consent Service will (in
+request and, in case there is no valid Consent, the Consent Service will (in
 addition to the error) respond with a redirect URL that the Client can send the
 Subject to give the Consent. That process would end with redirecting user back
 to the Client’s callback URL so that the Client can immediately learn about the
@@ -945,7 +946,7 @@ Declarations or Purpose Declarations) the Consent contains.
 In this version of the protocol, the interface should be provided over X-Road.
 
 The X-Road provides encrypted transport, mutual authentication of Consent
-Service and validating party and provable message log that will contain a signed
+Service, and validating party and provable message log that will contain a signed
 and timestamped message from the Consent Service with the claim of validity of
 the Consent. Alternative implementations of the API have to take care of these
 properties by themselves.
@@ -954,7 +955,7 @@ The Service Provider can declare an allowed max cache time for the response in
 the Service Declaration. If the declaration has such time, the response contains
 timestamp of expiration of validity for that particular response.
 
-Extension: for some use cases it makes sense to provide combined API where the
+Extension: for some use cases, it makes sense to provide combined API where the
 Service Provider submits all the details it would otherwise send in the report
 afterwards and the Consent Service can both validate if those parameters match
 with the Consent and report the successful or failed use of data with one
@@ -997,7 +998,7 @@ Usually a service on the X-Road but can also be an internal service and/or it
 may be implemented using other protocols. The Protected Service must be able to
 get the Consent Reference and Request Reference as parameters.
 
-In case of Protected Data re-purposing (the Client and the Service Provider are
+In case of Protected Data re-purposing, (the Client and the Service Provider are
 the same organization and that organization has a novel use for the data that
 needs additional Consent from the Data Subject) there may be no need to have a
 public service. The Service Provider still has to declare the internal service
@@ -1008,7 +1009,7 @@ afterwards.
 ### 6.3. Client IS
 <a id="markdown-63-client-is" name="63-client-is"></a>
 
-Information system that implements a new service/can use the data for purpose
+Information system that implements a new service and can use the data for the purpose
 that requires Consent from the Data Subject. The Client IS has to acquire a
 Consent Reference and create a Request Reference before it can submit the
 request. It has to be able to use Protected Service (as agreed with the Service
@@ -1137,7 +1138,7 @@ UTF-8 encoding.
 Identifiers are strings that contain only code points in ASCII except the space
 (code points 33 .. 126).
 
-For translatable strings there should be alternative representation for
+For translatable strings, there should be alternative representation for
 alternative languages with some languages deemed mandatory in agreements between
 parties.
 
@@ -1150,7 +1151,7 @@ Every service defines a possible set of returned errors. Errors are defined as
 error codes with an explanation. Some errors may define additional returned data
 structure.
 
-In case of SOAP-based transport protocol the error may be returned as SOAP fault
+In case of SOAP-based transport protocol, the error may be returned as SOAP fault
 with error code as fault code and additional data as details. For JSON-based
 transport, the error may be returned as a JSON object with key “error” with
 string value of error code and additional data structure as the other keys in
@@ -1166,16 +1167,16 @@ Declarations.
 API is provided by the Consent Service to Service Providers and Clients
 (parties).
 
-In the first version of the protocol this API runs as a service on X-Road. The
+In the first version of the protocol, this API runs as a service on X-Road. The
 parties need to be authenticated and the Consent Service needs (wants) to be
 able to show that the information in its database came from some specific party.
 
-Alternatively the Consent Service can use its local administration interface to
+Alternatively, the Consent Service can use its local administration interface to
 register and update the declarations. The authentication of the information and
 showing its source is then out of the scope of this specification. The parties
 still have to provide the information described here.
 
-#### 8.2.1. addServiceDeclaration
+#### 8.2.1. `addServiceDeclaration`
 <a id="markdown-821-addservicedeclaration" name="821-addservicedeclaration"></a>
 
 A party with access to the Service Declaration API uses this message to declare
@@ -1242,14 +1243,14 @@ Consent to be given.
 
 Should contain:
 
-- what are the input parameters for the service (if applicable)
+- What are the input parameters for the service (if applicable)
 
-- what data will the service return directly to the Client, which time
+- What data will the service return directly to the Client, which time
   periods, which fields, how precise
 
-- what other data can the Client deduce from the response
+- What other data can the Client deduce from the response
 
-- example data (if applicable or reasonable)
+- Example data (if applicable or reasonable)
 
 The Consent Server should support some simple markup language to structure this
 text. For example, this could be a subset of markdown or HTML.
@@ -1292,8 +1293,9 @@ several years.
 <td valign="top">N</td>
 <td valign="top">boolean</td>
 <td valign="top">
-Does the Service Provider need to have the Consent digitally signed by the Data
-Subject. If false the Consent Service MAY use other means to prove that the Data
+
+`true` if the Service Provider does need to have the Consent digitally signed by the Data
+Subject. If `false` the Consent Service MAY use other means to prove that the Data
 Subject did actually give the Consent. 
 
 Default `false`.
@@ -1332,7 +1334,7 @@ the validation response).
 ##### 8.2.1.2. Response
 <a id="markdown-8212-response" name="8212-response"></a>
 
-In case of successful declaration the Consent Service responds with single
+In case of successful declaration, the Consent Service responds with single
 string field with value “OK”.
 
 <table>
@@ -1371,7 +1373,7 @@ Possible errors:
   negative; description or name does not validate by rules defined by Consent
   Service
 
-#### 8.2.2. updateServiceDeclarationValidUntil
+#### 8.2.2. `updateServiceDeclarationValidUntil`
 <a id="markdown-822-updateservicedeclarationvaliduntil" name="822-updateservicedeclarationvaliduntil"></a>
 
 A Service Provider can update the timestamp of end of the validity of a Service
@@ -1472,11 +1474,10 @@ Possible errors:
 - `invalid_request` – authentication mismatch, Service Declaration not found,
   timestamp in past or after the previous value
 
-#### 8.2.3. listServiceDeclarations
+#### 8.2.3. `listServiceDeclarations`
 <a id="markdown-823-listservicedeclarations" name="823-listservicedeclarations"></a>
 
-Parties can list Service Declarations by a Service Provider id. Useful to check
-the existence of a Service Declaration and to receive the details?
+Parties can list Service Declarations by a Service Provider id. 
 
 ##### 8.2.3.1. Request
 <a id="markdown-8231-request" name="8231-request"></a>
@@ -1637,7 +1638,7 @@ declaration matched.
 The Purpose Declaration API allows the Client to declare its purposes for data
 usage and update their validity.
 
-#### 8.3.1. addPurposeDeclaration
+#### 8.3.1. `addPurposeDeclaration`
 <a id="markdown-831-addpurposedeclaration" name="831-addpurposedeclaration"></a>
 
 ##### 8.3.1.1. Request
@@ -1704,12 +1705,12 @@ Consent to be given.
 
 Should contain:
 
-- for what the Client needs the data
+- For what the Client needs the data
 
-- what data exactly and how will be used, especially if the Client gets more
+- What data exactly and how will be used, especially if the Client gets more
   data than it needs
 
-- what the Client will do with the Protected Data (or data derived from it)
+- What the Client will do with the Protected Data (or data derived from it)
   after the Consent expires or is withdrawn
 
 The Consent Server should support some simple markup language to structure this
@@ -1771,12 +1772,12 @@ Extra parameters of a Purpose Declaration. Structure defined by the CS,
 
 For example:
 
-- some kind of topic, to organize CS UI
+- Some kind of topic, to organize CS UI
 
-- “public” flag: if this purpose is seen by all subjects or only if the user has
+- “Public” flag: if this purpose is seen by all subjects or only if the user has
   been sent to CS with direct link
 
-- set of `subjectId`s if the purpose is applicable only for small set of users
+- Set of `subjectId`s if the purpose is applicable only for small set of users
   (for example: a research project)
 
 </td>
@@ -1784,7 +1785,7 @@ For example:
 </tbody>
 </table>
 
-#### 8.3.2. updatePurposeDeclarationValidUntil
+#### 8.3.2. `updatePurposeDeclarationValidUntil`
 <a id="markdown-832-updatepurposedeclarationvaliduntil" name="832-updatepurposedeclarationvaliduntil"></a>
 
 ##### 8.3.2.1. Request
@@ -1846,7 +1847,7 @@ this update, must be not after the previous value.
 </tbody>
 </table>
 
-#### 8.3.3. listPurposeDeclarations
+#### 8.3.3. `listPurposeDeclarations`
 <a id="markdown-833-listpurposedeclarations" name="833-listpurposedeclarations"></a>
 
 ##### 8.3.3.1. Request
@@ -1997,7 +1998,7 @@ declaration matched.
 The API enables the Client to get an existing Consent Reference for a particular
 Purpose Declaration and Data Subject pair.
 
-#### 8.4.1. getConsentReference
+#### 8.4.1. `getConsentReference`
 <a id="markdown-841-getconsentreference" name="841-getconsentreference"></a>
 
 ##### 8.4.1.1. Request
@@ -2179,7 +2180,7 @@ The steps of the flow are as follows:
     browser back to the callback URL submitted in step 2 with additional
     parameter code.
 
-11. the control in browser will be returned to the Client’s `callbackURL` with
+11. The control in browser will be returned to the Client’s `callbackURL` with
     parameter `code` or with parameter `error`. In case of the error, the flow
     ends. The code returned is valid for limited time.
 
@@ -2188,12 +2189,12 @@ The steps of the flow are as follows:
 13. The Consent Service responds successfully with the Consent Reference, if the
     code is valid and the code and other parameters match.
 
-Note: the additional parameter code is used to make the flow more similar to the
+Note: The additional parameter code is used to make the flow more similar to the
 OAuth2.0 Authorization Code flow.  It also helps to bind the Consent given to
 the process that this was meant for. This is useful for possible extensions like
 use-only-once Consents etc.
 
-#### 8.4.2. getAllConsentsFor
+#### 8.4.2. `getAllConsentsFor`
 <a id="markdown-842-getallconsentsfor" name="842-getallconsentsfor"></a>
 
 Get all valid Consent References for a Data Subject.
@@ -2318,7 +2319,7 @@ to, belongs to the Client that requested validation or if that Purpose
 Declaration refers to the Service Declaration from the Service Provider that
 requested the validation.
 
-#### 8.5.1. validateConsentReference
+#### 8.5.1. `validateConsentReference`
 <a id="markdown-851-validateconsentreference" name="851-validateconsentreference"></a>
 
 ##### 8.5.1.1. Request
@@ -2466,6 +2467,10 @@ Purpose Declaration in the Consent refers to).
 
 One Purpose Declaration MAY refer to multiple Service Declarations from the same
 Service Provider and therefore there can be more than one identifier.
+
+**The validation response essentially says that "this consent allows the 
+receiver of this response to provide services declared with identifiers listed
+in serviceDeclarationId field".**
 </td>
 </tr>
 </tbody>
@@ -2477,7 +2482,7 @@ Service Provider and therefore there can be more than one identifier.
 The Service Provider uses this API to report the use of the Protected Service to
 the Consent Service.
 
-#### 8.6.1. reportServiceUse
+#### 8.6.1. `reportServiceUse`
 <a id="markdown-861-reportserviceuse" name="861-reportserviceuse"></a>
 
 ##### 8.6.1.1. Request
@@ -2633,21 +2638,21 @@ error, the Client failed to authenticate properly)
 The exact API is subject of agreement between the Client and the Service
 Provider. From the perspective of this protocol the requirements are:
 
-- the Client needs to communicate/present a Consent Reference that allows the
+- The Client needs to communicate/present a Consent Reference that allows the
   Service Provider to respond to the request.
 
-- if the Client and the Service Provider use multiple Consent Services in
+- If the Client and the Service Provider use multiple Consent Services in
   parallel, the Client must refer to the specific Consent Service that issued
   this Consent Reference
 
-- the Client needs to communicate/present a Request Reference that will be
+- The Client needs to communicate/present a Request Reference that will be
   logged through the Reporting API. This MAY be part of underlying transport
   protocol, if applicable (for example, Message ID of the X-Road message)
 
-- the Client SHOULD be able to show/prove which Consent Reference and Request
+- The Client SHOULD be able to show/prove which Consent Reference and Request
   Reference it did send/use together and with which Service Provider.
 
-- the Service Provider SHOULD be able to show/prove which Consent Reference and
+- The Service Provider SHOULD be able to show/prove which Consent Reference and
   Request Reference it did receive together and from which Client.
 
 

@@ -84,6 +84,7 @@
     "choose_service": "Vali teenus mida soovid kasutada:",
     "checking_consent": "Kontrollin nõusoleku olemasolu",
     "retry_if_timed_out": "Kui vastus automaatselt ei tule, vajuta allolevat nuppu.",
+    "ill_give_consent": "Annan nõusoleku",
     "consented_data": "Nõusolek saadud.",
 
     "active-user":"Sisselogitud kasutaja",
@@ -196,6 +197,7 @@
     "reason-no-consent": " küsis, kuid ei saanud Sinu andmeid nõusoleku puudumise tõttu",
     "reason-ok": " sai Sinu andmed nõusoleku alusel",
     "reason-consent-not-valid": " küsis, kuid ei saanud Sinu andmeid mittekehtiva nõusoleku alusel",
+    "usage-open-consent": "Vaata nõusolekut",
 
     "consent-client": "Nõusoleku saaja:",
     "consent-purpose-name": "Teenus:",

@@ -47,7 +47,7 @@
       "title": "Consent service at TEHIK",
       "stylename": "consentservice",
 
-      "please-login": "Please login to Consent Servive of TEHIK to give a consent:"
+      "please-login": "Please login to Consent Service of TEHIK to give a consent:"
     }
   },
 
@@ -57,6 +57,7 @@
     "choose_service": "Choose a service:",
     "checking_consent": "Checking for the consent",
     "retry_if_timed_out": "If the response does not come automatically, please press the button below.",
+    "ill_give_consent": "I will give consent",
     "consented_data": "We have your consent.",
 
     "active-user":"User logged in is",
@@ -161,7 +162,7 @@
     "validity": "Validity:",
     "valid-until": "Valid until: ",
     "gets-under-consent": "This consent allows {{clientName}} to request the following data:",
-    "you-can-withdraw": "You can withdraw this content at any time in your consents view ",
+    "you-can-withdraw": "You can withdraw this consent at any time in your consents view ",
 
     "no-consent-use-events": "Consent usage events were not found.",
     "use-history": "History:",
@@ -169,6 +170,7 @@
     "reason-no-consent": " requested but did NOT get your data because of a missing consent.",
     "reason-ok": " got your data under the consent,",
     "reason-consent-not-valid": " requested but did NOT get your data because of a not valid consent.",
+    "usage-open-consent": "Show consent details",
 
     "consent-client": "Receiver of the consent:",
     "consent-purpose-name": "Service:",

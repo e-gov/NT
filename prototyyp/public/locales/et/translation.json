@@ -1,0 +1,220 @@
+{
+  "msg-log": {
+    "title": "Sõnumite logi",
+    "empty": "Ootab kasutaja sisendit",
+    "sender": "Saatja",
+    "receivers": "Saaja",
+    "type": "Tüüp",
+    "time": "Aeg",
+    "log-button": "logi"
+  },
+  
+  "// 'population registry'": "",
+  "// every person should have space in their name": "",
+  "person": {
+    "47302200234": {
+      "name": "Mari-Liis Männik",
+      "tel": "5555 5555"
+    },
+
+    "default": {
+      "name": "Külaline [ISIKUKOOD]",
+      "tel": "5ISIKUKOOD"
+    }
+
+  },
+
+  "business": {
+    "EE/COM/10112345": {
+      "name": "HealthStartup OÜ",
+      "ntr": "10112345"
+    },
+    "EE/GOV/70009770": {
+      "name": "Tervise ja Heaolu Infosüsteemide Keskus",
+      "ntr": "70009770"
+    }
+  },
+
+  "register": "Registreeri",
+  "continue": "Edasi",
+  "declare": "Deklareeri",
+  "login": "Logi sisse",
+  "logout": "Logi välja",
+  "close": "Sule",
+  "no-log-lines": "Logis ei ole veel ridu.",
+  "log": "Logi",
+  "return": "Tagasi",
+  "internal-state": "Olek",
+
+  "demo": {
+    "arenaname": "Lihtne demostsenaarium", 
+    "arena-explained": "<h4>Nõusolekuteenuse tõendusprototüüp</h4>\n\n<p>Täpsemalt loe <a href=\"https://github.com/e-gov/NT/\">https://github.com/e-gov/NT/</a></p>\n\n<h5>Mida ma näen?</h5>\n\n<p>Ekraanil on kujutatud kolme infosüsteemi, mis omavahel suhtlevad:\n\n<ul>\n    <li>Andmeteenus, mis oskab klientrakendusele nõusoleku alusel andmeid väljastada</li>\n    <li>Klientrakendus, mis oskab nõusoleku taodelda ning nõusoleku alusel andmeid küsida</li>\n    <li>Nõusolekuteenus, mis haldab nõusolekuid ja vastab valideerimispäringutele</li>\n</ul>\n\n<p>Ekraani allosas on süsteemidevahelise suhtluse logi. Iga konkreetse süsteemi logi avaneb \nsüsteemi kujutava kasti paremal ülemises nurgas olevast nupust. Logikirje päisele klikkides\navaneb detailne sõnumivaade.</p>\n\n<h5>Mida ma tegema pean, et midagi juhtuks?</h5>\n\n<ol>\n\t<li>\n\t\tDeklareeri teenusekirjeldused (nupp \"Deklareeri\" Tervise\n\t\tInfosüsteemi kastil). Deklaratsiooni andmed võib täita käsitsi\n\t\tvõi valida eeltäidetud deklaratsiooni (mida võib enne esitamist\n\t\tka muuta). Edasiseks on kasulik järjest esitada kõik kolm\n\t\teeltäidetud deklaratsiooni. Kord esitatud identifikaatoriga\n\t\tdeklaratsiooni uuesti esitada ei saa. Edukalt esitatud\n\t\tteenusedeklaratsioonide arv on näha nõusolekuteenuse kastil.\n\t</li>\n\t<li>\n\t\tDeklareeri eesmärgikirjeldused (nupp \"Deklareeri\" HealthStartupi\n\t\tkastil). Ka neid andmeid võib muuta. Ka kõik kaks eeltäidetud\n\t\teesmärgideklaratsiooni on mõtet täita. Edukalt esitatud\n\t\tdeklaratsiooni uuesti esitada ei saa. Edukalt esitatud\n\t\teesmärgideklaratsioonide arv on näha nõusolekuteenuse kastil.\n\t</li>\n\t<li>\n\t\tAva klientrakenduse (HealthStartup) lõppkasutajavaade ja logi\n\t\tsisse. Sisselogimiseks sisesta kasutaja identifikaator või jäta\n\t\tmuutmata eeltäidetud identifikaator. Eeltäidetud\n\t\tidentifikaatoriga kasutaja kohta on Tervise Infosüsteemis olemas\n\t\tvajalikud andmed (mida saab soovi korral\n\t\tmuuta/asendada/kustutada)\n\t</li>\n\t<li>\n\t\tVali klientrakenduses teenus. Rakendus kontrollib, et nõusolekut\n\t\tpole ja pakub kasutaja suunamist nõusolekuteenusesse. \n\t</li>\n\t<li>\n\t\tSuundu nõusolekuteenusesse, logi sisse ja veendu, et\n\t\tnõusolekutaotlusel olevad andmed on need samad, mis\n\t\tdeklaratsioonidel. Anna nõusolek.\n\t</li>\n\t<li>\n\t\tPöördu tagasi klientrakendusse. Klientrakendus saab\n\t\tnõusolekuteenuselt sõnumi uue nõusoleku kohta ja kuvab teadet,\n\t\tet nõusolek on olemas. Nüüd saab käivitada andmete päringu.\n\t</li>\n\t<li>\n\t\tKui klientrakenduses on sisselogitud kasutaja, siis põhivaates\n\t\ton iga defineeritud (ei ole sama, mis deklareeritud!) teenuse\n\t\tkohta võimalus teha andmete päringut, küsida ja kontrollida\n\t\tnõusolekuviidet ja nõusolekuviide unustada või asendada. \n\t</li>\n\t<li>\n\t\tPõhivaatest on alati võimalik avada nõusolekuteenuse\n\t\tkliendivaade. Kliendivaatest on võimalik näha ja tagasivõtta oma\n\t\tkehtivaid nõusolekuid ning näha nõusolekute alusel toimunud (või\n\t\tmittetoimunud) andmevahetussündmuste logi. \n\t</li>\n</ol>\n\n<h5>Tegin midagi valesti, kas ma rikkusin kõik ära?</h5>\n\nKõik, mis toimub, toimub brauseri mälus. Kui lehekülg uuesti laadida, siis\ntaastub algolek. \n\n",
+
+    "EE/COM/10112345/healthstartup": {
+      "title": "HealthStartup\u2122",
+      "stylename": "healthstartup",
+      "service": {
+        "tervisepaevik_vaktsineerimised": {
+          "name": "Vaktsineerimiste meeldetuletused",
+          "consent-header": "Meeldetuletuste aktiveerimiseks on meil vaja Sinu immuniseerimiste andmeid Tervise Infosüsteemist.",
+          "consent-intro": "Enne nõusoleku andmist veendu, et oled tutvunud meie privaatsuspoliitika ja kasutustingimustega, mis on leitavad <a href=\"JavaScript:void(0);\">siin</a>. Nõusoleku andmiseks suuname Sind e-Tervise nõusolekute keskkonda, mida haldab Tervise- ja Heaolu Infosüsteemide Keskus."
+        },
+        "tervisepaevik_visualiseerimine": {
+          "name": "Terviseandmete visualiseerimine",
+          "consent-header": "Terviseandmete visualiseerimiseks on meil vaja Sinu uuringute ja diagnooside andmeid Tervise Infosüsteemist.",
+          "consent-intro": "Enne nõusoleku andmist veendu, et oled tutvunud meie privaatsuspoliitika ja kasutustingimustega, mis on leitavad <a href=\"JavaScript:void(0);\">siin</a>. Nõusoleku andmiseks suuname Sind e-Tervise nõusolekute keskkonda, mida haldab Tervise- ja Heaolu Infosüsteemide Keskus."
+        }
+      }
+    },
+    "EE/GOV/70009770/digilugu": {
+      "title": "Tervise Infosüsteem",
+      "stylename": "tis"
+    },
+    "EE/GOV/70009770/nt": {
+      "title": "Nõusolekuteenus TEHIKus",
+      "stylename": "consentservice",
+
+      "please-login": "Nõusoleku andmiseks sisene Tervise- ja Heaolu Infosüsteemide Keskuse nõusolekute andmise keskkonda:"
+    }
+  },
+
+  "ClientIS": {
+    "please_login": "Tere! Teenuse kasutamiseks logi palun sisse.",
+    "hello": "TERE, USERNAME",
+    "choose_service": "Vali teenus mida soovid kasutada:",
+    "checking_consent": "Kontrollin nõusoleku olemasolu",
+    "retry_if_timed_out": "Kui vastus automaatselt ei tule, vajuta allolevat nuppu.",
+    "ill_give_consent": "Annan nõusoleku",
+    "consented_data": "Nõusolek saadud.",
+
+    "active-user":"Sisselogitud kasutaja",
+    "no-active-user": "Sisselogitud kasutajat pole",
+    "open-end-user-view": "Ava lõppkasutaja vaade",
+    "retry-fetch": "Korda päringut",
+    "load-consented-data": "Küsi nõusoleku alusel andmed",
+    "dump-consent-ref-cache": "(unusta kõik viited)",
+    "dump-response-cache": "(unusta kõik vastused)",
+    "purpose-decl-intro": "Eesmärgideklaratsioon kirjeldab andmesubjektile pakutavat teenust, mille pakkumiseks on vaja andmesubjekti nõusolekul küsida andmesubjekti andmeid andmekogu(de)st. Muuhulgas esitatakse deklaratsioonis andmed, mida andmesubjektil on vaja teada nõusoleku andmiseks. Eesmärgideklaratsioone saab tulevikus registreerida Eesti.ee portaalis, MISP süsteemis või kasutades otse vastavat X-tee teenust",
+    "declarer": "Deklareerija:",
+    "clear": "Kustuta kõik teenuseviited",
+    "services-configured": "kirjeldatud teenust,",
+    "consent-refs-cached": "nõusolekuviidet puhvris,",
+    "responses-cached": "vastust puhvris.",
+    "consent-ref": "Nõusolekuviide: ",
+    "consent-ref-not-asked": "/pole teada/",
+    "consent-ref-not-found": "/pole kehtivat nõusolekut/",
+    "response-has-no-data": "Vastust pole",
+    "data-items-returned": " rida",
+
+    "pd-declaring": "Eesmärgideklaratsiooni registreerimine",
+    "pd-prefill": "Eeltäidetud deklaratsiooni kiirvalik",
+    "pd-choose-prefill": "... vali eeltäidetud deklaratsioon ...",
+    "pd-decl-id": "Eesmärgideklaratsiooni identifikaator:",
+    "pd-decl-id-help": "Klientrakenduse poolt määratud eesmärgideklaratsiooni identifikaator",
+    "pd-decl-name": "Eesmärgideklaratsiooni nimi:",
+    "pd-decl-name-help": "Eesmärgi lühike nimi kasutajale näitamiseks",
+    "pd-purpose": "Andmete kasutamise eesmärk:",
+    "pd-purpose-help": "Andmesubjekti andmete töötlemise eesmärk. Kuvatakse nõusoleku andmisel andmesubjektile.",
+    "pd-services": "Kasutatavad teenused:",
+    "pd-sp-id": "teenusepakkuja id",
+    "pd-sd-id": "teenuse deklaratsiooni id"
+  },
+
+  "ServiceProviderIS": {
+    "database": "Andmebaas",
+    "services-defined": "defineeritud (kaitstud) teenust.",
+    "records-in-db": "kirjet andmebaasis.",
+    "service-decl-intro": "Teenusedeklaratsioon kirjeldab andmekogu teenust, mille kasutamiseks on vajalik andmesubjekti nõusolek. Muuhulgas esitatakse deklaratsioonis andmed, mida andmesubjektil on vaja teada nõusoleku andmiseks. Teenusedeklaratsioone saab tulevikus registreerida Eesti.ee portaalis, MISP süsteemis või kasutades otse vastavat X-tee teenust",
+    "declarer": "Deklareerija:",
+    "year": "aastat",
+    "month": "kuud",
+    "day": "paeva",
+    "sd-prefill": "Eeltäidetud deklaratsiooni kiirvalik",
+    "sd-choose-prefill": "... vali eeltäidetud deklaratsioon ...",
+    "declare-service-declaration": "Teenusedeklaratsiooni esitamine",
+    "service-declaration-id": "Teenusedeklaratsiooni identifikaator:",
+    "service-declaration-id-help": "Andmekogu poolt määratud teenusedeklaratsiooni masinloetav identifikaator.",
+    "service-declaration-name": "Teenusedeklaratsiooni nimi:",
+    "service-declaration-name-help": "Teenusedeklaratsiooni identifikaator inimloetaval kujul. Soovitatavalt teenuse kood/nimi ja vajadusel alamteenuse identifikaator.",
+    "sd-tech-description": "Teenuse tehniline kirjeldus:",
+    "sd-tech-description-help": "Teenuse ja selle osutamise tehniline kirjeldus. Kasutamiseks klientsüsteemide haldajatele",
+    "sd-description": "Teenuse andmekoosseisu kirjeldus:",
+    "sd-description-help": "Teenuse inimloetav kirjeldus. Tagastatavad andmed, teenuse sisu jne. Kuvatakse nõusoleku andmisel andmesubjektile.",
+    "sd-max-validity": "Nõusoleku maksimaalne kehtivusaeg:",
+    "sd-need-signature": "Vajab digiallkirja?",
+    "sd-need-signature-help": "Märgista see väli, kui andmesubjekt peab selle teenuse andmetele nõusoleku andmisel nõusoleku digitaalselt allkirjastama."
+  },
+
+  "ConsentService": {
+    "active-user":"Sisselogitud kasutaja",
+    "no-active-user": "Sisselogitud kasutajat pole",
+    "service-declarations": "teenusedeklaratsiooni",
+    "purpose-declarations": "eesmärgideklaratsiooni",
+    "active-consents": "kehtivat nõusolekut",
+    "total-consents": "nõusolekut kokku",
+    "open-end-user-view": "Ava lõppkasutaja vaade",
+
+    "please-login": "Nõusoleku andmiseks sisene nõusolekuteenusesse:",
+    "header-user": "Kasutaja",
+    "header-logout": "Väljun",
+    "login": "Sisene",
+    "tab-open-consent-requests": "Avatud taotlused",
+    "tab-my-consents": "Minu nõusolekud",
+    "tab-consent-usage-log": "Nõusolekute kasutamise ajalugu",
+
+    "tara-head-short": "Riigi autentimisteenus",
+    "tara-head-title": "Turvaline autentimine asutuste e-teenustes",
+    "tara-mobile-id": "Mobiil-ID",
+    "tara-mobile-id-explained": "Sisselogimiseks vajate kehtivat Mobiil-ID lepingut. Sisenemiseks Mobiil-ID-ga sisestage oma isikukood ja telefoninumber. Seejärel saadetakse Teie mobiiltelefonile kontrollsõnum.",
+    "tara-personal-code": "Isikukood",
+    "tara-phone-number": "Telefoninumber",
+    "tara-continue": "Jätkan",
+    "tara-return": "Tagasi teenusepakkuja juurde",
+    "tara-help": "Abi id.ee lehelt",
+    
+
+    "consent-request-sign-digitally": "Nõusoleku andmiseks allkirjasta nõusolek digitaalselt",
+    "consent-request-sign": "Allkirjasta",
+    "consent-request-back": "Tagasi",
+    "consent-request-give": "Anna nõusolek",
+    "consent-request-do-not-give": "Ei anna nõusolekut",
+    "consent-to": "Nõusolek ",
+    "consent-to-after": "-le on antud!",
+    "consent-given-all-consents": "Kõiki oma antud nõusolekuid näed ja saad hallata siit ",
+    "consent-given-all-consents-after": "",
+    "consent-given-return": "Tagasi teenusesse",
+    "no-open-consent-request": "Avatud taotlust pole.",
+    "asks-for-consent": "{{clientName}} ({{clientNTR}}) küsib nõusolekute järgmistel tingimustel:",
+    "purpose-of-use": "Andmete kasutamise eesmärk:",
+    "validity": "Kehtivus:",
+    "valid-until": "Kehtib kuni: ",
+    "gets-under-consent": "Nõusoleku alusel saab {{clientName}} Sinu kohta järgmised andmed:",
+    "you-can-withdraw": "Antud nõusoleku saad igal ajal tagasi võtta oma nõusolekute vaatest ",
+
+    "no-consent-use-events": "Nõusolekute kasutamise sündmusi ei leitud.",
+    "use-history": "Ajalugu:",
+    "purpose-in-usage-log": " (teenus {{purposeName}})",
+    "reason-no-consent": " küsis, kuid ei saanud Sinu andmeid nõusoleku puudumise tõttu",
+    "reason-ok": " sai Sinu andmed nõusoleku alusel",
+    "reason-consent-not-valid": " küsis, kuid ei saanud Sinu andmeid mittekehtiva nõusoleku alusel",
+    "usage-open-consent": "Vaata nõusolekut",
+
+    "consent-client": "Nõusoleku saaja:",
+    "consent-purpose-name": "Teenus:",
+    "consent-given-at": "Nõusolek antud:",
+    "consent-valid-until": "Nõusolek kehtib kuni:",
+    "consent-withdrawn-at": "Nõusolek tühistatud:",
+    "consent-purpose-text": "Eesmärk:",
+    "consent-details": "Detailid",
+    "consent-withdraw-consent": "Võtan nõusoleku tagasi",
+
+    "no-consents-found": "Nõusolekuid ei leitud.",
+    "consents-missing-badge": "Puuduvad",
+    "valid-consents": "Kehtivad nõusolekud:",
+    "invalid-consents": "Kehtetud nõusolekud:",
+    "consent-open-details": "Vaata lähemalt",
+    "consent-description-line": "{{clientName}}; {{purposeDeclName}}; Nõusolek antud {{validFrom}} – {{endName}} {{validUntil}}",
+    "consent-desc-valid-until": "kehtib kuni",
+    "consent-desc-withdrawn-at": "nõusolek tagasi võetud"
+  }
+}

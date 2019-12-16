@@ -1,0 +1,193 @@
+
+{
+  "msg-log": {
+    "title": "Message log",
+    "empty": "Waiting for actions",
+    "sender": "Sender",
+    "receivers": "Receiver",
+    "type": "Type",
+    "time": "Time",
+    "log-button": "log"
+  },
+  
+  "register": "Register",
+  "continue": "Continue",
+  "declare": "Declare",
+  "login": "Login",
+  "logout": "Logout",
+  "close": "Close",
+  "no-log-lines": "No lines in the log yet.",
+  "log": "Log",
+  "return": "Return",
+  "internal-state": "State",
+
+  "demo": {
+    "arenaname": "Simple demo scenario",
+    "EE/COM/10112345/healthstartup": {
+      "title": "HealthStartup\u2122",
+      "stylename": "healthstartup",
+      "service": {
+        "tervisepaevik_vaktsineerimised": {
+          "name": "Reminders of vaccinations",
+          "consent-header": "We need your data from Health Information System to activate reminders.",
+          "consent-intro": "Before giving the consent please make sure that you have understood our privacy policy and terms of use. You can find these <a href=\"JavaScript:void(0);\">here</a>. We will redirect you to the Consent Service managed by the Centre of Health and Wellfare Systems."
+        },
+        "tervisepaevik_visualiseerimine": {
+          "name": "Visualization of health data",
+          "consent-header": "We need your data from Health Information System to visualize it.",
+          "consent-intro": "Before giving the consent please make sure that you have understood our privacy policy and terms of use. You can find these <a href=\"JavaScript:void(0);\">here</a>. We will redirect you to the Consent Service managed by the Centre of Health and Wellfare Systems."
+        }
+      }
+    },
+    "EE/GOV/70009770/digilugu": {
+      "title": "Health Information System",
+      "stylename": "tis"
+    },
+    "EE/GOV/70009770/nt": {
+      "title": "Consent service at TEHIK",
+      "stylename": "consentservice",
+
+      "please-login": "Please login to Consent Service of TEHIK to give a consent:"
+    }
+  },
+
+  "ClientIS": {
+    "please_login": "Hello! To use our services, please log in:",
+    "hello": "HELLO, USERNAME",
+    "choose_service": "Choose a service:",
+    "checking_consent": "Checking for the consent",
+    "retry_if_timed_out": "If the response does not come automatically, please press the button below.",
+    "ill_give_consent": "I will give consent",
+    "consented_data": "We have your consent.",
+
+    "active-user":"User logged in is",
+    "no-active-user": "User is not logged in",
+    "open-end-user-view": "Open end-user view",
+    "retry-fetch": "Repeat the request",
+    "load-consented-data": "Fetch the data using the consent",
+    "dump-consent-ref-cache": "(forget all the references)",
+    "dump-response-cache": "(forget all the cached data)",
+    "purpose-decl-intro": "Purpose declaration describes a service offered to a data subject. To provide such a service the Client needs to request data from the data service(s) with the consent of the data subject.",
+    "declarer": "Declarer:",
+    "clear": "Remove all service declaration references",
+    "services-configured": "configured services,",
+    "consent-refs-cached": "consent references cached,",
+    "responses-cached": "responses cached.",
+    "consent-ref": "Consent reference: ",
+    "consent-ref-not-asked": "/unknown/",
+    "consent-ref-not-found": "/no valid consent/",
+    "response-has-no-data": "No response",
+    "data-items-returned": " rows",
+
+    "pd-declaring": "Register a Purpose Declaration",
+    "pd-prefill": "Prefilled declarations",
+    "pd-choose-prefill": "... choose a prefilled declaration ...",
+    "pd-decl-id": "Identifier of Purpose Declaration:",
+    "pd-decl-id-help": "Identifier of the Purpose Declaration, assigned by the client IS",
+    "pd-decl-name": "Name of the Purpose Declaration:",
+    "pd-decl-name-help": "Short name/title of the purpose, will be shown to the Data Subject",
+    "pd-purpose": "Purpose of the data usage:",
+    "pd-purpose-help": "The actual purpose we need consent for. Will be displayed as part of Consent Request",
+    "pd-services": "Services:",
+    "pd-sp-id": "service provider id",
+    "pd-sd-id": "service declaration id"
+  },
+
+  "ServiceProviderIS": {
+    "database": "Database",
+    "services-defined": "configured (protected) services.",
+    "records-in-db": "records in the database.",
+    "service-decl-intro": "Service declaration describes a (data) service offered by a service provider to the client information systems under the consent from the data subject. Service declaration contains data that the subject needs to understand to give the consent",
+    "declarer": "Declarer:",
+    "year": "year(s)",
+    "month": "month(s)",
+    "day": "day(s)",
+    "sd-prefill": "Prefilled declarations",
+    "sd-choose-prefill": "... choose a prefilled declaration ...",
+    "declare-service-declaration": "Register a Service Declaration",
+    "service-declaration-id": "Identifier of Service Declaration:",
+    "service-declaration-id-help": "Assigned by the Service Provider.",
+    "service-declaration-name": "Name of the Service Declaration:",
+    "service-declaration-name-help": "Human comprehensible name of Service Declaration. Part of Consent Request.",
+    "sd-tech-description": "Technical description of the service:",
+    "sd-tech-description-help": "Reference to the technical details of the service. For client system admins.",
+    "sd-description": "Service description (returned dataset):",
+    "sd-description-help": "Human comprehensible description of the service. Data returned, operations performed etc. Part of Consent Request, shown to the Data Subject.",
+    "sd-max-validity": "Maximum allowed validity of a consent",
+    "sd-need-signature": "Do we need digital signature?",
+    "sd-need-signature-help": "Check if the data subject MUST sign the consent digitally."
+  },
+
+  "ConsentService": {
+    "active-user":"User logged in",
+    "no-active-user": "User is not logged in",
+    "service-declarations": "service declarations",
+    "purpose-declarations": "purpose declarations",
+    "active-consents": "valid consents",
+    "total-consents": "consents in total",
+    "open-end-user-view": "Open end-user view",
+
+    "please-login": "Please log in to give a consent:",
+    "header-user": "User",
+    "header-logout": "Log out",
+    "login": "Log in",
+    "tab-open-consent-requests": "Open consent requests",
+    "tab-my-consents": "My consents",
+    "tab-consent-usage-log": "Consent usage history",
+
+    "tara-head-short": "National authentication service",
+    "tara-head-title": "Secure authentication for e-services",
+    "tara-mobile-id": "Mobile-ID",
+    "tara-mobile-id-explained": "Requires a valid Mobile-ID contract to log in. Insert your personal code and phone number and click \"Continue\". A verification message will be sent to your mobile phone.",
+    "tara-personal-code": "Personal code",
+    "tara-phone-number": "Phone number",
+    "tara-continue": "Continue",
+    "tara-return": "Return to service provider",
+    "tara-help": "Help from id.ee",
+    
+
+    "consent-request-sign-digitally": "To give a consent sign it digitally",
+    "consent-request-sign": "Sign",
+    "consent-request-back": "Return",
+    "consent-request-give": "Give consent",
+    "consent-request-do-not-give": "DO NOT give consent",
+    "consent-to": "Consent to ",
+    "consent-to-after": " has been given!",
+    "consent-given-all-consents": "You can see and manage all your consents here: ",
+    "consent-given-all-consents-after": "",
+    "consent-given-return": "Back to the service",
+    "no-open-consent-request": "No open consent request.",
+    "asks-for-consent": "{{clientName}} ({{clientNTR}}) asks for the consent with following conditions:",
+    "purpose-of-use": "Purpose of the usage of the data:",
+    "validity": "Validity:",
+    "valid-until": "Valid until: ",
+    "gets-under-consent": "This consent allows {{clientName}} to request the following data:",
+    "you-can-withdraw": "You can withdraw this consent at any time in your consents view ",
+
+    "no-consent-use-events": "Consent usage events were not found.",
+    "use-history": "History:",
+    "purpose-in-usage-log": " (service {{purposeName}})",
+    "reason-no-consent": " requested but did NOT get your data because of a missing consent.",
+    "reason-ok": " got your data under the consent,",
+    "reason-consent-not-valid": " requested but did NOT get your data because of a not valid consent.",
+    "usage-open-consent": "Show consent details",
+
+    "consent-client": "Receiver of the consent:",
+    "consent-purpose-name": "Service:",
+    "consent-given-at": "Valid since:",
+    "consent-valid-until": "Valid until:",
+    "consent-withdrawn-at": "Withdrawn at:",
+    "consent-purpose-text": "Purpose:",
+    "consent-details": "Details",
+    "consent-withdraw-consent": "Withdraw the consent",
+
+    "no-consents-found": "No consents found.",
+    "consents-missing-badge": "Missing",
+    "valid-consents": "Valid consents:",
+    "invalid-consents": "Not valid consents:",
+    "consent-open-details": "Open details",
+    "consent-description-line": "{{clientName}}; {{purposeDeclName}}; Consent given {{validFrom}} – {{endName}} {{validUntil}}",
+    "consent-desc-valid-until": "valid until",
+    "consent-desc-withdrawn-at": "withdrawn at"
+  }
+}

@@ -1,0 +1,229 @@
+table .Select {
+  position: static;
+}
+
+.Select-control {
+  border: 2px solid #dbdfe2;
+}
+
+.Select-control:hover {
+  box-shadow: none;
+}
+
+.Select.is-open .Select-control {
+  border-color: #9d9fb4;
+}
+
+.Select-menu-outer {
+  border: 2px solid #9d9fb4;
+  margin-top: -2px;
+}
+
+.Select-menu {
+  max-height: 196px;
+  padding: 5px;
+}
+
+.Select-option {
+  color: #34394c;
+  padding: 4px;
+}
+
+.Select-option.is-focused {
+  background-color: transparent;
+  color: #0083ba;
+}
+
+.Select-option.is-selected {
+  background-color: #aae1f8;
+  border-radius: 3px;
+  color: #34394c;
+}
+
+.Select-control {
+  height: 32px;
+}
+
+.Select-placeholder {
+  color: #9d9fb4;
+  line-height: 28px;
+  top: 0;
+}
+
+.Select-input {
+  height: 28px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Select-input > input {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  max-width: calc(100% - 40px);
+}
+
+.Select-value {
+  line-height: 28px !important;
+  min-height: 28px;
+}
+
+.Select-value-label {
+  color: #34394c !important;
+  padding-right: 15px;
+}
+
+.Select-clear-zone {
+  display: none;
+  position: absolute;
+  right: 35px;
+  top: 0;
+}
+
+.Select.has-value .Select-clear-zone {
+  display: block;
+}
+
+.Select-clear {
+  color: transparent;
+}
+
+.Select-clear::after {
+  color: #5d6071;
+  content: '\e91d';
+  font-family: 'iconfont';
+  font-size: 1.1rem;
+  margin-right: -15px;
+  margin-top: -5px;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+}
+
+.Select-clear:hover::after {
+  color: #0083ba;
+}
+
+.Select-arrow,
+.Select-arrow-zone:hover > .Select-arrow {
+  border-color: transparent #5d6071 transparent transparent;
+  border-width: 10px 7px 10px 0;
+  margin-top: 3px;
+  margin-bottom: -3px;
+}
+
+.Select.is-open .Select-arrow,
+.Select.is-open .Select-arrow-zone:hover > .Select-arrow {
+  border-color: #0083ba transparent transparent transparent;
+  border-width: 7px 10px 0 10px;
+  margin-top: 1px;
+  margin-bottom: -1px;
+}
+
+@media (min-width: 600px) {
+  .Select.is-open .Select-arrow-zone {
+    padding-top: 4px;
+  }
+}
+
+.select-autocomplete .Select-arrow-zone {
+  display: none;
+}
+
+.select-autocomplete .Select-control::after {
+  color: #5d6071;
+  content: '\ec6f';
+  float: right;
+  font-family: 'iconfont';
+  margin: 4px 7px 0 0;
+}
+
+.select-autocomplete.has-value .Select-clear-zone {
+  display: table-cell;
+}
+
+.select-autocomplete.has-value .Select-input > input {
+  max-width: calc(100% - 60px);
+}
+
+.has-danger .Select-control {
+  border-color: #ff7373;
+}
+
+.Select.is-focused .Select-control {
+  border-color: #9d9fb4;
+}
+
+.Select-input input::-ms-clear {
+  display: none;
+}
+
+.Select--single .Select-value-label {
+  display: block;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Select--single.select-autocomplete.has-value .Select-value-label {
+  max-width: calc(100% - 40px);
+}
+
+.Select--multi .Select-value-icon, .Select--multi .Select-value-label {
+  margin-top: -1px;
+  vertical-align: top;
+}
+
+.Select--multi .Select-value {
+  margin-top: 2px !important;
+  margin-bottom: 2px;
+}
+
+.Select--multi .Select-input {
+  left: 0;
+  pointer-events: none;
+}
+
+.Select-multi-value-wrapper {
+  padding-right: 50px;
+}
+
+.Select--multi .Select-control::after {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 599px) {
+  .Select-control {
+    height: 40px;
+  }
+
+  .Select-placeholder {
+    padding-top: 5px;
+  }
+
+  .Select-value {
+    line-height: 38px !important;
+  }
+
+  .Select-clear-zone {
+    right: 40px;
+  }
+
+  .Select-clear::after {
+    margin-top: -9px;
+  }
+
+  .Select-multi-value-wrapper {
+    padding-right: 60px;
+  }
+
+  .Select--multi .Select-value {
+    display: table;
+  }
+
+  .Select--multi .Select-value-icon, .Select--multi .Select-value-label {
+    display: table-cell;
+  }
+}

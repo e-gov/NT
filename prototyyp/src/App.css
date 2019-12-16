@@ -1,0 +1,272 @@
+.btn-success.btn-health {
+  background: #1da777;
+}
+.btn-success.btn-health:hover {
+  background: #0d9c6b;
+  border-color: #0d9c6b;
+}
+
+.client-app.modal .modal-content {
+  border: none;
+}
+
+.client-app.modal .modal-header {
+  border: none;
+  background: #1DA777;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.client-app.modal .modal-body {
+  padding: 2rem;
+  min-height: 460px;
+}
+
+.client-app.modal .app-header {
+  margin: -2rem -2rem 2rem -2rem;
+  background: url('./static/assets/images/app-bg.png');
+  height: 180px;
+}
+
+.client-app.modal .app-header .btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.client-app.modal .app-user-icon {
+  display: inline-block;
+  padding: 20px;
+  margin-top: 20px;
+  background: #1DA777;
+  border: 8px solid #fff;
+  border-radius: 50%;
+}
+
+.client-app.modal .app-user {
+  margin-top: 1rem;
+  color: #1DA777;
+}
+
+.client-app.modal h4 {
+  margin-bottom: 2rem;
+}
+
+.client-app.modal h4:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #1DA777;
+  margin: 10px auto;
+}
+
+.client-app.modal .modal-title {
+  width: 100%;
+  text-align: center;
+}
+.client-app.modal .modal-body {
+  text-align: center;
+}
+
+.language {
+  text-transform: uppercase;
+}
+
+div.language {
+  display: inline-block;
+}
+
+.language a {
+  font-size: 14px;
+  color: inherit;
+  margin-left: 2px;
+}
+
+.language .active {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.msg-log-popup .no-msg-log {
+  display: block;
+}
+
+.msg-log-popup .msg-log {
+  max-height: 350px;
+}
+
+.no-msg-log {
+  display: none;
+}
+
+.msg-log {
+  display: block;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.msg-log ul li {
+  margin-bottom: 4px;
+}
+
+.msg-log ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+.msg-log .msg-consentservice {
+  color: #007bff;
+}
+
+.style-consentservice {
+  border: 1px solid #007bff !important;
+}
+
+.style-consentservice .card-header {
+  background: #007bff;
+  color: #fff;
+}
+
+.msg-log .msg-tis {
+  color: #f78107;
+}
+
+.style-tis {
+  border: 1px solid #f78107 !important;
+}
+
+.style-tis .card-header {
+  background: #f78107;
+  color: #fff;
+}
+
+.msg-log .msg-healthstartup {
+  color: #1da777;
+}
+
+.style-healthstartup {
+  border: 1px solid #1da777 !important;
+}
+
+.style-healthstartup .card-header {
+  background: #1da777;
+  color: #fff;
+}
+
+.process {
+  height: 100%;
+  min-height: 280px;
+}
+
+.process-uilink {
+  display: inline;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.process-button {
+  display: block;
+  text-align: left;
+}
+
+.log-item {
+  list-style: none;
+  font-size: 12px;
+  text-align: left;
+}
+
+.msg-log-popup .log-item {
+  font-size: small;
+}
+
+.log-view {
+  padding: 0;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  list-style-type: none;
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.popup-visible {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.popup-content {
+  position: absolute;
+  margin: 1px;
+  border: 1px solid black;
+  padding: 5px;
+  background: white;
+}
+
+.popup-close {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 0px;
+  top: 0px;
+  color: red;
+  border: 1px dotted red;
+  text-align: center;
+  vertical-align: center;
+  background-color: plum;
+}
+
+.btn-link {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.card-header .btn-log {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+.form-text {
+  font-size: 11px;
+}
+
+.log-details {
+  margin: 0 -15px;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.log-details .row {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.log-details .col {
+  display: flex;
+  align-items: center;
+}
+.log-details p {
+  margin-bottom: 0;
+}
+.log-details h4 {
+  font-size: 1.2rem;
+  min-width: 80px;
+  margin-bottom: 0;
+}
+
+.link-underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-underline:hover {
+  color: #0056b3;
+}
+
+.scroll-pre {
+  max-height: 120px;
+}

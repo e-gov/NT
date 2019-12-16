@@ -1,0 +1,76 @@
+plugins {
+  id 'com.moowork.node' version '1.2.0'
+}
+
+apply plugin: 'base'
+
+node {
+  version = '10.16.0'
+  npmVersion = '6.9.0'
+  download = true
+}
+
+clean {
+	delete "node_modules/"
+	delete "build/"
+	delete ".gradle/"
+}
+
+task npmBuild {
+	dependsOn "npmInstall", "npm_run-script_build"
+}
+
+task createUIs {
+	dependsOn npmBuild
+	mkdir "build/ui/csui"
+	mkdir "build/ui/ria"
+	mkdir "build/ui/dummy"
+}
+
+task copyIndexCsUI(type: Copy) {
+	dependsOn createUIs
+
+	from "build/index.html"
+	filter { l -> l.replaceAll("href=\"./static/css/[^\"]+.css\"", "href=\"css/mta_visuaal.css\"").replaceAll("=\"./", "=\"../../") }
+	into "build/ui/csui"
+}
+
+task copyCssCsUI(type: Copy) {
+	dependsOn createUIs
+	from "src/static/css"
+	into "build/ui/csui/css"
+}
+
+task copyAssetsCsUI(type: Copy) {
+	dependsOn createUIs
+	from "src/static/assets"
+	include "fonts/**"
+	include "images/**"
+	into "build/ui/csui/assets"
+}
+task copyIndexRiaUI(type: Copy) {
+	dependsOn createUIs
+	from "build/index.html"
+	filter { l -> l.replaceAll("href=\"./static/css/[^\"]+.css\"", "href=\"assets/tara/main.css\"").replaceAll("=\"./", "=\"../../") }
+	into "build/ui/ria"
+}
+
+task copyCssRiaUI(type: Copy) {
+	dependsOn createUIs
+	from "src/static/assets"
+	into "build/ui/ria/assets"
+}
+
+task copyIndexDummy(type: Copy) {
+	dependsOn createUIs
+	from "build/index.html"
+	into "build/ui/dummy"
+}
+
+task copyStuff {
+	dependsOn copyIndexCsUI, copyIndexRiaUI, copyIndexDummy, copyCssCsUI, copyAssetsCsUI, copyCssRiaUI
+}
+
+build {
+	dependsOn copyStuff
+}

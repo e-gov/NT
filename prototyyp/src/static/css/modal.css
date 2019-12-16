@@ -1,0 +1,42 @@
+.modal-header .close {
+  background-color: #fff;
+  border: 2px solid #5d6071;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  height: 21px;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 21px;
+}
+
+.modal-header .close span {
+  bottom: 0;
+  font-size: 16px;
+  line-height: 16px;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .modal-header .close {
+    height: 29px;
+    width: 29px;
+  }
+
+  .modal-header .close span {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+}
+
+/* reactstrap modal sets padding-right to 17px */
+.modal-open {
+  padding-right: 0 !important;
+}

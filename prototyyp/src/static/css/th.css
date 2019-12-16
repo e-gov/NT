@@ -1,0 +1,12 @@
+.table thead th {
+  white-space: normal;
+}
+
+.table thead th a {
+  padding-left: 12px;
+}
+
+.sort-arrows {
+  position: absolute;
+  margin-right: 0;
+}

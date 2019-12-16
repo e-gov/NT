@@ -1590,3 +1590,18 @@ body {
   height: 0;
   overflow: hidden
 }
+
+.language {
+  text-transform: uppercase;
+}
+
+.language a {
+  font-size: 14px;
+  color: inherit;
+  margin-left: 2px;
+}
+
+.language .active {
+  color: #007bff;
+  font-weight: 500;
+}

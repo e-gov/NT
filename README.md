@@ -1,3 +1,5 @@
+![Riigi Infosüsteemi Amet](https://github.com/e-gov/RIHA-Frontend/raw/master/logo/gov-CVI/lions.png "Riigi Infosüsteemi Amet")
+
 ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 
 # Nõusolekuteenus / Consent Service

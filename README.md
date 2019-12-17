@@ -1,3 +1,5 @@
+ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
+
 # Nõusolekuteenus / Consent Service
 
 Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.

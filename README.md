@@ -13,7 +13,7 @@ Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (a
 ## Arhitektuur
 Arhitektuuridokument annab ülevaate nõusolekuteenuse olemusest, peamistest protsessidest ja osapooltest, defineerides mõisted, rollid, API-d, andmemudelid jpm. Dokument on inglise keeles.
 
-[Arhitektuuridokument 1.0](https://github.com/e-gov/NT/blob/docs/consent_service_architecture_1.0.pdf "arhitektuuridokument")
+[Arhitektuuridokument 1.1](https://github.com/e-gov/NT/blob/master/Consent_Service_Architecture.md "arhitektuuridokument")
 
 ## Tagasiside, ettepanekud ja küsimused
 Teenuse loomisel on oodatud kogukonna panus ettepanekute, küsimuste ja tõstatatud teemade näol. Selleks kasutame Githubis olevat "Issues" tab-i, kuhu lisasime ka esimesed lahendamata teemad ja küsimused. Modereerimise, vastamise ning teemade sulgemisega tegeleb RIA.

@@ -1,3 +1,7 @@
+![Riigi Infosüsteemi Amet](https://github.com/e-gov/RIHA-Frontend/raw/master/logo/gov-CVI/lions.png "Riigi Infosüsteemi Amet")
+
+[ET](https://github.com/e-gov/NT) | EN
+
 # Consent Service
 
 Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 and several pilots are planned in the second half of 2020 with healthcare data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services. 

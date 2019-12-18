@@ -371,8 +371,17 @@ Some of the communication, especially in the cases where the usage that needs
 consent happens in one organization, may use some other transport protocol or
 may need no transport protocol at all.
 
-The requirement is that the Consent Service must support exchanging the
-Protected Data both using the X-Road and without using it.
+The requirement towards a Consent Service implementation is, that it must support exchanging Protected Data both using the X-Road as well as without it.
+
+In general, the current architecture makes the following assumptions towards the
+particular transport layer used:
+
+  * **The endpoints can be authenticated**. The Service Provider must be able to
+  assume it is communicating with a particular Client so that, for example, applicability
+  of a particular consent can be confirmed
+  * **Non-repudiation** is reasonably guaranteed. This allows all parties to avoid the need
+  to retain a dedicated shared audit trail on both data exchange and consent validation acts
+  * **Confidentiality and integrity of data in flight** is reasonably guaranteed. This allows parties to assume all incoming and outgoing data is transmitted securely
 
 It is also assumed that all the participating organizations are members of the
 X-Road and therefore they are able to communicate with the Consent Service using
@@ -490,8 +499,8 @@ Service Declaration has:
   - What data (and for which time period, if applicable) is returned
 
 - End of validity. The moment until which this declaration is valid and the
-  Service Provider still offers the Protected Service as declared in this 
-  declaration. Validity can not be extended, only shortened. A Consent can only 
+  Service Provider still offers the Protected Service as declared in this
+  declaration. Validity can not be extended, only shortened. A Consent can only
   be valid as long as all the Service Declarations used in the corresponding
   Purpose Declaration are valid.
 
@@ -1296,7 +1305,7 @@ several years.
 
 `true` if the Service Provider does need to have the Consent digitally signed by the Data
 Subject. If `false` the Consent Service MAY use other means to prove that the Data
-Subject did actually give the Consent. 
+Subject did actually give the Consent.
 
 Default `false`.
 </td>
@@ -1477,7 +1486,7 @@ Possible errors:
 #### 8.2.3. `listServiceDeclarations`
 <a id="markdown-823-listservicedeclarations" name="823-listservicedeclarations"></a>
 
-Parties can list Service Declarations by a Service Provider id. 
+Parties can list Service Declarations by a Service Provider id.
 
 ##### 8.2.3.1. Request
 <a id="markdown-8231-request" name="8231-request"></a>
@@ -2468,7 +2477,7 @@ Purpose Declaration in the Consent refers to).
 One Purpose Declaration MAY refer to multiple Service Declarations from the same
 Service Provider and therefore there can be more than one identifier.
 
-**The validation response essentially says that "this consent allows the 
+**The validation response essentially says that "this consent allows the
 receiver of this response to provide services declared with identifiers listed
 in serviceDeclarationId field".**
 </td>
@@ -2654,5 +2663,3 @@ Provider. From the perspective of this protocol the requirements are:
 
 - The Service Provider SHOULD be able to show/prove which Consent Reference and
   Request Reference it did receive together and from which Client.
-
-

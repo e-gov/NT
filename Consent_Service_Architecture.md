@@ -2,9 +2,9 @@
 
 **Architecture specification**
 
-Version: 1.1
+Version: 1.2
 
-2019-12-16
+2020-01-14
 
 Y-1341-1
 
@@ -14,6 +14,7 @@ Y-1341-1
 | ---------- | --- | -----------
 | 2019-12-09 | 1.0 | Initial public version
 | 2019-12-16 | 1.1 | Minimally edited, converted to markdown.
+| 2020-01-14 | 1.2 | Added assumptions on the transport layer
 
 <!-- markdownlint-disable MD033 -->
 

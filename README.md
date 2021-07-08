@@ -6,7 +6,9 @@ ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 
 Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
-## Prototüüp
+## Lahenduse prototüüp 
+
+Esialgne prototüüp mõnes kohas erineb päris lahendusest, aga annab hea ülevaadet nõusolekuteenuse tomimisest.
 
 Prototüüp demonstreerib nõusolekuteenuse arhitektuuri ja protokolli toimimist, kasutades selleks kahte tõenäolist kasutusjuhtu tervisesektorist. Prototüübis on realiseeritud nii lõppkasutajavaated kui visualiseeritud osapoolte vahel liikuvad sõnumid, mis aitavad kaasa protokolli mõistmisele.
 

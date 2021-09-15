@@ -511,7 +511,7 @@ url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Nõusoleku
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
 ------------ | ------------ | -------------
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud nõusolekute puhul
 error.business.id-code-invalid | ID_CODE_INVALID (400) | Isikukood ei vasta standardile
 error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Küsitud äriidentifikaatorid, mis on seotud kehtetute eesmärgideklaratsoonidega eesmärgideklarastiooni mikroteenuse andmebaasis on loetletud vea kirjelduses
@@ -578,7 +578,178 @@ consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne ko
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
 ------------ | ------------ | -------------
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.http.404 | HTTP_NOT_FOUND (404) | Ei leitud kehtivaid nõusolekuid (staatuses APPROVED)
 error.business.id-code-invalid | ID_CODE_INVALID (400) | Isikukood ei vasta standardile
 
+### validateConsentForClient
+
+Päringu abil saab küsida Nõusolekuteenuselt nõusoleku kehtivust.
+
+Kasutab: Klientrakendus
+
+**API URL:**
+    
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
+
+**Päringu käsu näide (curl):**
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6" 
+```
+
+**Päring:**
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
+    
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
+
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
+mis on määratud nõusolekuga seotud eesmärgideklaratsioonis.
+
+**Vastus:**
+```    
+{
+  "consentReference": "91e9844d-3b5e-4df8-9254-42316b1607b6",
+  "consentExpiration": "2022-01-22T23:59:59.999999Z",
+  "idCode": "60001019906",
+  "purposeDeclarationId": "ED_KAKS"
+}
+```
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------ | -------------
+consentReference | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
+consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp
+idCode | string | Andmesubjekti isikukood
+purposeDeclarationId | string | Nõusolekuga seotud eesmärgideklaratsiooni identifikaator
+
+**Veahaldus:**
+    
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
+error.http.404 | HTTP_NOT_FOUND (404) | clientSubsystemIdentifier (Klientrakenduse x-tee alamsüsteemi) ja consentReference kombinatsiooni kohta  puudub kehtiv nõusolek
+error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
+    
+### validateConsentForDataProvider
+
+Päringu abil saab küsida Nõusolekuteenuselt nõusoleku kehtivust ning
+kaasnevad andmed, mille abil Andmekogu saab kontrollida andmeedastuse
+tingimused.
+
+Kasutab: Andmekogu
+
+**API URL:**
+    
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider
+
+**Päringu käsu näide (curl):**
+    
+```  
+curl -k -X GET \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6"
+```  
+
+**Päring:**
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
+
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
+
+
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Andmekogu x‑tee alamsüsteemi identifikaator on sama, mis on
+määratud nõusolekuga seotud teenusedeklaratsioonis.
+
+**Vastus:** (nõusolekuga seotud eesmärgideklaratsioon on seotud
+teenusedeklaratsiooniga IDga TD_KAKS)
+    
+```  
+{
+  "consentReference": "91e9844d-3b5e-4df8-9254-42316b1607b6",
+  "consentExpiration": "2022-01-22T23:59:59.999999Z",
+  "idCode": "60001019906",
+  "clientSubsystemIdentifier": " EE/GOV/70000562/yphis",
+  "serviceDeclarationId": "TD_KAKS"
+}
+```  
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------
+consentReference | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
+consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp
+idCode | string | Andmesubjekti isikukood. *Märkus:* Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse päring andmete järele sisaldab sama isikukoodi, mis on märatud selles parameetris
+clientSubsystemIdentifier | string | Eesmärgideklaratsioonis määratud klientrakenduse x-tee alamsüsteemi identifikaator. *Märkus:* Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse alamsüsteem, mis saadab päringu andmete järele, on sama, mis on märatud selles parameetris
+serviceDeclarationId | string | Nõusolekuga seotud teenusedeklaratsiooni identifikaator. *Märkus:* Andmekogu peab kontrollima, et kaitstud teenus, mille kaudu Klientrakendus küsib andmed vastab selles parameetris määratud teenusedeklaratsiooni identifikaatorile
+
+    
+**Veahaldus:**
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
+error.http.404 | HTTP_NOT_FOUND (404) | dataProviderSubsystemIdentifier (Andmekogu x-tee alamsüsteemi)  ja ConsentReference kombinatsiooni kohta  puudub kehtiv nõusolek
+error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
+    
+### reportDataTransmission
+
+Päringu abil saab teavitada Nõusolekuteenust sellest, et toimus
+isikuandmete edastus nõusoleku alusel Andmekogust Klientrakendusesse.
+
+Kasutab: Andmekogu
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
+
+**Päringu käsu näide (curl):**
+    
+```     
+curl -k -X POST \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent" \ 
+-d "{ \
+\"transmissionTimestamp\":\"2021-06-18T13:11:50.085Z\", \
+\"consentReference\":\"226cd452-0459-404c-832d-4771bef14af3\"}" 
+``` 
+
+
+**Päring:**
+    
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
+    
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+transmissionTimestamp | jah | timestamp | Aeg, millal toimus andmeedastus Andmekogust Klientrakendusesse
+consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
+
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Andmekogu x‑tee alamsüsteemi identifikaator on sama, mis on
+määratud nõusolekuga seotud teenusedeklaratsioonis.
+
+**Vastus:**
+``` 
+{  
+  "response": "success"
+}
+``` 
+    
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------
+response | - | Kui päring õnnestub, tagastatakse "success"    
+    
+**Veahaldus:**
+    
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
+error.http.404 | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri jaoks puudub vaste

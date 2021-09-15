@@ -259,12 +259,8 @@ sellest on teada Klientrakendusele.
 
 **Põhistsenaariumi jadadiagramm:**
 
-![A picture containing text, screenshot, computer Description
-automatically generated](media/image1.png){width="6.3in"
-height="8.683333333333334in"}
+![Põhistsenaariumi jadadiagramm](https://github.com/e-gov/NT/blob/256b2cf3448012b190ead1a2b432e89fe6e7305c/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image1.png)
 
-**\
-**
 
 **Alternatiivsed stsenaariumid ja laiendused:**
 
@@ -323,4 +319,266 @@ vajutamata.
 -   Protsess lõpeb. Juhul, kui Andmesubjekt uuesti hakkab
     Klientrakendust kasutama, protsess algab uuesti põhistsenaariumi
     punktist 1.
+
+## 3.2. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
+
+**Tegutsejad:** Andmekogu, Klientrakendus, Nõusolekuteenus
+
+**Osapooled ja nende huvid:**
+
+-   Klientrakendus soovib kätte saada Andmesubjekti andmeid Andmekogult kaitstud teenuse kaudu.
+
+-   Andmekogu soovib veenduda Nõusolekuteenuse abil, et küsitud andmete edastamisele on olemas kehtiv Andmesubjekti nõusolek ning andmeedastuse tingimused on korrektsed.
+
+-   Nõusolekuteenus soovib valideerida vajaliku nõusoleku kehtivust ning edastada Andmekogule andmeedastuse tingimuste kontrollimiseks vajalikud andmed.
+
+**Eeltingimused:** Andmekogul on teada enda infosüsteemidega seotud
+teenusedeklaratsioonide identifikaatorid. Andmekogul on olemas
+vastavusetabel, mille abil saab kontrollida millisele kaitstud teenusele
+vastab iga teenusedeklaratsioon.
+
+**Järeltingimused (kehtiva nõusoleku puhul):** Andmekogu edastab andmed
+Klientrakendusele kaitstud teenuse kaudu.
+
+**Põhistsenaarium (eeldusel , et vajalik nõusolek kehtib):**
+
+1.  Klientrakendus küsib andmed Andmekogult. Andmepäring peab sisaldama
+    vastavat nõusolekuviidet ning Andmesubjekti isikukoodi.
+
+2.  Andmekogu saadab nõusolekuviite Nõusolekuteenusesse valideerimiseks.
+    Nõusolekuteenus valideerib nõusolekuviite ja saadab Andmekogule
+    vastuse, mis sisaldab peale nõusolekuviite ka nõusoleku kehtivuse
+    lõppkuupäeva, Klientrakenduse alamsüsteemi identifikaatorit,
+    Andmesubjekti isikukoodi ja nõusolekuga seotud teenusedeklaratsiooni
+    identifikaatorit. Sammudes 2 ja 3 kasutatakse
+    ***validateConsentForDataProvider*** päringut (vt jaotis
+    [5.1.4.](#validateconsentfordataprovider))
+
+3.  Andmekogu kontrollib järgmised andmeedastuse tingimused:
+
+    -   andmepäringu saatnud Klientrakenduse alamsüsteemi identifikaator
+    (x-tee päringu päises) on sama, mis on Nõusolekuteenuse vastuses;
+
+    -   Klientrakenduse andmepäringus sisalduv Andmesubjekti isikukood on
+    sama, mis on Nõusolekuteenuse vastuses;
+
+    -   kaitstud teenus, mille kaudu Klientrakendus küsib andmed vastab
+    Nõusolekuteenuse vastuses sisalduvale teenusedeklaratsiooni
+    identifikaatorile.
+
+4.  Kui kõik kontrollid on õnnestunud, edastab Andmekogu küsitud andmed
+    Klientrakendusele.
+
+5.  Andmekogu raporteerib eduka andmeedastuse. Kasutatakse
+    ***reportDataTransmission*** päringut (vt jaotis
+    [5.1.5.](#reportdatatransmission)).
+
+
+**Põhistsenaariumi jadadiagramm:**
+
+![Põhistsenaariumi jadadiagramm](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image2.png)
+
+**Alternatiivsed stsenaariumid:**
+
+1a. Klientrakenduse andmepäring ei sisalda nõusolekuviidet.
+
+-   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
+    ja andmeedastust ei raporteerita.
+
+2a. Sellist nõusolekuviidet Nõusolekuteenuses ei eksisteeri.
+
+-   Valideerimine ebaõnnestunud, Nõusolekuteenus vastab Andmekogule
+    veateatega.
+
+-   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
+    ja andmeedastust ei raporteerita.
+
+2b. Nõusolekuviide viitab nõusolekule, mis ei kehti.
+
+-   Valideerimine ebaõnnestunud, Nõusolekuteenus vastab Andmekogule
+    veateatega.
+
+-   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
+    ja andmeedastust ei raporteerita.
+
+3a. Vähemalt üks kontrollidest on ebaõnnestunud.
+
+-   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
+    ja andmeedastust ei raporteerita.
+
+# Nõusoleku seisundidiagramm
+
+Järgnev diagramm kirjeldab nõusoleku võimalikke seisundeid ja
+nendevahelisi üleminekuid.
+
+![Põhistsenaariumi jadadiagramm](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image3.png)
+
+# Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
+
+Nõusolekuteenus pakub REST API päringuid üle x-tee.
+
+Kõikide Nõusolekuteenusele jõudnud päringute puhul kontrollitakse, et
+Nõusolekuteenuse juurde pöörduv x-tees autenditud alamsüsteem on õige
+osapool sellise päringu tegemiseks. Nõusolekuteenus vastab päringule
+ainult siis, kui küsija (ehk Andmekogu või Klientrakendus) on
+kontrollitava nõusolekuga seotud kas läbi eesmärgideklaratsioonil oleva
+alamsüsteemi või eesmärgideklaratsiooniga alati seotud oleval
+teenusedeklaratsioonil oleva alamsüsteemi.
+
+**Andmetüübid**
+
+Kõik string\'i tüüpi parameetrid on UTF-8 kodeeringuga sümbolid.
+
+Kõik number tüüpi parameetrid on ASCII kood'ide jada vahemikus 47-57
+(numbrid 0-9).
+
+Kõik timestamp tüüpi parameetrid on ISO8601 formaadis timestamp'id.
+
+## Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus
+
+### getConsentGroupReference
+
+Päringu abil saab Nõusolekuteenuselt küsida nõusoleku(te) lingi (URL),
+mille kaudu saab Andmesubjekti suunata nõusolekutaotlusi vaatama ja
+nõusolekuid andma.
+
+Kasutab: Klientrakendus
+
+**TÄHTIS!** Andmesubjekti suunamiseks mitte kasutada sama linki mitu
+korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid.
+Andmesubjekti suunamisel peab [alati]{.ul} küsima uue lingi
+**getConsentGroupReference** päringu abil.
+
+Enne lingi genereerimist Nõusolekuteenus kontrollib, et päringus
+sisalduv isikukood kuulub Andmesubjektile, kes on täisealine ja
+teovõimeline. Teovõime kontrollimiseks tehakse päringut Rahvastiku
+Registri vastu. Alaealine ja/või teovõimetu isik ei saa anda
+nõusolekuid. Kui isikukood ei vasta tingimustele, linki ei genereerita
+ja tagastatakse veateade.
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent
+
+**Päringu käsu näide (curl):**
+
+```
+curl -k  \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent" \
+-d "{ \
+\"idCode\":\"60001019906\",
+\"callback\":\"https://www.ria.ee\",
+\"purposeDeclarationBusinessIdentifiers\": [\"EesmärgideklaratsiooniID\"]
+}"
+```
+
+**Päring (Json):**
+
+```
+{
+  "idCode": "60001019906",
+  "callback": "https://www.ria.ee",
+  "purposeDeclarationBusinessIdentifiers": [
+    "EesmärgideklaratsiooniID"
+  ]
+}
+```
+
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+idCode | jah | string | Andmesubjekti isikukood
+callback | jah | string | Klientrakenduse tagasisuunamise URL
+purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
+
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
+mis on määratud eesmärgideklaratsiooni(de)s.
+
+**Vastus:**
+```
+{
+  "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30&callback=https://www.ria.ee"
+}
+```
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------ | -------------
+url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Nõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
+
+**Veahaldus:**
+
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline
+error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud nõusolekute puhul
+error.business.id-code-invalid | ID_CODE_INVALID (400) | Isikukood ei vasta standardile
+error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Küsitud äriidentifikaatorid, mis on seotud kehtetute eesmärgideklaratsoonidega eesmärgideklarastiooni mikroteenuse andmebaasis on loetletud vea kirjelduses
+error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED
+
+### getConsentReferences
+
+Päringu abil saab küsida Nõusolekuteenuselt kehtivate nõusoleku(te)
+nõusolekuviited (*Consent Reference*).
+
+Kasutab: Klientrakendus
+
+**API URL:**
+    
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference
+
+**Päringu käsu näide (curl):**
+    
+```
+curl -k \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference" \
+-d "{ \
+\"idCode\": \"60001019906\", \
+\"purposeDeclarationBusinessIdentifiers\": [\"EesmärgideklaratsiooniID\", \"ED_KAKS\", \"ED_KOLM\"]
+}"
+```
+
+**Päring (Json):** (näidises küsitakse kolme eesmärgideklaratsiooni
+kohta, kuid kehtiv nõusolek on ainult ühel neist):
+    
+```
+{
+  "idCode": "60001019906",
+  "purposeDeclarationBusinessIdentifiers": [
+    "EesmärgideklaratsiooniID", "ED_KAKS", "ED_KOLM"
+  ]
+}
+```
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+idCode | jah | string | Andmesubjekti isikukood
+purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
+    
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
+mis on määratud eesmärgideklaratsiooni(de)s.
+
+**Vastus:**
+```
+{
+  "ED_KAKS": "91e9844d-3b5e-4df8-9254-42316b1607b6"
+}
+```
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------ | -------------
+purposeDeclarationBusinessIdentifier
+(näidises: "ED_KAKS") | string | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu). Tagastatakse ainult need, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED)
+consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel
+    
+**Veahaldus:**
+
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline
+error.http.404 | HTTP_NOT_FOUND (404) | Ei leitud kehtivaid nõusolekuid (staatuses APPROVED)
+error.business.id-code-invalid | ID_CODE_INVALID (400) | Isikukood ei vasta standardile
 

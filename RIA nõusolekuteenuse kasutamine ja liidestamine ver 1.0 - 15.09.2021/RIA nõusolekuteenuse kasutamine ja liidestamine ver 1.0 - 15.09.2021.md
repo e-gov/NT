@@ -411,7 +411,7 @@ Klientrakendusele kaitstud teenuse kaudu.
 Järgnev diagramm kirjeldab nõusoleku võimalikke seisundeid ja
 nendevahelisi üleminekuid.
 
-![Põhistsenaariumi jadadiagramm](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image3.png)
+![Nõusoleku seisundidiagramm](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image3.png)
 
 # Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
 
@@ -753,3 +753,225 @@ Vea võti | Veakood ja staatus | Vea kirjeldus
 ------------ | ------------ | -------------
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
 error.http.404 | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri jaoks puudub vaste
+
+    
+# Juhised nõusolekuteenuse testimiseks liidestuja poolt
+
+Liidestuja-poolse testimise eesmärgiks on veenduda, et liidestuv(ad)
+infosüsteem(id) on valmis Nõusolekuteenusega vahetama nõusolekute
+(consent) andmeid. Testid on kirjeldatud API väljakutsete tasemel, see
+annab võimaluse liitujal testida nii otse API (arenduse varasemas
+faasis) kui oma kasutajaliidese kaudu.
+
+Testid katavad nõusolekutega seotud funktsionaalsuse ja on
+organiseeritud selliselt, et esmalt on kirjeldatud põhistsenaariumi
+testid ning seejärel veahalduse testid. Veahalduse testidest on valitud
+olulisemad, et liidestuv süsteem saaks veenduda oma veahalduse
+toimimises. Soovi korral võib äriliselt mitteolulised testid vahele
+jätta või oma teenuse spetsiifika seisukohalt olulisi teste lisada.
+
+Testide eeltingimuseks on Teenusedeklaratsiooni (TD) (koos
+infosüsteemiga) ning seda tarbiva(te) Eesmärgideklaratsiooni(de) (ED)
+olemasolu Nõusolekuteenuses. Nende sisestamine ei kuulu hetkel testide
+skoopi, sest seda on võimalik teha Nõusolekuteenuse kasutajaliidese
+kaudu.
+
+Siiski tuleb testides kasutatava Infosüsteemi, Teenusedeklaratsiooni ja
+Eesmärgideklaratsioonide puhul pidada silmas, et andmed tuleks sisestada
+võimalikult realistlikud, st võimalikult lähedased sellele, mis nad
+töökeskkonnas olema hakkavad. Nõusolekute olekute loogika ülevaateks
+vaata palun olekudiragrammi ptk 4.
+
+Testidesse ei ole kaasatud nõusoleku aegumise (Expired) ning
+mittevajalikuks muutumise (Inapplicable) stsenaariumid, kuna need
+toimuvad Nõusolekuteenuses automaatselt vastavalt deklaratsioonide ja
+nõusolekute kehtivuskuupäevade saabumisele. Soovi korral on võimalik
+neid testida, sisestades Teenusedeklaratsioonile ja
+eesmärgideklaratsioonile sobilikud kuupäevad (nt kehtivuse lõpp homme,
+Teenusedeklaratsioonil nõusoleku kehtivuse maksimaalne kestus 1päev)
+ning andes nõusolekud ning jälgides nõusolekute oleku muutumist tähtaja
+saabudes.
+
+## Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)
+
+*Testijuhtum 1 Nõusoleku URLi genereerimine ning nõusoleku info
+vaatamine (1 eesmärgideklaratsioon)*
+    
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem) | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
+2 | Kasuta saadud nõusolekuviidet Nõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolek REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
+    
+*Testijuhtum 2 Nõusoleku URLi genereerimine ning nõusoleku info vaatamine (mitu eesmärgideklaratsiooni – test läbida juhul, kui sellise stsenaariumid jaoks on olemas sisuline vajadus)*
+    
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, rohkem kui 1 ED identifikaatorit ja X-Tee alamsüsteem). Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
+2 | Kasuta saadud nõusolekuviidet Nõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolekud REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
+
+*Testijuhtum 3 Nõusoleku URLi genereerimine, kui antud isikukoodi, ED ning X-Tee alamsüsteemi jaoks on juba olemas nõusolekutaotlus või nõusolek (erinevates staatustes)*  
+
+Eeltingimus: nõusolekute uuesti küsimise/mitteküsimise loogika testimiseks on oluline, et infosüsteemi oleks loodud erinevates olekutes nõusolekuid, sest loogika sõltub neist. Võid testida korraga ühe eesmärgideklaratsiooniga, või mitmega (vastavalt kuidas tundub sisuliselt realistlik kasjutusjuhtum)
+
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api /consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem), kui selle kombinatsiooniga on juba APPROVED nõusolek olemas. Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse viga ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED 
+2 | Nagu samm 1, kuid olemasolev nõusolek on REQUESTED | Kontrolli, et tagastatakse uus ConsentGroupReference olemasolevale nõusolekutaotlusele
+3 | Nagu samm 1, kuid olemasolev nõusolek on DECLINED või EXPIRED olekus | Kontrolli, et genereeritakse uus nõusolek uue ConsentGroupReference’ga
+
+*Testijuhtum 4 Nõusoleku URLi alternatiivsed stsenaariumid*
+ 
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReferenceValidatsioonireeglitele mittevastava isikukoodiga (mittenumbriline, kontrollnumber vale, lühem/pikem kui 11 märki), teised sisendparameetrid on korrektsed | Vale kontrollnumbri puhul kontrolli veateadet koodiga ID_CODE_INVALID, formaadi vea puhul VALIDATION
+2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference Tundmatu ED identifikaatoriga, teised parameetrid on korrektsed | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND
+3 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReferenceX-Tee alamsüsteemiga, mis ei lange kokku ED-s kasutusel oleva alamsüsteemiga, teised sisendparameetrid on korrektsed | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND
+
+## Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)
+
+Nõusoleku andmise ja keeldumise testijuhtumid ei ole toodud välja API
+väljakutsete tasemel, kuna need funktsionaalsused on realiseeritud
+Nõusolekuteenuse kasutajaliideses.
+
+Veendumaks, et klientrakendus ja Nõusolekuteenus suudavad korrektselt
+andmeid vahetada ja õppimaks tundma, kuidas Nõusolekuteenus toimib,
+tuleks läbi teha vähemalt järgmised stsenaariumid:
+
+1.  Nõusolekute andmine -- peatükis 6.1 kirjeldatud testides küsitud
+    nõusolekuviidetele vastavate nõusolekute andmine kasutaja poolt ning
+    kontrollimine, et nõusolekud on kehtivad
+
+2.  Nõusolekute andmisest keeldumine - peatükis 6.1 kirjeldatud testides
+    küsitud nõusolekuviidetele vastavate nõusolekute mitteandmine
+    kasutaja poolt, ning kontrollimine, et nõusolekuid kuvatakse sama
+    lingi kaudu uuesti
+
+3.  Nõusolekust taganemine -- varasemate testide käigus antud
+    nõusolekute tagasivõtmine ning kontrollimine, et nõusolekud on
+    tagasi võetud.
+
+## Nõusolekuviidete pärimine
+
+*Testijuhtum 8 Nõusolekuviidete pärimine*
+    
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences  eelnevalt antud kehtivaid nõusolekuid omava sisendite (isikukood, ED identifikaator, X-Tee alamsüsteem) komplekti kohta | Kontrolli, et tagastatakse ainult APPROVED olekus nõusolekuviited koos ED identifikaatoriga. 
+2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences juhul, kui kehtivaid nõusolekuid etteantud sisendite komplekti puhul ei ole, on teistes olekutes nõusolekuid (isikukood, ED identifikaator, X-Tee alamsüsteem) | Kontrolli, et tagastatakse HTTP_NOT_FOUND
+
+*Testijuhtum 9 Nõusolekuviidete pärimine – alternatiivsed stsenaariumid*
+
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita  https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences  kui puudub kehtiv nõusolek sisendparameetrite komplekti jaoks | Kontrolli, et tagastatakse HTTP_NOT_FOUND
+
+## Nõusolekute valideerimine (Klientrakendus ja Andmekogu)
+
+*Testijuhtum 10 Nõusolekute valideerimine (Klientrakenduse ja Andmekogu
+jaoks)*
+    
+Eeltingimus: nõusolekute valideerimiseks on ideaalis vajalik koostada erinevates staatustes nõusolekuid (REQUESTED, APPROVED, DECLINED, EXPIRED, INAPPLICABLE), kuid valideerimise loogika esmaseks testiks piisab APPROVED nõusolekust ning alternatiivse stsenaariumi testiks ühes DECLINED, EXPIRED või INAPPLICABLE nõusolekust (mittevaliidsed nõusolekud käituvad kõik samamoodi).
+
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient kokkulangevate clientSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on APPROVED staatuses | Kontrolli, et tagastatakse nõusolekuga seotud andmed (consentReference, consentExpiration, idCode, purposeDeclarationID)
+2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient kokkulangevate clientSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on mõnes muus staatuses kui APPROVED | Kontrolli, et nõusoleku infot ei tagastata
+3 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForDataProvider kokkulangevate dataProviderSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on APPROVED staatuses | Kontrolli, et tagastatakse nõusolekuga seotud andmed (consentReference, ConsentExpiration, idCode, clientSubsystemIdentifier, serviceDeclarationID)
+4 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient kokkulangevate dataProviderSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on mõnes muus staatuses kui APPROVED | Kontrolli, et nõusoleku infot ei tagastata
+    
+## Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)
+
+*Testijuhtum 11 Nõusolekute alusel andmete pärimisest raporteerimine
+(raporteerib andmekogu)*
+
+Eeltingimus: on olemas mõni nõusolek, millele raporteerida 
+    
+N | Tegevus | Oodatav tulemus
+------------ | ------------- | ------------
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport olemasoleva nõusoleku consentReference-ga ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli, et tagastatakse “success” vastus ning võib kontrollida raporteerimise kirje olemasolu nõusolekuteenuses
+2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport consentReference-ga, mida ei eksisteeri, ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli veaolukorra haldamist, raporteerimise kirjet ei teki nõusolekuteenusesse
+    
+# Nõusolekuteenuse haldusliidese kasutamise juhend
+
+Nõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenusedeklaratsioonide, ja nendega seotud infosüsteemide (andmekogude) haldamiseks.
+
+**Üldised põhimõtted**
+
+-   Enne deklaratsioonide esitamist, Nõusolekuteenusesse peavad olema lisatud vajalikud infosüsteemid.
+
+-   Esialgu esitatakse teenusedeklaratsiooni ja seejärel eesmärgideklaratsiooni.
+
+-   Kui vajaliku teenuse jaoks teenusedeklaratsioon on juba olemas, uuesti seda deklareerida pole vaja, saab kasutada olemasolevat teenusedeklaratsiooni.
+
+-   Ühe infosüsteemiga võib olla seotud mitu teenusedeklaratsiooni. Ühe teenusedeklaratsiooniga võib olla seotud mitu eesmärgideklaratsiooni.
+
+-   Iga erineva andmekomplekti jaoks peab deklareerima eraldi teenusedeklaratsiooni, isegi kui andmed tulevad samast teenusest.
+
+-   Juhul, kui Klientrakendus vajab mitmes teenusedeklaratsioonides kirjeldatud andmeid, peab deklareerima mitu vastavat eesmärgideklaratsiooni. Üks eesmärgideklaratsioon võib olla seotud ainult ühe teenusedeklaratsiooniga.
+
+    
+![Loogilised seosed infosüsteemide ja deklaratsioonide vahel](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image4.png)
+
+## Rollid
+
+Roll | Kirjeldus | Millised vaated näeb
+------------ | ------------- | ------------
+RIA administraator | RIA administraator lisab/kustutab kasutajaid (teisi RIA administraatoreid ja infosüsteemide haldureid) ja jagab õiguseid: igale infosüsteemide haldurile määratakse tema vastutuses olev registrikood (või mitu registrikoode), mida valitakse rippmenüüst kõikidega x-tee kataloogist saadud registrikoodidega (member code). <br /> <br /> RIA administraator saab olla samal ajal ka infosüsteemide haldur, kui määrab endale sellist rolli. Sellel juhul talle peavad olema kättesaadavad nii RIA administraatorile kui ka infosüsteemide haldurile nähtavad vaated. | •	Haldusliidese kasutajate haldus <br /> •	Nõusolekute terviklus
+Infosüsteemide haldur (Andmekogu esindaja) | Nõusolekuteenuse haldusliidese põhikasutaja. <br /> <br />  Infosüsteemide haldur lisab, muudab, kustutab infosüsteeme oma vastutuses oleva registrikoodi(de) piires. Lisades/muutes infosüsteemi, näeb alamsüsteemide valikus ainult need alamsüsteemid, mis on seotud temale määratud registrikoodidega. <br /> <br />  Ühe infosüsteemi eest saab vastutada mitu infosüsteemi haldurit. Iga haldur saab lisada/muuta/kustutada tema vastutuses olevaid infosüsteeme. Igal infosüsteemi halduril on ligipääs kõigile nendele infosüsteemidele ja deklaratsioonidele, mille alamsüsteemi identifikaatoris olev registrikood = tema kasutajaga seotud registrikood (member code). Kui infosüsteemi halduri kasutajakonto kustutatakse, tema poolt sisestatud infosüsteemid jäävad alles. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevate infosüsteemidega seotud teenusedeklaratsioone. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevaid eesmärgideklaratsioone. Infosüsteemide haldur saab seostada eesmärgideklaratsioonid ainult tema vastutusalas olevate teenusedeklaratsioonidega. | •	Infosüsteemide koondvaade <br /> •	Infosüsteemi lisamine <br /> •	Infosüsteemi muutmine <br /> •	Teenusedeklaratsioonide koondvaade <br /> •	Teenusedeklaratsiooni esitamine <br /> •	Teenusedeklaratsiooni detailvaade <br /> •	Teenusedeklaratsiooni muutmine <br /> •	Eesmärgideklaratsioonide koondvaade <br /> •	Eesmärgideklaratsiooni esitamine <br /> •	Eesmärgideklaratsiooni detailvaade <br /> •	Eesmärgideklaratsiooni muutmine
+
+
+## Infosüsteemide haldus
+
+Nõusolekuteenuse haldusliideses registreeritakse kaitstud teenuste
+pakkuvate infosüsteemide andmed. Nende andmetega täidetakse automaatselt
+vastavad väljad teenusedeklaratsioonides, mis lihtsustab
+deklaratsioonide esitamise protsessi.
+
+### Infosüsteemide haldusega seotud vaated
+
+Infosüsteemide lisamise ja haldusega Nõusolekuteenuse haldusliideses on
+seotud järgmised vaated:
+
+**Infosüsteemide nimekiri**
+
+Ülevaade kõikidest lisatud infosüsteemidest, mille haldamiseks on
+kasutajal õigus. Võimaldab infosüsteemide nimekirja sorteerida erinevate
+tulpade andmete järgi.
+
+Iga deklaratsiooniga saab teha järgmised tegevused:
+
+\"Muuda\" - ava infosüsteemi detailvaade ja muuda infosüsteemi andmed.
+
+\"Kustuta\" - teosta infosüsteemi loogiline kustutamine. Kustutamine on
+võimalik ainult siis, kui infosüsteemiga pole seotud ühtegi kehtiva
+teenusedeklaratsiooni.
+
+![Infosüsteemide nimekiri](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image5.jpg)
+
+**Infosüsteemi lisamine**
+
+Uue infosüsteemi lisamise vorm. Sisestatavad andmed on detailselt
+kirjeldatud jaotises [7.2.2](#infosüsteemi-andmed).
+
+![Infosüsteemi lisamine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image6.jpg)
+    
+**Infosüsteemi muutmine**
+
+Vaade, mis võimaldab muuta infosüsteemi andmed. Infosüsteemi andmete
+muutmine ei mõjuta sellega seotud teenusedeklaratsioone - seal jäävad
+endised andmed. Uued teenusedeklaratsioonid luuakse kasutades uued
+andmed.
+
+![Infosüsteemi muutmine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image7.jpg)
+
+### Infosüsteemi andmed
+    
+Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
+------------ | ------------- | ------------ | ------------
+Infosüsteemi nimi | Kaitstud teenuste (andmeid) pakkuva infosüsteemi nimi | Tervise infosüsteem | Jah
+Nõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
+Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el | Sotsiaalministeerium | Jah
+Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. | 70001952 | Jah
+Volitatud töötleja (mittekohustuslik väli) | Volitatud töötleja asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/12750 <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | TEHIK | Jah
+Volitatud töötleja registrikood (mittekohustuslik väli) | Volitatud organisatsiooni registrikood. <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | 70009770 | Jah
+

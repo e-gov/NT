@@ -25,15 +25,13 @@ Versiooni ajalugu
 
 # **Sisukord** 
 
-[1. Sissejuhatus 5](#sissejuhatus)
+[1. Sissejuhatus](#1-sissejuhatus)
 
-[1.1. Mõisted 5](#mõisted)
+[1.1. Mõisted](#mõisted)
 
-[2. Eeltingimused nõusolekuteenuse kasutamiseks
-6](#eeltingimused-nõusolekuteenuse-kasutamiseks)
+[2. Eeltingimused nõusolekuteenuse kasutamiseks](#eeltingimused-nõusolekuteenuse-kasutamiseks)
 
-[3. Põhiprotsesside kirjeldus kasutusjuhtudena
-7](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
+[3. Põhiprotsesside kirjeldus kasutusjuhtudena](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
 
 [3.1. Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja
 andmesubjekti suunamine puuduvaid nõusolekuid andma
@@ -43,105 +41,87 @@ andmesubjekti suunamine puuduvaid nõusolekuid andma
 (andmekogu)
 12](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
 
-[4. Nõusoleku seisundidiagramm 14](#nõusoleku-seisundidiagramm)
+[4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
 
-[5. Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
-15](#nõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
+[5. Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#nõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
 
 [5.1. Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline
-kirjeldus
-15](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
+kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
 
-[5.1.1. getConsentGroupReference 15](#getconsentgroupreference)
+[5.1.1. getConsentGroupReference](#getconsentgroupreference)
 
-[5.1.2. getConsentReferences 17](#getconsentreferences)
+[5.1.2. getConsentReferences](#getconsentreferences)
 
-[5.1.3. validateConsentForClient 19](#validateconsentforclient)
+[5.1.3. validateConsentForClient](#validateconsentforclient)
 
-[5.1.4. validateConsentForDataProvider
-21](#validateconsentfordataprovider)
+[5.1.4. validateConsentForDataProvider](#validateconsentfordataprovider)
 
-[5.1.5. reportDataTransmission 22](#reportdatatransmission)
+[5.1.5. reportDataTransmission](#reportdatatransmission)
 
-[6. Juhised nõusolekuteenuse testimiseks liidestuja poolt
-25](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)
+[6. Juhised nõusolekuteenuse testimiseks liidestuja poolt](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)
 
 [6.1. Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni
-kuvamine (esmane ja korduv)
-25](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
+kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
 
 [6.2. Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine
-(*decline*)
-27](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
+(*decline*)](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
 
-[6.3. Nõusolekuviidete pärimine 28](#nõusolekuviidete-pärimine)
+[6.3. Nõusolekuviidete pärimine](#nõusolekuviidete-pärimine)
 
-[6.4. Nõusolekute valideerimine (Klientrakendus ja Andmekogu)
-28](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
+[6.4. Nõusolekute valideerimine (Klientrakendus ja Andmekogu)](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
 
 [6.5. Nõusolekute alusel edukast andmete pärimisest raporteerimine
-(Andmekogu)
-29](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
+(Andmekogu)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
 
-[7. Nõusolekuteenuse haldusliidese kasutamise juhend
-31](#nõusolekuteenuse-haldusliidese-kasutamise-juhend)
+[7. Nõusolekuteenuse haldusliidese kasutamise juhend](#nõusolekuteenuse-haldusliidese-kasutamise-juhend)
 
-[7.1. Rollid 31](#rollid)
+[7.1. Rollid](#rollid)
 
-[7.2. Infosüsteemide haldus 33](#infosüsteemide-haldus)
+[7.2. Infosüsteemide haldus](#infosüsteemide-haldus)
 
-[7.2.1. Infosüsteemide haldusega seotud vaated
-33](#infosüsteemide-haldusega-seotud-vaated)
+[7.2.1. Infosüsteemide haldusega seotud vaated](#infosüsteemide-haldusega-seotud-vaated)
 
-[7.2.2. Infosüsteemi andmed 35](#infosüsteemi-andmed)
+[7.2.2. Infosüsteemi andmed](#infosüsteemi-andmed)
 
-[7.3. Teenusedeklaratsioonide haldus
-35](#teenusedeklaratsioonide-haldus)
+[7.3. Teenusedeklaratsioonide haldus](#teenusedeklaratsioonide-haldus)
 
-[7.3.1. Teenusedeklaratsioonide haldusega seotud vaated
-35](#teenusedeklaratsioonide-haldusega-seotud-vaated)
+[7.3.1. Teenusedeklaratsioonide haldusega seotud vaated](#teenusedeklaratsioonide-haldusega-seotud-vaated)
 
-[7.3.2. Teenusedeklaratsiooni andmed 38](#teenusedeklaratsiooni-andmed)
+[7.3.2. Teenusedeklaratsiooni andmed](#teenusedeklaratsiooni-andmed)
 
-[7.3.3. Teenusedeklaratsiooni seisundidiagramm
-40](#teenusedeklaratsiooni-seisundidiagramm)
+[7.3.3. Teenusedeklaratsiooni seisundidiagramm](#teenusedeklaratsiooni-seisundidiagramm)
 
-[7.4. Eesmärgideklaratsioonide haldus
-40](#eesmärgideklaratsioonide-haldus)
+[7.4. Eesmärgideklaratsioonide haldus](#eesmärgideklaratsioonide-haldus)
 
-[7.4.1. Eesmärgideklaratsioonide haldusega seotud vaated
-40](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
+[7.4.1. Eesmärgideklaratsioonide haldusega seotud vaated](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
 
-[7.4.2. Eesmärgideklaratsiooni andmed
-43](#eesmärgideklaratsiooni-andmed)
+[7.4.2. Eesmärgideklaratsiooni andmed](#eesmärgideklaratsiooni-andmed)
 
-[7.4.3. Eesmärgideklaratsiooni seisundidiagramm
-45](#eesmärgideklaratsiooni-seisundidiagramm)
+[7.4.3. Eesmärgideklaratsiooni seisundidiagramm](#eesmärgideklaratsiooni-seisundidiagramm)
 
-[8. Nõusoleku mall 46](#nõusoleku-mall)
+[8. Nõusoleku mall](#nõusoleku-mall)
 
-[9. Nõusolekuteenuse kasutajaliides
-48](#nõusolekuteenuse-kasutajaliides)
+[9. Nõusolekuteenuse kasutajaliides](#nõusolekuteenuse-kasutajaliides)
 
-[9.1. Nõusoleku andmine 48](#nõusoleku-andmine)
+[9.1. Nõusoleku andmine](#nõusoleku-andmine)
 
-[9.1.1. Enne suunamist 48](#enne-suunamist)
+[9.1.1. Enne suunamist](#enne-suunamist)
 
-[9.1.2. Nõusolekuteenuses 49](#nõusolekuteenuses)
+[9.1.2. Nõusolekuteenuses](#nõusolekuteenuses)
 
-[9.1.3. Pärast suunamist 52](#pärast-suunamist)
+[9.1.3. Pärast suunamist](#pärast-suunamist)
 
-[9.2. Nõusolekute haldus 52](#nõusolekute-haldus)
+[9.2. Nõusolekute haldus](#nõusolekute-haldus)
 
-[9.2.1. Nõusolekuteenusest 52](#nõusolekuteenusest)
+[9.2.1. Nõusolekuteenusest](#nõusolekuteenusest)
 
-[9.2.2. Minu nõusolekud 53](#minu-nõusolekud)
+[9.2.2. Minu nõusolekud](#minu-nõusolekud)
 
-[9.2.3. Edastatud andmed 54](#edastatud-andmed)
+[9.2.3. Edastatud andmed](#edastatud-andmed)
 
-[9.2.4. Kasutustingimused 54](#kasutustingimused)
+[9.2.4. Kasutustingimused](#kasutustingimused)
 
-#  Sissejuhatus
+# 1. Sissejuhatus
 
 Dokumendi eesmärgiks on kirjeldada RIA nõusolekuteenuse peamisi
 kasutusmalle, andmevahetuse ja testimise põhimõtteid ning
@@ -221,7 +201,7 @@ Peatükk sisaldab kahte peamist Andmekogu ja Klientrakendusega seotud
 kasutusjuhtu, mis annavad ülevaade Nõusolekuteenuse API-de kasutamise
 kontekstist.
 
-## 3.1. Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma
+## Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma
 
 **Tegutsejad:** Andmesubjekt, Klientrakendus, Nõusolekuteenus
 
@@ -320,7 +300,7 @@ vajutamata.
     Klientrakendust kasutama, protsess algab uuesti põhistsenaariumi
     punktist 1.
 
-## 3.2. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
+## Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
 
 **Tegutsejad:** Andmekogu, Klientrakendus, Nõusolekuteenus
 

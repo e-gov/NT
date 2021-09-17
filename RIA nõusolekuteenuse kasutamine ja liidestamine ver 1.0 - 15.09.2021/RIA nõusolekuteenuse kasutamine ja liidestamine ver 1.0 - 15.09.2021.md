@@ -1054,3 +1054,85 @@ Deklaratsiooni vormi täitis | Infosüsteemide haldur (tema nimi ja roll süstee
 Viimati muudetud | Kuupäev, kuna TD andmed olid viimati muudetud | 15.05.2020 | Ei
 Viimane muutja | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes viimasena muutis TD andmed | Mart Mets (Administraator) | Ei
 Staatus | TD olek. Võimalikud olekud: KEHTIV ja KEHTETU’ (vt. jaotis 7.2.3.) | kehtiv | Ainult kehtetuks
+
+### Teenusedeklaratsiooni seisundidiagramm
+
+![Teenusedeklaratsiooni seisundidiagramm](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image12.png)
+
+## Eesmärgideklaratsioonide haldus
+
+Eesmärgideklaratsioon (ED) kirjeldab andmesaajat (Klientrakendust) ja
+kaitstud andmeteteenuse tarbimise eesmärki. Mõned eesmärgideklaratsiooni
+andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis
+[8](#nõusoleku-mall)).
+
+### Eesmärgideklaratsioonide haldusega seotud vaated
+
+Eesmärgideklaratsioonide esitamise ja haldusega Nõusolekuteenuse
+haldusliideses on seotud järgmised vaated:
+
+**Eesmärgideklaratsioonide nimekiri** 
+
+Ülevaade kõikidest esitatud eesmärgideklaratsioonidest. Võimaldab
+deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi,
+filtreerida staatuste järgi ning otsida deklaratsioone deklareerija nime
+järgi. 
+
+Iga deklaratsiooniga saab teha järgmised tegevused:
+
+-   *\"Vaata\"* - ava deklaratsiooni detailvaade kõikide selle andmetega
+
+-   *\"Muuda kehtetuks\"* - muuda eesmärgideklaratsiooni staatus
+    KEHTETUks ja muuda kehtetuks ka kõik selle deklaratsiooniga seotud
+    nõusolekud.
+
+-   *\"Klooni\"* - kasuta deklaratsioon mallina uue deklaratsiooni
+    jaoks - uue deklaratsiooni esitamise vormi automaatselt täidetakse
+    kloonitava deklaratsiooni andmetega edasiseks redigeerimiseks.
+
+![Eesmärgideklaratsioonide nimekiri](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image13.jpg)
+
+**Eesmärgideklaratsiooni esitamine**
+
+Uue eesmärgideklaratsiooni esitamise vorm. Sisestatavad andmed on
+detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed)
+
+![Eesmärgideklaratsiooni esitamine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image14.jpg)
+
+**Eesmärgideklaratsiooni detailvaade**
+
+Kuvab eesmärgideklaratsiooniga seotud andmed - nii põhiandmed kui ka
+metaandmed.  Samuti, kuvab mitu kehtivat nõusolekut on seotud antud
+eesmärgideklaratsiooniga. Detailvaate kaudu saab avaldada soovi muuta
+kehtiva deklaratsiooni andmed, vajutades nuppu \"Muuda deklaratsiooni
+andmed\". „Laadi alla" nuppu vajutades saab alla laadida
+eesmärgideklaratsiooni andmed CSV formaadis.
+
+![Eesmärgideklaratsiooni detailvaade](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image15.jpeg)
+
+**Eesmärgideklaratsiooni muutmine**
+
+Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmed osaliselt
+muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
+[7.4.2.](#eesmärgideklaratsiooni-andmed)
+
+![Eesmärgideklaratsiooni muutmine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image16.png)
+
+### Eesmärgideklaratsiooni andmed
+
+Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
+------------ | ------------- | ------------ | ------------
+Andmete saaja nimi | Klientrakenduse (ED deklareerija) ettevõte/asutuse ametlik nimi | Health Startup OÜ | Ei
+Andmete saaja registrikood | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood | 12819685 | Ei
+Nõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Nõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
+Andmete saaja pakutav teenus | Klientrakenduse või selle äriteenuse kaubanduslik nimi. Annab Andmesubjektile info, milline konkreetne äriteenus/infosüsteem hakkab kasutama tema isikuandmeid. | Immu | Ei
+Kasutatav teenusedeklaratsioon | Teenusedeklaratsioon (infosüsteemi nimi-TD identifikaator), millega deklareeritakse eesmärgi täitmiseks vajalikke andmeid pakkuvat kaitstud teenust. <br /> <br /> Teenusedeklaratsiooni (TD) valimine toimub kahe sammuga: <br /> <br /> 1) Infosüsteemi (millega on seotud TD) valimine - rippmenüü, mis sisaldab "Infosüsteemide halduse" kaudu lisatud infosüsteemide nimed. <br /> <br /> 2) TD identifikaatori valimine - rippmenüü, mis sisaldab eelmises sammus valitud infosüsteemiga seotud kehtivate teenusedeklaratsioonide identifikaatorid. <br />  <br /> Ühe ED-ga võib olla seotud ainult üks TD. | Tervise Infosüsteem-hl7_immuniseerimisandmed | Ei
+Eesmärgideklaratsiooni identifikaator | Eesmärgideklaratsiooni inimloetav unikaalne tunnus. | healthstartup_immuniseerimisandmed | Ei
+Eesmärgideklaratsiooni nimi | Deklareeritava andmete kasutamise eesmärgi  inimloetav lühike nimi. | Health Startup immuniseerimisandmed | Jah
+Andmete kasutamise eesmärk | Andmesubjekti andmete kasutamise eesmärgi kirjeldus. | Kui lubate Tervise infosüsteemil enda immuniseerimisandmed Health Startup OÜ-le edastada, võimaldab see teile pakkuda vaktsineerimiste nõustamise ja meeldetuletuse teenust Immu. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist saadud immuniseerimisandmeid isikliku vaktsineerimisvajaduste hindamiseks ning koostab nende põhjal vajaliku vaktsineerimisplaani, ühendades kasutaja sisestatud andmed riiklikult kogutud immuniseerimisandmetega. Nii saab võimalikuks vaktsineerimissoovituste pakkumine isiku asukoha, reisiplaanide, tervisliku seisundi, prognoositava puugihooaja jm sisendinfo põhjal, arvestades alati isiku seniseid immuniseerimisi. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist pärit immuniseerimisandmeid ainult ülalkirjeldatud teenuse Immu pakkumiseks ning kustutab kõik isikuandmed kasutaja sellekohasel soovil. | Jah
+Eesmärgideklaratsiooni kehtivusaja lõppkuupäev | ED kehtivusaja lõppkuupäevaks määratakse kas või sama kuupäev, mis on TD kehtivusaja lõppkupäev (võib olla ka "määramata"), või valitakse eraldi kuupäeva ED jaoks. | 15.05.2022 | Ei
+Deklaratsiooni esitamise kuupäev (määratakse automaatselt) | ED loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast. | 08.04.2020 | Ei
+Deklaratsiooni vormi täitis (määratakse automaatselt) | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis ED esitamise vormi. | Mart Mets (Administraator) | Ei
+Viimati muudetud (määratakse automaatselt) | Kuupäev, kuna ED andmed olid viimati muudetud. | 15.05.2020 | Ei
+Viimane muutja (määratakse automaatselt) | Infosüsteemi haldur (tema nimi ja roll süsteemis), kes viimasena muutis ED andmed. | Mart Mets (Administraator) | Ei
+Staatus | ED olek. Võimalikud olekud: KEHTIV ja KEHTETU (vt. jaotis 7.3.3.) | kehtiv | Ainult kehtetuks

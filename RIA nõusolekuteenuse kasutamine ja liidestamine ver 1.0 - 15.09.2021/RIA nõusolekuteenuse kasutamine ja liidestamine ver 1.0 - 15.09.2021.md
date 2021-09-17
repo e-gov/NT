@@ -1,6 +1,6 @@
 # RIA nõusolekuteenuse kasutamine ja liidestamine
 
-17.09.2021
+15.09.2021
 
 Versioon 1.0
 
@@ -16,7 +16,7 @@ Versiooni ajalugu
 | 11.05.2021 | 0.5 | Dokument muudetud
 | 25.05.2021 | 0.6 | Dokument muudetud
 | 21.06.2021 | 0.7 | Dokument muudetud
-| 17.09.2021 | 1.0 | Dokument avaldatud
+| 15.09.2021 | 1.0 | Dokument avaldatud
 
 
 <!-- markdownlint-disable MD033 -->

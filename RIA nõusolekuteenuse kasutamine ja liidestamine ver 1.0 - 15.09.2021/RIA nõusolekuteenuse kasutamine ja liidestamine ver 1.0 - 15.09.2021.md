@@ -1136,3 +1136,102 @@ Deklaratsiooni vormi täitis (määratakse automaatselt) | Infosüsteemide haldu
 Viimati muudetud (määratakse automaatselt) | Kuupäev, kuna ED andmed olid viimati muudetud. | 15.05.2020 | Ei
 Viimane muutja (määratakse automaatselt) | Infosüsteemi haldur (tema nimi ja roll süsteemis), kes viimasena muutis ED andmed. | Mart Mets (Administraator) | Ei
 Staatus | ED olek. Võimalikud olekud: KEHTIV ja KEHTETU (vt. jaotis 7.3.3.) | kehtiv | Ainult kehtetuks
+
+### Eesmärgideklaratsiooni seisundidiagramm
+
+![Eesmärgideklaratsiooni seisundidiagramm](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image17.png)
+    
+# Nõusoleku mall
+
+Järgmine tabel kirjeldab andmed, mis sisaldab nõusolek.
+    
+Andmeväli | Näide | Allikas
+------------ | ------------- | ------------
+Andmesubjekti nimi | Jaan Tamm | nõusolek
+Andmesubjekti isikukood | 39155555454 | nõusolek
+Andmekogu või infosüsteemi nimetus (andmete edastaja) | Tervise infosüsteem | teenusedeklaratsioon
+Isikuandmete vastutav töötleja (andmekogu või infosüsteemi haldaja) nimi ja registrikood | Sotsiaalministeerium (70001952) | teenusedeklaratsioon
+Isikuandmete volitatud töötleja nimi ja registrikood | TEHIK (70009770) | teenusedeklaratsioon
+Andmete saaja | Health Startup OÜ | eesmärgideklaratsioon
+Andmete saaja pakutav teenus (kaubanduslik nimi) | Immu | eesmärgideklaratsioon
+Isikuandmed (andmekoosseisu kirjeldus) | Immuniseerimistega seotud andmed:  <br /> <br /> •	haigus mille vastu immuniseeriti, <br /> •	immuniseerimise kuupäev, <br /> •	immuunpreparaat, <br /> •	partii number, <br /> •	manustatud annus, <br /> •	mitmes annus, <br /> •	järgmine immuniseerimine alates, <br /> •	tervishoiuasutus, <br /> •	immunpreparaadi ATC kood ja toimeaine(te) nimetus(ed). | teenusedeklaratsioon
+Andmete kasutamise eesmärk | Kui lubate Tervise infosüsteemil enda immuniseerimisandmed Health Startup OÜ-le edastada, võimaldab see teile pakkuda vaktsineerimiste nõustamise ja meeldetuletuse teenust Immu. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist saadud immuniseerimisandmeid isikliku vaktsineerimisvajaduste hindamiseks ning koostab nende põhjal vajaliku vaktsineerimisplaani, ühendades kasutaja sisestatud andmed riiklikult kogutud immuniseerimisandmetega. Nii saab võimalikuks vaktsineerimissoovituste pakkumine isiku asukoha, reisiplaanide, tervisliku seisundi, prognoositava puugihooaja jm sisendinfo põhjal, arvestades alati isiku seniseid immuniseerimisi. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist pärit immuniseerimisandmeid ainult ülalkirjeldatud teenuse Immu pakkumiseks ning kustutab kõik isikuandmed kasutaja sellekohasel soovil. | eesmärgideklaratsioon
+Nõusoleku kehtivus | alates 23.12.2024  <br /> kuni 20.02.2025 | nõusolek (kehtivusaja arvutatakse: nõusoleku andmise kuupäev + nõusoleku maksimaalne kehtivusaeg päevades (teenusedeklaratsioonist))
+
+# Nõusolekuteenuse kasutajaliides
+
+Nõusolekuteenuse Andmesubjektile (tavakasutajale) mõeldud kasutajaliides
+on realiseeritud eraldiseisva veebirakendusena, mis moodustab osa
+eesti.ee portaalist. Nõusolekuteenuse Andmesubjektile mõeldud
+kasutajaliides koosneb kahest poolest: nõusolekute andmine ja
+nõusolekute haldus.
+
+## Nõusoleku andmine 
+
+Andmesubjekt saab tutvuda nõusolekutaotlustega ja anda vajalikud
+nõusolekud unikaalse lingi kaudu, kuhu ta suunatakse Klientrakendusest.
+
+### Enne suunamist
+
+Iga kord kui Klientrakendus soovib suunata andmesubjekti nõusolekuid
+andma, peab see küsima Nõusolekuteenusest uue lingi vajalike
+nõusolekutaotluste komplektiga (kasutades ***getConsentGroupReference***
+API (vt jaotis [5.1.1.](#getconsentgroupreference))).
+
+Enne Nõusolekuteenusesse suunamist peab Klientrakendus informeerima
+Andmesubjekti nõusoleku(te) andmise vajadusest, andmete töötlemise
+tingimustest ja eesootavast Nõusolekuteenusesse suunamisest.
+
+Näidistekst:
+
+> Teenuse X kasutamiseks vajame Teie nõusolekut portaalis
+> eesti.ee/nõusolek, et vajalikke andmeid Y infosüsteemist küsida.
+> 
+> Kui lubate riigil meile oma andmeid anda, siis vastutame nende
+> töötlemise eest nii nagu\
+> meie **privaatsustingimustes (link)** kirjas on.\
+> **Miks meil seda vaja on ja miks see teile kasulik on? (link)**
+> 
+> Lähen nõusolekut andma:
+> 
+> **\[nupp\]**
+
+### Nõusolekuteenuses
+
+Enne Nõusolekuteenusesse sattumist autendib Andmesubjekt ennast TARA
+kaudu, kasutades ühte pakutavatest sisselogimisviisidest.
+
+![TARA](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image18.png)
+
+Pärast autentimist näeb Andmesubjekt nõusolekutaotlusi. Antud näitel
+küsitakse nõusolekut ainult ühe andmekomplekti edastamisele:
+immuniseerimisandmed.
+
+![Nõusolekutaotlused](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image19.png)
+
+Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
+kohta.
+
+![Nõusoleku andja](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image20.png)
+![Admete edastaja](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image21.png)
+![Andmete saaja](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image22.png)
+
+Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekt valida,
+kas ta lubab või ei luba kirjeldatud andmekomplekti edastamist. Kui
+lubab, siis staatuse silt ja nupp muutuvad rohelisteks.
+
+![Luban](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image23.png)
+
+Kui Andmesubjekt ei luba kirjeldatud andmekomplekti edastada, siis
+muutuvad staatuse silt ja nupp punasteks.
+
+![Ei luba](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image24.png)
+
+Enne „Kinnitan" nupu vajutamist saab Andmesubjekt oma otsuseid samal
+lehel muuta.
+
+Kui kõik valikud on tehtud, vajutab Andmesubjekt nuppu „Kinnitan".
+Nõusolekuteenus teeb antud nõusolekud kehtivateks ja suunab
+Andmesubjekti tagasi Klientrakendusesse.
+
+![Kinnitan](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image25.png)

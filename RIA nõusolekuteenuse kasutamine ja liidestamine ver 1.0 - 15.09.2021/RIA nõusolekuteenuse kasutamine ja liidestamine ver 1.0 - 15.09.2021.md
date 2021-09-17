@@ -975,3 +975,82 @@ Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse regis
 Volitatud töötleja (mittekohustuslik väli) | Volitatud töötleja asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/12750 <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | TEHIK | Jah
 Volitatud töötleja registrikood (mittekohustuslik väli) | Volitatud organisatsiooni registrikood. <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | 70009770 | Jah
 
+## Teenusedeklaratsioonide haldus
+
+Teenusedeklaratsioon (TD) kirjeldab infosüsteemi (Andmekogu) pakutavat
+kaitstud teenust, mille kasutamiseks on vajalik andmesubjekti nõusolek.
+Mõned teenusedeklaratsiooni andmed kuvatakse andmesubjektile nõusoleku
+andmisel (vt jaotis [8](#nõusoleku-mall)).
+
+### Teenusedeklaratsioonide haldusega seotud vaated
+
+Teenusedeklaratsioonide esitamise ja haldusega Nõusolekuteenuse
+haldusliideses on seotud järgmised vaated:
+
+**Teenusedeklaratsioonide nimekiri**
+
+Ülevaade kõikidest esitatud teenusedeklaratsioonidest. Võimaldab
+deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi
+ning filtreerida infosüsteemide ja staatuste järgi.
+
+Iga deklaratsiooniga saab teha järgmised tegevused:
+
+\"Vaata\" - ava deklaratsiooni detailvaade kõikide selle andmetega
+
+\"Muuda kehtetuks\" - muuda teenusedeklaratsiooni staatus KEHTETU-ks
+ning muuda kõik sellega seotud eesmärgideklaratsioonid ja nendega seotud
+nõusolekud kehtetuteks.
+
+\"Klooni\" - kasuta deklaratsioon mallina uue deklaratsiooni jaoks - uue
+deklaratsiooni esitamise vormi automaatselt täidetakse kloonitava
+deklaratsiooni andmetega edasiseks redigeerimiseks.
+
+![Teenusedeklaratsionide nimekiri](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image8.jpg)
+
+**Teenusedeklaratsiooni esitamine**
+
+Uue teenusedeklaratsiooni esitamise vorm. Sisestatavad andmed on
+detailselt kirjeldatud jaotises [7.3.2.](#teenusedeklaratsiooni-andmed)
+
+![Teenusedeklaratsioni esitamine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image9.jpg)
+
+**Teenusedeklaratsiooni detailvaade**
+
+Kuvab teenusedeklaratsiooniga seotud andmed - nii põhiandmed kui ka
+metaandmed. Samuti, kuvab mitu kehtivat eesmärgideklaratsiooni ja mitu
+kehtivat nõusolekut on seotud antud teenusedeklaratsiooniga. Detailvaate
+kaudu saab avaldada soovi muuta kehtiva deklaratsiooni andmed, vajutades
+nuppu \"Muuda deklaratsiooni andmed\".
+
+![Teenusedeklaratsioni detailvaade](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image10.jpeg)
+
+**Teenusedeklaratsiooni muutmine**
+
+Vaade, mis võimaldab kehtiva teenusedeklaratsiooni andmed osaliselt
+muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
+[7.3.2.](#teenusedeklaratsiooni-andmed)
+
+![Teenusedeklaratsioni muutmine](https://github.com/e-gov/NT/blob/262d0925d6819fb48f4053ee674c066675074215/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image11.jpeg)
+
+### Teenusedeklaratsiooni andmed
+
+Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
+------------ | ------------- | ------------ | ------------
+Teenust pakkuv infosüsteem | Rippmenüü, mis sisaldab Nõusolekuteenusesse lisatud infosüsteemide nimesid. TD esitamise vormis valitakse üks nendest valikutest - infosüsteem, mis pakub deklareeritavat teenust. | Tervise infosüsteem | Ei
+Nõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Nõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
+Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | Sotsiaalministeerium | Ei
+Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel)| 70001952 | Ei
+Volitatud töötleja| Volitatud töötleja asutuse ametlik nimi <br /> https://akit.cyber.ee/term/12750 (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | TEHIK | Ei
+Volitatud töötleja registrikood | Volitatud organisatsiooni registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | 70009770 | Ei
+Teenusedeklaratsiooni identifikaator | Teenusedeklaratsiooni inimloetav unikaalne tunnus | hl7_immuniseerimisandmed | Ei
+Teenusedeklaratsiooni nimi | Deklareeritava teenuse kaudu edastatava andmekoosseisu kokkuvõtlik lühike nimi (nähtav andmesubjektile nõusoleku andmekomplekti pealkirjana) | Immuniseerimisandmed | Jah
+Teenuse tehniline kirjeldus | Teenuse tehniline kirjeldus. MVP skoobi raames - informatiivne väli sisemiseks kasutamiseks. | X-tee teenuse 'hl7' päring, HL7 OID: 1.3.6.1.4.1.28284.6.1.1.35 | Jah
+Kasutatav x-tee teenus | Deklareeritav teenus. MVP skoobi raames - informatiivne väli sisemiseks kasutamiseks. | EE/GOV/70009770/digilugu/ImmuniseerimistePäring/v4 | Ei
+Teenuse andmekoosseisu kirjeldus | Teenuse inimloetav kirjeldus. Tagastatavad andmed, teenuse sisu jne. Kuvatakse nõusoleku andmisel andmesubjektile. | Immuniseerimistega seotud andmed: <br /> •	haigus mille vastu immuniseeriti, <br /> •	immuniseerimise kuupäev, <br /> •	immuunpreparaat,  <br /> •	partii number,   <br /> •	manustatud annus,   <br /> •	mitmes annus,  <br /> •	järgmine immuniseerimine alates,  <br /> •	tervishoiuasutus, <br /> •	immunpreparaadi ATC kood ja toimeaine(te) nimetus(ed). <br /> | Jah
+Nõusoleku maksimaalne kehtivusaeg | Mitu päeva maksimaalselt saab kehtida andmesubjekti nõusolek alates nõusoleku andmise hetkest. Selle põhjal arvutatakse nõusoleku kehtivusaja lõppkuupäev, mida näidetakse andmesubjektile nõusoleku andmisel. | 60 | Jah
+Teenusedeklaratsiooni kehtivusaja lõppkuupäev | TD kehtivusaja lõppkuupäev võib olla määramata (siis TD kehtib kuni selle muudetakse kehtetuks manuaalselt) või konkreetne valitud kuupäev (kui TD kehtivusaeg lõppeb, siis ka seotud ED muutuvad kehtetuteks) | 15.05.2022 | Jah
+Deklaratsiooni esitamise kuupäev | TD loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast. | 15.05.2020 |Ei
+Deklaratsiooni vormi täitis | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis TD esitamise vormi. | Mart Mets (Administraator) | Ei
+Viimati muudetud | Kuupäev, kuna TD andmed olid viimati muudetud | 15.05.2020 | Ei
+Viimane muutja | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes viimasena muutis TD andmed | Mart Mets (Administraator) | Ei
+Staatus | TD olek. Võimalikud olekud: KEHTIV ja KEHTETU’ (vt. jaotis 7.2.3.) | kehtiv | Ainult kehtetuks

@@ -16,7 +16,7 @@ Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (a
 
 [Link brauseris avanevale prototüübile](https://e-gov.github.io/NT "prototüüp")
 
-## Nõusoleku andmise prototüüp 
+## Nõusoleku andmise kasutusjuhu prototüüp 
 
 Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep rakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.
 

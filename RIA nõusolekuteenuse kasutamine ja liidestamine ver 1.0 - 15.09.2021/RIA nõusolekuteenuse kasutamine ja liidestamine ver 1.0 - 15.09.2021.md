@@ -1,8 +1,6 @@
 # RIA nõusolekuteenuse kasutamine ja liidestamine
 
-15.09.2021
-
-2020-01-14
+17.09.2021
 
 Versioon 1.0
 
@@ -18,16 +16,16 @@ Versiooni ajalugu
 | 11.05.2021 | 0.5 | Dokument muudetud
 | 25.05.2021 | 0.6 | Dokument muudetud
 | 21.06.2021 | 0.7 | Dokument muudetud
-| 15.09.2021 | 1.0 | Dokument avaldatud
+| 17.09.2021 | 1.0 | Dokument avaldatud
 
 
 <!-- markdownlint-disable MD033 -->
 
 # **Sisukord** 
 
-[1. Sissejuhatus](#1-sissejuhatus)
+[1. Sissejuhatus](#sissejuhatus)
 
-[1.1. Mõisted](#mõisted)
+[1.1 Mõisted](#mõisted)
 
 [2. Eeltingimused nõusolekuteenuse kasutamiseks](#eeltingimused-nõusolekuteenuse-kasutamiseks)
 
@@ -121,7 +119,7 @@ kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-in
 
 [9.2.4. Kasutustingimused](#kasutustingimused)
 
-# 1. Sissejuhatus
+# Sissejuhatus
 
 Dokumendi eesmärgiks on kirjeldada RIA nõusolekuteenuse peamisi
 kasutusmalle, andmevahetuse ja testimise põhimõtteid ning

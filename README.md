@@ -16,6 +16,12 @@ Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (a
 
 [Link brauseris avanevale prototüübile](https://e-gov.github.io/NT "prototüüp")
 
+## Nõusoleku andmise prototüüp 
+
+Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüübi aluseks on võetud Medikeep rakenduse kasutusjuht.
+
+[Link brauseris avanevale prototüübile](https://www.figma.com/proto/AOLWfaI9YWXYouwbksDtos/NT%3A-Medikeep%3A-n%C3%B5usoleku-andmine-ver-03.03.2021?node-id=3%3A1863&scaling=min-zoom "prototüüp")
+
 ## Arhitektuur
 Arhitektuuridokument annab ülevaate nõusolekuteenuse olemusest, peamistest protsessidest ja osapooltest, defineerides mõisted, rollid, API-d, andmemudelid jpm. Dokument on inglise keeles.
 

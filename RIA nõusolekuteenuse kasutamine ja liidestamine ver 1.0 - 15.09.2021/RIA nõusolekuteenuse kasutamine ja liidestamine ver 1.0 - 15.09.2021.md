@@ -1235,3 +1235,70 @@ Nõusolekuteenus teeb antud nõusolekud kehtivateks ja suunab
 Andmesubjekti tagasi Klientrakendusesse.
 
 ![Kinnitan](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image25.png)
+    
+### Pärast suunamist
+
+Pärast Andmesubjekti tagasi suunamist küsib Klientrakendus
+Nõusolekuteenusest nõusolekuviited ning nende valideerimise, et teada
+saada, millised nõusolekud olid antud ja nüüd kehtivad. Kasutatakse
+***getConsentReferences*** ja ***validateConsentForClient*** API-d (vt
+jaotised [5.1.2.](#getconsentreferences) ja
+[5.1.3.](#validateconsentforclient)).
+
+Vastavalt saadud vastusele, kuvab Klientrakendus Andmesubjektile teadet.
+Kui kõik vajalikud nõusolekud kehtivad, võib Klientrakendus hakata
+küsima andmeid Andmekogult ja osutama teenust Andmesubjektile.
+
+Kui mõned nõusolekud on puudu, küsib Klientrakendus Nõusolekuteenusest
+uue lingi (kasutades ***getConsentGroupReference*** API
+(vt jaotis [5.1.1.](#getconsentgroupreference)) ja suunab Andmesubjekti
+puuduvaid nõusolekuid andma.
+
+## Nõusolekute haldus
+
+Nõusolekute haldusliides on osa eesti.ee portaalist ja Andmesubjekt
+leiab selle navigatsiooni menüüst pärast sisselogimist. Haldusliides
+koosneb neljast alamlehest: „Nõusolekuteenusest", „Minu nõusolekud",
+„Andmete kasutus", „Kasutustingimused".
+
+### Nõusolekuteenusest
+
+Alamleht annab üldise info nõusolekuteenusest.
+
+![Nõusolekuteenusest](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image26.jpeg)
+
+### Minu nõusolekud
+
+Alamlehel saab näha kõiki Andmesubjekti poolt kunagi antud nõusolekuid -
+nii kehtivaid kui ka kehtetuid. Nõusolekuid saab filtreerida staatuse
+järgi ning otsida märksõna järgi. Nõusolekute tabel on sorteeritav.
+
+![Minu nõusolekud](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image27.jpeg)
+
+Tabeli reale vajutades saab näha nõusoleku detaile ning kehtiva
+nõusoleku puhul nuppu „loobun nõusolekust", mille abil saab nõusoleku
+tagasi võtta.
+
+![Nõusoleku detailid ja loobumine](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image28.jpeg)
+
+Kehtetu nõusoleku detailides saab näha põhjust, miks nõusolek ei kehti
+(nõusolek on tagasi võetud / nõusolek on aegunud / andmeedastus on
+lõppenud).
+
+![Nõusoleku kehtivuse lõppemise põhjus](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image29.jpg)
+
+### Edastatud andmed
+
+Alamleht annab ülevaate sellest, millised edukad andmepäringud olid
+tehtud Andmesubjekti nõusolekute alusel ja võimaldab Andmesubjektil
+jälgida oma isikuandmete edastamist. Informatsioon andmete edastamisest
+saab otsida märksõna järgi ning filtreerida aja perioodi järgi. Tabel on
+sorteeritav.
+
+![Edastatud andmed](https://github.com/e-gov/NT/blob/b20f0ff0abc43b5432976344a6eac7652be54163/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/dokumendis%20kasutatud%20pildid/image30.jpeg)
+
+### Kasutustingimused
+
+Alamleht tutvustab Andmesubjektile Nõusolekuteenuse kasutustingimusi.
+
+*(täiendamisel)*

@@ -18,7 +18,7 @@ Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (a
 
 ## Nõusoleku andmise kasutusjuhu prototüüp 
 
-Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep rakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.
+Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep mobiilrakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.
 
 [Link brauseris avanevale prototüübile](https://www.figma.com/proto/AOLWfaI9YWXYouwbksDtos/NT%3A-Medikeep%3A-n%C3%B5usoleku-andmine-ver-03.03.2021?node-id=3%3A1863&scaling=min-zoom "prototüüp")
 

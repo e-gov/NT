@@ -6,16 +6,6 @@ ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 
 Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
-## Lahenduse prototüüp 
-
-Esialgne prototüüp mõnes kohas erineb päris lahendusest, aga annab hea ülevaadet nõusolekuteenuse tomimisest.
-
-Prototüüp demonstreerib nõusolekuteenuse arhitektuuri ja protokolli toimimist, kasutades selleks kahte tõenäolist kasutusjuhtu tervisesektorist. Prototüübis on realiseeritud nii lõppkasutajavaated kui visualiseeritud osapoolte vahel liikuvad sõnumid, mis aitavad kaasa protokolli mõistmisele.
-
-Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (andmekogu), TEHIKu poolt käitatavat nõusolekuteenust (nõusolekuteenus) ning fiktiivset ettevõtet HealthStartup (klientrakendus), mille vahel on realiseeritud nõusolekupõhine andmevahetus. Kasutajal on võimalik stsenaariumid läbi mängida eeldefineeritud valikuid kasutades nii lõppkasutaja (andmesubjekti) kui teiste eelmainitud skeemis osalevate osapoolte vaatest.
-
-[Link brauseris avanevale prototüübile](https://e-gov.github.io/NT "prototüüp")
-
 ## Nõusoleku andmise kasutusjuhu prototüüp 
 
 Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep mobiilrakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.

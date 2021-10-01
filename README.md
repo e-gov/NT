@@ -13,9 +13,9 @@ Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaals
 [Link brauseris avanevale prototüübile](https://www.figma.com/proto/AOLWfaI9YWXYouwbksDtos/NT%3A-Medikeep%3A-n%C3%B5usoleku-andmine-ver-03.03.2021?node-id=3%3A1863&scaling=min-zoom "prototüüp")
 
 ## Arhitektuur
-Arhitektuuridokument annab ülevaate nõusolekuteenuse olemusest, peamistest protsessidest ja osapooltest, defineerides mõisted, rollid, API-d, andmemudelid jpm. Dokument on inglise keeles.
+Arhitektuuridokument annab ülevaate nõusolekuteenuse tehnilisest ehitusest, defineerides süsteemi komponendid, integratsioonid, evitusskeem, andmemudelid jpm. Dokument on inglise keeles.
 
-[Arhitektuuridokument 1.2](https://github.com/e-gov/NT/blob/master/Consent_Service_Architecture.md "arhitektuuridokument")
+[Arhitektuuridokument 2.0](https://github.com/e-gov/NT/blob/51ca5a67ef61f94ece4e00e94b1bc543fec8ce27/architecture/Architecture%202.0.md "arhitektuuridokument")
 
 ## Tagasiside, ettepanekud ja küsimused
 Teenuse loomisel on oodatud kogukonna panus ettepanekute, küsimuste ja tõstatatud teemade näol. Selleks kasutame Githubis olevat "Issues" tab-i, kuhu lisasime ka esimesed lahendamata teemad ja küsimused. Modereerimise, vastamise ning teemade sulgemisega tegeleb RIA.

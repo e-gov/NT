@@ -13,7 +13,10 @@ The prototype shows consent giving proscess and was used in testing of visual so
 [Link to the prototype](https://www.figma.com/proto/AOLWfaI9YWXYouwbksDtos/NT%3A-Medikeep%3A-n%C3%B5usoleku-andmine-ver-03.03.2021?node-id=3%3A1863&scaling=min-zoom "prototype")
 
 ## Architecture
-[Architecture specification 1.1](https://github.com/e-gov/NT/blob/master/Consent_Service_Architecture.md "architecture")
+
+Architecture document gives an overview of the Consent Service technical structure, defining system components, integrations, deployment diagram, data models etc. 
+
+[Architecture document 2.0](https://github.com/e-gov/NT/blob/51ca5a67ef61f94ece4e00e94b1bc543fec8ce27/architecture/Architecture%202.0.md "architecture document")
 
 ## Feedback and suggestions
 

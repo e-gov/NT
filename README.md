@@ -6,6 +6,9 @@ ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 
 Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
+## Nõusolekuteenuse kasutusjuhend partnerile
+[Nõusolekuteenuse kasutamine ja liidestamine ver 1.0](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021.md)
+
 ## Nõusoleku andmise kasutusjuhu prototüüp 
 
 Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep mobiilrakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.

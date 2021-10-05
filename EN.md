@@ -4,7 +4,11 @@
 
 # Consent Service
 
-Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 and several pilots are planned in the second half of 2020 with healthcare data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services. 
+Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 with the development of a fully functional MVP following in 2020-2021. Several pilots are planned in the second half of 2021 with financial data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services. 
+
+## Instructions for using the Consent Service (English version coming soon)
+
+[Nõusolekuteenuse kasutamine ja liidestamine ver 1.0](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021.md)
 
 ## Consent giving use case prototype
 

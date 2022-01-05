@@ -27,4 +27,4 @@ Teenuse loomisel on oodatud kogukonna panus ettepanekute, küsimuste ja tõstata
 
 ___
 
-Kõikvõimalike nõusolekuteenuse arendust puudutavate teemadega on alati võimalik kirjutada nõusolekuteenuse tootejuhile RIAs: sander.randorg@ria.ee
+Kõikvõimalike nõusolekuteenuse arendust puudutavate teemadega on alati võimalik kirjutada nõusolekuteenuse tootejuhile RIAs: piret.parna@ria.ee

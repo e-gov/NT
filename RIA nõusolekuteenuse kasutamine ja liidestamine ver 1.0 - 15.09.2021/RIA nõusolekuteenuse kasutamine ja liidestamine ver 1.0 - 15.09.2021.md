@@ -494,6 +494,7 @@ error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CO
 error.business.id-code-invalid | ID_CODE_INVALID (400) | Isikukood ei vasta standardile
 error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Küsitud äriidentifikaatorid, mis on seotud kehtetute eesmärgideklaratsoonidega eesmärgideklarastiooni mikroteenuse andmebaasis on loetletud vea kirjelduses
 error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED
+error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | Isik on kas teovõimetu või piiratud teovõimega
 
 ### getConsentReferences
 

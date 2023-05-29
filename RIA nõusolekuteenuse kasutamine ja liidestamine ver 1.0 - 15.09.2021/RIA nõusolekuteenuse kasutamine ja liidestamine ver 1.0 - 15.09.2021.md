@@ -223,7 +223,7 @@ sellest on teada Klientrakendusele.
 
 2.  Klientrakendus kontrollib Nõusolekuteenuse abil, kas teenuse pakkumiseks on olemas ja kehtivad kõik vajalikud Andmesubjekti nõusolekud. Kasutatakse ***getConsentReferences*** ja/või ***validateConsentForClient*** päringuid (vt jaotised [5.1.2.](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)) Klientrakendus tuvastab, et mõned vajalikud nõusolekud on puudu või ei kehti.
 
-3.  Klientrakendus küsib Nõusolekuteenuselt lingi, mis suunaks Andmesubjekti Nõusolekuteenuse kasutajaliidese kaudu puuduvaid nõusolekuid andma. Klientrakendus peab päringus saatma ainult nende eesmärgideklaratsioonide identifikaatorid, mis vastavad puuduvatele nõusolekutele. Kasutatakse ***getConsentGroupReference*** päringut (vt jaotis [5.1.1.](#getconsentgroupreference)). **TÄHTIS!** Mitte kasutada sama linki mitu korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid. Andmesubjekti suunamisel peab [alati]{.ul} küsima uue lingi **getConsentGroupReference** päringu abil.
+3.  Klientrakendus küsib Nõusolekuteenuselt lingi, mis suunaks Andmesubjekti Nõusolekuteenuse kasutajaliidese kaudu puuduvaid nõusolekuid andma. Klientrakendus peab päringus saatma ainult nende eesmärgideklaratsioonide identifikaatorid, mis vastavad puuduvatele nõusolekutele. Kasutatakse ***getConsentGroupReference*** päringut (vt jaotis [5.1.1.](#getconsentgroupreference)). **TÄHTIS!** Mitte kasutada sama linki mitu korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid. Andmesubjekti suunamisel peab _alati_ küsima uue lingi **getConsentGroupReference** päringu abil.
 
 4.  Nõusolekuteenuse poolt genereeritud lingi kaudu suunatakse Andmesubjekt nõusolekuid andma. Andmesubjekt logib sisse kasutades TARA autentimist.
 

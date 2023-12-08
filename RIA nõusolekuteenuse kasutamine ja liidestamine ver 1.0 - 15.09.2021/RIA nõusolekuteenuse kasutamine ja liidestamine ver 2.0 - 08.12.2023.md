@@ -972,9 +972,7 @@ Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
 ------------ | ------------- | ------------ | -------------
 representativeIdCode | jah | string | Esindaja isikukood
 representeeIdCode | jah | string | Esindatava ehk Andmesubjekti isikukood
-relationType | jah | String | Esindatava seos esindajaga. Nt lapsevanem (esindaja) esindab last (esindatav),
-siis seose tüüp on „LAPS".
-Võimalikud väärtused (klassifikaatori väärtus): „LAPS" 
+relationType | jah | String | Esindatava seos esindajaga. Nt lapsevanem (esindaja) esindab last (esindatav), siis seose tüüp on „LAPS". <br /> Võimalikud väärtused (klassifikaatori väärtus): „LAPS".
 callback | jah | string | Klientrakenduses tagasisuunamise URL
 | purposeDeclarationBusinessIdentifiers | jah | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)
 

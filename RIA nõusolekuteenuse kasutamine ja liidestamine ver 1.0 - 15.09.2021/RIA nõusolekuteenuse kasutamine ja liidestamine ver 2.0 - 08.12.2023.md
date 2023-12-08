@@ -34,16 +34,16 @@ Versiooni ajalugu
 
 [3.1. Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja
 andmesubjekti suunamine puuduvaid nõusolekuid andma
-7](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
+](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
 
 [3.2. Kasutusjuht 1.1 Kliendirakendus valideerib Andmesubjekti
 nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puudolevaid
 nõusolekuid andma
-9](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
+](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
 
 [3.3. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine
 (andmekogu)
-12](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
+](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
 
 [4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
 
@@ -63,7 +63,7 @@ kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-k
 [5.1.5. reportDataTransmission](#reportdatatransmission)
 
 [5.1.6. getConsentGroupReferenceRepresentable
-23](#getconsentgroupreferencerepresentable)
+](#getconsentgroupreferencerepresentable)
 
 [6. Juhised nõusolekuteenuse testimiseks liidestuja poolt](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)
 
@@ -106,11 +106,11 @@ kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-in
 
 [7.4.3. Eesmärgideklaratsiooni seisundidiagramm](#eesmärgideklaratsiooni-seisundidiagramm)
 
-[8. Statistika 52](#statistika)
+[8. Statistika](#statistika)
 
-[8.1. Statistika väljund 53](#statistika-väljund)
+[8.1. Statistika väljund](#statistika-väljund)
 
-[8.1.1. Statistika andmestik 53](#statistika-andmestik)
+[8.1.1. Statistika andmestik](#statistika-andmestik)
 
 [9. Nõusoleku mall](#nõusoleku-mall)
 
@@ -209,7 +209,7 @@ järgmised sammud:
 
 7.  Pärast eesmärgideklaratsiooni esitamist ekspordib Andmekogu eesmärgideklaratsiooni andmeid Nõusolekuteenusest ja edastab selle Klientrakendusele (nt e-maili kaudu). Nende andmete hulgas edastatakse eesmärgideklaratsiooni unikaalne identifikaator, mida Klientrakendus hakkab kasutama Nõusolekuteenuse suhtlemisel.
 
-8.  Klientrakendus liidestub Nõusolekuteenusega, võimaldades Andmesubjekti suunamist Nõusolekuteenusesse vajalike nõusolekute andmiseks.
+8.  Klientrakendus liidestub Nõusolekuteenusega, võimaldades Andmesubjekti või Andmesubjekti esindaja suunamist Nõusolekuteenusesse vajalike nõusolekute andmiseks.
 
 # Põhiprotsesside kirjeldus kasutusjuhtudena
 

@@ -7,7 +7,7 @@ ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
 ## Nõusolekuteenuse kasutusjuhend partnerile
-[Nõusolekuteenuse kasutamine ja liidestamine ver 1.0](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021.md)
+[Nõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
 
 ## Nõusoleku andmise kasutusjuhu prototüüp 
 

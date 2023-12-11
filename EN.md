@@ -8,7 +8,7 @@ Consent Service is an initiative led by the Estonian Information System Authorit
 
 ## Instructions for using the Consent Service (English version coming soon)
 
-[Nõusolekuteenuse kasutamine ja liidestamine ver 1.0](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine%20ver%201.0%20-%2015.09.2021.md)
+[Nõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
 
 ## Consent giving use case prototype
 

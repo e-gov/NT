@@ -1684,7 +1684,7 @@ on sorteeritav.
 omatakse täielikku isikuhooldusõigust. Laste info päritakse
 automaatselt Rahvastikuregistrist.
 
-![Lapse edastatud andmed](https://raw.githubusercontent.com/e-gov/NT/release/2.0/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image37.png)
+![Lapse edastatud andmed](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image37.png)
 
 ### Kasutustingimused
 

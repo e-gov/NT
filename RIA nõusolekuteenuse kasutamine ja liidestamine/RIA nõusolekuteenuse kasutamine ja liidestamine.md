@@ -658,11 +658,13 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 **Vastus:**
 ```
 {
+  "consentGroupReference": "dd74ed1b-a00f-4232-8b25-914d6ecbcb30"
   "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30&callback=https://www.ria.ee"
 }
 ```
 Parameeter | Andmetüüp | Kirjeldus
 ------------ | ------------ | -------------
+consentGroupReference | string | Nõusolekutaotluse viide - unikaalne kood, mida kasutatakse nõusolekutaotluste eristamiseks
 url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Nõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
 
 **Veahaldus:**

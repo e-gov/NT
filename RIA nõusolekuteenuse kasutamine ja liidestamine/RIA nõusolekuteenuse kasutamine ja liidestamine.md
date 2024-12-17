@@ -1651,7 +1651,7 @@ ei saa.
 
 Andmesubjektile kuvatakse nõusolekutaotlus.
 
-![Pikendamine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image36.png)
+![Pikendamine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usoleku%20pikendamine.PNG)
 
 Andmesubjekt saab kalendrist valida kehtivuse lõpu kuupäeva. Vaikimisi
 kuvatakse võimalik maksimum kuupäev, mis võetakse

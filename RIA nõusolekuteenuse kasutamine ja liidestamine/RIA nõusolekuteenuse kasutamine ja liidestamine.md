@@ -1509,13 +1509,13 @@ Enne Nõusolekuteenusesse sattumist autendib Andmesubjekt või
 Andmesubjekti esindaja ennast TARA kaudu, kasutades ühte pakutavatest 
 sisselogimisviisidest.
 
-![TARA]()
+![TARA](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/autentimise%20avakuva.PNG)
 
 Pärast autentimist näeb Andmesubjekt või Andmesubjekti esindaja 
 nõusolekutaotlusi. Antud näitel küsitakse nõusolekut ainult ühe 
-andmekomplekti edastamisele: immuniseerimisandmed.
+andmekomplekti edastamisele: Tervise konsultatsiooni andmeid.
 
-![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/autentimise%20avakuva.PNG)
+![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolekuandmise%20taotlus.PNG)
 
 Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
 kohta.
@@ -1523,19 +1523,19 @@ kohta.
 PS! Kui nõusolekut antakse esindatava eest, siis nõusoleku andjaks on
 esindatav ehk laps.
 
-![Nõusoleku andja,andmete edastaja, andmete saaja](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image20.png)
+![Nõusoleku andja,andmete edastaja, andmete saaja](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Infov%C3%A4ljad%20koos.PNG)
 
 Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekt või 
 Andmesubjekti esindaja valida, kas ta lubab või ei luba kirjeldatud 
 andmekomplekti edastamist. Kui lubab, siis staatuse silt ja nupp 
 muutuvad rohelisteks.
 
-![Luban](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image23.png)
+![Luban](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/luban%20n%C3%B5usoleku.PNG)
 
 Kui Andmesubjekt või Andmesubjekti esindaja ei luba kirjeldatud 
 andmekomplekti edastada, siis muutuvad staatuse silt ja nupp punasteks.
 
-![Ei luba](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image24.png)
+![Ei luba](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/ei%20luba%20n%C3%B5usolekut.PNG)
 
 Enne „Kinnitan" nupu vajutamist saab Andmesubjekt või Andmesubjekti 
 esindaja oma otsuseid samal lehel muuta.
@@ -1550,7 +1550,7 @@ allkirjastada digitaalselt.
 Kui kõik valikud on tehtud, suunatakse Andmesubjekti või Andmesubjekti
 esindaja tagasi Klientrakendusesse.
 
-![Kinnitan](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image25.png)
+![Kinnitan](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20antud.PNG)
     
 ### Pärast suunamist
 

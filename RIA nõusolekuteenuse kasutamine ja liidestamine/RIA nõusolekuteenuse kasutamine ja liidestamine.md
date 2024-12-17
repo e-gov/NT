@@ -1509,13 +1509,13 @@ Enne Nõusolekuteenusesse sattumist autendib Andmesubjekt või
 Andmesubjekti esindaja ennast TARA kaudu, kasutades ühte pakutavatest 
 sisselogimisviisidest.
 
-![TARA](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image18.png)
+![TARA]()
 
 Pärast autentimist näeb Andmesubjekt või Andmesubjekti esindaja 
 nõusolekutaotlusi. Antud näitel küsitakse nõusolekut ainult ühe 
 andmekomplekti edastamisele: immuniseerimisandmed.
 
-![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image19.png)
+![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/autentimise%20avakuva.PNG)
 
 Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
 kohta.

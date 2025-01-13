@@ -1356,7 +1356,7 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
 Uue eesmärgideklaratsiooni esitamise vorm. Sisestatavad andmed on
 detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni esitamine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image14.jpg)
+![Eesmärgideklaratsiooni esitamine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
 
 **Eesmärgideklaratsiooni detailvaade**
 
@@ -1367,7 +1367,7 @@ kehtiva deklaratsiooni andmed, vajutades nuppu \"Muuda deklaratsiooni
 andmed\". „Laadi alla" nuppu vajutades saab alla laadida
 eesmärgideklaratsiooni andmed CSV formaadis.
 
-![Eesmärgideklaratsiooni detailvaade](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image15.jpeg)
+![Eesmärgideklaratsiooni detailvaade](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
 
 **Eesmärgideklaratsiooni muutmine**
 
@@ -1375,7 +1375,7 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmed osaliselt
 muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni muutmine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image16.png)
+![Eesmärgideklaratsiooni muutmine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
 
 ### Eesmärgideklaratsiooni andmed
 

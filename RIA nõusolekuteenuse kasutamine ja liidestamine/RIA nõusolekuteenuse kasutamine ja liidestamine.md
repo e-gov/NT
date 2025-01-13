@@ -1458,6 +1458,7 @@ Andmete saaja | Health Startup OÜ | eesmärgideklaratsioon
 Andmete saaja pakutav teenus (kaubanduslik nimi) | Immu | eesmärgideklaratsioon
 Isikuandmed (andmekoosseisu kirjeldus) | Immuniseerimistega seotud andmed:  <br /> <br /> •	haigus mille vastu immuniseeriti, <br /> •	immuniseerimise kuupäev, <br /> •	immuunpreparaat, <br /> •	partii number, <br /> •	manustatud annus, <br /> •	mitmes annus, <br /> •	järgmine immuniseerimine alates, <br /> •	tervishoiuasutus, <br /> •	immunpreparaadi ATC kood ja toimeaine(te) nimetus(ed). | teenusedeklaratsioon
 Andmete kasutamise eesmärk | Kui lubate Tervise infosüsteemil enda immuniseerimisandmed Health Startup OÜ-le edastada, võimaldab see teile pakkuda vaktsineerimiste nõustamise ja meeldetuletuse teenust Immu. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist saadud immuniseerimisandmeid isikliku vaktsineerimisvajaduste hindamiseks ning koostab nende põhjal vajaliku vaktsineerimisplaani, ühendades kasutaja sisestatud andmed riiklikult kogutud immuniseerimisandmetega. Nii saab võimalikuks vaktsineerimissoovituste pakkumine isiku asukoha, reisiplaanide, tervisliku seisundi, prognoositava puugihooaja jm sisendinfo põhjal, arvestades alati isiku seniseid immuniseerimisi. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist pärit immuniseerimisandmeid ainult ülalkirjeldatud teenuse Immu pakkumiseks ning kustutab kõik isikuandmed kasutaja sellekohasel soovil. | eesmärgideklaratsioon
+Andmete saaja andmekaitsetingimused | https://andmekaitsetingimused.ee | eesmärgideklaratsioon
 Nõusoleku kehtivus | alates 23.12.2024  <br /> kuni 20.02.2025 | nõusolek (kehtivusaja arvutatakse: nõusoleku andmise kuupäev + nõusoleku maksimaalne kehtivusaeg päevades (teenusedeklaratsioonist))
 
 # Nõusolekuteenuse kasutajaliides
@@ -1516,7 +1517,7 @@ Pärast autentimist näeb Andmesubjekt või Andmesubjekti esindaja
 nõusolekutaotlusi. Antud näitel küsitakse nõusolekut ainult ühe 
 andmekomplekti edastamisele: Tervise konsultatsiooni andmeid.
 
-![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolekuandmise%20taotlus.PNG)
+![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus.PNG)
 
 Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
 kohta.
@@ -1531,12 +1532,12 @@ Andmesubjekti esindaja valida, kas ta lubab või ei luba kirjeldatud
 andmekomplekti edastamist. Kui lubab, siis staatuse silt ja nupp 
 muutuvad rohelisteks.
 
-![Luban](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/luban%20n%C3%B5usoleku.PNG)
+![Luban](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20luban.PNG)
 
 Kui Andmesubjekt või Andmesubjekti esindaja ei luba kirjeldatud 
 andmekomplekti edastada, siis muutuvad staatuse silt ja nupp punasteks.
 
-![Ei luba](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/ei%20luba%20n%C3%B5usolekut.PNG)
+![Ei luba](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20ei%20luba.PNG)
 
 Enne „Kinnitan" nupu vajutamist saab Andmesubjekt või Andmesubjekti 
 esindaja oma otsuseid samal lehel muuta.
@@ -1608,7 +1609,7 @@ nõusoleku puhul nuppu „loobun nõusolekust", mille abil saab nõusoleku
 tagasi võtta ning juhul, kui nõusoleku pikendamine on lubatud, siis
 nuppu „Pikenda", millega saab nõusolekut pikendada.
 
-![Nõusoleku detailid ja loobumine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image28.jpeg)
+![Nõusoleku detailid ja loobumine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20portaalis.PNG)
 
 Kui nõusoleku kinnitas või allkirjastas Andmesubjekti esindaja (sh ka
 loobus), siis nõusoleku detailandmetel kuvatakse

@@ -1356,7 +1356,7 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
 Uue eesmärgideklaratsiooni esitamise vorm. Sisestatavad andmed on
 detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni esitamine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image14.jpg)
+![Eesmärgideklaratsiooni esitamine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
 
 **Eesmärgideklaratsiooni detailvaade**
 
@@ -1367,7 +1367,7 @@ kehtiva deklaratsiooni andmed, vajutades nuppu \"Muuda deklaratsiooni
 andmed\". „Laadi alla" nuppu vajutades saab alla laadida
 eesmärgideklaratsiooni andmed CSV formaadis.
 
-![Eesmärgideklaratsiooni detailvaade](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image15.jpeg)
+![Eesmärgideklaratsiooni detailvaade](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
 
 **Eesmärgideklaratsiooni muutmine**
 
@@ -1375,7 +1375,7 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmed osaliselt
 muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni muutmine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image16.png)
+![Eesmärgideklaratsiooni muutmine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
 
 ### Eesmärgideklaratsiooni andmed
 
@@ -1389,6 +1389,7 @@ Kasutatav teenusedeklaratsioon | Teenusedeklaratsioon (infosüsteemi nimi-TD ide
 Eesmärgideklaratsiooni identifikaator | Eesmärgideklaratsiooni inimloetav unikaalne tunnus. | healthstartup_immuniseerimisa ndmed | Ei
 Eesmärgideklaratsiooni nimi | Deklareeritava andmete kasutamise eesmärgi  inimloetav lühike nimi. | Health Startup immuniseerimisandmed | Jah
 Andmete kasutamise eesmärk | Andmesubjekti andmete kasutamise eesmärgi kirjeldus. | Kui lubate Tervise infosüsteemil enda immuniseerimisandmed Health Startup OÜ-le edastada, võimaldab see teile pakkuda vaktsineerimiste nõustamise ja meeldetuletuse teenust Immu. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist saadud immuniseerimisandmeid isikliku vaktsineerimisvajaduste hindamiseks ning koostab nende põhjal vajaliku vaktsineerimisplaani, ühendades kasutaja sisestatud andmed riiklikult kogutud immuniseerimisandmetega. Nii saab võimalikuks vaktsineerimissoovituste pakkumine isiku asukoha, reisiplaanide, tervisliku seisundi, prognoositava puugihooaja jm sisendinfo põhjal, arvestades alati isiku seniseid immuniseerimisi. <br />  <br /> Health Startup OÜ kasutab Tervise infosüsteemist pärit immuniseerimisandmeid ainult ülalkirjeldatud teenuse Immu pakkumiseks ning kustutab kõik isikuandmed kasutaja sellekohasel soovil. | Jah
+Andmete saaja andmekaitsetingimused | Klientrakenduse või selle äriteenuse andmekaitsetingimused (lisada lingina) | https://andmekaitsetingimused.ee | Jah
 Eesmärgideklaratsiooni kehtivusaja lõppkuupäev | ED kehtivusaja lõppkuupäevaks määratakse kas või sama kuupäev, mis on TD kehtivusaja lõppkupäev (võib olla ka "määramata"), või valitakse eraldi kuupäeva ED jaoks. | määramata | Ei
 Deklaratsiooni esitamise kuupäev (määratakse automaatselt) | ED loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast. | 09.06.2023 | Ei
 Deklaratsiooni vormi täitis (määratakse automaatselt) | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis ED esitamise vormi. | Mart Mets (Infosüsteemi haldur) | Ei

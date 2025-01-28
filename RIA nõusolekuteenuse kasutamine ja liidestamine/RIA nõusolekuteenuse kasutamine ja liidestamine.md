@@ -1,8 +1,8 @@
 # RIA nõusolekuteenuse kasutamine ja liidestamine
 
-08.12.2023
+28.01.2025
 
-Versioon 2.0
+Versioon 2.1
 
 ---
 Versiooni ajalugu
@@ -18,7 +18,7 @@ Versiooni ajalugu
 | 21.06.2021 | 0.7 | Dokument muudetud
 | 15.09.2021 | 1.0 | Dokument avaldatud
 | 08.12.2023 | 2.0 | Dokument muudetud
-| 01.28.2025 | 2.1 | Dokument muudetud
+| 28.01.2025 | 2.1 | Dokument muudetud
 
 
 <!-- markdownlint-disable MD033 -->

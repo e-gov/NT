@@ -18,6 +18,7 @@ Versiooni ajalugu
 | 21.06.2021 | 0.7 | Dokument muudetud
 | 15.09.2021 | 1.0 | Dokument avaldatud
 | 08.12.2023 | 2.0 | Dokument muudetud
+| 01.28.2025 | 2.1 | Dokument muudetud
 
 
 <!-- markdownlint-disable MD033 -->
@@ -1009,6 +1010,122 @@ error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | Rahvastikuregistr
 error.business.represented_person-not-minor | REPRESENTED_PERSON_NOT_MINOR (500) | Esindatav ei ole alaealine
 error.business.representation_error | RR_REPRESENTATION_ERROR (500) | Rahvastikuregistri andmete põhjal puudub esindajal esindatava suhtes täielik isikuhooldusõigus või on esindaja staatus vale
 error.business.relation-type-error | RELATION_TYPE_INVALID (400) | Vale relationType väärtus (sellist klassifikaatorit ei eksisteeri)    
+
+###  postConsentFilterByStatus
+
+Nõusolekuteenust kasutatavatel teenustel on vajalik saada andmestik tagasivõetud või kehtivate nõusolekute kohta vastava teenuse raames. Selleks luuakse päring, kus päringu teostaja annab ette sisendi otsitavate staatuste kohta (kehtiv/kehtetu/kehtiv ja kehtetu) ning loetelu nõusolekute identifikaatoritest ja saab vastu loetelu nõusolekuviidetest ja nõusoleku staatustest.
+
+Kasutab: Andmekogu
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/filter-by-status
+
+**Päringu käsu näide (curl):** 
+
+```
+curl -X POST \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-H "X-Road-Client: ee-dev/COM/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/filter-by-status" \
+-d "{ \
+\"consentStatus\": [\"VALID\", \"INVALID\"], \
+\"consentReferences\": [ \
+  \"226cd452-0459-1111-832d-4771bef14af3\", \"226cd452-0459-2222-832d-4771bef14af3\", ... , \"226cd452-0459-3333-832d-4771bef14af3\", \"invalid-reference\" \
+] \
+}"
+```
+
+**Päring (Json):** 
+
+```
+{
+  "consentStatus": ["VALID", "INVALID"],
+  "consentReferences": [
+    "226cd452-0459-1111-832d-4771bef14af3",
+    "226cd452-0459-2222-832d-4771bef14af3",
+    ... ,
+    "226cd452-0459-3333-832d-4771bef14af3",
+    "invalid-reference"
+  ]
+}
+```
+
+Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
+------------ | ------------- | ------------ | -------------
+consentStatus | jah | array of string | viide otsitavate nõusolekute staatusele. Väärtused: VALID, INVALID.
+consentReferences | jah, ei tohi olla tühi | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000. 
+consentReferences | jah | array of string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest
+
+**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
+mis on määratud eesmärgideklaratsiooni(de)s.
+
+**Vastus:**
+
+```
+{
+  "consent": [
+    {
+      "consentReference": "226cd452-0459-1111-832d-4771bef14af3",
+      "consentStatus": "APPROVED",
+      "consentExpiration": "2026-12-18T23:59:59.99999Z",
+      "idCode": "30101011111",
+      "purposeDeclarationId": "ed_test12"
+    },
+    {
+      "consentReference": "226cd452-0459-2222-832d-4771bef14af3",
+      "consentStatus": "EXPIRED",
+      "consentExpiration": "2024-12-18T23:59:59.99999Z",
+      "idCode": "40101011111",
+      "purposeDeclarationId": "ed_test12"
+    },
+    ...
+    ,
+    {
+      "consentReference": "226cd452-0459-3333-832d-4771bef14af3",
+      "consentStatus": "APPROVED",
+      "consentExpiration": "2027-12-18T23:59:59.99999Z",
+      "idCode": "30101012222",
+      "purposeDeclarationId": "ed_test12"
+    },
+  ],
+  "invalidConsents": [
+    "invalid-reference"
+  ]
+}
+```
+
+Süsteem väljastab tulemused vastavalt consentStatus valikule:
+
+1. VALID valiku korral väljastatakse väärtused, mille consent.status on APPROVED
+
+2. INVALID valiku korral väljastatakse väärtused, mille consent.status on DECLINED, INAPPLICABLE või EXPIRED
+
+3. VALID, INVALID valiku korral väljastatakse väärtused, mille consent.status on APPROVED, DECLINED, INAPPLICABLE või EXPIRED
+
+
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------ | -------------
+consent | array | Loetelu Consent objektidest
+invalidConsents | array | Optional. Loetelu nõusolekuviidetest sisendi põhjal, millele teenuse tarbijal ei olnud ligipääsu või kui kirjet ei eksisteeri.
+
+**Consent**
+
+Parameeter | Andmetüüp | Kirjeldus
+------------ | ------------ | -------------
+consentReference | string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
+consentStatus | string | Nõusoleku olek.
+consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp.
+idCode | string | Andmesubjekti isikukood.
+purposeDeclarationId | string | Nõusolekuga seotud eesmärgideklaratsiooni identifikaator.
+
+**Veahaldus:**
+
+Vea võti | Veakood ja staatus | Vea kirjeldus
+------------ | ------------ | -------------
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, andmetüüp ei vasta)
 
 # Juhised nõusolekuteenuse testimiseks liidestuja poolt
 

@@ -65,6 +65,7 @@ kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-k
 
 [5.1.6. getConsentGroupReferenceRepresentable
 ](#getconsentgroupreferencerepresentable)
+
 [5.1.7. postConsentFilterByStatus](#postConsentFilterByStatus)
 
 [6. Juhised nõusolekuteenuse testimiseks liidestuja poolt](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)

@@ -2,14 +2,14 @@
 
 ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 
-# Nõusolekuteenus / Consent Service
+# Andmenõusolekuteenus / Data Consent Service
 
-Nõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
+Andmenõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
-## Nõusolekuteenuse kasutusjuhend partnerile
-[Nõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
+## Andmenõusolekuteenuse kasutusjuhend partnerile
+[Andmenõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
 
-## Nõusoleku andmise kasutusjuhu prototüüp 
+## Andmenõusoleku andmise kasutusjuhu prototüüp 
 
 Prototüüp demonstreerib nõusoleku andmise protsessi ja oli kasutatud visuaalse lahenduse ja kasutajamugavuse testimiseks. Prototüüb koosneb mobiilvaadetest, mille vahel saab navigeerida, klikides "aktiivsetele" nuppudele. Prototüübi aluseks on võetud Medikeep mobiilrakenduse kasutusjuht. Protsess algab Medikeep rakenduses, kust kasutajat suunatakse Nõusolekuteenusesse nõusolekut andma, ja lõpeb samuti Medikeep rakenduses, kuhu kasutajat suunatakse pärast nõusoleku andmist.
 
@@ -27,4 +27,4 @@ Teenuse loomisel on oodatud kogukonna panus ettepanekute, küsimuste ja tõstata
 
 ___
 
-Kõikvõimalike nõusolekuteenuse arendust puudutavate teemadega on alati võimalik kirjutada Riigi Infosüsteemi Ameti kasutajatoele: help@ria.ee
+Kõikvõimalike andmenõusolekuteenuse arendust puudutavate teemadega on alati võimalik kirjutada Riigi Infosüsteemi Ameti kasutajatoele: help@ria.ee

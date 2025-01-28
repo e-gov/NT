@@ -1723,7 +1723,7 @@ märksõna järgi. Nõusolekute tabel on sorteeritav.
 
 Tabeli reale vajutades saab näha nõusoleku detaile ning kehtiva
 nõusoleku puhul nuppu „loobun nõusolekust", mille abil saab nõusoleku
-tagasi võtta ning juhul, kui nõusoleku pikendamine on lufveaud, siis
+tagasi võtta ning juhul, kui nõusoleku pikendamine on lubatud, siis
 nuppu „Pikenda", millega saab nõusolekut pikendada.
 
 ![Nõusoleku detailid ja loobumine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20portaalis.PNG)

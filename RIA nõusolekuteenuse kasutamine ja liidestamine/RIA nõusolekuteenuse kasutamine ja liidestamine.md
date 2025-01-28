@@ -65,6 +65,7 @@ kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-k
 
 [5.1.6. getConsentGroupReferenceRepresentable
 ](#getconsentgroupreferencerepresentable)
+[5.1.7. postConsentFilterByStatus](#postConsentFilterByStatus)
 
 [6. Juhised nõusolekuteenuse testimiseks liidestuja poolt](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)
 
@@ -1015,7 +1016,7 @@ error.business.relation-type-error | RELATION_TYPE_INVALID (400) | Vale relation
 
 Nõusolekuteenust kasutatavatel teenustel on vajalik saada andmestik tagasivõetud või kehtivate nõusolekute kohta vastava teenuse raames. Selleks luuakse päring, kus päringu teostaja annab ette sisendi otsitavate staatuste kohta (kehtiv/kehtetu/kehtiv ja kehtetu) ning loetelu nõusolekute identifikaatoritest ja saab vastu loetelu nõusolekuviidetest ja nõusoleku staatustest.
 
-Kasutab: Andmekogu
+Kasutab: Klientrakendus
 
 **API URL:**
 

@@ -864,7 +864,7 @@ error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS
     
 ### reportDataTransmission
 
-Päringu abil saab teavitada Nõusolekuteenust sellest, et toimus
+Päringu abil saab teavitada Andmenõusolekuteenust sellest, et toimus
 isikuandmete edastus nõusoleku alusel Andmekogust Klientrakendusesse.
 
 Kasutab: Andmekogu
@@ -1015,7 +1015,7 @@ error.business.relation-type-error | RELATION_TYPE_INVALID (400) | Vale relation
 
 ###  postConsentFilterByStatus
 
-Nõusolekuteenust kasutatavatel teenustel on vajalik saada andmestik tagasivõetud või kehtivate nõusolekute kohta vastava teenuse raames. Selleks luuakse päring, kus päringu teostaja annab ette sisendi otsitavate staatuste kohta (kehtiv/kehtetu/kehtiv ja kehtetu) ning loetelu nõusolekute identifikaatoritest ja saab vastu loetelu nõusolekuviidetest ja nõusoleku staatustest.
+Andmenõusolekuteenust kasutatavatel teenustel on vajalik saada andmestik tagasivõetud või kehtivate nõusolekute kohta vastava teenuse raames. Selleks luuakse päring, kus päringu teostaja annab ette sisendi otsitavate staatuste kohta (kehtiv/kehtetu/kehtiv ja kehtetu) ning loetelu nõusolekute identifikaatoritest ja saab vastu loetelu nõusolekuviidetest ja nõusoleku staatustest.
 
 Kasutab: Klientrakendus
 
@@ -1343,7 +1343,7 @@ andmed.
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
 Infosüsteemi nimi | Kaitstud teenuste (andmeid) pakkuva infosüsteemi nimi | Tervise infosüsteem | Jah
-Nõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
+Andmenõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el | Sotsiaalministeerium | Jah
 Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. | 70001952 | Jah
 Volitatud töötleja (mittekohustuslik väli) | Volitatud töötleja asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/12750 <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | TEHIK | Jah
@@ -1411,7 +1411,7 @@ muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
 Teenust pakkuv infosüsteem | Rippmenüü, mis sisaldab Andmenõusolekuteenusesse lisatud infosüsteemide nimesid. TD esitamise vormis valitakse üks nendest valikutest - infosüsteem, mis pakub deklareeritavat teenust. | Tervise infosüsteem | Ei
-Nõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
+Andmenõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | Sotsiaalministeerium | Ei
 Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel)| 70001952 | Ei
 Volitatud töötleja| Volitatud töötleja asutuse ametlik nimi <br /> https://akit.cyber.ee/term/12750 (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | TEHIK | Ei
@@ -1502,7 +1502,7 @@ Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
 Andmete saaja nimi | Klientrakenduse (ED deklareerija) ettevõte/asutuse ametlik nimi | Health Startup OÜ | Ei
 Andmete saaja registrikood | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood | 12819685 | Ei
-Nõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
+Andmenõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
 Andmete saaja pakutav teenus | Klientrakenduse või selle äriteenuse kaubanduslik nimi. Annab Andmesubjektile info, milline konkreetne äriteenus/infosüsteem hakkab kasutama tema isikuandmeid. | Immu | Ei
 Kasutatav teenusedeklaratsioon | Teenusedeklaratsioon (infosüsteemi nimi-TD identifikaator), millega deklareeritakse eesmärgi täitmiseks vajalikke andmeid pakkuvat kaitstud teenust. <br /> <br /> Teenusedeklaratsiooni (TD) valimine toimub kahe sammuga: <br /> <br /> 1) Infosüsteemi (millega on seotud TD) valimine - rippmenüü, mis sisaldab "Infosüsteemide halduse" kaudu lisatud infosüsteemide nimed. <br /> <br /> 2) TD identifikaatori valimine - rippmenüü, mis sisaldab eelmises sammus valitud infosüsteemiga seotud kehtivate teenusedeklaratsioonide identifikaatorid. <br />  <br /> Ühe ED-ga võib olla seotud ainult üks TD. | Tervise Infosüsteem-hl7_immuniseerimisandmed | Ei
 Eesmärgideklaratsiooni identifikaator | Eesmärgideklaratsiooni inimloetav unikaalne tunnus. | healthstartup_immuniseerimisa ndmed | Ei

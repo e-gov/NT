@@ -1,4 +1,4 @@
-# RIA nõusolekuteenuse kasutamine ja liidestamine
+# RIA andmenõusolekuteenuse kasutamine ja liidestamine
 
 28.01.2025
 
@@ -29,7 +29,7 @@ Versiooni ajalugu
 
 [1.1 Mõisted](#mõisted)
 
-[2. Eeltingimused nõusolekuteenuse kasutamiseks](#eeltingimused-nõusolekuteenuse-kasutamiseks)
+[2. Eeltingimused andmenõusolekuteenuse kasutamiseks](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)
 
 [3. Põhiprotsesside kirjeldus kasutusjuhtudena](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
 
@@ -48,7 +48,7 @@ nõusolekuid andma
 
 [4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
 
-[5. Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#nõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
+[5. Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
 
 [5.1. Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline
 kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
@@ -68,7 +68,7 @@ kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-k
 
 [5.1.7. postConsentFilterByStatus](#postConsentFilterByStatus)
 
-[6. Juhised nõusolekuteenuse testimiseks liidestuja poolt](#juhised-nõusolekuteenuse-testimiseks-liidestuja-poolt)
+[6. Juhised andmenõusolekuteenuse testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)
 
 [6.1. Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni
 kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
@@ -83,7 +83,7 @@ kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-in
 [6.5. Nõusolekute alusel edukast andmete pärimisest raporteerimine
 (Andmekogu)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
 
-[7. Nõusolekuteenuse haldusliidese kasutamise juhend](#nõusolekuteenuse-haldusliidese-kasutamise-juhend)
+[7. Andmenõusolekuteenuse haldusliidese kasutamise juhend](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
 
 [7.1. Rollid](#rollid)
 
@@ -117,19 +117,19 @@ kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-in
 
 [9. Nõusoleku mall](#nõusoleku-mall)
 
-[10. Nõusolekuteenuse kasutajaliides](#nõusolekuteenuse-kasutajaliides)
+[10. Andmenõusolekuteenuse kasutajaliides](#andmenõusolekuteenuse-kasutajaliides)
 
 [10.1. Nõusoleku andmine](#nõusoleku-andmine)
 
 [10.1.1. Enne suunamist](#enne-suunamist)
 
-[10.1.2. Nõusolekuteenuses](#nõusolekuteenuses)
+[10.1.2. Andmenõusolekuteenuses](#Andmenõusolekuteenuses)
 
 [10.1.3. Pärast suunamist](#pärast-suunamist)
 
 [10.2. Nõusolekute haldus](#nõusolekute-haldus)
 
-[10.2.1. Nõusolekuteenusest](#nõusolekuteenusest)
+[10.2.1. Andmenõusolekuteenusest](#Andmenõusolekuteenusest)
 
 [10.2.2. Minu nõusolekud](#minu-nõusolekud)
 
@@ -139,11 +139,11 @@ kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-in
 
 # Sissejuhatus
 
-Dokumendi eesmärgiks on kirjeldada RIA nõusolekuteenuse peamisi
+Dokumendi eesmärgiks on kirjeldada RIA andmenõusolekuteenuse peamisi
 kasutusmalle, andmevahetuse ja testimise põhimõtteid ning
 kasutajaliideseid.
 
-Dokument on aluseks RIA nõusolekuteenusega liidestamisele ja selle
+Dokument on aluseks RIA andmenõusolekuteenusega liidestamisele ja selle
 kasutusele võtmisele.
 
 ## Mõisted
@@ -160,7 +160,7 @@ isikuandmeid.
 **Klientrakendus** **(Client)** -- infosüsteem, mis vajab
 Andmesubjektile teenuse osutamiseks Andmesubjekti andmeid Andmekogust.
 
-**Nõusolekuteenus (Consent Service**) -- infosüsteem, mis vastutab
+**Andmenõusolekuteenus (Data Consent Service**) -- infosüsteem, mis vastutab
 Andmesubjektide nõusolekute haldamise eest.
 
 **Kaitstud teenus** **(Protected Service)** -- abstraktne Andmekogu
@@ -169,11 +169,11 @@ kasutamiseks on vajalik Andmesubjekti nõusolek.
 
 **Teenusedeklaratsioon** **(Service Declaration)** -- ühe Andmekogu
 poolt pakutava kaitstud teenuse ja edastavate andmete kirjeldus.
-Registreeritakse Andmekogu poolt Nõusolekuteenuses.
+Registreeritakse Andmekogu poolt Andmenõusolekuteenuses.
 
 **Eesmärgideklaratsioon (Purpose Declaration)** -- andmete kasutamise
 eesmärgi kirjeldus. MVP raames registreeritakse Andmekogu poolt
-Nõusolekuteenuses, on aluseks nõusolekutaotlustele.
+Andmenõusolekuteenuses, on aluseks nõusolekutaotlustele.
 Eesmärgideklaratsiooni sisu on pakutud Klientrakenduse poolt. Kui oma
 eesmärkide saavutamiseks Klientrakendus vajab andmeid mitmetelt kaitstud
 teenustelt (ühest või erinevatest andmekogudest), registreeritakse mitu
@@ -192,7 +192,7 @@ Andmesubjekt pole veel andnud.
 **Nõusolekuviide (Consent Reference)** -- nõusoleku unikaalne kood, mida
 kasutatakse nõusoleku kehtivuse valideerimisel.
 
-# Eeltingimused nõusolekuteenuse kasutamiseks
+# Eeltingimused andmenõusolekuteenuse kasutamiseks
 
 Selleks, et võimaldada nõusolekute küsimist Andmesubjektilt
 Klientrakenduse jaoks, peavad Andmekogu ja Klientrakendus tegema
@@ -204,33 +204,33 @@ järgmised sammud:
 
 3.  Juhul, kui x-tee kataloogis ei ole Klientrakendusele vajalikku andmekomplekti, loob Andmekogu uue kaitstud teenuse, mis vastab Klientrakenduse vajadusele.
 
-4.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Nõusolekuteenusesse infosüsteemi, mis hakkab pakkuma soovitud kaitstud teenust (kui see ei olnud lisatud varem) (vt jaotis [7.2.](#infosüsteemide-haldus))
+4.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse infosüsteemi, mis hakkab pakkuma soovitud kaitstud teenust (kui see ei olnud lisatud varem) (vt jaotis [7.2.](#infosüsteemide-haldus))
 
-5.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Nõusolekuteenusesse kaitstud teenuse kirjeldav Teenusedeklaratsiooni (vt jaotis [7.3.](#teenusedeklaratsioonide-haldus)). Kui vajaliku teenuse jaoks on Teenusedeklaratsioon juba olemas, pole seda uuesti deklareerida vaja, saab kasutada olemasolevat Teenusedeklaratsiooni.
+5.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse kaitstud teenuse kirjeldav Teenusedeklaratsiooni (vt jaotis [7.3.](#teenusedeklaratsioonide-haldus)). Kui vajaliku teenuse jaoks on Teenusedeklaratsioon juba olemas, pole seda uuesti deklareerida vaja, saab kasutada olemasolevat Teenusedeklaratsiooni.
 
-6.  Klientrakendusega sõlmitud lepingu alusel, Andmekogu esindaja -- Infosüsteemide haldur -- lisab Nõusolekuteenusesse andmete kasutamise eesmärgi kirjeldava Eesmärgideklaratsiooni (vt jaotis [7.4.](#eesmärgideklaratsioonide-haldus))
+6.  Klientrakendusega sõlmitud lepingu alusel, Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse andmete kasutamise eesmärgi kirjeldava Eesmärgideklaratsiooni (vt jaotis [7.4.](#eesmärgideklaratsioonide-haldus))
 
-7.  Pärast eesmärgideklaratsiooni esitamist ekspordib Andmekogu eesmärgideklaratsiooni andmeid Nõusolekuteenusest ja edastab selle Klientrakendusele (nt e-maili kaudu). Nende andmete hulgas edastatakse eesmärgideklaratsiooni unikaalne identifikaator, mida Klientrakendus hakkab kasutama Nõusolekuteenuse suhtlemisel.
+7.  Pärast eesmärgideklaratsiooni esitamist ekspordib Andmekogu eesmärgideklaratsiooni andmeid Andmenõusolekuteenusest ja edastab selle Klientrakendusele (nt e-maili kaudu). Nende andmete hulgas edastatakse eesmärgideklaratsiooni unikaalne identifikaator, mida Klientrakendus hakkab kasutama Andmenõusolekuteenusega suhtlemisel.
 
-8.  Klientrakendus liidestub Nõusolekuteenusega, võimaldades Andmesubjekti või Andmesubjekti esindaja suunamist Nõusolekuteenusesse vajalike nõusolekute andmiseks.
+8.  Klientrakendus liidestub Andmenõusolekuteenusega, võimaldades Andmesubjekti või Andmesubjekti esindaja suunamist Andmenõusolekuteenusesse vajalike nõusolekute andmiseks.
 
 # Põhiprotsesside kirjeldus kasutusjuhtudena
 
 Peatükk sisaldab kahte peamist Andmekogu ja Klientrakendusega seotud
-kasutusjuhtu, mis annavad ülevaade Nõusolekuteenuse API-de kasutamise
+kasutusjuhtu, mis annavad ülevaade Andmenõusolekuteenuse API-de kasutamise
 kontekstist.
 
 ## Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma
 
-**Tegutsejad:** Andmesubjekt, Klientrakendus, Nõusolekuteenus
+**Tegutsejad:** Andmesubjekt, Klientrakendus, Andmenõusolekuteenus
 
 **Osapooled ja nende huvid:**
 
 -   Andmesubjekt soovib kasutada Klientrakenduse teenust, mille toimimiseks on vajalik Andmesubjekti nõusolek tema isikuandmete edastamisele ja töötlemisele.
 
--   Klientrakendus soovib veenduda, et kõik teenuse pakkumiseks vajalikud nõusolekud kehtivad, ja kui mõned nõusolekud on puudu - suunata Andmesubjekt Nõusolekuteenusesse, et ta saaks neid anda. Andmesubjekti tagasi suunamisel soovib Klientrakendus teada saada, kas vajalikud nõusolekud on antud või mitte.
+-   Klientrakendus soovib veenduda, et kõik teenuse pakkumiseks vajalikud nõusolekud kehtivad, ja kui mõned nõusolekud on puudu - suunata Andmesubjekt Andmenõusolekuteenusesse, et ta saaks neid anda. Andmesubjekti tagasi suunamisel soovib Klientrakendus teada saada, kas vajalikud nõusolekud on antud või mitte.
 
--   Nõusolekuteenus soovib võimaldada Andmesubjektil kinnitada või tagasi lükata nõusolekutaotlused ning suunata Andmesubjekti tagasi Klientrakendusesse.
+-   Andmenõusolekuteenus soovib võimaldada Andmesubjektil kinnitada või tagasi lükata nõusolekutaotlused ning suunata Andmesubjekti tagasi Klientrakendusesse.
 
 **Eeltingimused:** Klientrakendusel on teada Andmesubjekti isikukood,
 ning enda teenusele vastavad eesmärgideklaratsioonide identifikaatorid.
@@ -242,17 +242,17 @@ sellest on teada Klientrakendusele.
 
 1.  Andmesubjekt avaldab soovi kasutada Klientrakenduse teenust, mille toimimiseks on vajalik Andmesubjekti nõusolek (või mitu nõusolekut) tema isikuandmete edastamisele ja töötlemisele.
 
-2.  Klientrakendus kontrollib Nõusolekuteenuse abil, kas teenuse pakkumiseks on olemas ja kehtivad kõik vajalikud Andmesubjekti nõusolekud. Kasutatakse ***getConsentReferences*** ja/või ***validateConsentForClient*** päringuid (vt jaotised [5.1.2.](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)) Klientrakendus tuvastab, et mõned vajalikud nõusolekud on puudu või ei kehti.
+2.  Klientrakendus kontrollib Andmenõusolekuteenuse abil, kas teenuse pakkumiseks on olemas ja kehtivad kõik vajalikud Andmesubjekti nõusolekud. Kasutatakse ***getConsentReferences*** ja/või ***validateConsentForClient*** päringuid (vt jaotised [5.1.2.](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)) Klientrakendus tuvastab, et mõned vajalikud nõusolekud on puudu või ei kehti.
 
-3.  Klientrakendus küsib Nõusolekuteenuselt lingi, mis suunaks Andmesubjekti Nõusolekuteenuse kasutajaliidese kaudu puuduvaid nõusolekuid andma. Klientrakendus peab päringus saatma ainult nende eesmärgideklaratsioonide identifikaatorid, mis vastavad puuduvatele nõusolekutele. Kasutatakse ***getConsentGroupReference*** päringut (vt jaotis [5.1.1.](#getconsentgroupreference)). **TÄHTIS!** Mitte kasutada sama linki mitu korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid. Andmesubjekti suunamisel peab <ins>alati</ins> küsima uue lingi **getConsentGroupReference** päringu abil.
+3.  Klientrakendus küsib Andmenõusolekuteenuselt lingi, mis suunaks Andmesubjekti Andmenõusolekuteenuse kasutajaliidese kaudu puuduvaid nõusolekuid andma. Klientrakendus peab päringus saatma ainult nende eesmärgideklaratsioonide identifikaatorid, mis vastavad puuduvatele nõusolekutele. Kasutatakse ***getConsentGroupReference*** päringut (vt jaotis [5.1.1.](#getconsentgroupreference)). **TÄHTIS!** Mitte kasutada sama linki mitu korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid. Andmesubjekti suunamisel peab <ins>alati</ins> küsima uue lingi **getConsentGroupReference** päringu abil.
 
-4.  Nõusolekuteenuse poolt genereeritud lingi kaudu suunatakse Andmesubjekt nõusolekuid andma. Andmesubjekt logib sisse kasutades TARA autentimist.
+4.  Andmenõusolekuteenuse poolt genereeritud lingi kaudu suunatakse Andmesubjekt nõusolekuid andma. Andmesubjekt logib sisse kasutades TARA autentimist.
 
 5.  Andmesubjekt vaatab läbi nõusolekutaotlused, kinnitab need, millega nõustub, ja lükkab tagasi need, millega ei nõustu. Kui valikud on tehtud, vajutab ta nuppu „Kinnitan".
 
-6.  Nõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks nõusolekuteks ning omistab neile nõusolekuviited. Nõusolekuteenus suunab Andmesubjekti tagasi Klientrakendusesse.
+6.  Andmenõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks nõusolekuteks ning omistab neile nõusolekuviited. Andmenõusolekuteenus suunab Andmesubjekti tagasi Klientrakendusesse.
 
-7.  Pärast Andmesubjekti tagasi suunamist küsib Klientrakendus Nõusolekuteenusest nõusolekuviited ning nende valideerimise, et teada saada, millised nõusolekud kehtivad. Kasutatakse ***getConsentReferences*** ja ***validateConsentForClient*** päringuid (vt jaotised [5.1.2.](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)).
+7.  Pärast Andmesubjekti tagasi suunamist küsib Klientrakendus Andmenõusolekuteenusest nõusolekuviited ning nende valideerimise, et teada saada, millised nõusolekud kehtivad. Kasutatakse ***getConsentReferences*** ja ***validateConsentForClient*** päringuid (vt jaotised [5.1.2.](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)).
 
 8.  Vastavalt saadud vastusele kuvab Klientrakendus Andmesubjektile teadet.
 
@@ -275,20 +275,20 @@ kehtivad.
 küsitud nõusolekud olid varem juba antud Andmesubjekti poolt ja
 kehtivad.
 
--   Nõusolekuteenus välistab kehtivad nõusolekud ja ei küsi neid
+-   Andmenõusolekuteenus välistab kehtivad nõusolekud ja ei küsi neid
     genereeritud lindi kaudu Andmesubjektilt uuesti.
 
 3b. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi kõik küsitud
 nõusolekud olid varem juba antud Andmesubjekti poolt ja kehtivad.
 
--   Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+-   Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
     veateatega. Protsess lõpeb.
 
 3c. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi mõned
 küsitud nõusolekud olid varem juba antud Andmesubjekti poolt, aga pärast
 on aegunud või on Andmesubjekti pool tagasi võetud.
 
--   Nõusolekuteenus loob uued vastavad nõusolekutaotlused ja võimaldab
+-   Andmenõusolekuteenus loob uued vastavad nõusolekutaotlused ja võimaldab
     Andmesubjektile genereeritud lingi kaudu nendega nõustuda.
 
 3d. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi vähemalt üks
@@ -296,20 +296,20 @@ küsitud nõusolekutest on seotud kehtetu eesmärgideklaratsiooniga (s.t
 andmeedastust selle eesmärgideklaratsiooni alusel üldse enam toimuda ei
 saa).
 
--   Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+-   Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
     veateatega. Protsess lõpeb.
 
 3e. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi päring
 sisaldab eesmärgideklaratsioonide identifikaatorid, mis ei eksisteeri.
 
--   Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+-   Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
     veateatega. Protsess lõpeb.
 
 3f. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi päring
 sisaldab isikukoodi, mis kuulub alaealisele ja/või teovõimatule
 Andmesubjektile.
 
--   Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+-   Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
     veateatega. Protsess lõpeb.
 
 3g. Andmesubjekt lahkub lehelt otsust tegemata ja „Kinnitan" nuppu
@@ -323,7 +323,7 @@ vajutamata.
 nõusolekud on seotud teenusedeklaratsiooniga, kus on nõutud nõusoleku 
 digitaalne allkirjastamine
 
--   Nõusolekuteenus loob nõusolekutaotlused ja võimaldab Andmesubjektil
+-   Andmenõusolekuteenus loob nõusolekutaotlused ja võimaldab Andmesubjektil
     genereeritud lingi kaudu neid allkirjastada.
 
 ## Kasutusjuht 1.1: Kliendirakendus valideerib Andmesubjekti nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puudolevaid nõusolekuid andma.
@@ -338,11 +338,11 @@ digitaalne allkirjastamine
   - Klientrakendus soovib veenduda, et
     kõik teenuse pakkumiseks vajalikud nõusolekud kehtivad ja kui mõned
     nõusolekud on puudu – suunata Andmesubjekti esindaja
-    Nõusolekuteenusesse, et ta saaks Andmesubjekti eest neid anda.
+    Andmenõusolekuteenusesse, et ta saaks Andmesubjekti eest neid anda.
     Andmesubjekti esindaja tagasi suunamisel soovib Klientrakendus teada
     saada, kas vajalikud nõusolekud on antud või mitte.
 
-  - Nõusolekuteenus soovib võimaldada
+  - Andmenõusolekuteenus soovib võimaldada
     Andmesubjekti esindajal kinnitada või tagasi lükata Andmesubjekti
     nõusolekutaotlused ning suunata Andmesubjekti esindaja tagasi
     Klientrakendusesse.
@@ -361,15 +361,15 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     mitu nõusolekut) Andmesubjekti isikuandmete edastamisele ja
     töötlemisele.
 
-2.  Klientrakendus kontrollib Nõusolekuteenuse abil, kas teenuse
+2.  Klientrakendus kontrollib Andmenõusolekuteenuse abil, kas teenuse
     pakkumiseks on olemas ja kehtivad kõik vajalikud Andmesubjekti
     nõusolekud. Kasutatakse ***getConsentReferences*** ja/või
     ***validateConsentForClient*** päringuid (vt jaotised
     [5.1.2](#getconsentreferences) ja [5.1.3.](#validateconsentforclient)) Klientrakendus tuvastab, et
     mõned vajalikud nõusolekud on puudu või ei kehti.
 
-3.  Klientrakendus küsib Nõusolekuteenuselt lingi, mis suunaks
-    andmesubjekti esindaja Nõusolekuteenuse kasutajaliidese kaudu
+3.  Klientrakendus küsib Andmenõusolekuteenuselt lingi, mis suunaks
+    andmesubjekti esindaja Andmenõusolekuteenuse kasutajaliidese kaudu
     Andmesubjekti puuduvaid nõusolekuid andma. Klientrakendus peab
     päringus saatma ainult nende eesmärgideklaratsioonide
     identifikaatorid, mis vastavad puuduvatele nõusolekutele.
@@ -380,7 +380,7 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     suunamisel peab <ins>alati</ins> küsima uue
     lingi **getConsentGroupReferenceRepresentable** päringu abil.
 
-4.  Nõusolekuteenuse poolt genereeritud lingi kaudu suunatakse
+4.  Andmenõusolekuteenuse poolt genereeritud lingi kaudu suunatakse
     Andmesubjekt esindaja Andmesubjekti nõusolekuid andma. Andmesubjekti
     esindaja logib sisse kasutades TARA autentimist.
 
@@ -388,12 +388,12 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     kinnitab need, millega nõustub, ja lükkab tagasi need, millega ei
     nõustu. Kui valikud on tehtud, vajutab ta nuppu „Kinnitan“.
 
-6.  Nõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks
-    nõusolekuteks ning omistab neile nõusolekuviited. Nõusolekuteenus
+6.  Andmenõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks
+    nõusolekuteks ning omistab neile nõusolekuviited. Andmenõusolekuteenus
     suunab Andmesubjekti esindaja tagasi Klientrakendusesse.
 
 7.  Pärast Andmesubjekti esindaja tagasi suunamist küsib Klientrakendus
-    Nõusolekuteenusest nõusolekuviited ning nende valideerimise, et
+    Andmenõusolekuteenusest nõusolekuviited ning nende valideerimise, et
     teada saada, millised Andmesubjekti nõusolekud kehtivad.
 
     Kasutatakse **getConsentReferences** ja **validateConsentForClient**
@@ -418,7 +418,7 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     Andmesubjekti nõusolekute andmiseks, kuigi mõned küsitud nõusolekud
     olid varem juba antud ja kehtivad.
 
-      - Nõusolekuteenus välistab Andmesubjekti kehtivad nõusolekud ja ei
+      - Andmenõusolekuteenus välistab Andmesubjekti kehtivad nõusolekud ja ei
         küsi neid genereeritud lingi kaudu uuesti.
 
 3.  Klientrakendus küsib lingi nõusolekute andmiseks, kuigi mõned
@@ -426,7 +426,7 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     poolt, aga pärast on aegunud või on Andmesubjekti esindaja pool
     tagasi võetud.
 
-      - Nõusolekuteenus loob uued vastavad nõusolekutaotlused ja
+      - Andmenõusolekuteenus loob uued vastavad nõusolekutaotlused ja
         võimaldab Andmesubjekti esindajal genereeritud lingi kaudu
         nendega nõustuda.
 
@@ -436,14 +436,14 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     andmeedastust selle eesmärgideklaratsiooni alusel üldse enam toimuda
     ei saa).
 
-      - Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+      - Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
         veateatega. Protsess lõpeb.
 
 5.  Klientrakendus küsib lingi nõusolekute andmiseks, kuigi päring
     sisaldab Andmesubjekti esindaja isikukoodi, mis kuulub alaealisele
     ja/või teovõimetule Andmesubjekti esindajale.
 
-      - Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+      - Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
         veateatega. Protsess lõpeb.
 
 6.  Andmesubjekt esindaja lahkub lehelt otsust tegemata ja
@@ -457,7 +457,7 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     küsitud nõusolekud on seotud teenusedeklaratsiooniga, kus on nõutud
     nõusoleku digitaalne allkirjastamine.
 
-      - Nõusolekuteenus loob nõusolekutaotlused ja võimaldab
+      - Andmenõusolekuteenus loob nõusolekutaotlused ja võimaldab
         Andmesubjekti esindajal genereeritud lingi kaudu neid
         allkirjastada.
 
@@ -465,33 +465,33 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
     sisaldab Andmesubjekti isikukoodi, mis ei kuulub alaealisele
     Andmesubjektile.
 
-      - Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+      - Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
         veateatega. Protsess lõpeb.
 
 9.  Kliendirakendus küsib lingi nõusolekute andmiseks, aga päringus
     sisalduv Andmesubjekti ja Andmesubjekti esindaja seos puudub ning
     esindajal ei ole õigust Andmesubjekti esindada.
 
-      - Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+      - Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
         veateatega. Protsess lõpeb.
 
 10. Kliendirakendus küsib lingi nõusolekute andmiseks, aga päringus
     sisalduv Andmesubjekti suhte tüüp ei ole „LAPS“.
 
-      - Nõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
+      - Andmenõusolekuteenus ei genereeri linki ja vastab Klientrakendusele
         veateatega. Protsess lõpeb.
 
 ## Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
 
-**Tegutsejad:** Andmekogu, Klientrakendus, Nõusolekuteenus
+**Tegutsejad:** Andmekogu, Klientrakendus, Andmenõusolekuteenus
 
 **Osapooled ja nende huvid:**
 
 -   Klientrakendus soovib kätte saada Andmesubjekti andmeid Andmekogult kaitstud teenuse kaudu.
 
--   Andmekogu soovib veenduda Nõusolekuteenuse abil, et küsitud andmete edastamisele on olemas kehtiv Andmesubjekti nõusolek ning andmeedastuse tingimused on korrektsed.
+-   Andmekogu soovib veenduda Andmenõusolekuteenuse abil, et küsitud andmete edastamisele on olemas kehtiv Andmesubjekti nõusolek ning andmeedastuse tingimused on korrektsed.
 
--   Nõusolekuteenus soovib valideerida vajaliku nõusoleku kehtivust ning edastada Andmekogule andmeedastuse tingimuste kontrollimiseks vajalikud andmed.
+-   Andmenõusolekuteenus soovib valideerida vajaliku nõusoleku kehtivust ning edastada Andmekogule andmeedastuse tingimuste kontrollimiseks vajalikud andmed.
 
 **Eeltingimused:** Andmekogul on teada enda infosüsteemidega seotud
 teenusedeklaratsioonide identifikaatorid. Andmekogul on olemas
@@ -506,8 +506,8 @@ Klientrakendusele kaitstud teenuse kaudu.
 1.  Klientrakendus küsib andmed Andmekogult. Andmepäring peab sisaldama
     vastavat nõusolekuviidet ning Andmesubjekti isikukoodi.
 
-2.  Andmekogu saadab nõusolekuviite Nõusolekuteenusesse valideerimiseks.
-    Nõusolekuteenus valideerib nõusolekuviite ja saadab Andmekogule
+2.  Andmekogu saadab nõusolekuviite Andmenõusolekuteenusesse valideerimiseks.
+    Andmenõusolekuteenus valideerib nõusolekuviite ja saadab Andmekogule
     vastuse, mis sisaldab peale nõusolekuviite ka nõusoleku kehtivuse
     lõppkuupäeva, Klientrakenduse alamsüsteemi identifikaatorit,
     Andmesubjekti isikukoodi ja nõusolekuga seotud teenusedeklaratsiooni
@@ -518,13 +518,13 @@ Klientrakendusele kaitstud teenuse kaudu.
 3.  Andmekogu kontrollib järgmised andmeedastuse tingimused:
 
     -   andmepäringu saatnud Klientrakenduse alamsüsteemi identifikaator
-    (x-tee päringu päises) on sama, mis on Nõusolekuteenuse vastuses;
+    (x-tee päringu päises) on sama, mis on Andmenõusolekuteenuse vastuses;
 
     -   Klientrakenduse andmepäringus sisalduv Andmesubjekti isikukood on
-    sama, mis on Nõusolekuteenuse vastuses;
+    sama, mis on Andmenõusolekuteenuse vastuses;
 
     -   kaitstud teenus, mille kaudu Klientrakendus küsib andmed vastab
-    Nõusolekuteenuse vastuses sisalduvale teenusedeklaratsiooni
+    Andmenõusolekuteenuse vastuses sisalduvale teenusedeklaratsiooni
     identifikaatorile.
 
 4.  Kui kõik kontrollid on õnnestunud, edastab Andmekogu küsitud andmed
@@ -546,9 +546,9 @@ Klientrakendusele kaitstud teenuse kaudu.
 -   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
     ja andmeedastust ei raporteerita.
 
-2a. Sellist nõusolekuviidet Nõusolekuteenuses ei eksisteeri.
+2a. Sellist nõusolekuviidet Andmenõusolekuteenuses ei eksisteeri.
 
--   Valideerimine ebaõnnestunud, Nõusolekuteenus vastab Andmekogule
+-   Valideerimine ebaõnnestunud, Andmenõusolekuteenus vastab Andmekogule
     veateatega.
 
 -   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
@@ -556,7 +556,7 @@ Klientrakendusele kaitstud teenuse kaudu.
 
 2b. Nõusolekuviide viitab nõusolekule, mis ei kehti.
 
--   Valideerimine ebaõnnestunud, Nõusolekuteenus vastab Andmekogule
+-   Valideerimine ebaõnnestunud, Andmenõusolekuteenus vastab Andmekogule
     veateatega.
 
 -   Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata
@@ -574,13 +574,13 @@ nendevahelisi üleminekuid.
 
 ![Nõusoleku seisundidiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image3.png)
 
-# Nõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
+# Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
 
-Nõusolekuteenus pakub REST API päringuid üle x-tee.
+Andmenõusolekuteenus pakub REST API päringuid üle x-tee.
 
 Kõikide Nõusolekuteenusele jõudnud päringute puhul kontrollitakse, et
-Nõusolekuteenuse juurde pöörduv x-tees autenditud alamsüsteem on õige
-osapool sellise päringu tegemiseks. Nõusolekuteenus vastab päringule
+Andmenõusolekuteenuse juurde pöörduv x-tees autenditud alamsüsteem on õige
+osapool sellise päringu tegemiseks. Andmenõusolekuteenus vastab päringule
 ainult siis, kui küsija (ehk Andmekogu või Klientrakendus) on
 kontrollitava nõusolekuga seotud kas läbi eesmärgideklaratsioonil oleva
 alamsüsteemi või eesmärgideklaratsiooniga alati seotud oleval
@@ -599,7 +599,7 @@ Kõik timestamp tüüpi parameetrid on ISO8601 formaadis timestamp'id.
 
 ### getConsentGroupReference
 
-Päringu abil saab Nõusolekuteenuselt küsida nõusoleku(te) lingi (URL),
+Päringu abil saab Andmenõusolekuteenuselt küsida nõusoleku(te) lingi (URL),
 mille kaudu saab Andmesubjekti suunata nõusolekutaotlusi vaatama ja
 nõusolekuid andma.
 
@@ -610,7 +610,7 @@ korda, sest vana lingi kaudu võidakse kuvada puudulikke andmeid.
 Andmesubjekti suunamisel peab <ins>alati</ins> küsima uue lingi
 **getConsentGroupReference** päringu abil.
 
-Enne lingi genereerimist Nõusolekuteenus kontrollib, et päringus
+Enne lingi genereerimist Andmenõusolekuteenus kontrollib, et päringus
 sisalduv isikukood kuulub Andmesubjektile, kes on täisealine ja
 teovõimeline. Teovõime kontrollimiseks tehakse päringut Rahvastiku
 Registri vastu. Alaealine ja/või teovõimetu isik ei saa anda
@@ -654,7 +654,7 @@ idCode | jah | string | Andmesubjekti isikukood
 callback | jah | string | Klientrakenduse tagasisuunamise URL
 purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
 mis on määratud eesmärgideklaratsiooni(de)s.
 
@@ -668,7 +668,7 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 Parameeter | Andmetüüp | Kirjeldus
 ------------ | ------------ | -------------
 consentGroupReference | string | Nõusolekutaotluse viide - unikaalne kood, mida kasutatakse nõusolekutaotluste eristamiseks
-url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Nõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
+url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Andmenõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
 
 **Veahaldus:**
 
@@ -683,7 +683,7 @@ error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | Isik on kas teov�
 
 ### getConsentReferences
 
-Päringu abil saab küsida Nõusolekuteenuselt kehtivate nõusoleku(te)
+Päringu abil saab küsida Andmenõusolekuteenuselt kehtivate nõusoleku(te)
 nõusolekuviited (*Consent Reference*).
 
 Kasutab: Klientrakendus
@@ -722,7 +722,7 @@ Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
 idCode | jah | string | Andmesubjekti isikukood
 purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
     
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
 mis on määratud eesmärgideklaratsiooni(de)s.
 
@@ -748,7 +748,7 @@ error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta stan
 
 ### validateConsentForClient
 
-Päringu abil saab küsida Nõusolekuteenuselt nõusoleku kehtivust.
+Päringu abil saab küsida Andmenõusolekuteenuselt nõusoleku kehtivust.
 
 Kasutab: Klientrakendus
 
@@ -772,7 +772,7 @@ Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
 ------------ | ------------- | ------------ | -------------
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
 mis on määratud nõusolekuga seotud eesmärgideklaratsioonis.
 
@@ -802,7 +802,7 @@ error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS
     
 ### validateConsentForDataProvider
 
-Päringu abil saab küsida Nõusolekuteenuselt nõusoleku kehtivust ning
+Päringu abil saab küsida Andmenõusolekuteenuselt nõusoleku kehtivust ning
 kaasnevad andmed, mille abil Andmekogu saab kontrollida andmeedastuse
 tingimused.
 
@@ -830,7 +830,7 @@ Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Andmekogu x‑tee alamsüsteemi identifikaator on sama, mis on
 määratud nõusolekuga seotud teenusedeklaratsioonis.
 
@@ -896,7 +896,7 @@ Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
 transmissionTimestamp | jah | timestamp | Aeg, millal toimus andmeedastus Andmekogust Klientrakendusesse
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Andmekogu x‑tee alamsüsteemi identifikaator on sama, mis on
 määratud nõusolekuga seotud teenusedeklaratsioonis.
 
@@ -920,7 +920,7 @@ error.http.404 | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri
 
 ###  getConsentGroupReferenceRepresentable
 
-Päringu abil saab Nõusolekuteenuselt küsida nõusoleku(te) lingi (URL),
+Päringu abil saab Andmenõusolekuteenuselt küsida nõusoleku(te) lingi (URL),
 mille kaudu saab Andmesubjekti esindajat suunata
 Andmesubjekti (esindatava) nõusolekutaotlusi vaatama ja nõusolekuid
 andma.
@@ -932,7 +932,7 @@ vana lingi kaudu võidakse kuvada puudulikke andmeid. Andmesubjekti
 esindaja suunamisel peab <ins>alati</ins> küsima uue lingi
 **getConsentGroupReferenceRepresentation** päringu abil.
 
-Enne lingi genereerimist Nõusolekuteenus kontrollib
+Enne lingi genereerimist Andmenõusolekuteenus kontrollib
 Rahvastikuregistrist esindaja teovõimet ning esindatava suhtes täielikku
 isikuhooldusõiguse olemasolu. Kui tegu ei ole teovõimelise isikuga
 või puudub täielik isikuhooldusõigus, siis URL'i ei genereerita ja
@@ -981,7 +981,7 @@ relationType | jah | string | Esindatava seos esindajaga. Nt lapsevanem (esindaj
 callback | jah | string | Klientrakenduses tagasisuunamise URL
 | purposeDeclarationBusinessIdentifiers | jah | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
 mis on määratud eesmärgideklaratsiooni(de)s.
 
@@ -997,7 +997,7 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 
 Parameeter | Andmetüüp | Kirjeldus
 ------------ | ------------ | -------------
-url | string | Nõusoleku(te) URL, mille kaudu saab esindaja anda Andmesubjekt eest Nõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
+url | string | Nõusoleku(te) URL, mille kaudu saab esindaja anda Andmesubjekt eest Andmenõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
 
 **Veahaldus:**
 
@@ -1060,7 +1060,7 @@ consentStatus | jah | array of string | viide otsitavate nõusolekute staatusele
 consentReferences | jah, ei tohi olla tühi | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000. 
 consentReferences | jah | array of string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest
 
-**Tähtis!** Päringu kättesaamisel Nõusolekuteenus kontrollib, et x-tees
+**Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
 mis on määratud eesmärgideklaratsiooni(de)s.
 
@@ -1129,10 +1129,10 @@ Vea võti | Veakood ja staatus | Vea kirjeldus
 ------------ | ------------ | -------------
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, andmetüüp ei vasta)
 
-# Juhised nõusolekuteenuse testimiseks liidestuja poolt
+# Juhised andmenõusolekuteenuse testimiseks liidestuja poolt
 
 Liidestuja-poolse testimise eesmärgiks on veenduda, et liidestuv(ad)
-infosüsteem(id) on valmis Nõusolekuteenusega vahetama nõusolekute
+infosüsteem(id) on valmis Andmenõusolekuteenusega vahetama nõusolekute
 (consent) andmeid. Testid on kirjeldatud API väljakutsete tasemel, see
 annab võimaluse liitujal testida nii otse API (arenduse varasemas
 faasis) kui oma kasutajaliidese kaudu.
@@ -1146,8 +1146,8 @@ jätta või oma teenuse spetsiifika seisukohalt olulisi teste lisada.
 
 Testide eeltingimuseks on Teenusedeklaratsiooni (TD) (koos
 infosüsteemiga) ning seda tarbiva(te) Eesmärgideklaratsiooni(de) (ED)
-olemasolu Nõusolekuteenuses. Nende sisestamine ei kuulu hetkel testide
-skoopi, sest seda on võimalik teha Nõusolekuteenuse kasutajaliidese
+olemasolu Andmenõusolekuteenuses. Nende sisestamine ei kuulu hetkel testide
+skoopi, sest seda on võimalik teha Andmenõusolekuteenuse kasutajaliidese
 kaudu.
 
 Siiski tuleb testides kasutatava Infosüsteemi, Teenusedeklaratsiooni ja
@@ -1158,7 +1158,7 @@ vaata palun olekudiragrammi ptk 4.
 
 Testidesse ei ole kaasatud nõusoleku aegumise (Expired) ning
 mittevajalikuks muutumise (Inapplicable) stsenaariumid, kuna need
-toimuvad Nõusolekuteenuses automaatselt vastavalt deklaratsioonide ja
+toimuvad Andmenõusolekuteenuses automaatselt vastavalt deklaratsioonide ja
 nõusolekute kehtivuskuupäevade saabumisele. Soovi korral on võimalik
 neid testida, sisestades Teenusedeklaratsioonile ja
 eesmärgideklaratsioonile sobilikud kuupäevad (nt kehtivuse lõpp homme,
@@ -1174,14 +1174,14 @@ vaatamine (1 eesmärgideklaratsioon)*
 N | Tegevus | Oodatav tulemus
 ------------ | ------------- | ------------
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem) | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
-2 | Kasuta saadud nõusolekuviidet Nõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolek REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
+2 | Kasuta saadud nõusolekuviidet Andmenõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolek REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
     
 *Testijuhtum 2 Nõusoleku URLi genereerimine ning nõusoleku info vaatamine (mitu eesmärgideklaratsiooni – test läbida juhul, kui sellise stsenaariumid jaoks on olemas sisuline vajadus)*
     
 N | Tegevus | Oodatav tulemus
 ------------ | ------------- | ------------
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, rohkem kui 1 ED identifikaatorit ja X-Tee alamsüsteem). Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
-2 | Kasuta saadud nõusolekuviidet Nõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolekud REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
+2 | Kasuta saadud nõusolekuviidet Andmenõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolekud REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
 
 *Testijuhtum 3 Nõusoleku URLi genereerimine, kui antud isikukoodi, ED ning X-Tee alamsüsteemi jaoks on juba olemas nõusolekutaotlus või nõusolek (erinevates staatustes)*  
 
@@ -1205,10 +1205,10 @@ N | Tegevus | Oodatav tulemus
 
 Nõusoleku andmise ja keeldumise testijuhtumid ei ole toodud välja API
 väljakutsete tasemel, kuna need funktsionaalsused on realiseeritud
-Nõusolekuteenuse kasutajaliideses.
+Andmenõusolekuteenuse kasutajaliideses.
 
-Veendumaks, et klientrakendus ja Nõusolekuteenus suudavad korrektselt
-andmeid vahetada ja õppimaks tundma, kuidas Nõusolekuteenus toimib,
+Veendumaks, et klientrakendus ja Andmenõusolekuteenus suudavad korrektselt
+andmeid vahetada ja õppimaks tundma, kuidas Andmenõusolekuteenus toimib,
 tuleks läbi teha vähemalt järgmised stsenaariumid:
 
 1.  Nõusolekute andmine -- peatükis 6.1 kirjeldatud testides küsitud
@@ -1262,16 +1262,16 @@ Eeltingimus: on olemas mõni nõusolek, millele raporteerida
     
 N | Tegevus | Oodatav tulemus
 ------------ | ------------- | ------------
-1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport olemasoleva nõusoleku consentReference-ga ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli, et tagastatakse “success” vastus ning võib kontrollida raporteerimise kirje olemasolu nõusolekuteenuses
-2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport consentReference-ga, mida ei eksisteeri, ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli veaolukorra haldamist, raporteerimise kirjet ei teki nõusolekuteenusesse
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport olemasoleva nõusoleku consentReference-ga ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli, et tagastatakse “success” vastus ning võib kontrollida raporteerimise kirje olemasolu Andmenõusolekuteenuses
+2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport consentReference-ga, mida ei eksisteeri, ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli veaolukorra haldamist, raporteerimise kirjet ei teki Andmenõusolekuteenusesse
     
-# Nõusolekuteenuse haldusliidese kasutamise juhend
+# Andmenõusolekuteenuse haldusliidese kasutamise juhend
 
-Nõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenusedeklaratsioonide, ja nendega seotud infosüsteemide (andmekogude) haldamiseks.
+Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenusedeklaratsioonide, ja nendega seotud infosüsteemide (andmekogude) haldamiseks.
 
 **Üldised põhimõtted**
 
--   Enne deklaratsioonide esitamist, Nõusolekuteenusesse peavad olema lisatud vajalikud infosüsteemid.
+-   Enne deklaratsioonide esitamist, Andmenõusolekuteenusesse peavad olema lisatud vajalikud infosüsteemid.
 
 -   Esialgu esitatakse teenusedeklaratsiooni ja seejärel eesmärgideklaratsiooni.
 
@@ -1291,19 +1291,19 @@ Nõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenusedek
 Roll | Kirjeldus | Millised vaated näeb
 ------------ | ------------- | ------------
 RIA administraator | RIA administraator lisab/kustutab kasutajaid (teisi RIA administraatoreid ja infosüsteemide haldureid) ja jagab õiguseid: igale infosüsteemide haldurile määratakse tema vastutuses olev registrikood (või mitu registrikoode), mida valitakse rippmenüüst kõikidega x-tee kataloogist saadud registrikoodidega (member code). <br /> <br /> RIA administraator saab olla samal ajal ka infosüsteemide haldur, kui määrab endale sellist rolli. Sellel juhul talle peavad olema kättesaadavad nii RIA administraatorile kui ka infosüsteemide haldurile nähtavad vaated. | •	Haldusliidese kasutajate haldus <br /> •	Nõusolekute terviklus
-Infosüsteemide haldur (Andmekogu esindaja) | Nõusolekuteenuse haldusliidese põhikasutaja. <br /> <br />  Infosüsteemide haldur lisab, muudab, kustutab infosüsteeme oma vastutuses oleva registrikoodi(de) piires. Lisades/muutes infosüsteemi, näeb alamsüsteemide valikus ainult need alamsüsteemid, mis on seotud temale määratud registrikoodidega. <br /> <br />  Teeb statistikat oma vastutuses oleva(te) registrikoodi(de) piires. <br /> <br /> Juhul, kui on märgistatud valik „RIA administraatori statistika", saab teha statistikat üle kogu infosüsteemi. Seda valikut kasutavad RIA administraatorid. <br /> <br /> Ühe infosüsteemi eest saab vastutada mitu infosüsteemi haldurit. Iga haldur saab lisada/muuta/kustutada tema vastutuses olevaid infosüsteeme. Igal infosüsteemi halduril on ligipääs kõigile nendele infosüsteemidele ja deklaratsioonidele, mille alamsüsteemi identifikaatoris olev registrikood = tema kasutajaga seotud registrikood (member code). Kui infosüsteemi halduri kasutajakonto kustutatakse, tema poolt sisestatud infosüsteemid jäävad alles. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevate infosüsteemidega seotud teenusedeklaratsioone. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevaid eesmärgideklaratsioone. Infosüsteemide haldur saab seostada eesmärgideklaratsioonid ainult tema vastutusalas olevate teenusedeklaratsioonidega. | •	Infosüsteemide koondvaade <br /> •	Infosüsteemi lisamine <br /> •	Infosüsteemi muutmine <br /> •	Teenusedeklaratsioonide koondvaade <br /> •	Teenusedeklaratsiooni esitamine <br /> •	Teenusedeklaratsiooni detailvaade <br /> •	Teenusedeklaratsiooni muutmine <br /> •	Eesmärgideklaratsioonide koondvaade <br /> •	Eesmärgideklaratsiooni esitamine <br /> •	Eesmärgideklaratsiooni detailvaade <br /> •	Eesmärgideklaratsiooni muutmine <br /> •	Statistika vaade
+Infosüsteemide haldur (Andmekogu esindaja) | Andmenõusolekuteenuse haldusliidese põhikasutaja. <br /> <br />  Infosüsteemide haldur lisab, muudab, kustutab infosüsteeme oma vastutuses oleva registrikoodi(de) piires. Lisades/muutes infosüsteemi, näeb alamsüsteemide valikus ainult need alamsüsteemid, mis on seotud temale määratud registrikoodidega. <br /> <br />  Teeb statistikat oma vastutuses oleva(te) registrikoodi(de) piires. <br /> <br /> Juhul, kui on märgistatud valik „RIA administraatori statistika", saab teha statistikat üle kogu infosüsteemi. Seda valikut kasutavad RIA administraatorid. <br /> <br /> Ühe infosüsteemi eest saab vastutada mitu infosüsteemi haldurit. Iga haldur saab lisada/muuta/kustutada tema vastutuses olevaid infosüsteeme. Igal infosüsteemi halduril on ligipääs kõigile nendele infosüsteemidele ja deklaratsioonidele, mille alamsüsteemi identifikaatoris olev registrikood = tema kasutajaga seotud registrikood (member code). Kui infosüsteemi halduri kasutajakonto kustutatakse, tema poolt sisestatud infosüsteemid jäävad alles. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevate infosüsteemidega seotud teenusedeklaratsioone. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevaid eesmärgideklaratsioone. Infosüsteemide haldur saab seostada eesmärgideklaratsioonid ainult tema vastutusalas olevate teenusedeklaratsioonidega. | •	Infosüsteemide koondvaade <br /> •	Infosüsteemi lisamine <br /> •	Infosüsteemi muutmine <br /> •	Teenusedeklaratsioonide koondvaade <br /> •	Teenusedeklaratsiooni esitamine <br /> •	Teenusedeklaratsiooni detailvaade <br /> •	Teenusedeklaratsiooni muutmine <br /> •	Eesmärgideklaratsioonide koondvaade <br /> •	Eesmärgideklaratsiooni esitamine <br /> •	Eesmärgideklaratsiooni detailvaade <br /> •	Eesmärgideklaratsiooni muutmine <br /> •	Statistika vaade
 
 
 ## Infosüsteemide haldus
 
-Nõusolekuteenuse haldusliideses registreeritakse kaitstud teenuste
+Andmenõusolekuteenuse haldusliideses registreeritakse kaitstud teenuste
 pakkuvate infosüsteemide andmed. Nende andmetega täidetakse automaatselt
 vastavad väljad teenusedeklaratsioonides, mis lihtsustab
 deklaratsioonide esitamise protsessi.
 
 ### Infosüsteemide haldusega seotud vaated
 
-Infosüsteemide lisamise ja haldusega Nõusolekuteenuse haldusliideses on
+Infosüsteemide lisamise ja haldusega Andmenõusolekuteenuse haldusliideses on
 seotud järgmised vaated:
 
 **Infosüsteemide nimekiri**
@@ -1343,7 +1343,7 @@ andmed.
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
 Infosüsteemi nimi | Kaitstud teenuste (andmeid) pakkuva infosüsteemi nimi | Tervise infosüsteem | Jah
-Nõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
+Nõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el | Sotsiaalministeerium | Jah
 Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. | 70001952 | Jah
 Volitatud töötleja (mittekohustuslik väli) | Volitatud töötleja asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/12750 <br /> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks. | TEHIK | Jah
@@ -1358,7 +1358,7 @@ andmisel (vt jaotis [8](#nõusoleku-mall)).
 
 ### Teenusedeklaratsioonide haldusega seotud vaated
 
-Teenusedeklaratsioonide esitamise ja haldusega Nõusolekuteenuse
+Teenusedeklaratsioonide esitamise ja haldusega Andmenõusolekuteenuse
 haldusliideses on seotud järgmised vaated:
 
 **Teenusedeklaratsioonide nimekiri**
@@ -1410,8 +1410,8 @@ muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
-Teenust pakkuv infosüsteem | Rippmenüü, mis sisaldab Nõusolekuteenusesse lisatud infosüsteemide nimesid. TD esitamise vormis valitakse üks nendest valikutest - infosüsteem, mis pakub deklareeritavat teenust. | Tervise infosüsteem | Ei
-Nõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Nõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
+Teenust pakkuv infosüsteem | Rippmenüü, mis sisaldab Andmenõusolekuteenusesse lisatud infosüsteemide nimesid. TD esitamise vormis valitakse üks nendest valikutest - infosüsteem, mis pakub deklareeritavat teenust. | Tervise infosüsteem | Ei
+Nõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | Sotsiaalministeerium | Ei
 Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel)| 70001952 | Ei
 Volitatud töötleja| Volitatud töötleja asutuse ametlik nimi <br /> https://akit.cyber.ee/term/12750 (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | TEHIK | Ei
@@ -1446,7 +1446,7 @@ andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis
 
 ### Eesmärgideklaratsioonide haldusega seotud vaated
 
-Eesmärgideklaratsioonide esitamise ja haldusega Nõusolekuteenuse
+Eesmärgideklaratsioonide esitamise ja haldusega Andmenõusolekuteenuse
 haldusliideses on seotud järgmised vaated:
 
 **Eesmärgideklaratsioonide nimekiri** 
@@ -1502,7 +1502,7 @@ Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
 ------------ | ------------- | ------------ | ------------
 Andmete saaja nimi | Klientrakenduse (ED deklareerija) ettevõte/asutuse ametlik nimi | Health Startup OÜ | Ei
 Andmete saaja registrikood | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood | 12819685 | Ei
-Nõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Nõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Nõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
+Nõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
 Andmete saaja pakutav teenus | Klientrakenduse või selle äriteenuse kaubanduslik nimi. Annab Andmesubjektile info, milline konkreetne äriteenus/infosüsteem hakkab kasutama tema isikuandmeid. | Immu | Ei
 Kasutatav teenusedeklaratsioon | Teenusedeklaratsioon (infosüsteemi nimi-TD identifikaator), millega deklareeritakse eesmärgi täitmiseks vajalikke andmeid pakkuvat kaitstud teenust. <br /> <br /> Teenusedeklaratsiooni (TD) valimine toimub kahe sammuga: <br /> <br /> 1) Infosüsteemi (millega on seotud TD) valimine - rippmenüü, mis sisaldab "Infosüsteemide halduse" kaudu lisatud infosüsteemide nimed. <br /> <br /> 2) TD identifikaatori valimine - rippmenüü, mis sisaldab eelmises sammus valitud infosüsteemiga seotud kehtivate teenusedeklaratsioonide identifikaatorid. <br />  <br /> Ühe ED-ga võib olla seotud ainult üks TD. | Tervise Infosüsteem-hl7_immuniseerimisandmed | Ei
 Eesmärgideklaratsiooni identifikaator | Eesmärgideklaratsiooni inimloetav unikaalne tunnus. | healthstartup_immuniseerimisa ndmed | Ei
@@ -1580,12 +1580,12 @@ Andmete kasutamise eesmärk | Kui lubate Tervise infosüsteemil enda immuniseeri
 Andmete saaja andmekaitsetingimused | https://andmekaitsetingimused.ee | eesmärgideklaratsioon
 Nõusoleku kehtivus | alates 23.12.2024  <br /> kuni 20.02.2025 | nõusolek (kehtivusaja arvutatakse: nõusoleku andmise kuupäev + nõusoleku maksimaalne kehtivusaeg päevades (teenusedeklaratsioonist))
 
-# Nõusolekuteenuse kasutajaliides
+# Andmenõusolekuteenuse kasutajaliides
 
-Nõusolekuteenuse Andmesubjektile (tavakasutajale) sh Andmesubjekti 
+Andmenõusolekuteenuse Andmesubjektile (tavakasutajale) sh Andmesubjekti 
 esindajale mõeldud kasutajaliides on realiseeritud eraldiseisva 
 veebirakendusena, mis moodustab osa eesti.ee portaalist. 
-Nõusolekuteenuse Andmesubjektile ja Andmesubjekti esindajale mõeldud
+Andmenõusolekuteenuse Andmesubjektile ja Andmesubjekti esindajale mõeldud
 kasutajaliides koosneb kahest poolest: nõusolekute andmine ja
 nõusolekute haldus.
 
@@ -1598,17 +1598,17 @@ nõusolekud unikaalse lingi kaudu, kuhu ta suunatakse Klientrakendusest.
 
 Iga kord kui Klientrakendus soovib suunata Andmesubjekti või 
 Andmesubjekti esindajat nõusolekuid andma, peab see küsima 
-Nõusolekuteenusest uue lingi vajalike nõusolekutaotluste komplektiga.
+Andmenõusolekuteenusest uue lingi vajalike nõusolekutaotluste komplektiga.
 Kui Andmesubjekt läheb nõusolekuid andma, siis küsitakse uus link
 kasutades teenust ***getConsentGroupReference***
 API (vt jaotis [5.1.1](#getconsentgroupreference)), kui Andmesubjekti esindaja, siis kasutatakse
 teenust ***getConsentGroupReferenceRepresentable*** (vt jaotist
 [5.1.6.](#getconsentgroupreferencerepresentable))
 
-Enne Nõusolekuteenusesse suunamist peab Klientrakendus informeerima
+Enne Andmenõusolekuteenusesse suunamist peab Klientrakendus informeerima
 Andmesubjekti või Andmesubjekti esindajat nõusoleku(te) andmise 
 vajadusest, andmete töötlemise tingimustest ja eesootavast 
-Nõusolekuteenusesse suunamisest.
+Andmenõusolekuteenusesse suunamisest.
 
 Näidistekst:
 
@@ -1624,9 +1624,9 @@ Näidistekst:
 > 
 > **\[nupp\]**
 
-### Nõusolekuteenuses
+### Andmenõusolekuteenuses
 
-Enne Nõusolekuteenusesse sattumist autendib Andmesubjekt või 
+Enne Andmenõusolekuteenusesse sattumist autendib Andmesubjekt või 
 Andmesubjekti esindaja ennast TARA kaudu, kasutades ühte pakutavatest 
 sisselogimisviisidest.
 
@@ -1662,7 +1662,7 @@ Enne „Kinnitan" nupu vajutamist saab Andmesubjekt või Andmesubjekti
 esindaja oma otsuseid samal lehel muuta.
 
 Kui valikud on tehtud, vajutab Andmesubjekt või Andmesubjekti esindaja
-nuppu „Kinnitan". Nõusolekuteenus teeb antud nõusolekud kehtivateks.
+nuppu „Kinnitan". Andmenõusolekuteenus teeb antud nõusolekud kehtivateks.
 
 PS! Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusoleku
 andmisel digitaalne allkirjastamine nõutud, siis nõusoleku tuleb
@@ -1676,7 +1676,7 @@ esindaja tagasi Klientrakendusesse.
 ### Pärast suunamist
 
 Pärast Andmesubjekti või Andmesubjekti esindaja tagasi suunamist küsib 
-Klientrakendus Nõusolekuteenusest nõusolekuviited ning nende 
+Klientrakendus Andmenõusolekuteenusest nõusolekuviited ning nende 
 valideerimise, et teada saada, millised nõusolekud olid antud ja nüüd 
 kehtivad. Kasutatakse ***getConsentReferences*** ja 
 ***validateConsentForClient*** API-d (vt jaotised [5.1.2.](#getconsentreferences) ja
@@ -1687,7 +1687,7 @@ Andmesubjekti esindajale teadet. Kui kõik vajalikud nõusolekud
 kehtivad, võib Klientrakendus hakata küsima andmeid Andmekogult ja 
 osutama teenust Andmesubjektile või Andmesubjekti esindajale.
 
-Kui mõned nõusolekud on puudu, küsib Klientrakendus Nõusolekuteenusest
+Kui mõned nõusolekud on puudu, küsib Klientrakendus Andmenõusolekuteenusest
 uue lingi (kasutades ***getConsentGroupReference*** API
 (vt jaotis [5.1.1.](#getconsentgroupreference)) ja suunab Andmesubjekti
 või Andmesubjekti esindaja puuduvaid nõusolekuid andma.
@@ -1697,14 +1697,14 @@ või Andmesubjekti esindaja puuduvaid nõusolekuid andma.
 Nõusolekute haldusliides on osa eesti.ee portaalist ja Andmesubjekt
 või Andmesubjekti esindaja leiab selle navigatsiooni menüüst pärast 
 sisselogimist. Haldusliides koosneb neljast alamlehest: 
-„Nõusolekuteenusest", „Minu nõusolekud", „Andmete kasutus", 
+„Andmenõusolekuteenusest", „Minu nõusolekud", „Andmete kasutus", 
 „Kasutustingimused".
 
-### Nõusolekuteenusest
+### Andmenõusolekuteenusest
 
-Alamleht annab üldise info nõusolekuteenusest.
+Alamleht annab üldise info Andmenõusolekuteenusest.
 
-![Nõusolekuteenusest](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image26.jpeg)
+![Andmenõusolekuteenusest](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image26.jpeg)
 
 ### Minu nõusolekud
 
@@ -1784,7 +1784,7 @@ kehtivuse kuupäeva, saab Andmesubjekt valida kas ta lubab või ei luba
 kirjeldatud andmekomplekti edastamist ning kinnitada nõusolek.
 
 Kui nõusoleku pikendamisega nõustuti (tehti märge „Luban") ning
-kinnitati, siis Nõusolekuteenus teeb antud nõusoleku kehtivaks ning
+kinnitati, siis Andmenõusolekuteenus teeb antud nõusoleku kehtivaks ning
 eelmise, mille pealt nõusoleku pikendamist alustati kehtetuks.
 
 Kui nõusoleku pikendamisega ei nõustutud (tehti märge „Ei luba") ning
@@ -1811,6 +1811,6 @@ automaatselt Rahvastikuregistrist.
 
 ### Kasutustingimused
 
-Alamleht tutvustab Andmesubjektile Nõusolekuteenuse kasutustingimusi.
+Alamleht tutvustab Andmesubjektile Andmenõusolekuteenuse kasutustingimusi.
 
 *(täiendamisel)*

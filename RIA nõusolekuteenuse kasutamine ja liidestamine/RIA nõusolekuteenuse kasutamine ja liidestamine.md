@@ -578,7 +578,7 @@ nendevahelisi üleminekuid.
 
 Andmenõusolekuteenus pakub REST API päringuid üle x-tee.
 
-Kõikide Nõusolekuteenusele jõudnud päringute puhul kontrollitakse, et
+Kõikide Andmenõusolekuteenusele jõudnud päringute puhul kontrollitakse, et
 Andmenõusolekuteenuse juurde pöörduv x-tees autenditud alamsüsteem on õige
 osapool sellise päringu tegemiseks. Andmenõusolekuteenus vastab päringule
 ainult siis, kui küsija (ehk Andmekogu või Klientrakendus) on

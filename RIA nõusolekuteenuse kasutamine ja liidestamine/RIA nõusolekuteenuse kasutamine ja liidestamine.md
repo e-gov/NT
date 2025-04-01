@@ -35,10 +35,7 @@ Versiooni ajalugu
 
 [3.1. Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
 
-[3.2. Kasutusjuht 1.1 Kliendirakendus valideerib Andmesubjekti
-nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puudolevaid
-nõusolekuid andma
-](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
+[3.2. Kasutusjuht 1.1 Kliendirakendus valideerib Andmesubjekti nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puuduolevaid nõusolekuid andma](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
 
 [3.3. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine
 (andmekogu)

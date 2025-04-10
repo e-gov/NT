@@ -8,7 +8,7 @@ Data Consent Service is an initiative led by the Estonian Information System Aut
 
 ## Instructions for using the Data Consent Service (English version coming soon)
 
-[Andmenõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
+[Using and interfacing the RIA Data Consent Service](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20no%CC%83usolekuteenuse%20kasutamine%20ja%20liidestamine_eng.md)
 
 ## Data Consent giving use case prototype
 

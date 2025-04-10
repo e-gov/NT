@@ -115,11 +115,11 @@ In order to enable the collection of consents from the Data Subject for the Clie
 
 3. In the event that the X-tee directory does not contain the data set required by the Client, the Data Provider creates a new Protected Service that meets the Client’s needs.
 
-4. The Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service an information system that provides the requested Protected Service (if it was not added before) (see section [7.2.](#infosüsteemide-haldus))
+4. The Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service an information system that provides the requested Protected Service (if it was not added before) (see section [7.2.](#information-systems-management))
 
-5. The Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service a Service Declaration describing the Protected Service (see section [7.3.](#teenusedeklaratsioonide-haldus)). If a Service Declaration is already in place for the required service, there is no need to declare it again – the existing Service Declaration can be used.
+5. The Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service a Service Declaration describing the Protected Service (see section [7.3.](#service-declarations-management)). If a Service Declaration is already in place for the required service, there is no need to declare it again – the existing Service Declaration can be used.
 
-6. Based on the agreement with the Client, the Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service a Purpose Declaration describing the purpose for the use of the data (see section [7.4.](#eesmärgideklaratsioonide-haldus))
+6. Based on the agreement with the Client, the Data Provider’s representative – the Information Systems Administrator – adds to the Data Consent Service a Purpose Declaration describing the purpose for the use of the data (see section [7.4.](#purpose-declarations-management))
 
 7. After the Purpose Declaration has been submitted, the Data Provider exports the data of the Purpose Declaration from the Data Consent Service and forwards it to the Client (for example, via email). Among this data, a unique identifier for the Purpose Declaration is transmitted, which is used by the Client to communicate with the Data Consent Service.
 
@@ -243,7 +243,7 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 
 1. The Client verifies that all the necessary consents from the Data Subject are in place and valid.
    
-   - The Client provides the Representative with the requested service and requests the necessary data from the Data Provider to provide it. ‘Use case 2: Data query and consent validation (Data Provider)’ is launched (see section [3.3.](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)).
+   - The Client provides the Representative with the requested service and requests the necessary data from the Data Provider to provide it. ‘Use case 2: Data query and consent validation (Data Provider)’ is launched (see section [3.3.](#use-case-2-data-query-and-consent-validation-data-provider)).
 
 2. The Client asks for a link for the Representative to provide the consents from the Data Subject, even though some of the consents requested were already given previously and are valid.
    
@@ -1019,7 +1019,7 @@ A view that allows you to modify the data of the information system. Changing th
 
 ## Service Declarations management
 
-A Service Declaration (SD) describes a Protected Service provided by an information system (the Data Provider), the use of which requires the Data Subject’s consent. Some of the data in the Service Declaration is displayed to the Data Subject when consent is given (see section [8](#nõusoleku-mall)).
+A Service Declaration (SD) describes a Protected Service provided by an information system (the Data Provider), the use of which requires the Data Subject’s consent. Some of the data in the Service Declaration is displayed to the Data Subject when consent is given (see section [9](#consent-template)).
 
 ### Views associated with the management of Service Declarations
 
@@ -1041,7 +1041,7 @@ The following actions can be performed on each declaration:
 
 **Submitting a Service Declaration**
 
-The form for submitting a new Service Declaration. The data to be entered is described in detail in section [7.3.2.](#teenusedeklaratsiooni-andmed)
+The form for submitting a new Service Declaration. The data to be entered is described in detail in section [7.3.2.](#service-declaration-data)
 
 ![Submission of a Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image9.jpg)
 
@@ -1053,7 +1053,7 @@ It displays the data associated with the Service Declaration – both basic and 
 
 **Modifying a Service Declaration**
 
-A view that allows to partially modify the data of a valid Service Declaration. Fields which may/may not be changed are described in section [7.3.2.](#teenusedeklaratsiooni-andmed)
+A view that allows to partially modify the data of a valid Service Declaration. Fields which may/may not be changed are described in section [7.3.2.](#service-declaration-data)
 
 ![Modifying a Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image11.jpeg)
 
@@ -1090,7 +1090,7 @@ A view that allows to partially modify the data of a valid Service Declaration. 
 
 ## Purpose Declarations management
 
-The Purpose Declaration (PD) describes the data recipient (the Client) and the purpose for using the protected data service. Some of the data in the Purpose Declaration is displayed to the Data Subject at the time of consent (see section [8](#nõusoleku-mall)).
+The Purpose Declaration (PD) describes the data recipient (the Client) and the purpose for using the protected data service. Some of the data in the Purpose Declaration is displayed to the Data Subject at the time of consent (see section [9](#consent-template)).
 
 ### Views associated with the Purpose Declarations management
 
@@ -1112,7 +1112,7 @@ The following actions can be performed on each declaration:
 
 **Submitting a Purpose Declaration**
 
-Form for submitting a new Purpose Declaration. The data to be entered is described in detail in section [7.4.2.](#eesmärgideklaratsiooni-andmed)
+Form for submitting a new Purpose Declaration. The data to be entered is described in detail in section [7.4.2.](#purpose-declaration-data)
 
 ![Submitting a Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
 
@@ -1124,7 +1124,7 @@ It displays the data associated with the Purpose Declaration – both basic and 
 
 **Modifying a Purpose Declaration**
 
-A view that allows to partially modify the data of a valid Purpose Declaration. Fields which may/may not be changed are described in section [7.4.2.](#eesmärgideklaratsiooni-andmed)
+A view that allows to partially modify the data of a valid Purpose Declaration. Fields which may/may not be changed are described in section [7.4.2.](#purpose-declaration-data)
 
 ![Modifying a Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
 

@@ -6,7 +6,7 @@
 
 Data Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 with the development of a fully functional MVP following in 2020-2021. Several pilots are planned in the second half of 2021 with financial data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services. 
 
-## Instructions for using the Data Consent Service (English version coming soon)
+## Instructions for using the Data Consent Service
 
 [Using and interfacing the RIA Data Consent Service](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20no%CC%83usolekuteenuse%20kasutamine%20ja%20liidestamine_eng.md)
 

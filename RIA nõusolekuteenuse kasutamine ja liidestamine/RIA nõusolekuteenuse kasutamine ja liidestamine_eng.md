@@ -22,107 +22,58 @@ Version history
 | 28 January 2025| 2.1| Document revised
 
 <!-- markdownlint-disable MD033 -->
-# **Table of contents**
+# **Table of Contents**
 
-[1.](#sissejuhatus)[ ](#sissejuhatus)[Introduction](#sissejuhatus)
-
-[1.1 Definitions](#mõisted)
-
-[2.](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)[ ](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)[Prerequisites for using the Data Consent Service](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)
-
-[3.](#põhiprotsesside-kirjeldus-kasutusjuhtudena)[ ](#põhiprotsesside-kirjeldus-kasutusjuhtudena)[Description of key processes as use cases](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
-
-[3.1.](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)[ ](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)[Use case 1: validation of consents (Client) and redirecting the Data Subject to provide the missing consents](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)[ ](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
-
-[3.2.](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)[ ](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)[Use case 1.1: The Client validates the consent(s) of the Data Subject and directs the Representative to provide any missing consents requested from the Data Subject](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)[ ](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
-
-[3.3.](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)[ ](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)[Use case 2:](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)[ ](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)[Data query and consent validation (Data Provider)](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)[ ](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
-
-[4.](#nõusoleku-seisundidiagramm)[ ](#nõusoleku-seisundidiagramm)[Consent status diagram](#nõusoleku-seisundidiagramm)
-
-[5.](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)[ ](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)[Interfacing with the Data Consent Service and the technical specifications of queries](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
-
-[5.1.](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)[ ](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)[Technical specifications of the queries used by the Data Provider and the Client](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
-
-[5.1.1. getConsentGroupReference](#getconsentgroupreference)
-
-[5.1.2. getConsentReferences](#getconsentreferences)
-
-[5.1.3. validateConsentForClient](#validateconsentforclient)
-
-[5.1.4. validateConsentForDataProvider](#validateconsentfordataprovider)
-
-[5.1.5. reportDataTransmission](#reportdatatransmission)
-
-[5.1.6. getConsentGroupReferenceRepresentable ](#getconsentgroupreferencerepresentable)
-
-[5.1.7. postConsentFilterByStatus](#postConsentFilterByStatus)
-
-[6.](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)[ ](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)[Instructions for the interface testing of the Data Consent Service](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)
-
-[6.1.](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)[ ](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)[Creating a consent URL and displaying information on consents in the status ‘requested’ (primary and recurring)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
-
-[6.2.](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)[ Approving and declining consent](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
-
-[6.3.](#nõusolekuviidete-pärimine)[ ](#nõusolekuviidete-pärimine)[Consent references query](#nõusolekuviidete-pärimine)
-
-[6.4.](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)[ ](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)[Validation of consents (Client and Data Provider)](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
-
-[6.5.](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)[ ](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)[Reporting on successful data queries based on consents (Data Provider)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
-
-[7.](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)[ ](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)[Instructions for using the management interface of the Data Consent Service](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
-
-[7.1.](#rollid)[ ](#rollid)[Roles](#rollid)
-
-[7.2.](#infosüsteemide-haldus)[ ](#infosüsteemide-haldus)[Information systems management](#infosüsteemide-haldus)
-
-[7.2.1.](#infosüsteemide-haldusega-seotud-vaated)[ ](#infosüsteemide-haldusega-seotud-vaated)[Views associated with the management of information systems](#infosüsteemide-haldusega-seotud-vaated)
-
-[7.2.2.](#infosüsteemi-andmed)[ ](#infosüsteemi-andmed)[Information system data](#infosüsteemi-andmed)
-
-[7.3.](#teenusedeklaratsioonide-haldus)[ ](#teenusedeklaratsioonide-haldus)[Service Declarations management](#teenusedeklaratsioonide-haldus)
-
-[7.3.1.](#teenusedeklaratsioonide-haldusega-seotud-vaated)[ ](#teenusedeklaratsioonide-haldusega-seotud-vaated)[Views associated with the management of Service Declarations](#teenusedeklaratsioonide-haldusega-seotud-vaated)
-
-[7.3.2.](#teenusedeklaratsiooni-andmed)[ ](#teenusedeklaratsiooni-andmed)[Service Declaration data](#teenusedeklaratsiooni-andmed)
-
-[7.3.3.](#teenusedeklaratsiooni-seisundidiagramm)[ ](#teenusedeklaratsiooni-seisundidiagramm)[Status diagram of the Service Declaration](#teenusedeklaratsiooni-seisundidiagramm)
-
-[7.4.](#eesmärgideklaratsioonide-haldus)[ ](#eesmärgideklaratsioonide-haldus)[Purpose Declarations management](#eesmärgideklaratsioonide-haldus)
-
-[7.4.1.](#eesmärgideklaratsioonide-haldusega-seotud-vaated)[ ](#eesmärgideklaratsioonide-haldusega-seotud-vaated)[Views associated with the management of Purpose Declarations](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
-
-[7.4.2.](#eesmärgideklaratsiooni-andmed)[ ](#eesmärgideklaratsiooni-andmed)[Purpose Declaration data](#eesmärgideklaratsiooni-andmed)
-
-[7.4.3.](#eesmärgideklaratsiooni-seisundidiagramm)[ ](#eesmärgideklaratsiooni-seisundidiagramm)[Status diagram of the Purpose Declaration](#eesmärgideklaratsiooni-seisundidiagramm)
-
-[8.](#statistika)[ ](#statistika)[Statistics](#statistika)
-
-[8.1.](#statistika-väljund)[ ](#statistika-väljund)[Statistics output](#statistika-väljund)
-
-[8.1.1.](#statistika-andmestik)[ ](#statistika-andmestik)[Statistical data](#statistika-andmestik)
-
-[9.](#nõusoleku-mall)[ ](#nõusoleku-mall)[Consent template](#nõusoleku-mall)
-
-[10.](#andmenõusolekuteenuse-kasutajaliides)[ ](#andmenõusolekuteenuse-kasutajaliides)[User interface of the Data Consent Service](#andmenõusolekuteenuse-kasutajaliides)
-
-[10.1.](#nõusoleku-andmine)[ ](#nõusoleku-andmine)[Approving consent](#nõusoleku-andmine)
-
-[10.1.1.](#enne-suunamist)[ ](#enne-suunamist)[Before being redirected](#enne-suunamist)
-
-[10.1.2.](#Andmenõusolekuteenuses)[ ](#Andmenõusolekuteenuses)[In the Data Consent Service](#Andmenõusolekuteenuses)
-
-[10.1.3.](#pärast-suunamist)[ ](#pärast-suunamist)[After being redirected](#pärast-suunamist)
-
-[10.2.](#nõusolekute-haldus)[ ](#nõusolekute-haldus)[Consents management](#nõusolekute-haldus)
-
-[10.2.1.](#Andmenõusolekuteenusest)[ ](#Andmenõusolekuteenusest)[About the Data Consent Service](#Andmenõusolekuteenusest)
-
-[10.2.2.](#minu-nõusolekud)[ ](#minu-nõusolekud)[My consents](#minu-nõusolekud)
-
-[10.2.3.](#edastatud-andmed)[ ](#edastatud-andmed)[Data transmitted](#edastatud-andmed)
-
-[10.2.4.](#kasutustingimused)[ ](#kasutustingimused)[Terms of use](#kasutustingimused)
+- [1. Introduction](#introduction)
+  - [1.1 Definitions](#definitions)
+- [2. Prerequisites for using the Data Consent Service](#prerequisites-for-using-the-data-consent-service)
+- [3. Description of key processes as use cases](#description-of-key-processes-as-use-cases)
+  - [3.1 Use case 1: validation of consents (Client)](#use-case-1-validation-of-consents-client-and-redirecting-the-data-subject-to-provide-the-missing-consents)
+  - [3.2 Use case 1.1: validation via Representative](#use-case-11-the-client-validates-the-consents-of-the-data-subject-and-directs-the-representative-to-provide-any-missing-consents-requested-from-the-data-subject)
+  - [3.3 Use case 2: Data query and consent validation (Data Provider)](#use-case-2-data-query-and-consent-validation-data-provider)
+- [4. Consent status diagram](#consent-status-diagram)
+- [5. Interfacing with the Data Consent Service and the technical specifications of queries](#interfacing-with-the-data-consent-service-and-the-technical-specifications-of-queries)
+  - [5.1 Technical specifications of the queries](#technical-specifications-of-the-queries-used-by-the-data-provider-and-the-client)
+    - [5.1.1 getConsentGroupReference](#getconsentgroupreference)
+    - [5.1.2 getConsentReferences](#getconsentreferences)
+    - [5.1.3 validateConsentForClient](#validateconsentforclient)
+    - [5.1.4 validateConsentForDataProvider](#validateconsentfordataprovider)
+    - [5.1.5 reportDataTransmission](#reportdatatransmission)
+    - [5.1.6 getConsentGroupReferenceRepresentable](#getconsentgroupreferencerepresentable)
+    - [5.1.7 postConsentFilterByStatus](#postconsentfilterbystatus)
+- [6. Instructions for the interface testing of the Data Consent Service](#instructions-for-the-interface-testing-of-the-data-consent-service)
+  - [6.1 Creating a consent URL](#creating-a-consent-url-and-displaying-information-on-consents-in-the-status-requested-primary-and-recurring)
+  - [6.2 Approving and declining consent](#approving-and-declining-consent)
+  - [6.3 Consent references query](#consent-references-query)
+  - [6.4 Validation of consents (Client and Data Provider)](#validation-of-consents-client-application-and-data-provider)
+  - [6.5 Reporting on successful data queries](#reporting-on-successful-data-queries-based-on-consents-data-provider)
+- [7. Instructions for using the management interface of the Data Consent Service](#instructions-for-using-the-management-interface-of-the-data-consent-service)
+  - [7.1 Roles](#roles)
+  - [7.2 Information systems management](#information-systems-management)
+    - [7.2.1 Views related to management](#views-associated-with-the-management-of-information-systems)
+    - [7.2.2 Information system data](#information-system-data)
+  - [7.3 Service Declarations management](#service-declarations-management)
+    - [7.3.1 Views related to Service Declarations](#views-associated-with-the-management-of-service-declarations)
+    - [7.3.2 Service Declaration data](#service-declaration-data)
+    - [7.3.3 Status diagram of Service Declaration](#status-diagram-of-the-service-declaration)
+  - [7.4 Purpose Declarations management](#purpose-declarations-management)
+    - [7.4.1 Views related to Purpose Declarations](#views-associated-with-the-management-of-purpose-declarations)
+    - [7.4.2 Purpose Declaration data](#purpose-declaration-data)
+    - [7.4.3 Status diagram of Purpose Declaration](#status-diagram-of-the-purpose-declaration)
+- [8. Statistics](#statistics)
+  - [8.1 Statistics output](#statistics-output)
+    - [8.1.1 Statistical data](#statistical-data)
+- [9. Consent template](#consent-template)
+- [10. User interface of the Data Consent Service](#user-interface-of-the-data-consent-service)
+  - [10.1 Approving consent](#approving-consent)
+    - [10.1.1 Before being redirected](#before-being-redirected)
+    - [10.1.2 In the Data Consent Service](#in-the-data-consent-service)
+    - [10.1.3 After being redirected](#after-being-redirected)
+  - [10.2 Consents management](#consents-management)
+    - [10.2.1 About the Data Consent Service](#about-the-data-consent-service)
+    - [10.2.2 My consents](#my-consents)
+    - [10.2.3 Data transmitted](#data-transmitted)
+    - [10.2.4 Terms of use](#terms-of-use)
 
 # Introduction
 

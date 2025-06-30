@@ -494,9 +494,9 @@ vastavusetabel, mille abil saab kontrollida millisele kaitstud teenusele
 vastab iga teenusedeklaratsioon.
 
 **Järeltingimused (kehtiva nõusoleku puhul):** Andmekogu edastab andmed
-Klientrakendusele kaitstud teenuse kaudu.
+Klientrakendusele kaitstud teenuse kaudu. Andmekogu raporteerib Andmenõusolekuteenusele eduka andmeedastuse.
 
-**Põhistsenaarium (eeldusel , et vajalik nõusolek kehtib):**
+**Põhistsenaarium (eeldusel, et vajalik nõusolek kehtib):**
 
 1.  Klientrakendus küsib andmed Andmekogult. Andmepäring peab sisaldama
     vastavat nõusolekuviidet ning Andmesubjekti isikukoodi.

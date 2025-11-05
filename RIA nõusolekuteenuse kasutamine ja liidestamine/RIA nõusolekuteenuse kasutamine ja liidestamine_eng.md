@@ -487,7 +487,10 @@ curl -k \
 }
 ```
 
-Parameter | Type of data | Description ------------ | ------------ | ------------- purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS") | string | Valid Purpose Declaration identifier (can be more than one). Only those for which a valid consent has been found (with the status APPROVED) will be returned consentReference | string | Valid Consent Reference – a unique code used to determine the validity of the consent
+| Parameter| Type of data| Description 
+|----------|----------|----------
+| purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS")| string| Valid Purpose Declaration identifier (can be more than one). Only those for which a valid consent has been found (with the status APPROVED) will be returned 
+| consentReference| string| Valid Consent Reference – a unique code used to determine the validity of the consent
 
 **Error management:**
 

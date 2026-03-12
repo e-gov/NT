@@ -530,9 +530,8 @@ Klientrakendusele kaitstud teenuse kaudu. Andmekogu peab raporteerima Andmenõus
     [5.1.5.](#reportdatatransmission)).
 
 > [!IMPORTANT]
-> **Andmekogu peab iga eduka andmeedastuse järel kutsuma välja `reportDataTransmission` päringu (vt jaotis [5.1.5.](#reportdatatransmission)).**
-> Ilma selleta ei ole andmesubjektil võimalik Andmenõusolekuteenuse kasutajaliideses näha, et tema andmeid on edastatud (vaade „Edastatud andmed" jääb tühjaks).
-> See on liidestumise kohustuslik samm, mitte valikuline.
+> **Andmeedastuse raporteerimine on kohustuslik liidestumise samm, mitte valikuline.**
+> Ilma `reportDataTransmission` päringuta ei ole andmesubjektil võimalik Andmenõusolekuteenuse kasutajaliideses näha, et tema andmeid on edastatud (vaade „Edastatud andmed" jääb tühjaks). See on kõige levinum liidestumise viga.
 
 
 **Põhistsenaariumi jadadiagramm:**

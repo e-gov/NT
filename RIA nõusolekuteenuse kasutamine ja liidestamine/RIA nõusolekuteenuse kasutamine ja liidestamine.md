@@ -494,7 +494,7 @@ vastavusetabel, mille abil saab kontrollida millisele kaitstud teenusele
 vastab iga teenusedeklaratsioon.
 
 **Järeltingimused (kehtiva nõusoleku puhul):** Andmekogu edastab andmed
-Klientrakendusele kaitstud teenuse kaudu. Andmekogu raporteerib Andmenõusolekuteenusele eduka andmeedastuse.
+Klientrakendusele kaitstud teenuse kaudu. Andmekogu peab raporteerima Andmenõusolekuteenusele eduka andmeedastuse [reportDataTransmission](#reportdatatransmission) päringu abil — see on kohustuslik järeltegevus.
 
 **Põhistsenaarium (eeldusel, et vajalik nõusolek kehtib):**
 

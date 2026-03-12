@@ -1,4 +1,4 @@
-# Using and interfacing the RIA Data Consent Service
+**Follow-up conditions (in the case of a valid consent):** the Data Provider transmits the data to the Client via the Protected Service.# Using and interfacing the RIA Data Consent Service
 
 28 January 2025
 
@@ -295,7 +295,7 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 
 **Prerequisites:** the Data Provider knows the identifiers of the Service Declarations associated with its own information systems. The Data Provider has a correlation table that can be used to check which Protected Service each Service Declaration corresponds to.
 
-**Follow-up conditions (in the case of a valid consent):** the Data Provider transmits the data to the Client via the Protected Service.
+**Follow-up conditions (in the case of a valid consent):** the Data Provider transmits the data to the Client via the Protected Service. The Data Provider must report the successful data transmission to the Data Consent Service using the [reportDataTransmission](#reportdatatransmission) query — this is a mandatory follow-up action.
 
 **Baseline scenario (assuming that the necessary consent is valid):**
 
@@ -314,6 +314,11 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 4. If all the verifications are successful, the Data Provider transmits the requested data to the Client.
 
 5. The Data Provider reports the successful transmission of data. The ***reportDataTransmission*** query is used (see section [5.1.5.](#reportdatatransmission)).
+
+> [!IMPORTANT]
+> **The Data Provider must call the `reportDataTransmission` query after every successful data transmission (see section [5.1.5.](#reportdatatransmission)).**
+> Without this, the Data Subject will not be able to see in the Data Consent Service user interface that their data has been transmitted (the 'Data transmitted' view will remain empty).
+> This is a mandatory integration step, not optional.
 
 **Baseline scenario sequence diagram:**
 

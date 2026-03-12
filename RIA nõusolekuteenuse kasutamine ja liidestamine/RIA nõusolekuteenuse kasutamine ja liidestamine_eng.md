@@ -1,5 +1,3 @@
-**Follow-up conditions (in the case of a valid consent):** the Data Provider transmits the data to the Client via the Protected Service.# Using and interfacing the RIA Data Consent Service
-
 28 January 2025
 
 Version 2.1

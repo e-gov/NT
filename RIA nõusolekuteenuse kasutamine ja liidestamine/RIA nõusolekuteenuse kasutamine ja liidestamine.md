@@ -529,6 +529,11 @@ Klientrakendusele kaitstud teenuse kaudu. Andmekogu raporteerib Andmenõusolekut
     ***reportDataTransmission*** päringut (vt jaotis
     [5.1.5.](#reportdatatransmission)).
 
+> [!IMPORTANT]
+> **Andmekogu peab iga eduka andmeedastuse järel kutsuma välja `reportDataTransmission` päringu (vt jaotis [5.1.5.](#reportdatatransmission)).**
+> Ilma selleta ei ole andmesubjektil võimalik Andmenõusolekuteenuse kasutajaliideses näha, et tema andmeid on edastatud (vaade „Edastatud andmed" jääb tühjaks).
+> See on liidestumise kohustuslik samm, mitte valikuline.
+
 
 **Põhistsenaariumi jadadiagramm:**
 

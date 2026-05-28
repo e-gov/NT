@@ -442,8 +442,7 @@ curl --location 'https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/c
 | ------------------------------------ | --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | purposeDeclarationBusinessIdentifier | jah             | string           | Juriidilise isiku eesmärgideklaratsiooni identifikaator                                                                                                                                                                                                                            |
 | regCodes                             | ei              | array of strings | Juriidilistest isikutest andmesubjektide registrikoodid, kelle vastuseid nõusolekupäringu(te)le soovitakse saada. Kui nimekiri on tühi, soovitakse andmeid kõigi juriidilisest isikutest andmesubjektide kohta, kellele on esitatud päring antud eesmärgideklaratsiooni(de) kohta. |
-
-consentStatus \| ei \| array of strings \| Nõusoleku staatus(ed), mille alusel otsitakse nõusolekuid.
+| consentStatus                        | ei              | array of strings | Nõusoleku staatus(ed), mille alusel otsitakse nõusolekuid.                                                                                                                                                                                                                         |
 
 Päringu kättesaamisel teeb JURNT üldise kontrolli: kas x-tees autenditud Teenusepakkuja x-tee alamsüsteemi identifikaator on sama, mis on määratud juriidilise isiku eesmärgideklaratsioonis.
 

@@ -87,27 +87,27 @@ The document is the basis for interfacing with and deploying RIA’s Data Consen
 
 ## Definitions
 
-**Data Subject** -- a person to whom personal data held in the Data Provider relates.
+**Data Subject** - a person to whom personal data held in the Data Provider relates.
 
-**Representative** -- the person who represents the Data Subject.
+**Representative** - the person who represents the Data Subject.
 
-**Data Provider** -- the information system that holds the Data Subject’s personal data.
+**Data Provider** - the information system that holds the Data Subject’s personal data.
 
-**Client** -- an information system that needs the data of the Data Subject from the Data Provider to provide a service to the Data Subject.
+**Client** - an information system that needs the data of the Data Subject from the Data Provider to provide a service to the Data Subject.
 
-**Data Consent Service** -- the information system that is responsible for managing the consents of Data Subjects.
+**Data Consent Service** - the information system that is responsible for managing the consents of Data Subjects.
 
-**Protected Service** -- an abstract Data Provider service that provides access to the data of the Data Subject and requires the consent of the Data Subject to be used.
+**Protected Service** - an abstract Data Provider service that provides access to the data of the Data Subject and requires the consent of the Data Subject to be used.
 
-**Service Declaration** -- a description of the Protected Service provided by one Data Provider and the data transmitted. Registered by the Data Provider in the Data Consent Service.
+**Service Declaration** - a description of the Protected Service provided by one Data Provider and the data transmitted. Registered by the Data Provider in the Data Consent Service.
 
-**Purpose Declaration** -- a description of the purpose for which the data is used. Within the MVP, it is registered by the Data Provider in the Data Consent Service and forms the basis for consents in the status ‘requested’. The content of the Purpose Declaration is provided by the Client. If the Client needs data from multiple protected services (from one or different Data Providers) to achieve its purposes, multiple Purpose Declarations are registered -- separately for each service. In this case, the Client must also obtain multiple corresponding Data Subject consents.
+**Purpose Declaration** - a description of the purpose for which the data is used. Within the MVP, it is registered by the Data Provider in the Data Consent Service and forms the basis for consents in the status ‘requested’. The content of the Purpose Declaration is provided by the Client. If the Client needs data from multiple protected services (from one or different Data Providers) to achieve its purposes, multiple Purpose Declarations are registered - separately for each service. In this case, the Client must also obtain multiple corresponding Data Subject consents.
 
-**Consent** -- consent given to the Data Provider by the Data Subject, on the basis of which the Data Provider may transmit to the Client through protected services the data described in the consent for processing for the purpose described in the consent.
+**Consent** - consent given to the Data Provider by the Data Subject, on the basis of which the Data Provider may transmit to the Client through protected services the data described in the consent for processing for the purpose described in the consent.
 
-**Consent in the status ‘requested’** -- consent that is required by the Client to provide the service to the Data Subject, but has not yet been given by the Data Subject.
+**Consent in the status ‘requested’** - consent that is required by the Client to provide the service to the Data Subject, but has not yet been given by the Data Subject.
 
-**Consent Reference** -- the unique consent code used to determine the validity of the consent.
+**Consent Reference** - the unique consent code used to determine the validity of the consent.
 
 # Prerequisites for using the Data Consent Service
 
@@ -432,7 +432,7 @@ purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declara
 
 Parameter | Type of data | Description
 --- | --- | ---
-consentGroupReference | string | Reference to consent in the status ‘requested’ -- a unique code used to distinguish consents in the status ‘requested’.
+consentGroupReference | string | Reference to consent in the status ‘requested’ - a unique code used to distinguish consents in the status ‘requested’.
 url | string | URL of the consent(s) through which the Data Subject can provide the consents requested by the Client in the Data Consent Service.
 
 **Error management:**
@@ -897,7 +897,7 @@ curl -k -X GET \
 
 Parameter | Type of data | Description
 --- | --- | ---
-status | string | Service health status. "UP" -- the service is available.
+status | string | Service health status. "UP" - the service is available.
 
 **Error management:**
 
@@ -937,7 +937,7 @@ curl -k -X GET \
 
 Parameter | Type of data | Description
 --- | --- | ---
-status | string | Service health status. "UP" -- the service is available.
+status | string | Service health status. "UP" - the service is available.
 
 **Error management:**
 
@@ -1000,11 +1000,11 @@ Test cases for consent approval and refusal are not listed at the API challenge 
 
 In order to make sure that the Client and the Data Consent Service are able to exchange data correctly and to learn how the Data Consent Service works, at least the following scenarios should be run:
 
-1. Consent approval -- the user gives the corresponding consents to the Consent References requested in the tests described in chapter 6.1 and verifies that the consents are valid
+1. Consent approval - the user gives the corresponding consents to the Consent References requested in the tests described in chapter 6.1 and verifies that the consents are valid
 
 2. Refusing to provide the consent – the user does not give the consents corresponding to the Consent References requested in the tests described in chapter 6.1, and it is verified that the consents are displayed again via the same link
 
-3. Consent withdrawal -- withdrawing the consents given in previous tests, and it is verified that the consent has been withdrawn.
+3. Consent withdrawal - withdrawing the consents given in previous tests, and it is verified that the consent has been withdrawn.
 
 ## Consent references query
 
@@ -1256,9 +1256,9 @@ The Statistics menu is intended to provide statistics on declarations and relate
 
 The information system and/or the name of the data recipient must be selected to produce statistics:
 
-- Information System -- Information Systems are displayed according to the organisations within their area of responsibility. If the user is marked as ‘RIA administrator statistics’, then Information Systems from across the system are displayed in the selection. 1-n values can be selected.
+- Information System - Information Systems are displayed according to the organisations within their area of responsibility. If the user is marked as ‘RIA administrator statistics’, then Information Systems from across the system are displayed in the selection. 1-n values can be selected.
 
-- Recipient of the data -- Company search field by name of data recipient. You can search by data recipients within the limits of the organisations under your responsibility. If the user is marked as ‘RIA administrator statistics’, then data recipients are searched from across the system. You can search by one value at a time.
+- Recipient of the data - Company search field by name of data recipient. You can search by data recipients within the limits of the organisations under your responsibility. If the user is marked as ‘RIA administrator statistics’, then data recipients are searched from across the system. You can search by one value at a time.
 
 ## Statistics output
 

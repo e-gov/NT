@@ -77,31 +77,31 @@ The document is the basis for interfacing with and deploying the RIA Legal Entit
 
 ## Definitions
 
-**Data Subject** -- a legal entity to which the data held in the Data Provider relates.
+**Data Subject** - a legal entity to which the data held in the Data Provider relates.
 
-**Representative** -- the person who represents the Data Subject.
+**Representative** - the person who represents the Data Subject.
 
-**Data Provider** -- the information system that holds the Data Subject's personal data.
+**Data Provider** - the information system that holds the Data Subject's personal data.
 
-**Client / Requesting Legal Entity** -- an information system that needs the data of the Data Subject from the Data Provider to provide a service to the Data Subject.
+**Client / Requesting Legal Entity** - an information system that needs the data of the Data Subject from the Data Provider to provide a service to the Data Subject.
 
-**Legal Entity Data Consent Service (JURNT)** -- the information system that is responsible for managing the consents of Data Subjects that are legal entities.
+**Legal Entity Data Consent Service (JURNT)** - the information system that is responsible for managing the consents of Data Subjects that are legal entities.
 
-**Protected Service** -- an abstract Data Provider service that provides access to the data of the Data Subject and requires the consent of the Data Subject to be used.
+**Protected Service** - an abstract Data Provider service that provides access to the data of the Data Subject and requires the consent of the Data Subject to be used.
 
-**Service Declaration** -- a description of the Protected Service provided by one Data Provider and the data transmitted. Registered by the Data Provider in the Data Consent Service.
+**Service Declaration** - a description of the Protected Service provided by one Data Provider and the data transmitted. Registered by the Data Provider in the Data Consent Service.
 
-**Purpose Declaration** -- a description of the purpose for which the data is used. Within the MVP, it is registered by the Data Provider in the Data Consent Service and forms the basis for consents in the status 'requested'. The content of the Purpose Declaration is provided by the Client. If the Client needs data from multiple Protected Services (from one or different Data Providers) to achieve its purposes, multiple Purpose Declarations are registered -- separately for each service. In this case, the Client must also obtain multiple corresponding Data Subject consents.
+**Purpose Declaration** - a description of the purpose for which the data is used. Within the MVP, it is registered by the Data Provider in the Data Consent Service and forms the basis for consents in the status 'requested'. The content of the Purpose Declaration is provided by the Client. If the Client needs data from multiple Protected Services (from one or different Data Providers) to achieve its purposes, multiple Purpose Declarations are registered - separately for each service. In this case, the Client must also obtain multiple corresponding Data Subject consents.
 
-**Consent** -- consent given to the Data Provider by the Data Subject, on the basis of which the Data Provider may transmit to the Client through Protected Services the data described in the consent for processing for the purpose described in the consent.
+**Consent** - consent given to the Data Provider by the Data Subject, on the basis of which the Data Provider may transmit to the Client through Protected Services the data described in the consent for processing for the purpose described in the consent.
 
-**Consent in the status 'requested' (Consent Request)** -- consent that is required by the Client to provide the service to the Data Subject, but has not yet been given by the Data Subject.
+**Consent in the status 'requested' (Consent Request)** - consent that is required by the Client to provide the service to the Data Subject, but has not yet been given by the Data Subject.
 
-**Consent Reference** -- the unique consent code used to determine the validity of the consent.
+**Consent Reference** - the unique consent code used to determine the validity of the consent.
 
-**Consent Request** -- a request submitted to the Data Subject to obtain consent to transmit data concerning them.
+**Consent Request** - a request submitted to the Data Subject to obtain consent to transmit data concerning them.
 
-**Requesting Legal Entity** -- a legal entity (Client) that submits the Consent Request to the Data Subject.
+**Requesting Legal Entity** - a legal entity (Client) that submits the Consent Request to the Data Subject.
 
 # Prerequisites for using the Legal Entity Data Consent Service
 
@@ -113,11 +113,11 @@ In order to enable the collection of consents from the Data Subject for the Clie
 
 3. In the event that the X-tee directory does not contain the dataset required by the Client, the Data Provider creates a new Protected Service that meets the Client's needs.
 
-4. The Data Provider's representative -- the Information Systems Administrator -- adds to the Data Consent Service an information system that provides the requested Protected Service (if it was not added before) (see section [7.2.](#information-systems-management))
+4. The Data Provider's representative - the Information Systems Administrator - adds to the Data Consent Service an information system that provides the requested Protected Service (if it was not added before) (see section [7.2.](#information-systems-management))
 
-5. The Data Provider's representative -- the Information Systems Administrator -- adds to the Data Consent Service a Service Declaration describing the Protected Service (see section [7.3.](#service-declarations-management)). If a Service Declaration is already in place for the required service, there is no need to declare it again -- the existing Service Declaration can be used.
+5. The Data Provider's representative - the Information Systems Administrator - adds to the Data Consent Service a Service Declaration describing the Protected Service (see section [7.3.](#service-declarations-management)). If a Service Declaration is already in place for the required service, there is no need to declare it again - the existing Service Declaration can be used.
 
-6. Based on the agreement with the Client, the Data Provider's representative -- the Information Systems Administrator -- adds to the Data Consent Service a Purpose Declaration describing the purpose for the use of the data (see section [7.4.](#purpose-declarations-management))
+6. Based on the agreement with the Client, the Data Provider's representative - the Information Systems Administrator - adds to the Data Consent Service a Purpose Declaration describing the purpose for the use of the data (see section [7.4.](#purpose-declarations-management))
 
 7. After the Purpose Declaration has been submitted, the Data Provider exports the data of the Purpose Declaration from the Data Consent Service and forwards it to the Client (for example, via email). Among this data, a unique identifier for the Purpose Declaration is transmitted, which is used by the Client to communicate with the Data Consent Service.
 
@@ -363,8 +363,8 @@ General checks:
 
 Error key | Error code and status | Error description
 --- | --- | ---
-error.business.requested-consents-not-related-to-any-declarations | VALIDATION (404) | "REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS" -- no valid legal entity Purpose Declarations exist for the given X-tee subsystem
-error.validation | VALIDATION (400) | Error message info. Filled only when an error is found. "SIZE" -- registry codes are missing or exceed 100, "NOT_BLANK" -- the Purpose Declaration or registry code field is missing.
+error.business.requested-consents-not-related-to-any-declarations | VALIDATION (404) | "REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS" - no valid legal entity Purpose Declarations exist for the given X-tee subsystem
+error.validation | VALIDATION (400) | Error message info. Filled only when an error is found. "SIZE" - registry codes are missing or exceed 100, "NOT_BLANK" - the Purpose Declaration or registry code field is missing.
 
 Check for each registry code (after the general checks pass):
 
@@ -372,14 +372,14 @@ Check for each registry code (after the general checks pass):
 
 A legal entity is deemed valid when its status='R' (entered in the register). Otherwise it is an error and JURNT returns the error "REG_CODE_INVALID" in the response for that registry code (see the "Response" table). Duplicate registry codes are allowed; they are reflected only once in the response.
 
-**Response:** (array of objects) -- contains a block for each legal entity:
+**Response:** (array of objects) - contains a block for each legal entity:
 
 Parameter | Type of data | Description
 --- | --- | ---
 regCode | string | Data Subject's registry code
 consentRequestReference | string | The generated consent request reference. This is different from the consent reference that is created upon approval. It allows the data to be reconciled before approval. Filled only when status=OK.
 status | string | If the data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.
-errorCode | string | Error message info. Filled only when status=ERROR: "REG_CODE_INVALID" -- no legal entity with the given registry code exists according to the Business Register data, or the registry code does not match the standard, "DUPLICATE_CONSENTS_REQUESTED_IN_SUCCESSION" -- a consent request (status PENDING) for the given registry code and legal entity Purpose Declaration already exists, "ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED" -- a consent for the given registry code and legal entity Purpose Declaration already exists (status APPROVED).
+errorCode | string | Error message info. Filled only when status=ERROR: "REG_CODE_INVALID" - no legal entity with the given registry code exists according to the Business Register data, or the registry code does not match the standard, "DUPLICATE_CONSENTS_REQUESTED_IN_SUCCESSION" - a consent request (status PENDING) for the given registry code and legal entity Purpose Declaration already exists, "ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED" - a consent for the given registry code and legal entity Purpose Declaration already exists (status APPROVED).
 
 Example output when the general checks pass and one registry code is suitable but the other is not:
 
@@ -476,15 +476,15 @@ Parameter | Type of data | Description
 --- | --- | ---
 regCode | string | Data Subject's registry code
 consentStatus | string | Status of the corresponding consent
-consentReference | string | Consent Reference of a valid consent -- a unique code used to determine the validity of the consent. If the consent has never been approved, this is null.
-consentRequestReference | string | Consent request reference -- a unique code generated when the consent request is created. Its purpose is to enable the integrator to reconcile which status the consent is in before the consent becomes valid.
+consentReference | string | Consent Reference of a valid consent - a unique code used to determine the validity of the consent. If the consent has never been approved, this is null.
+consentRequestReference | string | Consent request reference - a unique code generated when the consent request is created. Its purpose is to enable the integrator to reconcile which status the consent is in before the consent becomes valid.
 
 **Error management:**
 
 Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Error info. Filled only when the input format is invalid and the server cannot read it.
-error.business.requested-consents-not-related-to-any-declarations | VALIDATION (404) | "REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS" -- no valid legal entity Purpose Declarations exist for the given X-tee subsystem
+error.business.requested-consents-not-related-to-any-declarations | VALIDATION (404) | "REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS" - no valid legal entity Purpose Declarations exist for the given X-tee subsystem
 
 ### *url*
 
@@ -537,7 +537,7 @@ callback | yes | string | Client redirecting URL
 
 Parameter | Type of data | Description
 --- | --- | ---
-consentGroupReference | string | Consent request reference -- a unique code used to distinguish consent requests
+consentGroupReference | string | Consent request reference - a unique code used to distinguish consent requests
 url | string | The consent(s) URL through which the Data Subject can provide the consents requested by the Client in the Data Consent Service
 
 **Error management:**
@@ -572,7 +572,7 @@ curl -k -X GET \
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
-consentReference | yes | string | JURNT Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+consentReference | yes | string | JURNT Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
 
 **Important!** Upon receipt of the query, JURNT verifies that the identifier of the Client's X-tee subsystem authenticated in the X-tee is the same as specified in the Purpose Declaration associated with the consent.
 
@@ -589,7 +589,7 @@ consentReference | yes | string | JURNT Consent Reference -- a unique code corre
 
 Parameter | Type of data | Description
 --- | --- | ---
-consentReference | string | Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined.
+consentReference | string | Consent Reference - a unique code corresponding to the consent the validity of which is to be determined.
 consentExpiration | timestamp (ISO 8601) | Expiration date of the consent
 regCode | string | Data Subject's registry code
 purposeDeclarationId | string | Identifier of the Purpose Declaration associated with the consent
@@ -626,7 +626,7 @@ curl -k -X GET \
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
-consentReference | yes | string | JURNT Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+consentReference | yes | string | JURNT Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
 
 **Important!** Upon receipt of the query, JURNT verifies that the identifier of the Data Provider's X-tee subsystem authenticated in the X-tee is the same as specified in the Service Declaration associated with the consent.
 
@@ -646,7 +646,7 @@ Parameter | Type of data | Description
 --- | --- | ---
 regCode | string | Data Subject's registry code. *Note:* The Data Provider must verify that the X-tee-authenticated Client's data query contains the same registry code as specified in this parameter.
 clientSubsystemIdentifier | string | The Client's X-tee subsystem identifier specified in the Purpose Declaration. *Note:* The Data Provider must verify that the X-tee-authenticated Client subsystem sending the data query is the same as the one specified in this parameter.
-consentReference | string | JURNT Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+consentReference | string | JURNT Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
 consentExpiration | timestamp (ISO 8601) | Expiration date of the consent
 serviceDeclarationId | string | Identifier of the Service Declaration associated with the consent. *Note:* The Data Provider must verify that the Protected Service through which the Client queries the data corresponds to the Service Declaration identifier specified in this parameter.
 
@@ -694,7 +694,7 @@ https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
 transmissionTimestamp | yes | timestamp | The time at which the data transmission from the Data Provider to the Client occurred
-consentReference | yes | string | Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+consentReference | yes | string | Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Data Provider's X-tee subsystem authenticated in the X-tee is the same as specified in the Service Declaration associated with the consent.
 
@@ -746,7 +746,7 @@ curl -k -X GET \
 
 Parameter | Type of data | Description
 --- | --- | ---
-status | string | Service health status. "UP" -- the service is available.
+status | string | Service health status. "UP" - the service is available.
 
 **Error management:**
 
@@ -786,7 +786,7 @@ curl -k -X GET \
 
 Parameter | Type of data | Description
 --- | --- | ---
-status | string | Service health status. "UP" -- the service is available.
+status | string | Service health status. "UP" - the service is available.
 
 **Error management:**
 
@@ -818,7 +818,7 @@ N | Action | Expected result
 1 | Run https://\<security-server-address\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/url with correct input parameters (registry code, PD identifier and X-tee subsystem) | Check that a consent URL is returned that can be used in the next step
 2 | Use the obtained consent reference to display the consents requested in the Data Consent Service | Check that a consent in REQUESTED status is returned, corresponding to the input registry code, SD and PD data
 
-*Test case 2: Generating a consent URL and viewing consent info (multiple Purpose Declarations -- run this test only if there is a substantive need for such a scenario)*
+*Test case 2: Generating a consent URL and viewing consent info (multiple Purpose Declarations - run this test only if there is a substantive need for such a scenario)*
 
 N | Action | Expected result
 --- | --- | ---
@@ -876,11 +876,11 @@ The test cases for approving and declining consent are not specified at the API-
 
 To confirm that the Client and the Data Consent Service can correctly exchange data, and to become familiar with how the Data Consent Service works, the following scenarios should be carried out at a minimum:
 
-1. Granting consents -- the user grants consents corresponding to the consent references requested in the tests described in chapter 6.1, and a check is made that the consents are valid
+1. Granting consents - the user grants consents corresponding to the consent references requested in the tests described in chapter 6.1, and a check is made that the consents are valid
 
-2. Declining consents -- the user does not grant consents corresponding to the consent references requested in the tests described in chapter 6.1, and a check is made that the consents are again displayed via the same link
+2. Declining consents - the user does not grant consents corresponding to the consent references requested in the tests described in chapter 6.1, and a check is made that the consents are again displayed via the same link
 
-3. Withdrawing consent -- consents granted during earlier tests are withdrawn, and a check is made that the consents are withdrawn.
+3. Withdrawing consent - consents granted during earlier tests are withdrawn, and a check is made that the consents are withdrawn.
 
 ## Consent references query
 
@@ -891,7 +891,7 @@ N | Action | Expected result
 1 | Run https://\<security-server-address\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/status for a set of inputs (registry code, PD identifier, X-tee subsystem) for which valid consents were previously granted | Check that only consent references in APPROVED status are returned together with the PD identifier
 2 | Run https://\<security-server-address\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/status when there are no valid consents for the given set of inputs but there are consents in other statuses (registry code, PD identifier, X-tee subsystem) | Check that HTTP_NOT_FOUND is returned
 
-*Test case 9: Querying consent references -- alternative scenarios*
+*Test case 9: Querying consent references - alternative scenarios*
 
 N | Action | Expected result
 --- | --- | ---
@@ -931,7 +931,7 @@ The Data Consent Service management interface is designed for the management of 
 
 - First, a Service Declaration is submitted, followed by a Purpose Declaration.
 
-- If a Service Declaration is already in place for the required service, there is no need to declare it again -- the existing Service Declaration can be used.
+- If a Service Declaration is already in place for the required service, there is no need to declare it again - the existing Service Declaration can be used.
 
 - Several Service Declarations may be associated with one information system. Several Purpose Declarations may be associated with one Service Declaration.
 
@@ -962,9 +962,9 @@ An overview of all added information systems that the user has the right to mana
 
 The following actions can be performed on each declaration:
 
-'Edit' -- open the information system detailed view and edit the information system data.
+'Edit' - open the information system detailed view and edit the information system data.
 
-'Delete' -- perform a logical deletion of the information system. The deletion is only possible if there are no valid Service Declarations associated with the information system.
+'Delete' - perform a logical deletion of the information system. The deletion is only possible if there are no valid Service Declarations associated with the information system.
 
 ![List of information systems](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image5.jpg)
 
@@ -976,7 +976,7 @@ The form for adding a new information system. The data to be entered is describe
 
 **Modifying an information system**
 
-A view that allows you to modify the data of the information system. Changing the data of the information system does not affect the associated Service Declarations -- the data will remain as it is. New Service Declarations will be created using the new data.
+A view that allows you to modify the data of the information system. Changing the data of the information system does not affect the associated Service Declarations - the data will remain as it is. New Service Declarations will be created using the new data.
 
 ![Modifying an information system](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image6.jpg)
 
@@ -1005,11 +1005,11 @@ Overview of all submitted Service Declarations. It allows the list of declaratio
 
 The following actions can be performed on each declaration:
 
-'View' -- open a detailed view of the declaration with all its data.
+'View' - open a detailed view of the declaration with all its data.
 
-'Change to invalid' -- change the status of the Service Declaration to INVALID, and make all associated Purpose Declarations and associated consents invalid.
+'Change to invalid' - change the status of the Service Declaration to INVALID, and make all associated Purpose Declarations and associated consents invalid.
 
-'Clone' -- use the declaration as a template for a new declaration -- the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
+'Clone' - use the declaration as a template for a new declaration - the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
 ![List of Service Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%208.png)
 
@@ -1021,7 +1021,7 @@ The form for submitting a new Service Declaration. The data to be entered is des
 
 **Detailed view of a Service Declaration**
 
-It displays the data associated with the Service Declaration -- both basic and metadata. It also displays the number of valid Purpose Declarations and the number of valid consents associated with a given Service Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button.
+It displays the data associated with the Service Declaration - both basic and metadata. It also displays the number of valid Purpose Declarations and the number of valid consents associated with a given Service Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button.
 
 ![Detailed view of a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image10.png)
 
@@ -1035,7 +1035,7 @@ A view that allows to partially modify the data of a valid Service Declaration. 
 
 Field name | Description | Example value | Can it be changed?
 --- | --- | --- | ---
-Information system providing the service | A drop-down menu containing the names of the information systems included in the Data Consent Service. In the SD submission form, one of these options is selected -- the information system providing the service to be declared. | Environment information system | No
+Information system providing the service | A drop-down menu containing the names of the information systems included in the Data Consent Service. In the SD submission form, one of these options is selected - the information system providing the service to be declared. | Environment information system | No
 Subsystem using the Data Consent Service | The subsystem corresponding to the selected information system that will access the Data Consent Service. The parameter to verify that the Data Provider's subsystem authenticated in the X-tee accessing the Data Consent Service is the correct party to make such a query. (This field will be filled in automatically when the information system providing the service is selected) | EE/GOV/70009770/digi | No
 Data controller (owner) | Official name of the data controller's (owner's) organisation <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el (This field will be filled in automatically when the information system providing the service is selected) | Statistics Estonia | No
 Registry code of the data controller | Registry code of the data controller's (owner's) organisation. (It will be filled in automatically when the information system providing the service is selected) | 70000332 | No
@@ -1043,8 +1043,8 @@ Data processor | Official name of the data processor's organisation <br /> https
 Registry code of the data processor | Registry code of the data processor's organisation. (It will be filled in automatically when the information system providing the service is selected) | 70009770 | No
 Identifier of the Service Declaration | Unique human-readable identifier of the Service Declaration | hl7_seisundiandmed | No
 Name of the Service Declaration | A short name of the data content to be transferred via the declared service (visible to the Data Subject as the title of the consent data set) | Environmental data | Yes
-Technical specifications of the service | Technical specifications of the service. Within the MVP scope -- an informative field for internal use. | X-tee service 'hl7' query, HL7 OID: 1.3.6.1.4.1.28284.6.1.1.35 | Yes
-X-tee service to be used | Service to be declared. Within the MVP scope -- an informative field for internal use. | EE/GOV/70009770/digi/ESGPäring/v4 | No
+Technical specifications of the service | Technical specifications of the service. Within the MVP scope - an informative field for internal use. | X-tee service 'hl7' query, HL7 OID: 1.3.6.1.4.1.28284.6.1.1.35 | Yes
+X-tee service to be used | Service to be declared. Within the MVP scope - an informative field for internal use. | EE/GOV/70009770/digi/ESGPäring/v4 | No
 Description of the data content of the service | Human-readable description of the service. Data to be returned, service content, etc. To be displayed when consent is given to the Data Subject. | Data related to compiling ESG reports: <br /> •	average energy consumption, <br /> •	waste management volume, <br /> •	assessment of working conditions. | Yes
 Maximum period of validity of the consent | Maximum number of days the Data Subject's consent can be valid from the moment the consent is given. On this basis, the expiry date of the consent is calculated and indicated to the Data Subject at the time of giving the consent. | 60 | Yes
 Expiry date of the Service Declaration | The SD expiry date can be unspecified (the SD will be valid until it is manually invalidated) or a specific selected date (when the SD expires, the associated PD will also become invalid). | 15 May 2026 | Yes
@@ -1077,11 +1077,11 @@ Overview of all the Purpose Declarations that have been submitted. It allows to 
 
 The following actions can be performed on each declaration:
 
-- '*View*' -- open a detailed view of the declaration with all its data.
+- '*View*' - open a detailed view of the declaration with all its data.
 
-- '*Change to invalid*' -- change the status of the Purpose Declaration to INVALID and also make all associated consents invalid.
+- '*Change to invalid*' - change the status of the Purpose Declaration to INVALID and also make all associated consents invalid.
 
-- '*Clone*' -- use the declaration as a template for a new declaration -- the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
+- '*Clone*' - use the declaration as a template for a new declaration - the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
 ![List of Purpose Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2013.png)
 
@@ -1093,7 +1093,7 @@ Form for submitting a new Purpose Declaration. The data to be entered is describ
 
 **Detailed view of a Purpose Declaration**
 
-It displays the data associated with the Purpose Declaration -- both basic and metadata. It also displays the number of valid consents associated with a given Purpose Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button. By clicking on the 'Download' button, it is possible to download the Purpose Declaration data in CSV format.
+It displays the data associated with the Purpose Declaration - both basic and metadata. It also displays the number of valid consents associated with a given Purpose Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button. By clicking on the 'Download' button, it is possible to download the Purpose Declaration data in CSV format.
 
 ![Detailed view of a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2015.png)
 
@@ -1111,7 +1111,7 @@ Name of the data recipient | Official name of the company/organisation of the Cl
 Registry code of the data recipient | Registry code of the company/organisation of the Client (PD declarant) | 87654321 | No
 Subsystem using the Data Consent Service | The Client's subsystem that will access the Data Consent Service. The parameter to verify that the Client's subsystem authenticated in the X-tee accessing the Data Consent Service is the correct party to make such a query. The drop-down menu contains all subsystems from the X-tee directory and supports *autocomplete* search. | EE/COM/87654321/digi | No
 Service provided by the data recipient | The trade name of the Client or its business service. It provides the Data Subject with information about which specific business service/information system will use their personal data. | Environment_1 | No
-Service Declaration to be used | A Service Declaration (information system name -- SD identifier) declaring a Protected Service providing the data necessary to fulfil the purpose. <br /> <br /> The selection of the Service Declaration (SD) is done in two steps: <br /> <br /> 1) Selection of the information system (associated with the SD) -- drop-down menu containing the names of the information systems added via 'Information systems management'. <br /> <br /> 2) Selecting a SD identifier -- drop-down menu containing the identifiers of the valid Service Declarations associated with the information system selected in the previous step. <br /> <br /> Only one SD can be associated with one PD. | Environment information system -- KESKK_ARUANNE (service for legal entity data) | No
+Service Declaration to be used | A Service Declaration (information system name - SD identifier) declaring a Protected Service providing the data necessary to fulfil the purpose. <br /> <br /> The selection of the Service Declaration (SD) is done in two steps: <br /> <br /> 1) Selection of the information system (associated with the SD) - drop-down menu containing the names of the information systems added via 'Information systems management'. <br /> <br /> 2) Selecting a SD identifier - drop-down menu containing the identifiers of the valid Service Declarations associated with the information system selected in the previous step. <br /> <br /> Only one SD can be associated with one PD. | Environment information system - KESKK_ARUANNE (service for legal entity data) | No
 Identifier of the Purpose Declaration | Unique human-readable identifier of the Purpose Declaration | ARUANNE_KOOST | No
 Name of the Purpose Declaration | A human-readable short name of the purpose of the use of the data to be declared. | ESG report | Yes
 Purpose of the use of data | Description of the purposes for which the Data Subject's data are used. | If you allow the Environmental Indicators information system to transmit your company's data to the company Aruanded AS, this will allow it to provide you with the service of compiling an ESG report.<br /> Aruanded AS uses the data received from the Environmental Indicators information system to assess your company's sustainability and, based on this, compiles the necessary ESG report. | Yes
@@ -1133,9 +1133,9 @@ The Statistics menu is intended to provide statistics on declarations and relate
 
 The information system and/or the name of the data recipient must be selected to produce statistics:
 
-- Information System -- Information Systems are displayed according to the organisations within their area of responsibility. If the user is marked as 'RIA administrator statistics', then Information Systems from across the system are displayed in the selection. 1-n values can be selected.
+- Information System - Information Systems are displayed according to the organisations within their area of responsibility. If the user is marked as 'RIA administrator statistics', then Information Systems from across the system are displayed in the selection. 1-n values can be selected.
 
-- Recipient of the data -- Company search field by name of data recipient. You can search by data recipients within the limits of the organisations under your responsibility. If the user is marked as 'RIA administrator statistics', then data recipients are searched from across the system. You can search by one value at a time.
+- Recipient of the data - Company search field by name of data recipient. You can search by data recipients within the limits of the organisations under your responsibility. If the user is marked as 'RIA administrator statistics', then data recipients are searched from across the system. You can search by one value at a time.
 
 ## Statistics output
 
@@ -1172,8 +1172,8 @@ Service provided by the data recipient (trade name) | Environment_1 | Purpose De
 Data (description of the data content) | Data required for compiling ESG reports: <br /> •	average energy consumption, <br /> •	waste management volume, <br /> •	assessment of working conditions. | Service Declaration
 Purpose of the use of data | If you allow the Environment information system to transmit your company's data to the company Aruanded AS, this will allow it to provide you with the service of compiling an ESG report. <br /> Aruanded AS uses the data received from the Environment information system to assess your company's sustainability and, based on this, compiles the necessary ESG report. | Purpose Declaration
 Data protection conditions of the recipient of the data | https://andmekaitsetingimused.ee | Purpose Declaration
-Consent approver -- person's name and personal identification code | Kairi Sarapuu (4712220278) | consent
-Consent withdrawer -- person's name and personal identification code | Kairi Sarapuu (4712220278) | consent
+Consent approver - person's name and personal identification code | Kairi Sarapuu (4712220278) | consent
+Consent withdrawer - person's name and personal identification code | Kairi Sarapuu (4712220278) | consent
 Consent validity | from 23 December 2024 <br /> until 20 February 2025 | consent (the validity period is calculated as: the date consent was granted + the maximum consent validity in days (from the Service Declaration))
 
 # User interface of the Legal Entity Data Consent Service

@@ -91,48 +91,48 @@ kasutusele võtmisele.
 
 ## Mõisted
 
-**Andmesubjekt (Data Subject)** -- isik, kellega on seotud Andmekogus
+**Andmesubjekt (Data Subject)** - isik, kellega on seotud Andmekogus
 hoitavad isikuandmed.
 
 **Andmesubjekti esindaja (Representative)** -– isik, kes esindab
 Andmesubjekti.
 
-**Andmekogu (Data Provider)** -- infosüsteem, mis hoiab Andmesubjekti
+**Andmekogu (Data Provider)** - infosüsteem, mis hoiab Andmesubjekti
 isikuandmeid.
 
-**Klientrakendus** **(Client)** -- infosüsteem, mis vajab
+**Klientrakendus** **(Client)** - infosüsteem, mis vajab
 Andmesubjektile teenuse osutamiseks Andmesubjekti andmeid Andmekogust.
 
-**Andmenõusolekuteenus (Data Consent Service**) -- infosüsteem, mis vastutab
+**Andmenõusolekuteenus (Data Consent Service**) - infosüsteem, mis vastutab
 Andmesubjektide nõusolekute haldamise eest.
 
-**Kaitstud teenus** **(Protected Service)** -- abstraktne Andmekogu
+**Kaitstud teenus** **(Protected Service)** - abstraktne Andmekogu
 teenus, mis annab juurdepääsu Andmesubjekti andmetele ning mille
 kasutamiseks on vajalik Andmesubjekti nõusolek.
 
-**Teenusedeklaratsioon** **(Service Declaration)** -- ühe Andmekogu
+**Teenusedeklaratsioon** **(Service Declaration)** - ühe Andmekogu
 poolt pakutava kaitstud teenuse ja edastavate andmete kirjeldus.
 Registreeritakse Andmekogu poolt Andmenõusolekuteenuses.
 
-**Eesmärgideklaratsioon (Purpose Declaration)** -- andmete kasutamise
+**Eesmärgideklaratsioon (Purpose Declaration)** - andmete kasutamise
 eesmärgi kirjeldus. MVP raames registreeritakse Andmekogu poolt
 Andmenõusolekuteenuses, on aluseks nõusolekutaotlustele.
 Eesmärgideklaratsiooni sisu on pakutud Klientrakenduse poolt. Kui oma
 eesmärkide saavutamiseks Klientrakendus vajab andmeid mitmetelt kaitstud
 teenustelt (ühest või erinevatest andmekogudest), registreeritakse mitu
-eesmärgideklaratsiooni -- iga teenuse jaoks eraldi. Sellel juhul
+eesmärgideklaratsiooni - iga teenuse jaoks eraldi. Sellel juhul
 Klientrakendus peab saama ka mitu vastavat Andmesubjekti nõusolekut.
 
-**Nõusolek (Consent)** -- Andmesubjekti poolt Andmekogule antud
+**Nõusolek (Consent)** - Andmesubjekti poolt Andmekogule antud
 nõusolek, mille alusel Andmekogu tohib kaitstud teenuste kaudu edastada
 Klientrakendusele nõusolekus kirjeldatud andmeid nende töötlemiseks
 nõusolekus kirjeldatud eesmärgil.
 
-**Nõusolekutaotlus (Consent in status REQUESTED)** -- nõusolek, mida
+**Nõusolekutaotlus (Consent in status REQUESTED)** - nõusolek, mida
 vajab Klientrakendus Andmesubjektile teenuse osutamiseks, kuid
 Andmesubjekt pole veel andnud.
 
-**Nõusolekuviide (Consent Reference)** -- nõusoleku unikaalne kood, mida
+**Nõusolekuviide (Consent Reference)** - nõusoleku unikaalne kood, mida
 kasutatakse nõusoleku kehtivuse valideerimisel.
 
 # Eeltingimused andmenõusolekuteenuse kasutamiseks
@@ -147,11 +147,11 @@ järgmised sammud:
 
 3.  Juhul, kui x-tee kataloogis ei ole Klientrakendusele vajalikku andmekomplekti, loob Andmekogu uue kaitstud teenuse, mis vastab Klientrakenduse vajadusele.
 
-4.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse infosüsteemi, mis hakkab pakkuma soovitud kaitstud teenust (kui see ei olnud lisatud varem) (vt jaotis [7.2.](#infosüsteemide-haldus))
+4.  Andmekogu esindaja - Infosüsteemide haldur - lisab Andmenõusolekuteenusesse infosüsteemi, mis hakkab pakkuma soovitud kaitstud teenust (kui see ei olnud lisatud varem) (vt jaotis [7.2.](#infosüsteemide-haldus))
 
-5.  Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse kaitstud teenuse kirjeldav Teenusedeklaratsiooni (vt jaotis [7.3.](#teenusedeklaratsioonide-haldus)). Kui vajaliku teenuse jaoks on Teenusedeklaratsioon juba olemas, pole seda uuesti deklareerida vaja, saab kasutada olemasolevat Teenusedeklaratsiooni.
+5.  Andmekogu esindaja - Infosüsteemide haldur - lisab Andmenõusolekuteenusesse kaitstud teenuse kirjeldav Teenusedeklaratsiooni (vt jaotis [7.3.](#teenusedeklaratsioonide-haldus)). Kui vajaliku teenuse jaoks on Teenusedeklaratsioon juba olemas, pole seda uuesti deklareerida vaja, saab kasutada olemasolevat Teenusedeklaratsiooni.
 
-6.  Klientrakendusega sõlmitud lepingu alusel, Andmekogu esindaja -- Infosüsteemide haldur -- lisab Andmenõusolekuteenusesse andmete kasutamise eesmärgi kirjeldava Eesmärgideklaratsiooni (vt jaotis [7.4.](#eesmärgideklaratsioonide-haldus))
+6.  Klientrakendusega sõlmitud lepingu alusel, Andmekogu esindaja - Infosüsteemide haldur - lisab Andmenõusolekuteenusesse andmete kasutamise eesmärgi kirjeldava Eesmärgideklaratsiooni (vt jaotis [7.4.](#eesmärgideklaratsioonide-haldus))
 
 7.  Pärast eesmärgideklaratsiooni esitamist ekspordib Andmekogu eesmärgideklaratsiooni andmeid Andmenõusolekuteenusest ja edastab selle Klientrakendusele (nt e-maili kaudu). Nende andmete hulgas edastatakse eesmärgideklaratsiooni unikaalne identifikaator, mida Klientrakendus hakkab kasutama Andmenõusolekuteenusega suhtlemisel.
 
@@ -1105,7 +1105,7 @@ curl -k -X GET \
 
 Parameeter | Andmetüüp | Kirjeldus
 --- | --- | ---
-status | string | Teenuse seisund. "UP" -- teenus on saadaval.
+status | string | Teenuse seisund. "UP" - teenus on saadaval.
 
 **Veahaldus:**
 
@@ -1145,7 +1145,7 @@ curl -k -X GET \
 
 Parameeter | Andmetüüp | Kirjeldus
 --- | --- | ---
-status | string | Teenuse seisund. "UP" -- teenus on saadaval.
+status | string | Teenuse seisund. "UP" - teenus on saadaval.
 
 **Veahaldus:**
 
@@ -1238,7 +1238,7 @@ Veendumaks, et klientrakendus ja Andmenõusolekuteenus suudavad korrektselt
 andmeid vahetada ja õppimaks tundma, kuidas Andmenõusolekuteenus toimib,
 tuleks läbi teha vähemalt järgmised stsenaariumid:
 
-1.  Nõusolekute andmine -- peatükis 6.1 kirjeldatud testides küsitud
+1.  Nõusolekute andmine - peatükis 6.1 kirjeldatud testides küsitud
     nõusolekuviidetele vastavate nõusolekute andmine kasutaja poolt ning
     kontrollimine, et nõusolekud on kehtivad
 
@@ -1247,7 +1247,7 @@ tuleks läbi teha vähemalt järgmised stsenaariumid:
     kasutaja poolt, ning kontrollimine, et nõusolekuid kuvatakse sama
     lingi kaudu uuesti
 
-3.  Nõusolekust taganemine -- varasemate testide käigus antud
+3.  Nõusolekust taganemine - varasemate testide käigus antud
     nõusolekute tagasivõtmine ning kontrollimine, et nõusolekud on
     tagasi võetud.
 
@@ -1557,12 +1557,12 @@ märkega „RIA administraatori statistika" üle kogu süsteemi.
 Statistika tegemiseks tuleb valida infosüsteem ja/või andmete saaja
 nimi:
 
--   Infosüsteem -- valikusse kuvatakse Infosüsteemid vastavalt oma
+-   Infosüsteem - valikusse kuvatakse Infosüsteemid vastavalt oma
     vastutusalas olevate asutuste piires. Kui kasutaja on märkega „RIA
     administraatori statistika", siis kuvatakse valikusse infosüsteeme
     üle kogu süsteemi. Saab valida 1-n väärtust.
 
--   Andmete saaja -- ettevõtte otsingu väli andmete saaja nime järgi.
+-   Andmete saaja - ettevõtte otsingu väli andmete saaja nime järgi.
     Otsida saab andmete saaja järgi oma vastutusalas olevate asutuste
     piires. Kui kasutaja on märkega „RIA administraatori statistika",
     siis otsitakse andmete saajaid üle kogu süsteemi. Saab otsida ühe

@@ -108,7 +108,7 @@ purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declara
 Parameter | Type of data | Description
 --- | --- | ---
 purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS") | string | Only those Purpose Declarations for which a valid consent has been found (with the status APPROVED) are returned.
-consentReference | string | Consent Reference of a valid consent -- a unique code used to determine the validity of the consent.
+consentReference | string | Consent Reference of a valid consent - a unique code used to determine the validity of the consent.
 
 **Error management:**
 
@@ -142,7 +142,7 @@ curl -k -X GET \
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
-consentReference | yes | string | Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+consentReference | yes | string | Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in X-tee is the same as the one specified in the Purpose Declaration associated with the consent.
 
@@ -159,7 +159,7 @@ consentReference | yes | string | Consent Reference -- a unique code correspondi
 
 Parameter | Type of data | Description
 --- | --- | ---
-consentReference | string | Consent Reference -- a unique code corresponding to the consent the validity of which is determined
+consentReference | string | Consent Reference - a unique code corresponding to the consent the validity of which is determined
 consentExpiration | timestamp (ISO 8601) | Expiration date of the consent
 idCode | string | Personal identification code of the Data Subject
 purposeDeclarationId | string | Identifier of the Purpose Declaration associated with the consent
@@ -214,7 +214,7 @@ Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
 idCode | yes | string | Personal identification code of the Data Subject
 purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declaration identifier (can be more than one)
-language | no | string | Language code that determines the language of the data. Two-letter codes are used (e.g. "en" -- English, "et" -- Estonian). The default value is "et".
+language | no | string | Language code that determines the language of the data. Supported values: "et" - Estonian, "en" - English, "ru" - Russian. The default value is "et".
 
 **Response:**
 
@@ -312,8 +312,9 @@ Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
 error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for all requested consents
+error.business.requested-consents-not-related-to-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for some of the requested consents. The corresponding business identifiers are listed in the error description.
 error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard
-error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | The requested consents are associated with invalid Purpose Declarations
+error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | The requested consents are associated with invalid Purpose Declarations. The corresponding business identifiers are listed in the error description.
 error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | When asking for multiple consents, all the consents found are with the status APPROVED
 error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | The person is either incapacitated or with limited active legal capacity
 
@@ -394,14 +395,15 @@ Parameter | Type of data | Description
 --- | --- | ---
 consentConfirmReference | string | UUID of the consent pending decision
 status | string | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.
-errorCode | string | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" -- the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" -- the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" -- the UUID provided in the input cannot be found in the database.
+errorCode | string | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" - the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" - the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" - the UUID provided in the input cannot be found in the database.
 
 **Error management:**
 
 Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
-error.http.404 | HTTP_NOT_FOUND (404) | No match exists for the combination of consentConfirmReference and the X-tee client header
+
+Per-consent processing errors are returned in the response body via the `status` and `errorCode` fields (the HTTP status stays 200, see Response).
 
 ## getConsentHealth
 
@@ -432,7 +434,7 @@ curl -k -X GET \
 
 Parameter | Type of data | Description
 --- | --- | ---
-status | string | Service health status. "UP" -- the service is available.
+status | string | Service health status. "UP" - the service is available.
 
 **Error management:**
 

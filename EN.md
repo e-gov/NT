@@ -4,9 +4,10 @@
 
 # Data Consent Service
 
-Data Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 with the development of a fully functional MVP following in 2020-2021. Several pilots are planned in the second half of 2021 with financial data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services. 
+Data Consent Service is an initiative led by the Estonian Information System Authority to build a universal, decentralized and scalable solultion for managing consents used for data processing. Reference architecture along with the first prototype was published in December 2019 with the development of a fully functional MVP following in 2020-2021. Several pilots are planned in the second half of 2021 with financial data as the first priority. Main use cases include sharing personal data from public sector databases to private sector entities for the purpose of creating highly personalized value adding services.
 
 ## Instructions for using the Data Consent Service
+
 - [Using and interfacing the Data Consent Service](doc/en/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
 - [Using and interfacing the Legal Entity Data Consent Service](doc/en/RIA%20juriidilise%20isiku%20andmen%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
 - [Using and interfacing the Simplified Data Consent Service](doc/en/Simplified%20data%20consent%20service%20doc.md)
@@ -19,13 +20,12 @@ The prototype shows consent giving proscess and was used in testing of visual so
 
 ## Architecture
 
-Architecture document gives an overview of the Consent Service technical structure, defining system components, integrations, deployment diagram, data models etc. 
+Architecture document gives an overview of the Consent Service technical structure, defining system components, integrations, deployment diagram, data models etc.
 
 [Architecture document 2.0](https://github.com/e-gov/NT/blob/51ca5a67ef61f94ece4e00e94b1bc543fec8ce27/architecture/Architecture%202.0.md "architecture document")
 
 ## Feedback and suggestions
 
 If you want to be a part of the development process by raising issues and providing feedback, please use the "Issues" tab in this repository. Even if the majority is in Estonian, the Estonian Information System Authority will deal with translations once it becomes necessary.
-
 
 [Link to the "Issues" tab](https://github.com/e-gov/NT/issues "issues")

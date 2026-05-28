@@ -5,16 +5,17 @@
 Version 0.6
 
 ---
+
 Version history
 
-Version | Date | Description
---- | --- | ---
-0.1 | 12 July 2025 | Document created.
-0.2 | 11 September 2025 | Document updated.
-0.3 | 01 November 2025 | Document revised.
-0.4 | 06 January 2026 | Document revised.
-0.5 | 28 January 2026 | Document update. Error code updates.
-0.6 | 21 April 2026 | First name and last name removed from the /api/consent/third-party service input.
+| Version | Date              | Description                                                                       |
+| ------- | ----------------- | --------------------------------------------------------------------------------- |
+| 0.1     | 12 July 2025      | Document created.                                                                 |
+| 0.2     | 11 September 2025 | Document updated.                                                                 |
+| 0.3     | 01 November 2025  | Document revised.                                                                 |
+| 0.4     | 06 January 2026   | Document revised.                                                                 |
+| 0.5     | 28 January 2026   | Document update. Error code updates.                                              |
+| 0.6     | 21 April 2026     | First name and last name removed from the /api/consent/third-party service input. |
 
 <!-- markdownlint-disable MD033 -->
 
@@ -46,7 +47,7 @@ You have two days to add a document to the Data Consent Service and 24 hours (on
 
 **Web service URLs**
 
-- LIVE:  https://<security-server-address>/r1/EE/GOV/70006317/consent/consent/...
+- LIVE: https://<security-server-address>/r1/EE/GOV/70006317/consent/consent/...
 - STAGE: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/...
 
 Steps for the Simplified Data Consent Service. The image is illustrative, showing what a simplified signing process might look like. The actual process depends on the business processes implemented in the specific institution.
@@ -57,7 +58,7 @@ Steps for the Simplified Data Consent Service. The image is illustrative, showin
 
 ## getConsentReferences
 
-The query can be submitted to ask the Data Consent Service for the consent references of valid consent(s) (*Consent Reference*).
+The query can be submitted to ask the Data Consent Service for the consent references of valid consent(s) (_Consent Reference_).
 
 Used by: Client
 
@@ -90,10 +91,10 @@ curl -k -X POST \
 }
 ```
 
-Parameter | Is it mandatory? | Type of data | Description
---- | --- | --- | ---
-idCode | yes | string | Personal identification code of the Data Subject
-purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declaration identifier (can be more than one)
+| Parameter                             | Is it mandatory? | Type of data     | Description                                           |
+| ------------------------------------- | ---------------- | ---------------- | ----------------------------------------------------- |
+| idCode                                | yes              | string           | Personal identification code of the Data Subject      |
+| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one) |
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in X-tee is the same as the one specified in the Purpose Declaration(s).
 
@@ -105,18 +106,18 @@ purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declara
 }
 ```
 
-Parameter | Type of data | Description
---- | --- | ---
-purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS") | string | Only those Purpose Declarations for which a valid consent has been found (with the status APPROVED) are returned.
-consentReference | string | Consent Reference of a valid consent - a unique code used to determine the validity of the consent.
+| Parameter                                                        | Type of data | Description                                                                                                       |
+| ---------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------- |
+| purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS") | string       | Only those Purpose Declarations for which a valid consent has been found (with the status APPROVED) are returned. |
+| consentReference                                                 | string       | Consent Reference of a valid consent - a unique code used to determine the validity of the consent.               |
 
 **Error management:**
 
-Error key | Error code and status | Error description
---- | --- | ---
-error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
-error.http.404 | HTTP_NOT_FOUND (404) | No valid consents found (with the status APPROVED)
-error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard
+| Error key                      | Error code and status | Error description                                                                                                                    |
+| ------------------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| error.validation               | VALIDATION (400)      | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric) |
+| error.http.404                 | HTTP_NOT_FOUND (404)  | No valid consents found (with the status APPROVED)                                                                                   |
+| error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard                                                                   |
 
 ## validateConsentForClient
 
@@ -140,9 +141,9 @@ curl -k -X GET \
 
 **Query:** https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6
 
-Parameter | Is it mandatory? | Type of data | Description
---- | --- | --- | ---
-consentReference | yes | string | Consent Reference - a unique code corresponding to the consent the validity of which is to be determined
+| Parameter        | Is it mandatory? | Type of data | Description                                                                                              |
+| ---------------- | ---------------- | ------------ | -------------------------------------------------------------------------------------------------------- |
+| consentReference | yes              | string       | Consent Reference - a unique code corresponding to the consent the validity of which is to be determined |
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in X-tee is the same as the one specified in the Purpose Declaration associated with the consent.
 
@@ -157,20 +158,20 @@ consentReference | yes | string | Consent Reference - a unique code correspondin
 }
 ```
 
-Parameter | Type of data | Description
---- | --- | ---
-consentReference | string | Consent Reference - a unique code corresponding to the consent the validity of which is determined
-consentExpiration | timestamp (ISO 8601) | Expiration date of the consent
-idCode | string | Personal identification code of the Data Subject
-purposeDeclarationId | string | Identifier of the Purpose Declaration associated with the consent
+| Parameter            | Type of data         | Description                                                                                        |
+| -------------------- | -------------------- | -------------------------------------------------------------------------------------------------- |
+| consentReference     | string               | Consent Reference - a unique code corresponding to the consent the validity of which is determined |
+| consentExpiration    | timestamp (ISO 8601) | Expiration date of the consent                                                                     |
+| idCode               | string               | Personal identification code of the Data Subject                                                   |
+| purposeDeclarationId | string               | Identifier of the Purpose Declaration associated with the consent                                  |
 
 **Error management:**
 
-Error key | Error code and status | Error description
---- | --- | ---
-error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
-error.http.404 | HTTP_NOT_FOUND (404) | No valid consent exists for the combination of clientSubsystemIdentifier (Client X-tee subsystem) and consentReference
-error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | The queried consent is not with the status APPROVED
+| Error key                                      | Error code and status                 | Error description                                                                                                                    |
+| ---------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| error.validation                               | VALIDATION (400)                      | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric) |
+| error.http.404                                 | HTTP_NOT_FOUND (404)                  | No valid consent exists for the combination of clientSubsystemIdentifier (Client X-tee subsystem) and consentReference               |
+| error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | The queried consent is not with the status APPROVED                                                                                  |
 
 ## getThirdPartyConsents
 
@@ -210,11 +211,11 @@ curl -k -X POST \
 }
 ```
 
-Parameter | Is it mandatory? | Type of data | Description
---- | --- | --- | ---
-idCode | yes | string | Personal identification code of the Data Subject
-purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declaration identifier (can be more than one)
-language | no | string | Language code that determines the language of the data. Supported values: "et" - Estonian, "en" - English, "ru" - Russian. The default value is "et".
+| Parameter                             | Is it mandatory? | Type of data     | Description                                                                                                                                           |
+| ------------------------------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | yes              | string           | Personal identification code of the Data Subject                                                                                                      |
+| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one)                                                                                                 |
+| language                              | no               | string           | Language code that determines the language of the data. Supported values: "et" - Estonian, "en" - English, "ru" - Russian. The default value is "et". |
 
 **Response:**
 
@@ -283,40 +284,40 @@ The response to the query is a consent request data set in JSON format. The resp
 ]
 ```
 
-Parameter | Type of data | Description
---- | --- | ---
-consentConfirmReference | string | UUID of the consent pending decision
-idCode | string | Personal identification code of the Data Subject
-firstName | string | First name
-lastName | string | Last name
-clientName | string | Name of the party (Client) to which the data is transmitted on the basis of the consent
-clientRegistryCode | string | Registry code of the party to which the data is transmitted on the basis of the consent
-clientService | string | Service provided by the data recipient
-purposeDeclarationDescription | string | Description of the Purpose Declaration (purpose of data use)
-serviceDeclarationName | string | Name of the Service Declaration
-serviceDeclarationDescription | string | Description of the data transmitted by the data transmitter / description of the service data set
-dataProviderName | string | Name of the Data Provider / information system
-dataControllerName | string | Data controller of the data transmitter
-dataControllerRegistryCode | string | Registry code of the data controller of the data transmitter
-dataProcessorName | string | Data processor of the data transmitter
-dataProcessorRegistryCode | string | Registry code of the data processor of the data transmitter
-validFrom | string | Consent validity from (timestamp-content string, e.g. 01.01.2022)
-validTo | string | Consent validity until (timestamp-content string, e.g. 01.01.2023)
-files | array | Array of files containing both the container and the PDF file
-type | string | File type. Possible values: CONSENT_CONTAINER or GENERATED_PDF
-content | string | File contents encoded in Base64 format
+| Parameter                     | Type of data | Description                                                                                       |
+| ----------------------------- | ------------ | ------------------------------------------------------------------------------------------------- |
+| consentConfirmReference       | string       | UUID of the consent pending decision                                                              |
+| idCode                        | string       | Personal identification code of the Data Subject                                                  |
+| firstName                     | string       | First name                                                                                        |
+| lastName                      | string       | Last name                                                                                         |
+| clientName                    | string       | Name of the party (Client) to which the data is transmitted on the basis of the consent           |
+| clientRegistryCode            | string       | Registry code of the party to which the data is transmitted on the basis of the consent           |
+| clientService                 | string       | Service provided by the data recipient                                                            |
+| purposeDeclarationDescription | string       | Description of the Purpose Declaration (purpose of data use)                                      |
+| serviceDeclarationName        | string       | Name of the Service Declaration                                                                   |
+| serviceDeclarationDescription | string       | Description of the data transmitted by the data transmitter / description of the service data set |
+| dataProviderName              | string       | Name of the Data Provider / information system                                                    |
+| dataControllerName            | string       | Data controller of the data transmitter                                                           |
+| dataControllerRegistryCode    | string       | Registry code of the data controller of the data transmitter                                      |
+| dataProcessorName             | string       | Data processor of the data transmitter                                                            |
+| dataProcessorRegistryCode     | string       | Registry code of the data processor of the data transmitter                                       |
+| validFrom                     | string       | Consent validity from (timestamp-content string, e.g. 01.01.2022)                                 |
+| validTo                       | string       | Consent validity until (timestamp-content string, e.g. 01.01.2023)                                |
+| files                         | array        | Array of files containing both the container and the PDF file                                     |
+| type                          | string       | File type. Possible values: CONSENT_CONTAINER or GENERATED_PDF                                    |
+| content                       | string       | File contents encoded in Base64 format                                                            |
 
 **Error management:**
 
-Error key | Error code and status | Error description
---- | --- | ---
-error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
-error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for all requested consents
-error.business.requested-consents-not-related-to-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for some of the requested consents. The corresponding business identifiers are listed in the error description.
-error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard
-error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | The requested consents are associated with invalid Purpose Declarations. The corresponding business identifiers are listed in the error description.
-error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | When asking for multiple consents, all the consents found are with the status APPROVED
-error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | The person is either incapacitated or with limited active legal capacity
+| Error key                                                         | Error code and status                                    | Error description                                                                                                                                                                   |
+| ----------------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error.validation                                                  | VALIDATION (400)                                         | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)                                                |
+| error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for all requested consents                                                                                      |
+| error.business.requested-consents-not-related-to-declarations     | REQUESTED_CONSENTS_NOT_RELATED_TO_DECLARATIONS (404)     | A valid Purpose Declaration and subsystem combination was not found for some of the requested consents. The corresponding business identifiers are listed in the error description. |
+| error.business.id-code-invalid                                    | ID_CODE_INVALID (500)                                    | The personal identification code does not comply with the standard                                                                                                                  |
+| error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | The requested consents are associated with invalid Purpose Declarations. The corresponding business identifiers are listed in the error description.                                |
+| error.business.all-requested-consents-have-already-been-approved  | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500)  | When asking for multiple consents, all the consents found are with the status APPROVED                                                                                              |
+| error.business.data-subject-error                                 | DATA_SUBJECT_ERROR (500)                                 | The person is either incapacitated or with limited active legal capacity                                                                                                            |
 
 ## saveSignedContainerAndApproveConsents
 
@@ -368,10 +369,10 @@ The query input consists of the UUID of the consent(s) and digitally signed Digi
 ]
 ```
 
-Parameter | Is it mandatory? | Type of data | Description
---- | --- | --- | ---
-consentConfirmReference | yes | string | UUID of the consent pending decision
-file | yes | string | Signed consent (DigiDoc container in ASICE format). Base64-encoded file within the string. NB! The file name in the container is "Nousolek.pdf". The container contains only the consent PDF file; no other files are allowed in the container.
+| Parameter               | Is it mandatory? | Type of data | Description                                                                                                                                                                                                                                     |
+| ----------------------- | ---------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference | yes              | string       | UUID of the consent pending decision                                                                                                                                                                                                            |
+| file                    | yes              | string       | Signed consent (DigiDoc container in ASICE format). Base64-encoded file within the string. NB! The file name in the container is "Nousolek.pdf". The container contains only the consent PDF file; no other files are allowed in the container. |
 
 **Response:**
 
@@ -391,17 +392,17 @@ The response to the query is an array containing a response for each consent reg
 ]
 ```
 
-Parameter | Type of data | Description
---- | --- | ---
-consentConfirmReference | string | UUID of the consent pending decision
-status | string | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.
-errorCode | string | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" - the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" - the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" - the UUID provided in the input cannot be found in the database.
+| Parameter               | Type of data | Description                                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| consentConfirmReference | string       | UUID of the consent pending decision                                                                                                                                                                                                                                                                                                                                                             |
+| status                  | string       | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.                                                                                                                                                                                                                                      |
+| errorCode               | string       | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" - the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" - the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" - the UUID provided in the input cannot be found in the database. |
 
 **Error management:**
 
-Error key | Error code and status | Error description
---- | --- | ---
-error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+| Error key        | Error code and status | Error description                                                  |
+| ---------------- | --------------------- | ------------------------------------------------------------------ |
+| error.validation | VALIDATION (400)      | Generic validation error messages (mandatory fields not specified) |
 
 Per-consent processing errors are returned in the response body via the `status` and `errorCode` fields (the HTTP status stays 200, see Response).
 
@@ -432,14 +433,14 @@ curl -k -X GET \
 }
 ```
 
-Parameter | Type of data | Description
---- | --- | ---
-status | string | Service health status. "UP" - the service is available.
+| Parameter | Type of data | Description                                             |
+| --------- | ------------ | ------------------------------------------------------- |
+| status    | string       | Service health status. "UP" - the service is available. |
 
 **Error management:**
 
-Error key | Error code and status | Error description
---- | --- | ---
-error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+| Error key        | Error code and status | Error description                                                  |
+| ---------------- | --------------------- | ------------------------------------------------------------------ |
+| error.validation | VALIDATION (400)      | Generic validation error messages (mandatory fields not specified) |
 
 If the service is unreachable, no response is returned (the security server returns a network or connection error).

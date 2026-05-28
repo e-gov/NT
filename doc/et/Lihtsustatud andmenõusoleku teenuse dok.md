@@ -5,16 +5,17 @@
 Versioon 0.6
 
 ---
+
 Versiooni ajalugu
 
-Versioon | Kuupäev | Kirjeldus
---- | --- | ---
-0.1 | 12.06.2025 | Dokument loodud.
-0.2 | 11.09.2025 | Dokument täiendatud.
-0.3 | 01.11.2025 | Dokument muudetud.
-0.4 | 06.01.2026 | Dokument muudetud.
-0.5 | 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.
-0.6 | 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi
+| Versioon | Kuupäev    | Kirjeldus                                                                   |
+| -------- | ---------- | --------------------------------------------------------------------------- |
+| 0.1      | 12.06.2025 | Dokument loodud.                                                            |
+| 0.2      | 11.09.2025 | Dokument täiendatud.                                                        |
+| 0.3      | 01.11.2025 | Dokument muudetud.                                                          |
+| 0.4      | 06.01.2026 | Dokument muudetud.                                                          |
+| 0.5      | 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.                                |
+| 0.6      | 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi |
 
 <!-- markdownlint-disable MD033 -->
 
@@ -57,7 +58,7 @@ Lihtsustatud andmenõusolekuteenuse sammud. Pilt on illustratiivne, et milline v
 
 ## getConsentReferences
 
-Päringu abil saab küsida Andmenõusolekuteenuselt kehtivate nõusoleku(te) nõusolekuviited (*Consent Reference*).
+Päringu abil saab küsida Andmenõusolekuteenuselt kehtivate nõusoleku(te) nõusolekuviited (_Consent Reference_).
 
 Kasutab: Klientrakendus
 
@@ -90,10 +91,10 @@ curl -k -X POST \
 }
 ```
 
-Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
---- | --- | --- | ---
-idCode | jah | string | Andmesubjekti isikukood
-purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
+| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                              |
+| ------------------------------------- | --------------- | ---------------- | ------------------------------------------------------ |
+| idCode                                | jah             | string           | Andmesubjekti isikukood                                |
+| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu) |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama, mis on määratud eesmärgideklaratsiooni(de)s.
 
@@ -105,18 +106,18 @@ purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklar
 }
 ```
 
-Parameeter | Andmetüüp | Kirjeldus
---- | --- | ---
-purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string | Tagastatakse ainult need eesmärgideklaratsioonid, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED).
-consentReference | string | Kehtiva nõusoleku nõusolekuviide - unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel.
+| Parameeter                                                 | Andmetüüp | Kirjeldus                                                                                                     |
+| ---------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------- |
+| purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string    | Tagastatakse ainult need eesmärgideklaratsioonid, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED). |
+| consentReference                                           | string    | Kehtiva nõusoleku nõusolekuviide - unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel.       |
 
 **Veahaldus:**
 
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline)
-error.http.404 | HTTP_NOT_FOUND (404) | Kehtivaid nõusolekuid ei leitud (staatuses APPROVED)
-error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile
+| Vea võti                       | Veakood ja staatus    | Vea kirjeldus                                                                                                  |
+| ------------------------------ | --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| error.validation               | VALIDATION (400)      | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline) |
+| error.http.404                 | HTTP_NOT_FOUND (404)  | Kehtivaid nõusolekuid ei leitud (staatuses APPROVED)                                                           |
+| error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile                                                                                 |
 
 ## validateConsentForClient
 
@@ -140,9 +141,9 @@ curl -k -X GET \
 
 **Päring:** https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6
 
-Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
---- | --- | --- | ---
-consentReference | jah | string | Nõusolekuviide - unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida
+| Parameeter       | On kohustuslik? | Andmetüüp | Kirjeldus                                                                                       |
+| ---------------- | --------------- | --------- | ----------------------------------------------------------------------------------------------- |
+| consentReference | jah             | string    | Nõusolekuviide - unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama, mis on määratud nõusolekuga seotud eesmärgideklaratsioonis.
 
@@ -157,20 +158,20 @@ consentReference | jah | string | Nõusolekuviide - unikaalne kood, mis vastab n
 }
 ```
 
-Parameeter | Andmetüüp | Kirjeldus
---- | --- | ---
-consentReference | string | Nõusolekuviide - unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse
-consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp
-idCode | string | Andmesubjekti isikukood
-purposeDeclarationId | string | Nõusolekuga seotud eesmärgideklaratsiooni identifikaator
+| Parameeter           | Andmetüüp            | Kirjeldus                                                                               |
+| -------------------- | -------------------- | --------------------------------------------------------------------------------------- |
+| consentReference     | string               | Nõusolekuviide - unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse |
+| consentExpiration    | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp                                                              |
+| idCode               | string               | Andmesubjekti isikukood                                                                 |
+| purposeDeclarationId | string               | Nõusolekuga seotud eesmärgideklaratsiooni identifikaator                                |
 
 **Veahaldus:**
 
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline)
-error.http.404 | HTTP_NOT_FOUND (404) | clientSubsystemIdentifier (Klientrakenduse x-tee alamsüsteemi) ja consentReference kombinatsiooni kohta puudub kehtiv nõusolek
-error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
+| Vea võti                                       | Veakood ja staatus                    | Vea kirjeldus                                                                                                                  |
+| ---------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| error.validation                               | VALIDATION (400)                      | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline)                 |
+| error.http.404                                 | HTTP_NOT_FOUND (404)                  | clientSubsystemIdentifier (Klientrakenduse x-tee alamsüsteemi) ja consentReference kombinatsiooni kohta puudub kehtiv nõusolek |
+| error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED                                                                                     |
 
 ## getThirdPartyConsents
 
@@ -210,11 +211,11 @@ curl -k -X POST \
 }
 ```
 
-Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
---- | --- | --- | ---
-idCode | jah | string | Andmesubjekti isikukood
-purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
-language | ei | string | Keelekood, mis määrab andmete keele. Toetatud väärtused: "et" - eesti, "en" - inglise, "ru" - vene. Vaikimisi väärtus "et".
+| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                   |
+| ------------------------------------- | --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | jah             | string           | Andmesubjekti isikukood                                                                                                     |
+| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                      |
+| language                              | ei              | string           | Keelekood, mis määrab andmete keele. Toetatud väärtused: "et" - eesti, "en" - inglise, "ru" - vene. Vaikimisi väärtus "et". |
 
 **Vastus:**
 
@@ -283,40 +284,40 @@ Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastu
 ]
 ```
 
-Parameeter | Andmetüüp | Kirjeldus
---- | --- | ---
-consentConfirmReference | string | Otsuse ootel nõusoleku UUID
-idCode | string | Andmesubjekti isikukood
-firstName | string | Eesnimi
-lastName | string | Perekonnanimi
-clientName | string | Osapoole nimi (Klientrakendus), kellele nõusoleku alusel andmed edastatakse
-clientRegistryCode | string | Osapoole registrikood, kellele nõusoleku alusel andmed esitatakse
-clientService | string | Andmete saaja pakutav teenus
-purposeDeclarationDescription | string | Eesmärgideklaratsiooni kirjeldus (andmete kasutamise eesmärk)
-serviceDeclarationName | string | Teenusedeklaratsiooni nimi
-serviceDeclarationDescription | string | Andmete edastaja andmete kirjeldus / teenuse andmekoosseisu kirjeldus
-dataProviderName | string | Andmekogu / infosüsteemi nimi
-dataControllerName | string | Andmete edastaja vastutav töötleja
-dataControllerRegistryCode | string | Andmete edastaja vastutava töötleja registrikood
-dataProcessorName | string | Andmete edastaja volitatud töötleja
-dataProcessorRegistryCode | string | Andmete edastaja volitatud töötleja registrikood
-validFrom | string | Nõusoleku kehtivus alates (timestamp sisuga string, nt 01.01.2022)
-validTo | string | Nõusoleku kehtivus kuni (timestamp sisuga string, nt 01.01.2023)
-files | array | Failide massiiv, mis sisaldab nii konteinerit kui ka PDF faili
-type | string | Faili tüüp. Võimalikud väärtused: CONSENT_CONTAINER või GENERATED_PDF
-content | string | Faili sisu kodeerituna Base64 vormingusse
+| Parameeter                    | Andmetüüp | Kirjeldus                                                                   |
+| ----------------------------- | --------- | --------------------------------------------------------------------------- |
+| consentConfirmReference       | string    | Otsuse ootel nõusoleku UUID                                                 |
+| idCode                        | string    | Andmesubjekti isikukood                                                     |
+| firstName                     | string    | Eesnimi                                                                     |
+| lastName                      | string    | Perekonnanimi                                                               |
+| clientName                    | string    | Osapoole nimi (Klientrakendus), kellele nõusoleku alusel andmed edastatakse |
+| clientRegistryCode            | string    | Osapoole registrikood, kellele nõusoleku alusel andmed esitatakse           |
+| clientService                 | string    | Andmete saaja pakutav teenus                                                |
+| purposeDeclarationDescription | string    | Eesmärgideklaratsiooni kirjeldus (andmete kasutamise eesmärk)               |
+| serviceDeclarationName        | string    | Teenusedeklaratsiooni nimi                                                  |
+| serviceDeclarationDescription | string    | Andmete edastaja andmete kirjeldus / teenuse andmekoosseisu kirjeldus       |
+| dataProviderName              | string    | Andmekogu / infosüsteemi nimi                                               |
+| dataControllerName            | string    | Andmete edastaja vastutav töötleja                                          |
+| dataControllerRegistryCode    | string    | Andmete edastaja vastutava töötleja registrikood                            |
+| dataProcessorName             | string    | Andmete edastaja volitatud töötleja                                         |
+| dataProcessorRegistryCode     | string    | Andmete edastaja volitatud töötleja registrikood                            |
+| validFrom                     | string    | Nõusoleku kehtivus alates (timestamp sisuga string, nt 01.01.2022)          |
+| validTo                       | string    | Nõusoleku kehtivus kuni (timestamp sisuga string, nt 01.01.2023)            |
+| files                         | array     | Failide massiiv, mis sisaldab nii konteinerit kui ka PDF faili              |
+| type                          | string    | Faili tüüp. Võimalikud väärtused: CONSENT_CONTAINER või GENERATED_PDF       |
+| content                       | string    | Faili sisu kodeerituna Base64 vormingusse                                   |
 
 **Veahaldus:**
 
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline)
-error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud nõusolekute puhul
-error.business.requested-consents-not-related-to-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_DECLARATIONS (404) | Osade küsitud nõusolekute puhul ei leitud kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni. Vastavad äriidentifikaatorid on loetletud veateate kirjelduses.
-error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile
-error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Vastavad äriidentifikaatorid on loetletud veateate kirjelduses.
-error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED
-error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | Isik on kas teovõimetu või piiratud teovõimega
+| Vea võti                                                          | Veakood ja staatus                                       | Vea kirjeldus                                                                                                                                                            |
+| ----------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| error.validation                                                  | VALIDATION (400)                                         | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood \<>&nbsp;11 märki, mittenumbriline)                                                           |
+| error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud nõusolekute puhul                                                                |
+| error.business.requested-consents-not-related-to-declarations     | REQUESTED_CONSENTS_NOT_RELATED_TO_DECLARATIONS (404)     | Osade küsitud nõusolekute puhul ei leitud kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni. Vastavad äriidentifikaatorid on loetletud veateate kirjelduses. |
+| error.business.id-code-invalid                                    | ID_CODE_INVALID (500)                                    | Isikukood ei vasta standardile                                                                                                                                           |
+| error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Vastavad äriidentifikaatorid on loetletud veateate kirjelduses.                                       |
+| error.business.all-requested-consents-have-already-been-approved  | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500)  | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED                                                                               |
+| error.business.data-subject-error                                 | DATA_SUBJECT_ERROR (500)                                 | Isik on kas teovõimetu või piiratud teovõimega                                                                                                                           |
 
 ## saveSignedContainerAndApproveConsents
 
@@ -368,10 +369,10 @@ Päringu sisendiks antakse nõusoleku(te) UUID ja digitaalselt allkirjastatud Di
 ]
 ```
 
-Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
---- | --- | --- | ---
-consentConfirmReference | jah | string | Otsuse ootel nõusoleku UUID
-file | jah | string | Allkirjastatud nõusolek (DigiDoc konteiner ASICE formaadis). Stringi sees Base64 kodeeritud fail. NB! Faili nimi konteineris on "Nousolek.pdf". Konteineris on ainult nõusoleku PDF fail, rohkem faile konteineris olla ei tohi.
+| Parameeter              | On kohustuslik? | Andmetüüp | Kirjeldus                                                                                                                                                                                                                        |
+| ----------------------- | --------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference | jah             | string    | Otsuse ootel nõusoleku UUID                                                                                                                                                                                                      |
+| file                    | jah             | string    | Allkirjastatud nõusolek (DigiDoc konteiner ASICE formaadis). Stringi sees Base64 kodeeritud fail. NB! Faili nimi konteineris on "Nousolek.pdf". Konteineris on ainult nõusoleku PDF fail, rohkem faile konteineris olla ei tohi. |
 
 **Vastus:**
 
@@ -391,17 +392,17 @@ Päringu vastuseks on massiiv, mis sisaldab iga nõusoleku kohta vastust andmete
 ]
 ```
 
-Parameeter | Andmetüüp | Kirjeldus
---- | --- | ---
-consentConfirmReference | string | Otsuse ootel nõusoleku UUID
-status | string | Kui andmete töötlemine õnnestub, tagastatakse staatuseks "OK". Kui andmete töötlemine ei õnnestunud, tagastatakse staatuseks "ERROR", koos vastav errorCode väärtusega.
-errorCode | string | Veateate info. Täidetakse ainult siis, kui status=ERROR. Võimalikud väärtused: "HTTP_NOT_FOUND" - X-tee klient ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis; "CONSENT_VALIDATE_INVALID" - sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga; "CONSENT_NOT_FOUND" - sisendis antud UUID ei leidu andmebaasist.
+| Parameeter              | Andmetüüp | Kirjeldus                                                                                                                                                                                                                                                                                                                                       |
+| ----------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference | string    | Otsuse ootel nõusoleku UUID                                                                                                                                                                                                                                                                                                                     |
+| status                  | string    | Kui andmete töötlemine õnnestub, tagastatakse staatuseks "OK". Kui andmete töötlemine ei õnnestunud, tagastatakse staatuseks "ERROR", koos vastav errorCode väärtusega.                                                                                                                                                                         |
+| errorCode               | string    | Veateate info. Täidetakse ainult siis, kui status=ERROR. Võimalikud väärtused: "HTTP_NOT_FOUND" - X-tee klient ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis; "CONSENT_VALIDATE_INVALID" - sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga; "CONSENT_NOT_FOUND" - sisendis antud UUID ei leidu andmebaasist. |
 
 **Veahaldus:**
 
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
+| Vea võti         | Veakood ja staatus | Vea kirjeldus                                                    |
+| ---------------- | ------------------ | ---------------------------------------------------------------- |
+| error.validation | VALIDATION (400)   | Validatsiooni üldised veateated (kohustuslikud väljad määramata) |
 
 Üksikute nõusolekute töötlemise vead tagastatakse vastusekehas `status` ja `errorCode` väljades (HTTP staatus jääb 200, vt Vastus).
 
@@ -432,14 +433,14 @@ curl -k -X GET \
 }
 ```
 
-Parameeter | Andmetüüp | Kirjeldus
---- | --- | ---
-status | string | Teenuse seisund. "UP" - teenus on saadaval.
+| Parameeter | Andmetüüp | Kirjeldus                                   |
+| ---------- | --------- | ------------------------------------------- |
+| status     | string    | Teenuse seisund. "UP" - teenus on saadaval. |
 
 **Veahaldus:**
 
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
+| Vea võti         | Veakood ja staatus | Vea kirjeldus                                                    |
+| ---------------- | ------------------ | ---------------------------------------------------------------- |
+| error.validation | VALIDATION (400)   | Validatsiooni üldised veateated (kohustuslikud väljad määramata) |
 
 Kui teenus ei ole kättesaadav, vastust ei tagastata (turvaserver tagastab võrgu- või ühenduse vea).

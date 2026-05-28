@@ -7,130 +7,76 @@ Versioon 2.1
 ---
 Versiooni ajalugu
 
-| Kuupäev      | Versioon | Kirjeldus
-| ---------- | --- | -----------
-| 26.01.2021 | 0.1 | Dokument loodud
-| 18.02.2021 | 0.2 | Dokument täiendatud
-| 16.03.2021 | 0.3 | Dokument muudetud
-| 03.05.2021 | 0.4 | Dokument muudetud
-| 11.05.2021 | 0.5 | Dokument muudetud
-| 25.05.2021 | 0.6 | Dokument muudetud
-| 21.06.2021 | 0.7 | Dokument muudetud
-| 15.09.2021 | 1.0 | Dokument avaldatud
-| 08.12.2023 | 2.0 | Dokument muudetud
-| 28.01.2025 | 2.1 | Dokument muudetud
+Kuupäev | Versioon | Kirjeldus
+--- | --- | ---
+26.01.2021 | 0.1 | Dokument loodud
+18.02.2021 | 0.2 | Dokument täiendatud
+16.03.2021 | 0.3 | Dokument muudetud
+03.05.2021 | 0.4 | Dokument muudetud
+11.05.2021 | 0.5 | Dokument muudetud
+25.05.2021 | 0.6 | Dokument muudetud
+21.06.2021 | 0.7 | Dokument muudetud
+15.09.2021 | 1.0 | Dokument avaldatud
+08.12.2023 | 2.0 | Dokument muudetud
+28.01.2025 | 2.1 | Dokument muudetud
 
 
 <!-- markdownlint-disable MD033 -->
 
-# **Sisukord** 
+# **Sisukord**
 
-[1. Sissejuhatus](#sissejuhatus)
-
-[1.1 Mõisted](#mõisted)
-
-[2. Eeltingimused andmenõusolekuteenuse kasutamiseks](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)
-
-[3. Põhiprotsesside kirjeldus kasutusjuhtudena](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
-
-[3.1. Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
-
-[3.2. Kasutusjuht 1.1 Kliendirakendus valideerib Andmesubjekti nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puuduolevaid nõusolekuid andma](#kasutusjuht-1.1-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
-
-[3.3. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine
-(andmekogu)
-](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
-
-[4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
-
-[5. Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
-
-[5.1. Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline
-kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
-
-[5.1.1. getConsentGroupReference](#getconsentgroupreference)
-
-[5.1.2. getConsentReferences](#getconsentreferences)
-
-[5.1.3. validateConsentForClient](#validateconsentforclient)
-
-[5.1.4. validateConsentForDataProvider](#validateconsentfordataprovider)
-
-[5.1.5. reportDataTransmission](#reportdatatransmission)
-
-[5.1.6. getConsentGroupReferenceRepresentable
-](#getconsentgroupreferencerepresentable)
-
-[5.1.7. postConsentFilterByStatus](#postConsentFilterByStatus)
-
-[6. Juhised andmenõusolekuteenuse testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)
-
-[6.1. Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni
-kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
-
-[6.2. Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine
-(*decline*)](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
-
-[6.3. Nõusolekuviidete pärimine](#nõusolekuviidete-pärimine)
-
-[6.4. Nõusolekute valideerimine (Klientrakendus ja Andmekogu)](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
-
-[6.5. Nõusolekute alusel edukast andmete pärimisest raporteerimine
-(Andmekogu)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
-
-[7. Andmenõusolekuteenuse haldusliidese kasutamise juhend](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
-
-[7.1. Rollid](#rollid)
-
-[7.2. Infosüsteemide haldus](#infosüsteemide-haldus)
-
-[7.2.1. Infosüsteemide haldusega seotud vaated](#infosüsteemide-haldusega-seotud-vaated)
-
-[7.2.2. Infosüsteemi andmed](#infosüsteemi-andmed)
-
-[7.3. Teenusedeklaratsioonide haldus](#teenusedeklaratsioonide-haldus)
-
-[7.3.1. Teenusedeklaratsioonide haldusega seotud vaated](#teenusedeklaratsioonide-haldusega-seotud-vaated)
-
-[7.3.2. Teenusedeklaratsiooni andmed](#teenusedeklaratsiooni-andmed)
-
-[7.3.3. Teenusedeklaratsiooni seisundidiagramm](#teenusedeklaratsiooni-seisundidiagramm)
-
-[7.4. Eesmärgideklaratsioonide haldus](#eesmärgideklaratsioonide-haldus)
-
-[7.4.1. Eesmärgideklaratsioonide haldusega seotud vaated](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
-
-[7.4.2. Eesmärgideklaratsiooni andmed](#eesmärgideklaratsiooni-andmed)
-
-[7.4.3. Eesmärgideklaratsiooni seisundidiagramm](#eesmärgideklaratsiooni-seisundidiagramm)
-
-[8. Statistika](#statistika)
-
-[8.1. Statistika väljund](#statistika-väljund)
-
-[8.1.1. Statistika andmestik](#statistika-andmestik)
-
-[9. Nõusoleku mall](#nõusoleku-mall)
-
-[10. Andmenõusolekuteenuse kasutajaliides](#andmenõusolekuteenuse-kasutajaliides)
-
-[10.1. Nõusoleku andmine](#nõusoleku-andmine)
-
-[10.1.1. Enne suunamist](#enne-suunamist)
-
-[10.1.2. Andmenõusolekuteenuses](#Andmenõusolekuteenuses)
-
-[10.1.3. Pärast suunamist](#pärast-suunamist)
-
-[10.2. Nõusolekute haldus](#nõusolekute-haldus)
-
-[10.2.1. Andmenõusolekuteenusest](#Andmenõusolekuteenusest)
-
-[10.2.2. Minu nõusolekud](#minu-nõusolekud)
-
-[10.2.3. Edastatud andmed](#edastatud-andmed)
-
-[10.2.4. Kasutustingimused](#kasutustingimused)
+- [1. Sissejuhatus](#sissejuhatus)
+  - [1.1 Mõisted](#mõisted)
+- [2. Eeltingimused andmenõusolekuteenuse kasutamiseks](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)
+- [3. Põhiprotsesside kirjeldus kasutusjuhtudena](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
+  - [3.1 Kasutusjuht 1: nõusolekute valideerimine (Klientrakendus) ja andmesubjekti suunamine puuduvaid nõusolekuid andma](#kasutusjuht-1-nõusolekute-valideerimine-klientrakendus-ja-andmesubjekti-suunamine-puuduvaid-nõusolekuid-andma)
+  - [3.2 Kasutusjuht 1.1: Kliendirakendus valideerib Andmesubjekti nõusoleku(d) ja suunab Andmesubjekti esindaja Andmesubjekti puudolevaid nõusolekuid andma](#kasutusjuht-11-kliendirakendus-valideerib-andmesubjekti-nõusolekud-ja-suunab-andmesubjekti-esindaja-andmesubjekti-puudolevaid-nõusolekuid-andma)
+  - [3.3 Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
+- [4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
+- [5. Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
+  - [5.1 Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
+    - [5.1.1 getConsentGroupReference](#getconsentgroupreference)
+    - [5.1.2 getConsentReferences](#getconsentreferences)
+    - [5.1.3 validateConsentForClient](#validateconsentforclient)
+    - [5.1.4 validateConsentForDataProvider](#validateconsentfordataprovider)
+    - [5.1.5 reportDataTransmission](#reportdatatransmission)
+    - [5.1.6 getConsentGroupReferenceRepresentable](#getconsentgroupreferencerepresentable)
+    - [5.1.7 postConsentFilterByStatus](#postconsentfilterbystatus)
+- [6. Juhised andmenõusolekuteenuse testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)
+  - [6.1 Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
+  - [6.2 Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
+  - [6.3 Nõusolekuviidete pärimine](#nõusolekuviidete-pärimine)
+  - [6.4 Nõusolekute valideerimine (Klientrakendus ja Andmekogu)](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
+  - [6.5 Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
+- [7. Andmenõusolekuteenuse haldusliidese kasutamise juhend](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
+  - [7.1 Rollid](#rollid)
+  - [7.2 Infosüsteemide haldus](#infosüsteemide-haldus)
+    - [7.2.1 Infosüsteemide haldusega seotud vaated](#infosüsteemide-haldusega-seotud-vaated)
+    - [7.2.2 Infosüsteemi andmed](#infosüsteemi-andmed)
+  - [7.3 Teenusedeklaratsioonide haldus](#teenusedeklaratsioonide-haldus)
+    - [7.3.1 Teenusedeklaratsioonide haldusega seotud vaated](#teenusedeklaratsioonide-haldusega-seotud-vaated)
+    - [7.3.2 Teenusedeklaratsiooni andmed](#teenusedeklaratsiooni-andmed)
+    - [7.3.3 Teenusedeklaratsiooni seisundidiagramm](#teenusedeklaratsiooni-seisundidiagramm)
+  - [7.4 Eesmärgideklaratsioonide haldus](#eesmärgideklaratsioonide-haldus)
+    - [7.4.1 Eesmärgideklaratsioonide haldusega seotud vaated](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
+    - [7.4.2 Eesmärgideklaratsiooni andmed](#eesmärgideklaratsiooni-andmed)
+    - [7.4.3 Eesmärgideklaratsiooni seisundidiagramm](#eesmärgideklaratsiooni-seisundidiagramm)
+- [8. Statistika](#statistika)
+  - [8.1 Statistika väljund](#statistika-väljund)
+  - [8.2 Statistika andmestik](#statistika-andmestik)
+- [9. Nõusoleku mall](#nõusoleku-mall)
+- [10. Andmenõusolekuteenuse kasutajaliides](#andmenõusolekuteenuse-kasutajaliides)
+  - [10.1 Nõusoleku andmine](#nõusoleku-andmine)
+    - [10.1.1 Enne suunamist](#enne-suunamist)
+    - [10.1.2 Andmenõusolekuteenuses](#andmenõusolekuteenuses)
+    - [10.1.3 Pärast suunamist](#pärast-suunamist)
+  - [10.2 Nõusolekute haldus](#nõusolekute-haldus)
+    - [10.2.1 Andmenõusolekuteenusest](#andmenõusolekuteenusest)
+    - [10.2.2 Minu nõusolekud](#minu-nõusolekud)
+      - [10.2.2.1 Nõusolekust loobumine](#nõusolekust-loobumine)
+      - [10.2.2.2 Nõusoleku pikendamine](#nõusoleku-pikendamine)
+    - [10.2.3 Edastatud andmed](#edastatud-andmed)
+    - [10.2.4 Kasutustingimused](#kasutustingimused)
 
 # Sissejuhatus
 
@@ -264,7 +210,7 @@ kehtivad.
 -   Klientrakendus pakub Andmesubjektile soovitud teenuse ja selle
     osutamiseks küsib vajalikud andmed Andmekogult. Käivitatakse
     „Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine
-    (andmekogu)" (vt. jaotis [3.2](#_Kasutusjuht_2:_Andmete).).
+    (andmekogu)" (vt. jaotis [3.2](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu).).
 
 3a. Klientrakendus küsib lingi nõusolekute andmiseks, kuigi mõned
 küsitud nõusolekud olid varem juba antud Andmesubjekti poolt ja
@@ -648,7 +594,7 @@ curl -k  \
 ```
 
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | jah | string | Andmesubjekti isikukood
 callback | jah | string | Klientrakenduse tagasisuunamise URL
 purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
@@ -665,14 +611,14 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 }
 ```
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consentGroupReference | string | Nõusolekutaotluse viide - unikaalne kood, mida kasutatakse nõusolekutaotluste eristamiseks
 url | string | Nõusoleku(te) URL, mille kaudu Andmesubjekt saab anda Andmenõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
 
 **Veahaldus:**
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud nõusolekute puhul
 error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile
@@ -717,7 +663,7 @@ kohta, kuid kehtiv nõusolek on ainult ühel neist):
 }
 ```
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | jah | string | Andmesubjekti isikukood
 purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)
     
@@ -732,7 +678,7 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 }
 ```
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 purposeDeclarationBusinessIdentifier
 (näidises: "ED_KAKS") | string | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu). Tagastatakse ainult need, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED)
 consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel
@@ -740,7 +686,7 @@ consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne ko
 **Veahaldus:**
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.http.404 | HTTP_NOT_FOUND (404) | Ei leitud kehtivaid nõusolekuid (staatuses APPROVED)
 error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile
@@ -768,7 +714,7 @@ curl -k -X GET \
 https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
     
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
@@ -785,7 +731,7 @@ mis on määratud nõusolekuga seotud eesmärgideklaratsioonis.
 }
 ```
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
 consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp
 idCode | string | Andmesubjekti isikukood
@@ -794,7 +740,7 @@ purposeDeclarationId | string | Nõusolekuga seotud eesmärgideklaratsiooni iden
 **Veahaldus:**
     
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.http.404 | HTTP_NOT_FOUND (404) | clientSubsystemIdentifier (Klientrakenduse x-tee alamsüsteemi) ja consentReference kombinatsiooni kohta  puudub kehtiv nõusolek
 error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
@@ -825,7 +771,7 @@ curl -k -X GET \
 https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
 
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
 
@@ -846,7 +792,7 @@ teenusedeklaratsiooniga IDga TD_KAKS)
 }
 ```  
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------- | ------------
+--- | --- | ---
 consentReference | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
 consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp
 idCode | string | Andmesubjekti isikukood. *Märkus:* Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse päring andmete järele sisaldab sama isikukoodi, mis on märatud selles parameetris
@@ -856,7 +802,7 @@ serviceDeclarationId | string | Nõusolekuga seotud teenusedeklaratsiooni identi
     
 **Veahaldus:**
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
 error.http.404 | HTTP_NOT_FOUND (404) | dataProviderSubsystemIdentifier (Andmekogu x-tee alamsüsteemi)  ja ConsentReference kombinatsiooni kohta  puudub kehtiv nõusolek
 error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
@@ -891,7 +837,7 @@ curl -k -X POST \
 https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
     
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 transmissionTimestamp | jah | timestamp | Aeg, millal toimus andmeedastus Andmekogust Klientrakendusesse
 consentReference | jah | string | Nõusolekuviide –  unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida
 
@@ -907,13 +853,13 @@ määratud nõusolekuga seotud teenusedeklaratsioonis.
 ``` 
     
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------- | ------------
-response | - | Kui päring õnnestub, tagastatakse "success"    
+--- | --- | ---
+response | - | Kui päring õnnestub, tagastatakse "success"
     
 **Veahaldus:**
     
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
 error.http.404 | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri jaoks puudub vaste
 
@@ -973,12 +919,12 @@ curl -X POST \
 ```
 
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 representativeIdCode | jah | string | Esindaja isikukood
 representeeIdCode | jah | string | Esindatava ehk Andmesubjekti isikukood
 relationType | jah | string | Esindatava seos esindajaga. Nt lapsevanem (esindaja) esindab last (esindatav), siis seose tüüp on „LAPS". <br /> Võimalikud väärtused (klassifikaatori väärtus): „LAPS".
 callback | jah | string | Klientrakenduses tagasisuunamise URL
-| purposeDeclarationBusinessIdentifiers | jah | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)
+ | purposeDeclarationBusinessIdentifiers | jah | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
@@ -995,22 +941,22 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 ```
 
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 url | string | Nõusoleku(te) URL, mille kaudu saab esindaja anda Andmesubjekt eest Andmenõusolekuteenuses Kliendirakenduse poolt küsitud nõusolekud
 
 **Veahaldus:**
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukoodi <>11 märki, mittenumbriline)
 error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | Kehtiva eesmärgideklaratsiooni ja alamsüsteemi kombinatsiooni ei leitud kõikide küsitud esindatava nõusolekute puhul
-error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile 
+error.business.id-code-invalid | ID_CODE_INVALID (500) | Isikukood ei vasta standardile
 error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud esindatava nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Küsitud äriidentifikaatorid, mis on seotud kehtetute eesmärgideklaratsoonidega eesmärgideklarastiooni mikroteenuse andmebaasis on loetletud vea kirjelduses
 error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud esindatava nõusolekud on staatuses APPROVED
 error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | Rahvastikuregistri andmete põhjal on esindaja kas teovõimetu või piiratud teovõimega või Rahvastikuregistri teenus tagastas vea
 error.business.represented_person-not-minor | REPRESENTED_PERSON_NOT_MINOR (500) | Esindatav ei ole alaealine
 error.business.representation_error | RR_REPRESENTATION_ERROR (500) | Rahvastikuregistri andmete põhjal puudub esindajal esindatava suhtes täielik isikuhooldusõigus või on esindaja staatus vale
-error.business.relation-type-error | RELATION_TYPE_INVALID (400) | Vale relationType väärtus (sellist klassifikaatorit ei eksisteeri)    
+error.business.relation-type-error | RELATION_TYPE_INVALID (400) | Vale relationType väärtus (sellist klassifikaatorit ei eksisteeri)
 
 ###  postConsentFilterByStatus
 
@@ -1054,9 +1000,9 @@ curl -X POST \
 ```
 
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentStatus | jah | array of string | viide otsitavate nõusolekute staatusele. Väärtused: VALID, INVALID.
-consentReferences | jah, ei tohi olla tühi | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000. 
+consentReferences | jah, ei tohi olla tühi | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000.
 consentReferences | jah | array of string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
@@ -1108,14 +1054,14 @@ Süsteem väljastab tulemused vastavalt consentStatus valikule:
 
 
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consent | array | Loetelu Consent objektidest
 invalidConsents | array | Optional. Loetelu nõusolekuviidetest sisendi põhjal, millele teenuse tarbijal ei olnud ligipääsu või kui kirjet ei eksisteeri.
 
 **Consent**
 
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.
 consentStatus | string | Nõusoleku olek.
 consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp.
@@ -1125,7 +1071,7 @@ purposeDeclarationId | string | Nõusolekuga seotud eesmärgideklaratsiooni iden
 **Veahaldus:**
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, andmetüüp ei vasta)
 
 # Juhised andmenõusolekuteenuse testimiseks liidestuja poolt
@@ -1171,14 +1117,14 @@ saabudes.
 vaatamine (1 eesmärgideklaratsioon)*
     
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem) | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
 2 | Kasuta saadud nõusolekuviidet Andmenõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolek REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
     
 *Testijuhtum 2 Nõusoleku URLi genereerimine ning nõusoleku info vaatamine (mitu eesmärgideklaratsiooni – test läbida juhul, kui sellise stsenaariumid jaoks on olemas sisuline vajadus)*
     
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, rohkem kui 1 ED identifikaatorit ja X-Tee alamsüsteem). Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse nõusolekute URL, mida on võimalik järgmises sammus kasutada
 2 | Kasuta saadud nõusolekuviidet Andmenõusolekuteenuses küsitud nõusolekute kuvamiseks | Kontrolli, et tagastatakse nõusolekud REQUESTED staatuses vastavalt sisendparameetriks olnud isikukoodi, TD ja ED andmetele
 
@@ -1187,15 +1133,15 @@ N | Tegevus | Oodatav tulemus
 Eeltingimus: nõusolekute uuesti küsimise/mitteküsimise loogika testimiseks on oluline, et infosüsteemi oleks loodud erinevates olekutes nõusolekuid, sest loogika sõltub neist. Võid testida korraga ühe eesmärgideklaratsiooniga, või mitmega (vastavalt kuidas tundub sisuliselt realistlik kasjutusjuhtum)
 
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
-1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api /consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem), kui selle kombinatsiooniga on juba APPROVED nõusolek olemas. Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse viga ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED 
+--- | --- | ---
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api /consent/getConsentGroupReference . Korrektsete sisendparameetritega (isikukood, ED identifikaator ja X-Tee alamsüsteem), kui selle kombinatsiooniga on juba APPROVED nõusolek olemas. Sisendiks olevad EDd peavad olema seotud sama alamsüsteemiga. | Kontrolli, et tagastatakse viga ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED
 2 | Nagu samm 1, kuid olemasolev nõusolek on REQUESTED | Kontrolli, et tagastatakse uus ConsentGroupReference olemasolevale nõusolekutaotlusele
 3 | Nagu samm 1, kuid olemasolev nõusolek on DECLINED või EXPIRED olekus | Kontrolli, et genereeritakse uus nõusolek uue ConsentGroupReference’ga
 
 *Testijuhtum 4 Nõusoleku URLi alternatiivsed stsenaariumid*
  
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReferenceValidatsioonireeglitele mittevastava isikukoodiga (mittenumbriline, kontrollnumber vale, lühem/pikem kui 11 märki), teised sisendparameetrid on korrektsed | Vale kontrollnumbri puhul kontrolli veateadet koodiga ID_CODE_INVALID, formaadi vea puhul VALIDATION
 2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference Tundmatu ED identifikaatoriga, teised parameetrid on korrektsed | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND
 3 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReferenceX-Tee alamsüsteemiga, mis ei lange kokku ED-s kasutusel oleva alamsüsteemiga, teised sisendparameetrid on korrektsed | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND
@@ -1228,14 +1174,14 @@ tuleks läbi teha vähemalt järgmised stsenaariumid:
 *Testijuhtum 8 Nõusolekuviidete pärimine*
     
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
-1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences  eelnevalt antud kehtivaid nõusolekuid omava sisendite (isikukood, ED identifikaator, X-Tee alamsüsteem) komplekti kohta | Kontrolli, et tagastatakse ainult APPROVED olekus nõusolekuviited koos ED identifikaatoriga. 
+--- | --- | ---
+1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences  eelnevalt antud kehtivaid nõusolekuid omava sisendite (isikukood, ED identifikaator, X-Tee alamsüsteem) komplekti kohta | Kontrolli, et tagastatakse ainult APPROVED olekus nõusolekuviited koos ED identifikaatoriga.
 2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences juhul, kui kehtivaid nõusolekuid etteantud sisendite komplekti puhul ei ole, on teistes olekutes nõusolekuid (isikukood, ED identifikaator, X-Tee alamsüsteem) | Kontrolli, et tagastatakse HTTP_NOT_FOUND
 
 *Testijuhtum 9 Nõusolekuviidete pärimine – alternatiivsed stsenaariumid*
 
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita  https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences  kui puudub kehtiv nõusolek sisendparameetrite komplekti jaoks | Kontrolli, et tagastatakse HTTP_NOT_FOUND
 
 ## Nõusolekute valideerimine (Klientrakendus ja Andmekogu)
@@ -1246,7 +1192,7 @@ jaoks)*
 Eeltingimus: nõusolekute valideerimiseks on ideaalis vajalik koostada erinevates staatustes nõusolekuid (REQUESTED, APPROVED, DECLINED, EXPIRED, INAPPLICABLE), kuid valideerimise loogika esmaseks testiks piisab APPROVED nõusolekust ning alternatiivse stsenaariumi testiks ühes DECLINED, EXPIRED või INAPPLICABLE nõusolekust (mittevaliidsed nõusolekud käituvad kõik samamoodi).
 
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient kokkulangevate clientSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on APPROVED staatuses | Kontrolli, et tagastatakse nõusolekuga seotud andmed (consentReference, consentExpiration, idCode, purposeDeclarationID)
 2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient kokkulangevate clientSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on mõnes muus staatuses kui APPROVED | Kontrolli, et nõusoleku infot ei tagastata
 3 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForDataProvider kokkulangevate dataProviderSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on APPROVED staatuses | Kontrolli, et tagastatakse nõusolekuga seotud andmed (consentReference, ConsentExpiration, idCode, clientSubsystemIdentifier, serviceDeclarationID)
@@ -1260,7 +1206,7 @@ N | Tegevus | Oodatav tulemus
 Eeltingimus: on olemas mõni nõusolek, millele raporteerida 
     
 N | Tegevus | Oodatav tulemus
------------- | ------------- | ------------
+--- | --- | ---
 1 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport olemasoleva nõusoleku consentReference-ga ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli, et tagastatakse “success” vastus ning võib kontrollida raporteerimise kirje olemasolu Andmenõusolekuteenuses
 2 | Käivita https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport consentReference-ga, mida ei eksisteeri, ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli veaolukorra haldamist, raporteerimise kirjet ei teki Andmenõusolekuteenusesse
     
@@ -1288,7 +1234,7 @@ Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenu
 ## Rollid
 
 Roll | Kirjeldus | Millised vaated näeb
------------- | ------------- | ------------
+--- | --- | ---
 RIA administraator | RIA administraator lisab/kustutab kasutajaid (teisi RIA administraatoreid ja infosüsteemide haldureid) ja jagab õiguseid: igale infosüsteemide haldurile määratakse tema vastutuses olev registrikood (või mitu registrikoode), mida valitakse rippmenüüst kõikidega x-tee kataloogist saadud registrikoodidega (member code). <br /> <br /> RIA administraator saab olla samal ajal ka infosüsteemide haldur, kui määrab endale sellist rolli. Sellel juhul talle peavad olema kättesaadavad nii RIA administraatorile kui ka infosüsteemide haldurile nähtavad vaated. | •	Haldusliidese kasutajate haldus <br /> •	Nõusolekute terviklus
 Infosüsteemide haldur (Andmekogu esindaja) | Andmenõusolekuteenuse haldusliidese põhikasutaja. <br /> <br />  Infosüsteemide haldur lisab, muudab, kustutab infosüsteeme oma vastutuses oleva registrikoodi(de) piires. Lisades/muutes infosüsteemi, näeb alamsüsteemide valikus ainult need alamsüsteemid, mis on seotud temale määratud registrikoodidega. <br /> <br />  Teeb statistikat oma vastutuses oleva(te) registrikoodi(de) piires. <br /> <br /> Juhul, kui on märgistatud valik „RIA administraatori statistika", saab teha statistikat üle kogu infosüsteemi. Seda valikut kasutavad RIA administraatorid. <br /> <br /> Ühe infosüsteemi eest saab vastutada mitu infosüsteemi haldurit. Iga haldur saab lisada/muuta/kustutada tema vastutuses olevaid infosüsteeme. Igal infosüsteemi halduril on ligipääs kõigile nendele infosüsteemidele ja deklaratsioonidele, mille alamsüsteemi identifikaatoris olev registrikood = tema kasutajaga seotud registrikood (member code). Kui infosüsteemi halduri kasutajakonto kustutatakse, tema poolt sisestatud infosüsteemid jäävad alles. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevate infosüsteemidega seotud teenusedeklaratsioone. <br /> <br />  Infosüsteemide haldur esitab ja haldab enda vastutuses olevaid eesmärgideklaratsioone. Infosüsteemide haldur saab seostada eesmärgideklaratsioonid ainult tema vastutusalas olevate teenusedeklaratsioonidega. | •	Infosüsteemide koondvaade <br /> •	Infosüsteemi lisamine <br /> •	Infosüsteemi muutmine <br /> •	Teenusedeklaratsioonide koondvaade <br /> •	Teenusedeklaratsiooni esitamine <br /> •	Teenusedeklaratsiooni detailvaade <br /> •	Teenusedeklaratsiooni muutmine <br /> •	Eesmärgideklaratsioonide koondvaade <br /> •	Eesmärgideklaratsiooni esitamine <br /> •	Eesmärgideklaratsiooni detailvaade <br /> •	Eesmärgideklaratsiooni muutmine <br /> •	Statistika vaade
 
@@ -1340,7 +1286,7 @@ andmed.
 ### Infosüsteemi andmed
     
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
------------- | ------------- | ------------ | ------------
+--- | --- | --- | ---
 Infosüsteemi nimi | Kaitstud teenuste (andmeid) pakkuva infosüsteemi nimi | Tervise infosüsteem | Jah
 Andmenõusolekuteenust kasutav alamsüsteem | Infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. <br />  <br /> Iga infosüsteemi puhul saab valida ainult ühte alamsüsteemi. <br />  <br /> Infosüsteemi ja alamsüsteemi vahel on seos „üks ühele“. | EE/GOV/70009770/digilugu | Jah
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi. <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el | Sotsiaalministeerium | Jah
@@ -1408,12 +1354,12 @@ muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 ### Teenusedeklaratsiooni andmed
 
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
------------- | ------------- | ------------ | ------------
+--- | --- | --- | ---
 Teenust pakkuv infosüsteem | Rippmenüü, mis sisaldab Andmenõusolekuteenusesse lisatud infosüsteemide nimesid. TD esitamise vormis valitakse üks nendest valikutest - infosüsteem, mis pakub deklareeritavat teenust. | Tervise infosüsteem | Ei
 Andmenõusolekuteenust kasutav alamsüsteem | Valitud infosüsteemile vastav alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Andmekogu alamsüsteem on õige osapool sellise päringu tegemiseks. (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | EE/GOV/70009770/digilugu | Ei
 Vastutav töötleja (omanik) | Vastutava töötleja (omaniku) asutuse ametlik nimi <br /> https://akit.cyber.ee/term/10448-vastutav-tootleja-iso-el (Väli täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | Sotsiaalministeerium | Ei
-Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel)| 70001952 | Ei
-Volitatud töötleja| Volitatud töötleja asutuse ametlik nimi <br /> https://akit.cyber.ee/term/12750 (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | TEHIK | Ei
+Vastutava töötleja registrikood | Vastutava töötleja (omaniku) asutuse registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | 70001952 | Ei
+Volitatud töötleja | Volitatud töötleja asutuse ametlik nimi <br /> https://akit.cyber.ee/term/12750 (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | TEHIK | Ei
 Volitatud töötleja registrikood | Volitatud organisatsiooni registrikood. (Täidetakse automaatselt teenust pakkuva infosüsteemi valimisel) | 70009770 | Ei
 Teenusedeklaratsiooni identifikaator | Teenusedeklaratsiooni inimloetav unikaalne tunnus | hl7_immuniseerimisandmed | Ei
 Teenusedeklaratsiooni nimi | Deklareeritava teenuse kaudu edastatava andmekoosseisu kokkuvõtlik lühike nimi (nähtav andmesubjektile nõusoleku andmekomplekti pealkirjana) | Immuniseerimisandmed | Jah
@@ -1426,7 +1372,7 @@ Nõusolek vajab allkirja: | Kas nõusolek tuleb digitaalselt allkirjastada. <br 
 Nõusolek vajab loobumisel allkirja | Kas nõusoleku loobumisel tuleb nõusolek digitaalselt allkirjastada. <br />Peale märke tegemist ja deklaratsiooni esitamist enam märget muuta ei saa. | Jah/ei | Ei
 Genereeri nõusoleku metaandmetest JSON | Kas nõusoleku allkirjastamisel genereeritakse nõusoleku metaandmetest JSON fail ja tõstetakse DigiDoc konteinerisse. <br />Peale märke tegemist ja deklaratsiooni esitamist enam märget muuta ei saa. | Jah/ei | Ei
 Nõusoleku pikendamine lubatud | Kas kinnitatud/allkirjastatud nõusolekute pikendamine on lubatud | Jah/ei | Jah
-Deklaratsiooni esitamise kuupäev | TD loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast. | 09.06.2023 |Ei
+Deklaratsiooni esitamise kuupäev | TD loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast. | 09.06.2023 | Ei
 Deklaratsiooni vormi täitis | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis TD esitamise vormi. | Mart Mets (Infosüsteemi haldur) | Ei
 Viimati muudetud | Kuupäev, kuna TD andmed olid viimati muudetud | 09.06.2023 | Ei
 Viimane muutja | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes viimasena muutis TD andmed | Mart Mets (Administraator) | Ei
@@ -1498,10 +1444,10 @@ muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 ### Eesmärgideklaratsiooni andmed
 
 Välja nimi | Kirjeldus | Näidisväärtus | Saab muuta?
------------- | ------------- | ------------ | ------------
+--- | --- | --- | ---
 Andmete saaja nimi | Klientrakenduse (ED deklareerija) ettevõte/asutuse ametlik nimi | Health Startup OÜ | Ei
 Andmete saaja registrikood | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood | 12819685 | Ei
-Andmenõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.  | EE/COM/12819685/immu	| Ei
+Andmenõusolekuteenust kasutav alamsüsteem | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut. | EE/COM/12819685/immu | Ei
 Andmete saaja pakutav teenus | Klientrakenduse või selle äriteenuse kaubanduslik nimi. Annab Andmesubjektile info, milline konkreetne äriteenus/infosüsteem hakkab kasutama tema isikuandmeid. | Immu | Ei
 Kasutatav teenusedeklaratsioon | Teenusedeklaratsioon (infosüsteemi nimi-TD identifikaator), millega deklareeritakse eesmärgi täitmiseks vajalikke andmeid pakkuvat kaitstud teenust. <br /> <br /> Teenusedeklaratsiooni (TD) valimine toimub kahe sammuga: <br /> <br /> 1) Infosüsteemi (millega on seotud TD) valimine - rippmenüü, mis sisaldab "Infosüsteemide halduse" kaudu lisatud infosüsteemide nimed. <br /> <br /> 2) TD identifikaatori valimine - rippmenüü, mis sisaldab eelmises sammus valitud infosüsteemiga seotud kehtivate teenusedeklaratsioonide identifikaatorid. <br />  <br /> Ühe ED-ga võib olla seotud ainult üks TD. | Tervise Infosüsteem-hl7_immuniseerimisandmed | Ei
 Eesmärgideklaratsiooni identifikaator | Eesmärgideklaratsiooni inimloetav unikaalne tunnus. | healthstartup_immuniseerimisa ndmed | Ei
@@ -1519,7 +1465,7 @@ Staatus | ED olek. Võimalikud olekud: KEHTIV ja KEHTETU (vt. jaotis 7.3.3.) | k
 
 ![Eesmärgideklaratsiooni seisundidiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image17.png)
     
-## Statistika
+# Statistika
 
 Statistika menüü on mõeldud statistika tegemiseks haldusliideses olevate
 deklaratsioonide ja nendega seotud nõusolekute kohta. Statistikat saavad
@@ -1540,7 +1486,7 @@ nimi:
     siis otsitakse andmete saajaid üle kogu süsteemi. Saab otsida ühe
     väärtuse järgi korraga.
 
-### Statistika väljund
+## Statistika väljund
 
 Statistika tulemuste tabelis saab näha statistikat vastavalt valitud
 Infosüsteemi ja/või andmete saaja järgi. Võimaldab statistika andmeid
@@ -1548,10 +1494,10 @@ sorteerida erinevate tulpade järgi.
 
 ![Statistika väljund](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image31.png)
 
-### Statistika andmestik
+## Statistika andmestik
 
 Välja nimi | Kirjeldus
------------- | -------------
+--- | ---
 Infosüsteem/Teenuse pakkuja | Infosüsteemi nimi, mis pakub deklareeritavat teenust.
 Andmete saaja | Kliendirakenduse (ED deklareerija) ettevõtte nimi)
 Kehtivad teenusedeklaratsioonid | Kehtivate teenusedeklaratsioonide kokku summa.
@@ -1566,7 +1512,7 @@ Kokku | Kokku summad.
 Järgmine tabel kirjeldab andmed, mis sisaldab nõusolek.
     
 Andmeväli | Näide | Allikas
------------- | ------------- | ------------
+--- | --- | ---
 Andmesubjekti nimi | Jaan Tamm | nõusolek
 Andmesubjekti isikukood | 39155555454 | nõusolek
 Andmekogu või infosüsteemi nimetus (andmete edastaja) | Tervise infosüsteem | teenusedeklaratsioon

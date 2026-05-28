@@ -15,103 +15,140 @@ Version | Date | Description
 0.4 | 06 January 2026 | Document revised.
 0.5 | 28 January 2026 | Document update. Error code updates.
 0.6 | 21 April 2026 | First name and last name removed from the /api/consent/third-party service input.
+
 <!-- markdownlint-disable MD033 -->
 
 # **Table of Contents**
-- [General info](#general-info)
-- [POST /api/consent/references](#post-apiconsentreferences)
-- [GET /api/consent/validation/client](#get-apiconsentvalidationclient)
-- [POST /api/consent/third-party](#post-apiconsentthird-party)
-- [POST /api/consent/third-party/container](#post-apiconsentthird-partycontainer)
-- [Error management](#error-management)
 
-## General info
+- [1. General info](#general-info)
+- [2. Technical specifications of the queries](#technical-specifications-of-the-queries)
+  - [2.1 getConsentReferences](#getconsentreferences)
+  - [2.2 validateConsentForClient](#validateconsentforclient)
+  - [2.3 getThirdPartyConsents](#getthirdpartyconsents)
+  - [2.4 saveSignedContainerAndApproveConsents](#savesignedcontainerandapproveconsents)
+  - [2.5 getConsentHealth](#getconsenthealth)
+
+# General info
 
 Architectural style: REST API
 
 Data structure: JSON
 
-Authentication: All queries sent to the Data Consent Service are checked to ensure that the x-tes authenticated subsystem accessing the Data Consent Service is the correct party to make the query. The Data Consent Service only responds to a query if the requester (i.e. the Data Collection or Client Application) is associated with the consent being checked, either through the subsystem specified in the purpose declaration or through the subsystem specified in the service declaration, which is always associated with the purpose declaration. Authentication is based on the metadata of the X-tee security server (client subsystem), which is compared with the specifications in the purpose declaration(s).
+Authentication: All queries sent to the Data Consent Service are checked to ensure that the X-tee-authenticated subsystem accessing the Data Consent Service is the correct party to make the query. The Data Consent Service only responds to a query if the requester (i.e. the Data Provider or the Client) is associated with the consent being checked, either through the subsystem specified in the Purpose Declaration or through the subsystem specified in the Service Declaration that is always associated with the Purpose Declaration. Authentication is based on the metadata of the X-tee security server (client subsystem), which is compared with the subsystem specified in the Purpose Declaration(s).
 
-You have two days to add a document to the consent service and 24 hours, or one day, to sign the document.
+You have two days to add a document to the Data Consent Service and 24 hours (one day) to sign the document.
 
-Data types:
-- String type parameters are UTF-8 encoded symbols.
-- Number type parameters are ASCII code sequences in the range 47-57 (numbers 0-9).
-- Timestamp type parameters are timestamps in ISO8601 format.
+**Data types**
 
-Web service URLs:
+- String parameters are characters encoded in UTF-8.
+- Number parameters are sequences of ASCII codes in the range 47–57 (digits 0–9).
+- Timestamp parameters are timestamps in the ISO 8601 format.
+
+**Web service URLs**
+
 - LIVE:  https://<security-server-address>/r1/EE/GOV/70006317/consent/consent/...
 - STAGE: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/...
 
-Steps for simplified data request service.
-The image is illustrative, showing what a simplified signing process might look like. The actual process depends on the business processes implemented in the specific institution.
+Steps for the Simplified Data Consent Service. The image is illustrative, showing what a simplified signing process might look like. The actual process depends on the business processes implemented in the specific institution.
 
-![PPic](../img/Lihtsustatud%20andmen%C3%B5usoleku%20teenus/pic_simplified.png)
+![Pic](../img/Lihtsustatud%20andmen%C3%B5usoleku%20teenus/pic_simplified.png)
 
-## POST /api/consent/references
-The query can be used to request consent references for valid consent(s) from the Data Consent Service.
+# Technical specifications of the queries
 
-API URL:  https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference 
+## getConsentReferences
 
-**Input**
-Parameter | Is it mandatory?| Data type | Description
---- | --- | --- | ---
-idCode | yes | string | Personal identification code of the data subject.
-purposeDeclarationBusinessIdentifiers | yes | array of strings | Declaration of objectives identifier (there may be several).
+The query can be submitted to ask the Data Consent Service for the consent references of valid consent(s) (*Consent Reference*).
 
+Used by: Client
 
-**Query example**
-```json
+**API URL:**
+
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference
+
+**Example of a query command (curl):**
+
+```
+curl -k -X POST \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference" \
+-d "{ \
+\"idCode\": \"60001019906\", \
+\"purposeDeclarationBusinessIdentifiers\": [\"PurposeDeclarationID\", \"ED_KAKS\", \"ED_KOLM\"]
+}"
+```
+
+**Query (Json):**
+
+```
 {
   "idCode": "60001019906",
   "purposeDeclarationBusinessIdentifiers": [
-    "EesmärgideklaratsiooniID",
-    "ED_KAKS",
-    "ED_KOLM"
+    "PurposeDeclarationID", "ED_KAKS", "ED_KOLM"
   ]
 }
 ```
 
-When receiving a query, the Data Consent Service checks that the identifier of the x-tee subsystem of the x-tee authenticated Client Application is the same as that specified in the purpose declaration(s).
+Parameter | Is it mandatory? | Type of data | Description
+--- | --- | --- | ---
+idCode | yes | string | Personal identification code of the Data Subject
+purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declaration identifier (can be more than one)
 
-**Output**
-Parameter | Data type | Description
---- | --- | ---
-purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string | Only those declarations of intent for which valid consent has been found (status APPROVED) will be returned.
-consentReference | string | Valid consent reference –  a unique code used to validate the validity of consent.
+**Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in X-tee is the same as the one specified in the Purpose Declaration(s).
 
-**Query example**
-```json
+**Response:**
+
+```
 {
   "ED_KAKS": "91e9844d-3b5e-4df8-9254-42316b1607b6"
 }
 ```
 
-## GET /api/consent/validation/client
-The query can be used to ask the Data Consent Service about the validity of consent. When using the simplified data consent service, this service is optional and is used for validation. Upon receiving the query, the Data Consent Service checks that the x-tee authenticated Client Application x-tee subsystem identifier is the same as that specified in the consent-related purpose declaration.
-
-API URL: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client 
-
-**Input**
-Parameter | Is it mandatory? | Data type | Description
---- | --- | --- | ---
-consentReference | yes | string | Consent reference – a unique code corresponding to the consent whose validity is to be validated.
-
-**Query example**
-
-`https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6`
-
-**Output**
-Parameter | Data type | Description
+Parameter | Type of data | Description
 --- | --- | ---
-consentReference | string | Consent reference – a unique code corresponding to the consent whose validity is being validated. 
-consentExpiration | timestamp (ISO 8601) | End of consent validity period.
-idCode | string | Personal identification code of the data subject.
-purposeDeclarationId | string | Identifier of the consent-related purpose statement.
+purposeDeclarationBusinessIdentifier (in the example: "ED_KAKS") | string | Only those Purpose Declarations for which a valid consent has been found (with the status APPROVED) are returned.
+consentReference | string | Consent Reference of a valid consent -- a unique code used to determine the validity of the consent.
 
-**Query example**
-```json
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
+error.http.404 | HTTP_NOT_FOUND (404) | No valid consents found (with the status APPROVED)
+error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard
+
+## validateConsentForClient
+
+The query can be submitted to ask the Data Consent Service about the validity of a consent. When using the Simplified Data Consent Service, this query is optional and is used for validation.
+
+Used by: Client
+
+**API URL:**
+
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
+
+**Example of a query command (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6"
+```
+
+**Query:** https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6
+
+Parameter | Is it mandatory? | Type of data | Description
+--- | --- | --- | ---
+consentReference | yes | string | Consent Reference -- a unique code corresponding to the consent the validity of which is to be determined
+
+**Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in X-tee is the same as the one specified in the Purpose Declaration associated with the consent.
+
+**Response:**
+
+```
 {
   "consentReference": "91e9844d-3b5e-4df8-9254-42316b1607b6",
   "consentExpiration": "2022-01-22T23:59:59.999999Z",
@@ -120,22 +157,50 @@ purposeDeclarationId | string | Identifier of the consent-related purpose statem
 }
 ```
 
-## POST /api/consent/third-party 
-Using a query, the Client Application can ask the Data Consent Service to grant consent(s) that are missing from the consent request(s).
+Parameter | Type of data | Description
+--- | --- | ---
+consentReference | string | Consent Reference -- a unique code corresponding to the consent the validity of which is determined
+consentExpiration | timestamp (ISO 8601) | Expiration date of the consent
+idCode | string | Personal identification code of the Data Subject
+purposeDeclarationId | string | Identifier of the Purpose Declaration associated with the consent
 
-The Data Consent Service processes the incoming query and generates a consent request data set based on the combination of the personal identification code and the purpose statement provided in the input. If there are several purpose declarations in the input, a separate data set, i.e. consent request, is generated for each purpose declaration. Each consent request (consent pending decision) is assigned a unique UUID. The consent request data set contains the consent request metadata and a system-generated container containing the consent data compiled into a PDF file or only the PDF file. The client application signs the PDF file and returns the signed file to the Data Consent Service. 
+**Error management:**
 
-API URL: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party 
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
+error.http.404 | HTTP_NOT_FOUND (404) | No valid consent exists for the combination of clientSubsystemIdentifier (Client X-tee subsystem) and consentReference
+error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | The queried consent is not with the status APPROVED
 
-**Input**
-Parameter | Is it mandatory? | Data type | Description
---- | --- | --- | ---
-idCode | yes | string | Personal identification code of the data subject.
-purposeDeclarationBusinessIdentifiers | yes | array of String | Identifier of the statement of objectives. There can be several.
-language | no | string | 	Language code that determines the language of the data. Two-letter codes are used (e.g., "en" for English, "et" for Estonian). The default value is "et". 
+## getThirdPartyConsents
 
-**Query example**
-```json
+The query can be submitted by the Client to ask the Data Consent Service for consent request(s) to grant missing consent(s).
+
+The Data Consent Service processes the incoming query and generates a consent request data set based on the combination of the personal identification code and the Purpose Declaration provided in the input. If the input contains several Purpose Declarations, a separate data set (i.e. consent request) is generated for each Purpose Declaration. Each consent request (consent pending decision) is assigned a unique UUID. The consent request data set contains the consent request metadata and a system-generated container containing the consent data compiled into a PDF file, or only the PDF file. The Client signs the PDF file and returns the signed file to the Data Consent Service.
+
+Used by: Client
+
+**API URL:**
+
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party
+
+**Example of a query command (curl):**
+
+```
+curl -k -X POST \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party" \
+-d "{ \
+\"idCode\": \"60001019906\", \
+\"purposeDeclarationBusinessIdentifiers\": [\"ED_KAKS\", \"ED_KOLM\"]
+}"
+```
+
+**Query (Json):**
+
+```
 {
   "idCode": "60001019906",
   "purposeDeclarationBusinessIdentifiers": [
@@ -145,34 +210,17 @@ language | no | string | 	Language code that determines the language of the data
 }
 ```
 
-**Output**
-The response to the request is a dataset of consent request(s) in JSON format. The response consists of an array that includes both an unsigned container containing a PDF and a separate consent request file in PDF format, which the client adds to the container themselves and sends back signed.
+Parameter | Is it mandatory? | Type of data | Description
+--- | --- | --- | ---
+idCode | yes | string | Personal identification code of the Data Subject
+purposeDeclarationBusinessIdentifiers | yes | array of strings | Purpose Declaration identifier (can be more than one)
+language | no | string | Language code that determines the language of the data. Two-letter codes are used (e.g. "en" -- English, "et" -- Estonian). The default value is "et".
 
-Parameter | Data type | Description
---- | --- | ---
-consentReference | string | Consent UUID pending decision.
-idCode | string | Personal identification number.
-firstName | string | First name.
-lastName | string | Last name.
-clientName | string | Name of the party (e.g., customer application) to whom the data is transferred on the basis of consent.
-clientRegistryCode | string | The registration code of the party to whom the data is submitted on the basis of consent.
-clientService | string | Service offered by the data recipient.
-purposeDeclarationDescription | string | Description of the purpose statement (purpose of data use).
-serviceDeclarationName | string | Service declaration name.
-serviceDeclarationDescription | string | Description of the data provided by the data provider/description of the service data set.
-dataProviderName | string | Name of the database/information system.
-dataControllerName | string | Data controller responsible for data transfer.
-dataControllerRegistryCode | string | Registration code of the controller responsible for data processing.
-dataProcessorName | string | Authorized processor of data.
-dataProcessorRegistryCode | string | Registration code of the data transmitter's authorized processor.
-validFrom | string | Validity of consent: from... Timestamp string. E.g. 01.01.2022
-validTo | string | Validity of consent: until... Timestamp string. E.g. 01.01.2023
-files | string | The file array contains both the container and the PDF file.
-type | string | File type. Possible values are CONSENT_CONTAINER or GENERATED_PDF.
-content | string | File contents encoded in Base64 format. 
+**Response:**
 
-**Query example**
-```json
+The response to the query is a consent request data set in JSON format. The response consists of an array containing both an unsigned container (which contains a PDF) and a separate consent request file in PDF format, which the Client adds to the container itself and sends back signed.
+
+```
 [
   {
     "consentConfirmReference": "7bf5904a-bce3-483f-99c2-527937b032b7",
@@ -235,75 +283,161 @@ content | string | File contents encoded in Base64 format. 
 ]
 ```
 
-## POST /api/consent/third-party/container
-The query can be used to send signed consent(s) to the Data Consent Service.
+Parameter | Type of data | Description
+--- | --- | ---
+consentConfirmReference | string | UUID of the consent pending decision
+idCode | string | Personal identification code of the Data Subject
+firstName | string | First name
+lastName | string | Last name
+clientName | string | Name of the party (Client) to which the data is transmitted on the basis of the consent
+clientRegistryCode | string | Registry code of the party to which the data is transmitted on the basis of the consent
+clientService | string | Service provided by the data recipient
+purposeDeclarationDescription | string | Description of the Purpose Declaration (purpose of data use)
+serviceDeclarationName | string | Name of the Service Declaration
+serviceDeclarationDescription | string | Description of the data transmitted by the data transmitter / description of the service data set
+dataProviderName | string | Name of the Data Provider / information system
+dataControllerName | string | Data controller of the data transmitter
+dataControllerRegistryCode | string | Registry code of the data controller of the data transmitter
+dataProcessorName | string | Data processor of the data transmitter
+dataProcessorRegistryCode | string | Registry code of the data processor of the data transmitter
+validFrom | string | Consent validity from (timestamp-content string, e.g. 01.01.2022)
+validTo | string | Consent validity until (timestamp-content string, e.g. 01.01.2023)
+files | array | Array of files containing both the container and the PDF file
+type | string | File type. Possible values: CONSENT_CONTAINER or GENERATED_PDF
+content | string | File contents encoded in Base64 format
 
-API URL: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party/container
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
+error.business.requested-consents-not-related-to-any-declarations | REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS (404) | A valid Purpose Declaration and subsystem combination was not found for all requested consents
+error.business.id-code-invalid | ID_CODE_INVALID (500) | The personal identification code does not comply with the standard
+error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | The requested consents are associated with invalid Purpose Declarations
+error.business.all-requested-consents-have-already-been-approved | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500) | When asking for multiple consents, all the consents found are with the status APPROVED
+error.business.data-subject-error | DATA_SUBJECT_ERROR (500) | The person is either incapacitated or with limited active legal capacity
+
+## saveSignedContainerAndApproveConsents
+
+The query can be submitted to send signed consent(s) to the Data Consent Service.
+
+Used by: Client
+
+**API URL:**
+
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party/container
 
 **Checks and storage logic**
 
-The data consent service processes the incoming query. During query processing, the data in the query is compared with the data in the database, where the following is checked:
+The Data Consent Service processes the incoming query. During query processing, the data in the query is compared with the data in the database, where the following is checked:
 
-- Whether the X-Road client that made the query matches the consent-related service declaration in the database.
-- Whether the fields found in the database entry by UUID match the consent information.
+- Whether the X-tee client that made the query matches the one in the database in the Service Declaration associated with the consent.
+- Whether the verification fields found in the database entry by UUID match the consent information.
 - Whether the signed DigiDoc container and signature are valid.
 - Whether the PDF hash in the DigiDoc container matches the PDF hash in the database container.
-- Whether the signature has been given within the last hour (time period adjustable with system parameter allowedSignatureTimeInMinutes = 24 hours).
+- Whether the signature has been provided within the last hour (the time period is adjustable with the system parameter `allowedSignatureTimeInMinutes` = 24 hours).
 - Whether the personal data in the signature (personal identification code, first name, last name) matches the information in the database.
-- If the data checks return a positive response ("status": "OK"), the data is saved in the following tables in the "Consent" database: CONSENT, CONSENT_SNAPSHOT, FILE. The unsigned DigiDoc container in the "FILE" table is replaced with the signed DigiDoc container from the query.
-- In case of an error, the status is returned with an error code (see Query response).
+- If the data checks return a positive response ("status": "OK"), the data is saved in the following tables of the "Consent" database: CONSENT, CONSENT_SNAPSHOT, FILE. The unsigned DigiDoc container in the "FILE" table is replaced with the signed DigiDoc container from the query.
+- In case of an error, the status is returned with an error code (see Response).
 
-**Input**
-The query input consists of the UUID of the consent(s) and digitally signed DigiDoc container(s). The input consists of an array containing one or more signed consents. One consent consists of the consent UUID value and a signed digital container containing the consent file in pdf format.
+**Example of a query command (curl):**
 
-Parameter | Is it mandatory? | Data type | Description
---- | --- | --- | ---
-consentConfirmReference | yes | string | Consent UUID pending decision.
-file | yes | string | Signed consent (DigiDoc container in ASICE format).  Base64-encoded file within the string. NB! The file name in the container is "Nousolek.pdf". The container only contains the consent PDF file; no other files are allowed in the container.
-
-**Input**
-```json
-[{
- "consentConfirmReference": "7bf5904a-bce3-483f-99c2-527937b032b7",
- "file": "0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2Npbmcg"
-}]
+```
+curl -k -X POST \
+-H "accept: application/json" \
+-H "Content-type: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/third-party/container" \
+-d "[{ \
+\"consentConfirmReference\": \"7bf5904a-bce3-483f-99c2-527937b032b7\", \
+\"file\": \"0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2Npbmcg\"
+}]"
 ```
 
-**Output**
-The response to the query is an array containing a response for each consent regarding the success/failure of data processing. The array consists of the UUID value of the consent awaiting a decision, the status, and the errorCode value if data processing fails.
+**Query (Json):**
 
-Parameter | Is it mandatory? | Data type | Description
---- | --- | --- | ---
-consentConfirmReference | yes | string | Consent UUID pending decision.
-status | yes | string | If the data processing is successful, the status "OK" is returned; If the data processing is unsuccessful, the status "ERROR" is returned, together with the corresponding errorCode value. 
-errorCode | yes | string | 	
-HTTP_NOT_FOUND - The X-road client is not the same as the one specified in the consent-related service declaration; CONSENT_VALIDATE_INVALID – The consent data provided in the input does not match the consent in the database. CONSENT_NOT_FOUND – The UUID provided in the input cannot be found in the database.
+The query input consists of the UUID of the consent(s) and digitally signed DigiDoc container(s). The input consists of an array containing one or more signed consents. One consent consists of the consent UUID value and a signed digital container containing the consent file in PDF format.
 
-**Query example**
-```json
-[{
-"consentConfirmReference": "7bf5904a-bce3-483f-99c2-527937b032b7",
-"status": "OK"
-}, {
-"consentConfirmReference": "f16904d0-6f9c-44b4-96a6-ae2106ab326b",
-"status": "ERROR",
-"errorCode": "CONSENT_NOT_FOUND"
-}]
+```
+[
+  {
+    "consentConfirmReference": "7bf5904a-bce3-483f-99c2-527937b032b7",
+    "file": "0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2Npbmcg"
+  }
+]
 ```
 
-## Error management
-HTTP code | Error code | Description
+Parameter | Is it mandatory? | Type of data | Description
+--- | --- | --- | ---
+consentConfirmReference | yes | string | UUID of the consent pending decision
+file | yes | string | Signed consent (DigiDoc container in ASICE format). Base64-encoded file within the string. NB! The file name in the container is "Nousolek.pdf". The container contains only the consent PDF file; no other files are allowed in the container.
+
+**Response:**
+
+The response to the query is an array containing a response for each consent regarding the success or failure of data processing. The array consists of the UUID value of the consent pending decision, the status, and the errorCode value if data processing fails.
+
+```
+[
+  {
+    "consentConfirmReference": "7bf5904a-bce3-483f-99c2-527937b032b7",
+    "status": "OK"
+  },
+  {
+    "consentConfirmReference": "f16904d0-6f9c-44b4-96a6-ae2106ab326b",
+    "status": "ERROR",
+    "errorCode": "CONSENT_NOT_FOUND"
+  }
+]
+```
+
+Parameter | Type of data | Description
 --- | --- | ---
-200 | OK | The query was successful and the corresponding query output is displayed.
-400 | VALIDATION FAILURE | Validation failed, required fields are empty. 
-400 | BAD REQUEST | Incorrect query content.
-404 | NOT FOUND | The combination of the current statement of objectives and subsystem was not found for all requested consents. 
-404 | REQUESTED CONSENTS ARE NOT RELATED TO ANY PURPOSE DECLARATIONS | The purpose identifier does not correspond to any existing declaration. 
-500 | INVALID ID CODE | The personal identification code is incorrect or the format is wrong.
-500 | INTERNAL SERVER ERROR | Required field is missing or empty.
-500 | ALL REQUESTED CONSENTS HAVE ALREADY BEEN  APPROVED | Multiple consent requests if all consents found are in APPROVED status.
-500 | DATA SUBJECT ERROR | According to the personal identification code, the person is a minor and/or legally incompetent. 
-503 | NOT FOUND | Incorrect X-ROAD-CLIENT header. 
+consentConfirmReference | string | UUID of the consent pending decision
+status | string | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.
+errorCode | string | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" -- the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" -- the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" -- the UUID provided in the input cannot be found in the database.
 
+**Error management:**
 
- 
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+error.http.404 | HTTP_NOT_FOUND (404) | No match exists for the combination of consentConfirmReference and the X-tee client header
+
+## getConsentHealth
+
+The query can be submitted to check the health status of the Data Consent Service.
+
+Used by: Client and Data Provider
+
+**API URL:**
+
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health
+
+**Example of a query command (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health"
+```
+
+**Response:**
+
+```
+{
+  "status": "UP"
+}
+```
+
+Parameter | Type of data | Description
+--- | --- | ---
+status | string | Service health status. "UP" -- the service is available.
+
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+
+If the service is unreachable, no response is returned (the security server returns a network or connection error).

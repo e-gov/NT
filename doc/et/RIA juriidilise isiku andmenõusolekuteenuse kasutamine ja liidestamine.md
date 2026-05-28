@@ -1,124 +1,131 @@
 # RIA juriidilise isiku andmenõusolekuteenuse kasutamine ja liidestamine
 
+09.03.2026
 
+Versioon 0.1
+
+---
 Versiooni ajalugu
 
-| Kuupäev    | Versioon | Kirjeldus       |
-|------------|----------|-----------------|
-| 09.03.2026 | 0.1      | Dokument loodud |
-
-Sisukord
-
-[1 Sissejuhatus](#1-sissejuhatus)
-
-[1.1 Mõisted](#11-mõisted)
-
-[2 Eeltingimused andmenõusolekuteenuse kasutamiseks](#2-eeltingimused-andmenõusolekuteenuse-kasutamiseks)
-
-[3 Põhiprotsesside kirjeldus kasutusjuhtudena](#3-põhiprotsesside-kirjeldus-kasutusjuhtudena)
-
-[3.1 Kasutusjuht 1: Andmesubjekti(de)le nõusolekupäringu tegemine Teenusepakkuja poolt](#31-kasutusjuht-1-andmesubjektidele-nõusolekupäringu-tegemine-teenusepakkuja-poolt)
-
-[3.2 Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)](#32-kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
-
-[4 Nõusoleku seisundidiagramm](#4-nõusoleku-seisundidiagramm)
-
-[5 Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#5-andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
-
-[5.1 Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus](#51-andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
-
-[5.1.1 Eesmärgideklaratsioonide nimekirja päring - purposedeclarations](#511-eesmärgideklaratsioonide-nimekirja-päring---purposedeclarations)
-
-[5.1.2 Nõusoleku päringu algatamine/nõusoleku küsimine - create](#512-nõusoleku-päringu-algataminenõusoleku-küsimine---create)
-
-[5.1.3 Nõusolekuviidete päring - *status*](#513-nõusolekuviidete-päring---status)
-
-[5.1.4 Nõusoleku(te) lingi (URL) päring - *url*](#514-nõusolekute-lingi-url-päring---url)
-
-[5.1.5 Nõusoleku kehtivuse päring Teenusepakkujale/Klientrakendusele - client](#515-nõusoleku-kehtivuse-päring-teenusepakkujaleklientrakendusele---client)
-
-[5.1.6 Nõusoleku kehtivuse päring Andmekogule - *dataprovider*](#516-nõusoleku-kehtivuse-päring-andmekogule---dataprovider)
-
-[5.1.7 Edastatud andmed - reportDataTransmission](#517-edastatud-andmed---reportdatatransmission)
-
-[6 Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt](#6-juhised-andmenõusolekuteenuse-jurnt-testimiseks-liidestuja-poolt)
-
-[6.1 Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)](#61-nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
-
-[6.2 Eesmärgideklaratsioonide pärimine (Teenusepakkuja)](#62-eesmärgideklaratsioonide-pärimine-teenusepakkuja)
-
-[6.3 Nõusoleku päringu algatamine / nõusoleku küsimine (Teenusepakkuja)](#63-nõusoleku-päringu-algatamine--nõusoleku-küsimine-teenusepakkuja)
-
-[6.4 Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)](#64-nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
-
-[6.5 Nõusolekuviidete pärimine](#65-nõusolekuviidete-pärimine)
-
-[6.6 Nõusolekute valideerimine (Klientrakendus ja Andmekogu)](#66-nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
-
-[6.7 Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)](#67-nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
-
-[7 Andmenõusolekuteenuse haldusliidese kasutamise juhend](#7-andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
-
-[7.1 Haldusliidese rollid](#71-haldusliidese-rollid)
-
-[7.2 Infosüsteemide haldus](#72-infosüsteemide-haldus)
-
-[7.2.1 Infosüsteemide haldusega seotud vaated](#721-infosüsteemide-haldusega-seotud-vaated)
-
-[7.2.2 Infosüsteemi andmed](#722-infosüsteemi-andmed)
-
-[7.3 Teenusedeklaratsioonide haldus](#73-teenusedeklaratsioonide-haldus)
-
-[7.3.1 Teenusedeklaratsioonide haldusega seotud vaated](#731-teenusedeklaratsioonide-haldusega-seotud-vaated)
-
-[7.3.2 Teenusedeklaratsiooni andmed](#732-teenusedeklaratsiooni-andmed)
-
-[7.3.3 Teenusedeklaratsiooni seisundidiagramm](#733-teenusedeklaratsiooni-seisundidiagramm)
-
-[7.4 Eesmärgideklaratsioonide haldus](#74-eesmärgideklaratsioonide-haldus)
-
-[7.4.1 Eesmärgideklaratsioonide haldusega seotud vaated](#741-eesmärgideklaratsioonide-haldusega-seotud-vaated)
-
-[7.4.2 Eesmärgideklaratsiooni andmed](#742-eesmärgideklaratsiooni-andmed)
-
-[7.4.3 Eesmärgideklaratsiooni seisundidiagramm](#743-eesmärgideklaratsiooni-seisundidiagramm)
-
-[8 Statistika](#8-statistika)
-
-[8.1 Statistika väljund](#81-statistika-väljund)
-
-[8.2 Statistika andmestik](#82-statistika-andmestik)
-
-[9 Nõusoleku mall](#9-nõusoleku-mall)
-
-[10 Andmenõusolekuteenuse kasutajaliides](#10-andmenõusolekuteenuse-kasutajaliides)
-
-[10.1 Nõusoleku andmine](#101-nõusoleku-andmine)
-
-[10.1.1 Klientrakenduse tegevused enne suunamist](#1011-klientrakenduse-tegevused-enne-suunamist)
-
-[10.1.2 Andmenõusolekuteenuses](#1012-andmenõusolekuteenuses)
-
-[10.1.3 Klientrakenduse tegevused peale suunamist](#1013-klientrakenduse-tegevused-peale-suunamist)
-
-[10.2 Nõusolekute haldus](#102-nõusolekute-haldus)
-
-[10.2.1 Nõusolekust loobumine](#1021-nõusolekust-loobumine)
-
-[10.3 Nõusoleku küsimine](#103-nõusoleku-küsimine)
-
-[10.3.1 Nõusolekute küsimine Klientrakenduse kaudu](#1031-nõusolekute-küsimine-klientrakenduse-kaudu)
-
-[10.4 Edastatud andmed](#104-edastatud-andmed)
+| Kuupäev    | Versioon | Kirjeldus
+| ---------- | --- | -----------
+| 09.03.2026 | 0.1 | Dokument loodud
 
 
-# 1 Sissejuhatus
+<!-- markdownlint-disable MD033 -->
+
+# **Sisukord**
+
+[1. Sissejuhatus](#sissejuhatus)
+
+[1.1 Mõisted](#mõisted)
+
+[2. Eeltingimused andmenõusolekuteenuse kasutamiseks](#eeltingimused-andmenõusolekuteenuse-kasutamiseks)
+
+[3. Põhiprotsesside kirjeldus kasutusjuhtudena](#põhiprotsesside-kirjeldus-kasutusjuhtudena)
+
+[3.1. Kasutusjuht 1: Andmesubjekti(de)le nõusolekupäringu tegemine Teenusepakkuja poolt](#kasutusjuht-1-andmesubjektidele-nõusolekupäringu-tegemine-teenusepakkuja-poolt)
+
+[3.2. Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)](#kasutusjuht-2-andmete-pärimine-ja-nõusoleku-valideerimine-andmekogu)
+
+[4. Nõusoleku seisundidiagramm](#nõusoleku-seisundidiagramm)
+
+[5. Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus](#andmenõusolekuteenusega-liidestamine-ja-päringute-tehniline-kirjeldus)
+
+[5.1. Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus](#andmekogu-ja-klientrakenduse-poolt-kasutavate-päringute-tehniline-kirjeldus)
+
+[5.1.1. purposedeclarations](#purposedeclarations)
+
+[5.1.2. create](#create)
+
+[5.1.3. status](#status)
+
+[5.1.4. url](#url)
+
+[5.1.5. client](#client)
+
+[5.1.6. dataprovider](#dataprovider)
+
+[5.1.7. reportDataTransmission](#reportdatatransmission)
+
+[6. Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-jurnt-testimiseks-liidestuja-poolt)
+
+[6.1. Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
+
+[6.2. Eesmärgideklaratsioonide pärimine (Teenusepakkuja)](#eesmärgideklaratsioonide-pärimine-teenusepakkuja)
+
+[6.3. Nõusoleku päringu algatamine / nõusoleku küsimine (Teenusepakkuja)](#nõusoleku-päringu-algatamine--nõusoleku-küsimine-teenusepakkuja)
+
+[6.4. Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
+
+[6.5. Nõusolekuviidete pärimine](#nõusolekuviidete-pärimine)
+
+[6.6. Nõusolekute valideerimine (Klientrakendus ja Andmekogu)](#nõusolekute-valideerimine-klientrakendus-ja-andmekogu)
+
+[6.7. Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)](#nõusolekute-alusel-edukast-andmete-pärimisest-raporteerimine-andmekogu)
+
+[7. Andmenõusolekuteenuse haldusliidese kasutamise juhend](#andmenõusolekuteenuse-haldusliidese-kasutamise-juhend)
+
+[7.1. Haldusliidese rollid](#haldusliidese-rollid)
+
+[7.2. Infosüsteemide haldus](#infosüsteemide-haldus)
+
+[7.2.1. Infosüsteemide haldusega seotud vaated](#infosüsteemide-haldusega-seotud-vaated)
+
+[7.2.2. Infosüsteemi andmed](#infosüsteemi-andmed)
+
+[7.3. Teenusedeklaratsioonide haldus](#teenusedeklaratsioonide-haldus)
+
+[7.3.1. Teenusedeklaratsioonide haldusega seotud vaated](#teenusedeklaratsioonide-haldusega-seotud-vaated)
+
+[7.3.2. Teenusedeklaratsiooni andmed](#teenusedeklaratsiooni-andmed)
+
+[7.3.3. Teenusedeklaratsiooni seisundidiagramm](#teenusedeklaratsiooni-seisundidiagramm)
+
+[7.4. Eesmärgideklaratsioonide haldus](#eesmärgideklaratsioonide-haldus)
+
+[7.4.1. Eesmärgideklaratsioonide haldusega seotud vaated](#eesmärgideklaratsioonide-haldusega-seotud-vaated)
+
+[7.4.2. Eesmärgideklaratsiooni andmed](#eesmärgideklaratsiooni-andmed)
+
+[7.4.3. Eesmärgideklaratsiooni seisundidiagramm](#eesmärgideklaratsiooni-seisundidiagramm)
+
+[8. Statistika](#statistika)
+
+[8.1. Statistika väljund](#statistika-väljund)
+
+[8.2. Statistika andmestik](#statistika-andmestik)
+
+[9. Nõusoleku mall](#nõusoleku-mall)
+
+[10. Andmenõusolekuteenuse kasutajaliides](#andmenõusolekuteenuse-kasutajaliides)
+
+[10.1. Nõusoleku andmine](#nõusoleku-andmine)
+
+[10.1.1. Klientrakenduse tegevused enne suunamist](#klientrakenduse-tegevused-enne-suunamist)
+
+[10.1.2. Andmenõusolekuteenuses](#andmenõusolekuteenuses)
+
+[10.1.3. Klientrakenduse tegevused peale suunamist](#klientrakenduse-tegevused-peale-suunamist)
+
+[10.2. Nõusolekute haldus](#nõusolekute-haldus)
+
+[10.2.1. Nõusolekust loobumine](#nõusolekust-loobumine)
+
+[10.3. Nõusoleku küsimine](#nõusoleku-küsimine)
+
+[10.3.1. Nõusolekute küsimine Klientrakenduse kaudu](#nõusolekute-küsimine-klientrakenduse-kaudu)
+
+[10.4. Edastatud andmed](#edastatud-andmed)
+
+
+# Sissejuhatus
 
 Dokumendi eesmärgiks on kirjeldada RIA juriidilise isiku andmenõusolekuteenuse (JURNT) peamisi kasutusmalle, andmevahetuse ja testimise põhimõtteid ning kasutajaliideseid.
 
 Dokument on aluseks RIA andmenõusolekuteenusega JURNT liidestamisele ja selle kasutusele võtmisele.
 
-## 1.1 Mõisted
+## Mõisted
 
 **Andmesubjekt (Data Subject)** -- juriidiline isik, kellega on seotud Andmekogus hoitavad andmed.
 
@@ -146,7 +153,7 @@ Dokument on aluseks RIA andmenõusolekuteenusega JURNT liidestamisele ja selle k
 
 **Nõusolekupäringu esitaja (Requesting Legal Entity)** -- juriidiline isik (Teenusepakkuja), kes esitab Nõusolekupäringu Andmesubjektile.
 
-# 2 Eeltingimused andmenõusolekuteenuse kasutamiseks
+# Eeltingimused andmenõusolekuteenuse kasutamiseks
 
 Selleks, et võimaldada nõusolekute küsimist Andmesubjektilt Teenusepakkuja/Klientrakenduse jaoks, peavad Andmekogu ja Teenusepakkuja tegema andmenõusolekuteenuse loomiseks järgmised sammud:
 
@@ -166,11 +173,11 @@ Selleks, et võimaldada nõusolekute küsimist Andmesubjektilt Teenusepakkuja/Kl
 
 8\. Teenusepakkuja Klientrakendus liidestub Andmenõusolekuteenusega, võimaldades Andmesubjekti või Andmesubjekti esindaja suunamist Andmenõusolekuteenusesse JURNT vajalike nõusolekute andmiseks.
 
-# 3 Põhiprotsesside kirjeldus kasutusjuhtudena
+# Põhiprotsesside kirjeldus kasutusjuhtudena
 
 Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga seotud kasutusjuhtu, mis annavad ülevaade Andmenõusolekuteenuse API-de kasutamise kontekstist.
 
-## 3.1 Kasutusjuht 1: Andmesubjekti(de)le nõusolekupäringu tegemine Teenusepakkuja poolt
+## Kasutusjuht 1: Andmesubjekti(de)le nõusolekupäringu tegemine Teenusepakkuja poolt
 
 **Tegutsejad:** Teenusepakkuja/Klientrakendus, Andmenõusolekuteenus JURNT
 
@@ -188,7 +195,7 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 **Põhistsenaarium:**
 
-1\. Teenusepakkuja küsib läbi API temale kasutamiseks lubatavaid eesmärkdeklaratsioone. Kasutatakse päringut **purposedeclarations** (vt jaotis [5.1.2.](#purposedeclarations).
+1\. Teenusepakkuja küsib läbi API temale kasutamiseks lubatavaid eesmärkdeklaratsioone. Kasutatakse päringut **purposedeclarations** (vt jaotis [5.1.1.](#purposedeclarations)).
 
 2\. JURNT kontrollib et x-tees autenditud Teenusepakkuja x-tee alamsüsteemi identifikaator on sama, mis on määratud eesmärgideklaratsiooni(de)s ja et eesmärgideklaratsioon on mõeldud juriidilisele isikule.
 
@@ -202,7 +209,7 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 7\. JURNT tagastab vastusena loetelu juriidilistest isikutest, kellele päring algatati. Iga juriidilise isiku kohta on vastuses registrikood ja nõusolekuviide/veakood.
 
-8\. Teenusepakkuja küsib kehtivaid nõusolekuviiteid (vt jaotis [5.1.2.](#status)).
+8\. Teenusepakkuja küsib kehtivaid nõusolekuviiteid (vt jaotis [5.1.3.](#status)).
 
 9\. JURNT tagastab vastusena kehtiva(d) nõusolekuviite(d).
 
@@ -224,7 +231,7 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 • Teenusepakkuja teeb iga andmevajaduse kohta eraldi nõusolekupäringu.
 
-## 3.2 Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
+## Kasutusjuht 2: Andmete pärimine ja nõusoleku valideerimine (andmekogu)
 
 **Tegutsejad:** Andmekogu, Andmenõusolekuteenus JURNT, Teenusepakkuja Klientrakendus
 
@@ -244,7 +251,7 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 1\. Klientrakendus küsib andmed Andmekogult. Andmepäring peab sisaldama vastavat nõusolekuviidet ning Andmesubjekti isikukoodi.
 
-2\. Andmekogu saadab nõusolekuviite andmenõusolekuteenusesse JURNT valideerimiseks. JURNT valideerib nõusolekuviite ja saadab Andmekogule vastuse, mis sisaldab peale nõusolekuviite ka nõusoleku kehtivuse lõppkuupäeva, Klientrakenduse alamsüsteemi identifikaatorit, Andmesubjekti registrikoodi ja nõusolekuga seotud teenusedeklaratsiooni identifikaatorit. Sammudes 2 ja 3 kasutatakse **dataprovider** päringut (vt jaotis [5.1.4.](#validateconsentfordataprovider))
+2\. Andmekogu saadab nõusolekuviite andmenõusolekuteenusesse JURNT valideerimiseks. JURNT valideerib nõusolekuviite ja saadab Andmekogule vastuse, mis sisaldab peale nõusolekuviite ka nõusoleku kehtivuse lõppkuupäeva, Klientrakenduse alamsüsteemi identifikaatorit, Andmesubjekti registrikoodi ja nõusolekuga seotud teenusedeklaratsiooni identifikaatorit. Sammudes 2 ja 3 kasutatakse **dataprovider** päringut (vt jaotis [5.1.6.](#dataprovider))
 
 3\. Andmekogu kontrollib järgmised andmeedastuse tingimused:
 
@@ -256,7 +263,7 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 4\. Kui kõik kontrollid on õnnestunud, edastab Andmekogu küsitud andmed Klientrakendusele. (See pole JURNT funktsionaalsus.)
 
-5\. Andmekogu raporteerib eduka andmeedastuse. Kasutatakse **reportDataTransmission** päringut (vt jaotis [5.1.5.](#reportdatatransmission)).
+5\. Andmekogu raporteerib eduka andmeedastuse. Kasutatakse **reportDataTransmission** päringut (vt jaotis [5.1.7.](#reportdatatransmission)).
 
 **Põhistsenaariumi jadadiagramm:**
 
@@ -280,13 +287,13 @@ Peatükk sisaldab kahte peamist Teenusepakkuja Klientrakemduse ja Andmekoguga se
 
 • Andmekogu vastab Klientrakendusele veateatega, andmeid ei edastata ja andmeedastust ei raporteerita.
 
-# 4 Nõusoleku seisundidiagramm
+# Nõusoleku seisundidiagramm
 
 Järgnev diagramm kirjeldab JURNT nõusoleku võimalikke seisundeid ja nendevahelisi üleminekuid.
 
 ![Nõusoleku seisundidiagramm](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image3.png)
 
-# 5 Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
+# Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
 
 Andmenõusolekuteenus JURNT pakub juriidilistele isikutele REST API päringuid üle x-tee, mida saab kasutada läbi oma klientrakenduse või muul moel.
 
@@ -300,9 +307,9 @@ Kõik number tüüpi parameetrid on ASCII kood'ide jada vahemikus 47-57 (numbrid
 
 Kõik timestamp tüüpi parameetrid on ISO8601 formaadis timestamp'id.
 
-## 5.1 Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus
+## Andmekogu ja Klientrakenduse poolt kasutavate päringute tehniline kirjeldus
 
-### 5.1.1 Eesmärgideklaratsioonide nimekirja päring - purposedeclarations
+### purposedeclarations
 
 Päringu abil saab Andmenõusolekuteenuselt küsida listi oma ettevõtte kehtivatest eesmärgideklaratsioonidest, mida saab kasutada juriidiliselt isikult andmenõusoleku küsimise päringute koostamiseks.
 
@@ -348,7 +355,7 @@ Kui ei leita ühtegi sobivat eesmärgideklaratsiooni, siis on vastus tühi list.
 |-----------|--------------------|-------------------------------------------------------------|
 | errorCode | VALIDATION (400)   | Päringul pole x-road-headerit pole kaasas, HTTP_BAD_REQUEST |
 
-### 5.1.2 Nõusoleku päringu algatamine/nõusoleku küsimine - create
+### create
 
 Päringu abil saab algatada juriidilis(t)elt isiku(te)lt andmenõusoleku küsimise.
 
@@ -441,7 +448,7 @@ Väljundi näide, kui üldised kontrollid läksid läbi ja üks registrikood sob
 ]
 ```
 
-### 5.1.3 Nõusolekuviidete päring - *status*
+### status
 
 Päringu abil saab küsida Andmenõusolekuteenuselt JURNT kehtivate nõusoleku(te) nõusolekuviited (*Consent Reference*) konkreetse eesmärgideklaratsiooni kohta. Saab valida nõusoleku staatuse(d), mille kohta nimekirja soovitakse.
 
@@ -528,7 +535,7 @@ Päringu kättesaamisel teeb JURNT üldise kontrolli: kas x-tees autenditud Teen
 | error.validation                                                  | VALIDATION (400)   | Veateate info. Täidetakse ainult siis, kui sisendi formaat vigane ja server ei suuda lugeda.                                                      |
 | error.business.requested-consents-not-related-to-any-declarations | VALIDATION (404)   | "REQUESTED_CONSENTS_NOT_RELATED_TO_ANY_DECLARATIONS" - antud x-tee alamsüsteemi jaoks puuduvad kehtivad juriidilise isiku eesmärgideklaratsioonid |
 
-### 5.1.4 Nõusoleku(te) lingi (URL) päring - *url*
+### url
 
 Päringu abil saab Andmenõusolekuteenuselt JURNT küsida nõusoleku(te) lingi (URL), mille kaudu saab Andmesubjekti suunata nõusolekutaotlusi vaatama ja nõusolekuid andma.
 
@@ -590,7 +597,7 @@ curl -k  \
 | error.http.404                  | HTTP_NOT_FOUND (404)   | Ei leitud kehtivaid nõusolekuid (staatuses APPROVED)                                                        |
 | error.business.reg-code-invalid | REG_CODE_INVALID (400) | Registrikood ei vasta standardile                                                                           |
 
-### 5.1.5 Nõusoleku kehtivuse päring Teenusepakkujale/Klientrakendusele - client
+### client
 
 Päringu abil saab küsida Andmenõusolekuteenuselt JURNT nõusoleku kehtivust. Kui küsitakse mitme nõusoleku kohta, tagastatakse vastus eraldi iga nõusoleku kohta samas vastusesõnumis.
 
@@ -644,7 +651,7 @@ curl -k -X GET \
 | error.http.404                                 | HTTP_NOT_FOUND (404)                  | clientSubsystemIdentifier (Klientrakenduse x-tee alamsüsteemi) ja consentReference kombinatsiooni kohta puudub kehtiv nõusolek |
 | error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED                                                                                     |
 
-### 5.1.6 Nõusoleku kehtivuse päring Andmekogule - *dataprovider*
+### dataprovider
 
 Päringu abil saab küsida Andmenõusolekuteenuselt JURNT nõusoleku kehtivust ning kaasnevad andmed, mille abil Andmekogu saab kontrollida andmeedastuse tingimusi.
 
@@ -700,7 +707,7 @@ curl -k -X GET \
 | error.http.404                                 | HTTP_NOT_FOUND (404)                  | dataProviderSubsystemIdentifier (Andmekogu x-tee alamsüsteemi) ja ConsentReference kombinatsiooni kohta puudub kehtiv nõusolek |
 | error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED                                                                                     |
 
-### 5.1.7 Edastatud andmed - reportDataTransmission
+### reportDataTransmission
 
 Päringu abil saab teavitada Andmenõusolekuteenust JURNT sellest, et toimus isikuandmete edastus nõusoleku alusel Andmekogust Teenusepakkujale/Klientrakendusse.
 
@@ -759,7 +766,7 @@ https:///r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/legal-enti
 | error.validation | VALIDATION (400)     | Validatsiooni üldised veateated (kohustuslikud väljad määramata) |
 | error.http.404   | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri jaoks puudub vaste      |
 
-# 6 Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt
+# Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt
 
 Liidestuja-poolse testimise eesmärgiks on veenduda, et liidestuv(ad) infosüsteem(id) on valmis Andmenõusolekuteenusega JURNT vahetama nõusolekute (consent) andmeid. Testid on kirjeldatud API väljakutsete tasemel, see annab võimaluse liitujal testida nii otse API (arenduse varasemas faasis) kui oma kasutajaliidese kaudu.
 
@@ -771,7 +778,7 @@ Siiski tuleb testides kasutatava Infosüsteemi, Teenusedeklaratsiooni ja Eesmär
 
 Testidesse ei ole kaasatud nõusoleku aegumise (Expired) ning mittevajalikuks muutumise (Inapplicable) stsenaariumid, kuna need toimuvad Andmenõusolekuteenuses automaatselt vastavalt deklaratsioonide ja nõusolekute kehtivuskuupäevade saabumisele. Soovi korral on võimalik neid testida, sisestades Teenusedeklaratsioonile ja eesmärgideklaratsioonile sobilikud kuupäevad (nt kehtivuse lõpp homme, Teenusedeklaratsioonil nõusoleku kehtivuse maksimaalne kestus 1 päev) ning andes nõusolekud ning jälgides nõusolekute oleku muutumist tähtaja saabudes.
 
-## 6.1 Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)
+## Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)
 
 *Testijuhtum 1 Nõusoleku URLi genereerimine ning nõusoleku info vaatamine (1 eesmärgideklaratsioon)*
 
@@ -805,7 +812,7 @@ Eeltingimus: nõusolekute uuesti küsimise/mitteküsimise loogika testimiseks on
 | 2 | Käivita https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/url tundmatu ED identifikaatoriga, teised parameetrid on korrektsed                                                                                              | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND                                           |
 | 3 | Käivita https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/url X-Tee alamsüsteemiga, mis ei lange kokku ED-s kasutusel oleva alamsüsteemiga, teised sisendparameetrid on korrektsed                                         | Kontrolli veateadet koodiga PURPOSE_DECLARATIONS_NOT_FOUND                                           |
 
-## 6.2 Eesmärgideklaratsioonide pärimine (Teenusepakkuja)
+## Eesmärgideklaratsioonide pärimine (Teenusepakkuja)
 
 *Testijuhtum 5 Eesmärgideklaratsioonide pärimine*
 
@@ -814,7 +821,7 @@ Eeltingimus: nõusolekute uuesti küsimise/mitteküsimise loogika testimiseks on
 | 1 | Käivita https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/purposedeclarations oma X-Tee kliendi jaoks, kellel on vähemalt üks valiidne eesmärgideklaratsioon | Kontrolli, et tagastatakse eesmärgideklaratsioonid VALID olekus ja et need oleksid sama alamsüsteemi identifikaatoriga |
 | 2 | Käivita https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/purposedeclarations X-Tee kliendi jaoks, kellel pole eesmärgideklaratsioone                        | Kontrolli, et tagastatakse tühi *list*                                                                                 |
 
-## 6.3 Nõusoleku päringu algatamine / nõusoleku küsimine (Teenusepakkuja)
+## Nõusoleku päringu algatamine / nõusoleku küsimine (Teenusepakkuja)
 
 *Testijuhtum 6 Üldised kontrollid loetelu kohta*
 
@@ -832,7 +839,7 @@ Eeltingimus: nõusolekute uuesti küsimise/mitteküsimise loogika testimiseks on
 | 2 | Nagu samm 1, kuid registrikoodid sisendis on mitu kehtivat registrikoodi, kellel on vähemalt üks valiidne eesmärgideklaratsioon                                                              | Kontrolli, et tagastatakse kõik õiged registrikoodid, nõusolekuviidad, staatus OK ja veakoode pole                                                                                                                                                                                                   |
 | 3 | Nagu samm 1, kuid sisendis on mitu kehtivat registrikoodi, kellest mõnel on vähemalt üks valiidne eesmärgideklaratsioon, mõnel mitte                                                         | Kontrolli, et <br> - tagastatakse kõik õiged registrikoodid, nõusolekuviidad, staatus OK ja veakoode pole, kui on valiidne eesmärgideklatatsioon, <br> - tagastatakse õiged registrikoodid, nõusolekuviit null, staatus ERROR ja veakood REG_CODE_INVALID, kui pole valiidset eesmärgideklaratsiooni |
 
-## 6.4 Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)
+## Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)
 
 Nõusoleku andmise ja keeldumise testijuhtumid ei ole toodud välja API väljakutsete tasemel, kuna need funktsionaalsused on realiseeritud Nõusolekuteenuse JURNT kasutajaliideses eesti.ee Ettevõtjaportaalis.
 
@@ -844,7 +851,7 @@ Veendumaks, et klientrakendus ja Andmenõusolekuteenus suudavad korrektselt andm
 
 3\. Nõusolekust taganemine -- varasemate testide käigus antud nõusolekute tagasivõtmine ning kontrollimine, et nõusolekud on tagasi võetud.
 
-## 6.5 Nõusolekuviidete pärimine
+## Nõusolekuviidete pärimine
 
 *Testijuhtum 8 Nõusolekuviidete pärimine*
 
@@ -859,7 +866,7 @@ Veendumaks, et klientrakendus ja Andmenõusolekuteenus suudavad korrektselt andm
 |---|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
 | 1 | Käivita https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/status kui puudub kehtiv nõusolek sisendparameetrite komplekti jaoks | Kontrolli, et tagastatakse HTTP_NOT_FOUND |
 
-## 6.6 Nõusolekute valideerimine (Klientrakendus ja Andmekogu)
+## Nõusolekute valideerimine (Klientrakendus ja Andmekogu)
 
 *Testijuhtum 10 Nõusolekute valideerimine (Klientrakenduse ja Andmekogu jaoks)*
 
@@ -872,7 +879,7 @@ Eeltingimus: nõusolekute valideerimiseks on ideaalis vajalik koostada erinevate
 | 3 | Käivita https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/validation/client/validation/dataprovider kokkulangevate dataProviderSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on APPROVED staatuses                | Kontrolli, et tagastatakse nõusolekuga seotud andmed (consentReference, ConsentExpiration, idCode, clientSubsystemIdentifier, serviceDeclarationID) |
 | 4 | Käivita https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/legal-entity-consent/validation/client/validation/dataprovider kokkulangevate dataProviderSubsystemIdentifier ning consentReferencega, kui vastav nõusolek on mõnes muus staatuses kui APPROVED | Kontrolli, et nõusoleku infot ei tagastata                                                                                                          |
 
-## 6.7 Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)
+## Nõusolekute alusel edukast andmete pärimisest raporteerimine (Andmekogu)
 
 *Testijuhtum 11 Nõusolekute alusel andmete pärimisest raporteerimine (raporteerib andmekogu)*
 
@@ -883,7 +890,7 @@ Eeltingimus: on olemas mõni nõusolek, millele raporteerida
 | 1 | Käivita https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/legal-entity-consent olemasoleva nõusoleku consentReference-ga ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli, et tagastatakse “success” vastus ning võib kontrollida raporteerimise kirje olemasolu Andmenõusolekuteenuses |
 | 2 | Käivita https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/legal-entity-consent consentReference-ga, mida ei eksisteeri, ning Xtee päringus olev alamsüsteem langeb kokku küsija alamsüsteemiga. | Kontrolli veaolukorra haldamist, raporteerimise kirjet ei teki Andmenõusolekuteenusesse                                 |
 
-# 7 Andmenõusolekuteenuse haldusliidese kasutamise juhend
+# Andmenõusolekuteenuse haldusliidese kasutamise juhend
 
 Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenusedeklaratsioonide, ja nendega seotud infosüsteemide (andmekogude) haldamiseks.
 
@@ -903,18 +910,18 @@ Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenu
 
 ![Loogilised seosed infosüsteemide ja deklaratsioonide vahel](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image4.png)
 
-## 7.1 Haldusliidese rollid
+## Haldusliidese rollid
 
 | Roll                                       | Kirjeldus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Milliseid vaateid näeb                                                                                                                                                                                                                                                                                                                                                                                                                |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RIA administraator                         | RIA administraator lisab/kustutab kasutajaid (teisi RIA administraatoreid ja infosüsteemide haldureid) ja jagab õiguseid: igale infosüsteemide haldurile määratakse tema vastutuses olev registrikood (või mitu registrikoode), mida valitakse rippmenüüst kõikidega x-tee kataloogist saadud registrikoodidega (member code). <br> <br> RIA administraator saab olla samal ajal ka infosüsteemide haldur, kui määrab endale sellist rolli. Sellel juhul talle peavad olema kättesaadavad nii RIA administraatorile kui ka infosüsteemide haldurile nähtavad vaated.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | •Haldusliidese kasutajate haldus <br> •Nõusolekute terviklus                                                                                                                                                                                                                                                                                                                                                                          |
 | Infosüsteemide haldur (Andmekogu esindaja) | Andmenõusolekuteenuse haldusliidese põhikasutaja. <br> <br> Infosüsteemide haldur lisab, muudab, kustutab infosüsteeme oma vastutuses oleva registrikoodi(de) piires. Lisades/muutes infosüsteemi, näeb alamsüsteemide valikus ainult need alamsüsteemid, mis on seotud temale määratud registrikoodidega. <br> <br> Teeb statistikat oma vastutuses oleva(te) registrikoodi(de) piires. <br> <br> Juhul, kui on märgistatud valik „RIA administraatori statistika", saab teha statistikat üle kogu infosüsteemi. Seda valikut kasutavad RIA administraatorid. <br> <br> Ühe infosüsteemi eest saab vastutada mitu infosüsteemi haldurit. Iga haldur saab lisada/muuta/kustutada tema vastutuses olevaid infosüsteeme. Igal infosüsteemi halduril on ligipääs kõigile nendele infosüsteemidele ja deklaratsioonidele, mille alamsüsteemi identifikaatoris olev registrikood = tema kasutajaga seotud registrikood (member code). Kui infosüsteemi halduri kasutajakonto kustutatakse, tema poolt sisestatud infosüsteemid jäävad alles. <br> <br> Infosüsteemide haldur esitab ja haldab enda vastutuses olevate infosüsteemidega seotud teenusedeklaratsioone. <br> <br> Infosüsteemide haldur esitab ja haldab enda vastutuses olevaid eesmärgideklaratsioone. Infosüsteemide haldur saab seostada eesmärgideklaratsioonid ainult tema vastutusalas olevate teenusedeklaratsioonidega. | •Infosüsteemide koondvaade <br> •Infosüsteemi lisamine <br> •Infosüsteemi muutmine <br> •Teenusedeklaratsioonide koondvaade <br> •Teenusedeklaratsiooni esitamine <br> •Teenusedeklaratsiooni detailvaade <br> •Teenusedeklaratsiooni muutmine <br> •Eesmärgideklaratsioonide koondvaade <br> •Eesmärgideklaratsiooni esitamine <br> •Eesmärgideklaratsiooni detailvaade <br> •Eesmärgideklaratsiooni muutmine <br> •Statistika vaade |
 
-## 7.2 Infosüsteemide haldus
+## Infosüsteemide haldus
 
 Andmenõusolekuteenuse haldusliideses registreeritakse kaitstud teenuste pakkuvate infosüsteemide andmed. Nende andmetega täidetakse automaatselt vastavad väljad teenusedeklaratsioonides, mis lihtsustab deklaratsioonide esitamise protsessi.
 
-### 7.2.1 Infosüsteemide haldusega seotud vaated
+### Infosüsteemide haldusega seotud vaated
 
 Infosüsteemide lisamise ja haldusega Andmenõusolekuteenuse haldusliideses on seotud järgmised vaated:
 
@@ -942,7 +949,7 @@ Vaade, mis võimaldab muuta infosüsteemi andmed. Infosüsteemi andmete muutmine
 
 ![Infosüsteemi muutmine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image6.jpg)
 
-### 7.2.2 Infosüsteemi andmed
+### Infosüsteemi andmed
 
 | Välja nimi                                              | Kirjeldus                                                                                                                                                                                                       | Näidisväärtus         | Saab muuta? |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|-------------|
@@ -953,11 +960,11 @@ Vaade, mis võimaldab muuta infosüsteemi andmed. Infosüsteemi andmete muutmine
 | Volitatud töötleja (mittekohustuslik väli)              | Volitatud töötleja asutuse ametlik nimi. <br> https://akit.cyber.ee/term/12750 <br> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks.                                                                      | Andmekeskus           | Jah         |
 | Volitatud töötleja registrikood (mittekohustuslik väli) | Volitatud organisatsiooni registrikood. <br> Kui volitatud töötlejat ei ole, jäetakse väli tühjaks.                                                                                                             | 70009770              | Jah         |
 
-## 7.3 Teenusedeklaratsioonide haldus
+## Teenusedeklaratsioonide haldus
 
-Teenusedeklaratsioon (TD) kirjeldab infosüsteemi (Andmekogu) pakutavat kaitstud teenust, mille kasutamiseks on vajalik andmesubjekti nõusolek. Mõned teenusedeklaratsiooni andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis [8](#nõusoleku-mall)).
+Teenusedeklaratsioon (TD) kirjeldab infosüsteemi (Andmekogu) pakutavat kaitstud teenust, mille kasutamiseks on vajalik andmesubjekti nõusolek. Mõned teenusedeklaratsiooni andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis [9](#nõusoleku-mall)).
 
-### 7.3.1 Teenusedeklaratsioonide haldusega seotud vaated
+### Teenusedeklaratsioonide haldusega seotud vaated
 
 Teenusedeklaratsioonide esitamise ja haldusega Andmenõusolekuteenuse haldusliideses on seotud järgmised vaated:
 
@@ -993,7 +1000,7 @@ Vaade, mis võimaldab kehtiva teenusedeklaratsiooni andmeid osaliselt muuta. Mil
 
 ![Teenusedeklaratsioni muutmine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image11.png)
 
-### 7.3.2 Teenusedeklaratsiooni andmed
+### Teenusedeklaratsiooni andmed
 
 | Välja nimi                                    | Kirjeldus                                                                                                                                                                                                                                                                                                                         | Näidisväärtus                                                                                                                    | Saab muuta?      |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|------------------|
@@ -1021,15 +1028,15 @@ Vaade, mis võimaldab kehtiva teenusedeklaratsiooni andmeid osaliselt muuta. Mil
 | Viimane muutja                                | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes viimasena muutis TD andmed                                                                                                                                                                                                                                               | Mart Mets (Administraator)                                                                                                       | Ei               |
 | Staatus                                       | TD olek. Võimalikud olekud: KEHTIV ja KEHTETU’ (vt. jaotis 7.2.3.)                                                                                                                                                                                                                                                                | kehtiv                                                                                                                           | Ainult kehtetuks |
 
-### 7.3.3 Teenusedeklaratsiooni seisundidiagramm
+### Teenusedeklaratsiooni seisundidiagramm
 
 ![Teenusedeklaratsiooni seisundidiagramm](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image12.png)
 
-## 7.4 Eesmärgideklaratsioonide haldus
+## Eesmärgideklaratsioonide haldus
 
-Eesmärgideklaratsioon (ED) kirjeldab andmesaajat (Klientrakendust/Teenusepakkujat) ja kaitstud andmeteenuse tarbimise eesmärki. Mõned eesmärgideklaratsiooni andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis [8](#nõusoleku-mall)).
+Eesmärgideklaratsioon (ED) kirjeldab andmesaajat (Klientrakendust/Teenusepakkujat) ja kaitstud andmeteenuse tarbimise eesmärki. Mõned eesmärgideklaratsiooni andmed kuvatakse andmesubjektile nõusoleku andmisel (vt jaotis [9](#nõusoleku-mall)).
 
-### 7.4.1 Eesmärgideklaratsioonide haldusega seotud vaated
+### Eesmärgideklaratsioonide haldusega seotud vaated
 
 Eesmärgideklaratsioonide esitamise ja haldusega Andmenõusolekuteenuse haldusliideses on seotud järgmised vaated:
 
@@ -1065,7 +1072,7 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmeid osaliselt muuta. M
 
 ![Eesmärgideklaratsiooni muutmine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2016.png)
 
-### 7.4.2 Eesmärgideklaratsiooni andmed
+### Eesmärgideklaratsiooni andmed
 
 | Välja nimi                                                 | Kirjeldus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Näidisväärtus                                                                                                                                                                                                                                                                                                                         | Saab muuta?      |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
@@ -1085,11 +1092,11 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmeid osaliselt muuta. M
 | Viimane muutja (määratakse automaatselt)                   | Infosüsteemi haldur (tema nimi ja roll süsteemis), kes viimasena muutis ED andmed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Mart Mets (Infosüsteemi haldur)                                                                                                                                                                                                                                                                                                       | Ei               |
 | Staatus                                                    | ED olek. Võimalikud olekud: KEHTIV ja KEHTETU (vt. jaotis 7.3.3.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | kehtiv                                                                                                                                                                                                                                                                                                                                | Ainult kehtetuks |
 
-### 7.4.3 Eesmärgideklaratsiooni seisundidiagramm
+### Eesmärgideklaratsiooni seisundidiagramm
 
 ![Eesmärgideklaratsiooni seisundidiagramm](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image17.png)
 
-# 8 Statistika
+# Statistika
 
 Statistika menüü on mõeldud statistika tegemiseks haldusliideses olevate deklaratsioonide ja nendega seotud nõusolekute kohta. Statistikat saavad teha kõik infosüsteemi haldurid oma haldusala piires ning kasutajad märkega „RIA administraatori statistika" üle kogu süsteemi.
 
@@ -1099,13 +1106,13 @@ Statistika tegemiseks tuleb valida infosüsteem ja/või andmete saaja nimi:
 
 • Andmete saaja -- ettevõtte otsingu väli andmete saaja nime järgi. Otsida saab andmete saaja järgi oma vastutusalas olevate asutuste piires. Kui kasutaja on märkega „RIA administraatori statistika", siis otsitakse andmete saajaid üle kogu süsteemi. Saab otsida ühe väärtuse järgi korraga.
 
-## 8.1 Statistika väljund
+## Statistika väljund
 
 Statistika tulemuste tabelis saab näha statistikat vastavalt valitud Infosüsteemi ja/või andmete saaja järgi. Võimaldab statistika andmeid sorteerida erinevate tulpade järgi.
 
 ![Statistika väljund](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2018.png)
 
-## 8.2 Statistika andmestik
+## Statistika andmestik
 
 | Välja nimi                       | Kirjeldus                                                                                                                                                                                                                                                                                               |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1118,7 +1125,7 @@ Statistika tulemuste tabelis saab näha statistikat vastavalt valitud Infosüste
 | Kõik nõusolekud                  | Kõikide nõusolekute arv kokku infosüsteemi põhiselt ja ettevõtte põhiselt sõltumata nende staatusest.                                                                                                                                                                                                   |
 | Kokku                            | Kokku arvude summad.                                                                                                                                                                                                                                                                                    |
 
-# 9 Nõusoleku mall
+# Nõusoleku mall
 
 Järgmine tabel kirjeldab andmeid, mida nõusolek sisaldab.
 
@@ -1138,20 +1145,20 @@ Järgmine tabel kirjeldab andmeid, mida nõusolek sisaldab.
 | Nõusolekust loobuja - isiku nimi ja isikukood                                       | Kairi Sarapuu (4712220278)                                                                                                                                                                                                                                                                                           | nõusolek                                                                                                                             |
 | Nõusoleku kehtivus                                                                  | alates 23.12.2024 <br> kuni 20.02.2025                                                                                                                                                                                                                                                                               | nõusolek (kehtivusaeg arvutatakse: nõusoleku andmise kuupäev + nõusoleku maksimaalne kehtivusaeg päevades (teenusedeklaratsioonist)) |
 
-# 10 Andmenõusolekuteenuse kasutajaliides
+# Andmenõusolekuteenuse kasutajaliides
 
 Andmenõusolekuteenuse JURNT tavakasutajale mõeldud kasutajaliides on realiseeritud eraldiseisva veebirakendusena, mis moodustab osa eesti.ee Ettevõtjaportaalist. JURNT kasutajaliides on mõeldud juriidilisest isikust Andmesubjekti esindaja(te)le ja Teenusepakkuja esindaja(te)le ning koosneb neljast osast: nõusolekute andmine, nõusolekute haldus, nõusolekute küsimine ja ülevaade nõusolekute põhjal edastatud andmetest. Kasutaja leiab need peale juriidilise isiku esindajana eesti.ee sisselogimist menüüpunkti Andmenõusolek alt alamlehtedelt "Ootel nõusolekud", Kõik nõusolekud", "Nõusolekute küsimine" ja "Edastatud andmed". Alamlehe nägemine sõltub vastava kasutajarolli olemasolust.
 
-## 10.1 Nõusoleku andmine
+## Nõusoleku andmine
 
 Juriidilisest isikust Andmesubjekti esindaja saab tutvuda nõusolekutaotlustega ja anda vajalikud nõusolekud:  
 • unikaalse lingi kaudu, kuhu ta suunatakse Teenusepakkuja Klientrakendusest  
 • või e-kirja teel teavitusena saadetud linki kasutades  
 • või sisenedes eesti.ee Ettevõtjaportaalis andmenõusolekuteenuse JURNT alamlehele "Ootel nõusolekud".
 
-### 10.1.1 Klientrakenduse tegevused enne suunamist
+### Klientrakenduse tegevused enne suunamist
 
-Iga kord kui Klientrakendus soovib suunata Andmesubjekti esindajat nõusolekuid andma, peab see küsima Andmenõusolekuteenusest JURNT uue lingi vajalike nõusolekutaotluste komplektiga. Uus link küsitakse kasutades teenust **url** API (vt jaotis [5.1.4](#514-nõusolekute-lingi-url-päring---url)).
+Iga kord kui Klientrakendus soovib suunata Andmesubjekti esindajat nõusolekuid andma, peab see küsima Andmenõusolekuteenusest JURNT uue lingi vajalike nõusolekutaotluste komplektiga. Uus link küsitakse kasutades teenust **url** API (vt jaotis [5.1.4.](#url)).
 
 Enne Andmenõusolekuteenusesse suunamist peab Klientrakendus informeerima Andmesubjekti või Andmesubjekti esindajat nõusoleku(te) andmise vajadusest, andmete töötlemise tingimustest ja eesootavast Andmenõusolekuteenusesse suunamisest. Kui Teenusepakkuja teeb nõusolekupäringu(d) JURNT kaudu, saadab JURNT automaatselt Andmesubjektile e-kirja teel teavituse läbi eesti.ee riikliku postkasti.
 
@@ -1167,7 +1174,7 @@ Näidistekst:
 
 >   **[nupp]**
 
-### 10.1.2 Andmenõusolekuteenuses
+### Andmenõusolekuteenuses
 
 Juriidilisest isikust Andmesubjekti esindaja saab tutvuda nõusolekutaotlustega ja anda vajalikud nõusolekud peale eesti.ee portaali sisenemist ja enda autentimist TARA kaudu, kasutades ühte pakutavatest sisselogimisviisidest. 
 
@@ -1186,15 +1193,15 @@ PS! Kui andmekogu poolt on teenusedeklaratsioonis nõusoleku andmisel digitaalne
 
 ![Ei luba](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant3.png)
 
-### 10.1.3 Klientrakenduse tegevused peale suunamist
+### Klientrakenduse tegevused peale suunamist
 
-Peale Andmesubjekti esindaja tagasi suunamist küsib Klientrakendus Andmenõusolekuteenusest nõusolekuviited ning nende valideerimise, et teada saada, millised nõusolekud olid antud ja nüüd kehtivad. Kasutatakse **url** ja **client** API-d (vt jaotised [5.1.2](#512-nõusoleku-päringu-algataminenõusoleku-küsimine---create) ja [5.1.3](#513-nõusolekuviidete-päring---status)).
+Peale Andmesubjekti esindaja tagasi suunamist küsib Klientrakendus Andmenõusolekuteenusest nõusolekuviited ning nende valideerimise, et teada saada, millised nõusolekud olid antud ja nüüd kehtivad. Kasutatakse **url** ja **client** API-d (vt jaotised [5.1.4.](#url) ja [5.1.5.](#client)).
 
 Vastavalt saadud vastusele, kuvab Klientrakendus Andmesubjekti esindajale teate. Kui kõik vajalikud nõusolekud kehtivad, võib Klientrakendus hakata küsima andmeid Andmekogult ja osutama teenust Andmesubjektile või Andmesubjekti esindajale.
 
-Kui mõned nõusolekud on puudu, küsib Klientrakendus Andmenõusolekuteenusest uue lingi (kasutades **url** API (vt jaotis [5.1.1](#511-eesmärgideklaratsioonide-nimekirja-päring---purposedeclarations)) ja suunab Andmesubjekti esindaja puuduvaid nõusolekuid andma.
+Kui mõned nõusolekud on puudu, küsib Klientrakendus Andmenõusolekuteenusest uue lingi (kasutades **url** API (vt jaotis [5.1.4.](#url)) ja suunab Andmesubjekti esindaja puuduvaid nõusolekuid andma.
 
-## 10.2 Nõusolekute haldus
+## Nõusolekute haldus
 
 Nõusolekute haldusvõimalused leiab juriidilisest isikust Andmesubjekti esindaja peale sisselogimist menüüpunkti Andmenõusolek alt alamlehelt "Kõik nõusolekud". Kasutaja saab juriidilise isiku esindajana näha kõiki nõusolekuid, mida ta on antud Andmesubjekti esindajana kinnitanud või millest loobunud, nii kehtivaid kui kehtetuid. Sellel lehel ei kuvata nõusolekutaotlusi (staatus Otsuse ootel), mida näeb alamlehel "Ootel nõusolekud".
 
@@ -1208,7 +1215,7 @@ Tabeli reale vajutades avaneb nõusoleku detailide vaade koos nupuga „Loobun n
 
 Kui Andmesubjekti esindaja kinnitas või allkirjastas nõusoleku (sh ka loobus), siis nõusoleku detailandmetel kuvatakse kinnitaja/allkirjastaja nimi.
 
-### 10.2.1 Nõusolekust loobumine
+### Nõusolekust loobumine
 
 Juriidilisest isikust Andmesubjekti esindaja saab nõusolekust loobuda nupust „Loobun nõusolekust“. Loobuda saab nõusolekust, mis on kehtiv (staatus Kinnitatud). Nõusolekust loobumine tuleb kasutajal üle kinnitada, et see ei tekiks kogemata.
 
@@ -1216,7 +1223,7 @@ Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusolekust loobumisel digit
 
 ![Loobu või pikenda](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant6.png)
 
-## 10.3 Nõusoleku küsimine
+## Nõusoleku küsimine
 
 Juriidilisest isikust Teenusepakkuja esindaja leiab peale eesti.ee portaali sisselogimist menüüpunkti Andmenõusolek alt vahelehelt "Nõusolekute küsimine" võimaluse potentsiaalsetele teenuse kasutajatele nõusolekupäringute tegemiseks. Loetelus on näha kõik sisseloginud kasutaja poolt tehtud nõusolekupäringud sõltumata nõusoleku staatusest.
 
@@ -1230,15 +1237,15 @@ Kasutaja otsib juriidilise isiku, kelle kohta soovitakse andmeid saada, valib ri
 
 Kui kasutaja on nõusolekupäringu ära esitanud, sulgub hüpikaken ja nõusolekupäringu loetelusse on juurde tekkinud uus päring staatuses "Otsuse ootel". Nõusolekute haldamise funktsionaalsus toimib ka sellel valamlehel nagu kirjeldatud eelnevas jaotises Nõusolekute haldus.
 
-### 10.3.1 Nõusolekute küsimine Klientrakenduse kaudu
+### Nõusolekute küsimine Klientrakenduse kaudu
 
-Kui Teenusepakkuja Klientrakendus soovib juriidilisest isikust Andmesubjektidelt saada nõusolekuid andmete saamiseks Andmekogult, siis küsitakse kõigepealt kehtivaid eesmärgideklaratsioone kasutades teenust **purposedeclarations** API (vt jaotis [5.1.1](#511-eesmärgideklaratsioonide-nimekirja-päring---purposedeclarations)).
+Kui Teenusepakkuja Klientrakendus soovib juriidilisest isikust Andmesubjektidelt saada nõusolekuid andmete saamiseks Andmekogult, siis küsitakse kõigepealt kehtivaid eesmärgideklaratsioone kasutades teenust **purposedeclarations** API (vt jaotis [5.1.4.](#url)).
 
-Valitud eesmärgideklaratsioonile vastavate andmete saamiseks Andmekogust tehakse nõusolekupäringud juriidilistele isikutele kasutades teenust **create** API (vt jaotis [5.1.2](#512-nõusoleku-päringu-algataminenõusoleku-küsimine---create)). Klientrakendusel peavad registrikoodid eelnevalt teada olema. Korraga saab koostada nõusolekupäringud 1 - 100 juriidilisele isikule.
+Valitud eesmärgideklaratsioonile vastavate andmete saamiseks Andmekogust tehakse nõusolekupäringud juriidilistele isikutele kasutades teenust **create** API (vt jaotis [5.1.4.](#url)). Klientrakendusel peavad registrikoodid eelnevalt teada olema. Korraga saab koostada nõusolekupäringud 1 - 100 juriidilisele isikule.
 
-Kehtivate nõusolekute kohta saab Klientrakendus nõusolekuviited kasutades teenust **status** API (vt jaotis [5.1.3](#513-nõusolekuviidete-päring---status)).
+Kehtivate nõusolekute kohta saab Klientrakendus nõusolekuviited kasutades teenust **status** API (vt jaotis [5.1.5.](#client)).
 
-## 10.4 Edastatud andmed
+## Edastatud andmed
 
 Alamleht "Edastatud andmed" annab ülevaate sellest, millised edukad andmepäringud on tehtud Andmesubjekti nõusolekute alusel ja võimaldab jälgida enda esindatava juriidilise isiku kohta käivate andmete edastamisi.
 

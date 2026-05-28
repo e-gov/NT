@@ -753,7 +753,8 @@ status | string | Service health status. "UP" -- the service is available.
 Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
-error.http.503 | SERVICE_UNAVAILABLE (503) | The service is unavailable (response: {"status": "DOWN"})
+
+If the service is unreachable, no response is returned (the security server returns a network or connection error).
 
 
 ### getReportingHealth
@@ -792,7 +793,8 @@ status | string | Service health status. "UP" -- the service is available.
 Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
-error.http.503 | SERVICE_UNAVAILABLE (503) | The service is unavailable (response: {"status": "DOWN"})
+
+If the service is unreachable, no response is returned (the security server returns a network or connection error).
 
 
 # Instructions for the interface testing of the Legal Entity Data Consent Service

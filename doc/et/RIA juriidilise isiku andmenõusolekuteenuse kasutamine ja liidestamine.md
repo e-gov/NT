@@ -753,7 +753,8 @@ status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
-error.http.503 | SERVICE_UNAVAILABLE (503) | Teenus ei ole saadaval (vastus: {"status": "DOWN"})
+
+Kui teenus ei ole kättesaadav, vastust ei tagastata (turvaserver tagastab võrgu- või ühenduse vea).
 
 
 ### getReportingHealth
@@ -792,7 +793,8 @@ status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
-error.http.503 | SERVICE_UNAVAILABLE (503) | Teenus ei ole saadaval (vastus: {"status": "DOWN"})
+
+Kui teenus ei ole kättesaadav, vastust ei tagastata (turvaserver tagastab võrgu- või ühenduse vea).
 
 
 # Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt

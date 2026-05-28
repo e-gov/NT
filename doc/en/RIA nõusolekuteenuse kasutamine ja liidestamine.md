@@ -384,7 +384,7 @@ Before generating the link, the Data Consent Service checks that the personal id
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent
 
 **Example of a query command (curl):**
 
@@ -393,7 +393,7 @@ curl -k  \
 -H "accept: application/json" \
 -H "Content-type: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent" \
 -d "{ \
 \"idCode\":\"60001019906\",
 \"callback\":\"https://www.ria.ee\",
@@ -454,7 +454,7 @@ Used by: Client
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference
 
 **Example of a query command (curl):**
 
@@ -463,7 +463,7 @@ curl -k \
 -H "accept: application/json" \
 -H "Content-type: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/reference" \
 -d "{ \
 \"idCode\": \"60001019906\", \
 \"purposeDeclarationBusinessIdentifiers\": [\"EesmärgideklaratsiooniID\", \"ED_KAKS\", \"ED_KOLM\"]
@@ -517,7 +517,7 @@ Used by: Client
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
 
 **Example of a query command (curl):**
 
@@ -526,10 +526,10 @@ curl -k -X GET \
 -H "accept: application/json" \
 -H "Content-type: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6" 
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6" 
 ```
 
-**Query:** https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
+**Query:** https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
@@ -571,7 +571,7 @@ Used by: Data Provider
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider
 
 **Example of a query command (curl):**
 
@@ -580,10 +580,10 @@ curl -k -X GET \
 -H "accept: application/json" \
 -H "Content-type: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6"
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6"
 ```
 
-**Query:** https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
+**Query:** https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/dataprovider?consentReference= 91e9844d-3b5e-4df8-9254-42316b1607b6
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
@@ -621,7 +621,7 @@ Used by: Data Provider
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
 
 **Example of a query command (curl):**
 
@@ -630,7 +630,7 @@ curl -k -X POST \
 -H "accept: application/json" \
 -H "Content-type: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent" \ 
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent" \ 
 -d "{ \
 \"transmissionTimestamp\":\"2021-06-18T13:11:50.085Z\", \
 \"consentReference\":\"226cd452-0459-404c-832d-4771bef14af3\"}" 
@@ -638,7 +638,7 @@ curl -k -X POST \
 
 **Query:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/consent
 
 Parameter | Is it mandatory? | Type of data | Description
 --- | --- | --- | ---
@@ -678,7 +678,7 @@ Before generating the link, the Data Consent Service checks from the population 
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/representation
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/representation
 
 **Example of a query command (curl):**&nbsp;
 
@@ -687,7 +687,7 @@ curl -X POST \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
 -H "X-Road-Client: ee-dev/COM/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/representation" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/representation" \
 -d "{ \
 \"callback\":\"https://www.ria.ee\",
 \"representativeIdCode\":\"39602235224\",
@@ -757,7 +757,7 @@ Used by: Client
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/filter-by-status
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/filter-by-status
 
 **Example of a query command (curl):**&nbsp;
 
@@ -766,7 +766,7 @@ curl -X POST \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
 -H "X-Road-Client: ee-dev/COM/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/filter-by-status" \
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/filter-by-status" \
 -d "{ \
 \"consentStatus\": [\"VALID\", \"INVALID\"], \
 \"consentReferences\": [ \
@@ -870,7 +870,7 @@ Used by: monitoring / X-Road consumers
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health
 
 **Example of a query command (curl):**
 
@@ -878,7 +878,7 @@ https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/
 curl -k -X GET \
 -H "accept: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health"
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health"
 ```
 
 **Response:**
@@ -892,6 +892,13 @@ curl -k -X GET \
 Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
+
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+
 
 ### getReportingHealth
 
@@ -901,7 +908,7 @@ Used by: monitoring / X-Road consumers
 
 **API URL:**
 
-https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health
+https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health
 
 **Example of a query command (curl):**
 
@@ -909,7 +916,7 @@ https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/ap
 curl -k -X GET \
 -H "accept: application/json" \
 -H "X-Road-Client: ee-dev/GOV/70006317/consent" \
-"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health"
+"https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health"
 ```
 
 **Response:**
@@ -923,6 +930,13 @@ curl -k -X GET \
 Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
+
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+
 
 # Instructions for the interface testing of the Data Consent Service
 
@@ -942,14 +956,14 @@ The Expired and Inapplicable scenarios are not included in the tests, as they ar
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . with the correct input parameters (personal identification code, PD identifier, and X-tee subsystem) | Verify that the URL of the consents returned can be used in the next step
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . with the correct input parameters (personal identification code, PD identifier, and X-tee subsystem) | Verify that the URL of the consents returned can be used in the next step
 2 | Use the Consent Reference received to view the consents requested in the Data Consent Service | Verify that the consent is returned with the REQUESTED status according to the personal identification code, SD, and PD data that were the input parameter
 
 *Test case 2 Generating the consent URL and viewing the consent information (multiple Purpose Declarations – carry out if there is a substantial need for such scenarios)*
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . with the correct input parameters (personal identification code, more than one PD identifier, and the X-tee subsystem). The input PDs must be associated with the same subsystem. | Verify that the URL of the consents returned can be used in the next step
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference . with the correct input parameters (personal identification code, more than one PD identifier, and the X-tee subsystem). The input PDs must be associated with the same subsystem. | Verify that the URL of the consents returned can be used in the next step
 2 | Use the Consent Reference received to view the consents requested in the Data Consent Service | Verify that consent is returned with the REQUESTED status according to the personal identification code, SD, and PD data that were the input parameter
 
 *Test case 3 Generating the consent URL if a consent in the status ‘requested’ or a consent is already in place for the given personal identification code, PD, and X-tee subsystem (in different statuses)*
@@ -958,7 +972,7 @@ Precondition: in order to test the logic for asking/not asking for consents agai
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api /consent/getConsentGroupReference . with the correct input parameters (personal identification code, PD identifier, and X-tee subsystem), if an APPROVED consent is already in place for this combination. The input PDs must be associated with the same subsystem. | Verify that the error ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED is returned
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api /consent/getConsentGroupReference . with the correct input parameters (personal identification code, PD identifier, and X-tee subsystem), if an APPROVED consent is already in place for this combination. The input PDs must be associated with the same subsystem. | Verify that the error ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED is returned
 2 | Like step 1, but the consent in place is REQUESTED | Verify that the new ConsentGroupReference is returned to the existing consent in the status ‘requested’
 3 | Like step 1, but the consent in place is either DECLINED or EXPIRED | Verify that a new consent is generated with the new ConsentGroupReference
 
@@ -966,9 +980,9 @@ N | Activity | Expected result
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with a personal identification code that does not comply with validation rules (non-numeric, incorrect verification number, shorter/longer than 11 characters), other input parameters are correct. | For an incorrect verification number, check the error message with the code ID_CODE_INVALID, for a format error with VALIDATION
-2 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with an unknown PD identifier, the other parameters are correct | Check the error message with the code PURPOSE_DECLARATIONS_NOT_FOUND
-3 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with an X-tee subsystem that does not match the subsystem used in the PD, the other input parameters are correct | Check the error message with the code PURPOSE_DECLARATIONS_NOT_FOUND
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with a personal identification code that does not comply with validation rules (non-numeric, incorrect verification number, shorter/longer than 11 characters), other input parameters are correct. | For an incorrect verification number, check the error message with the code ID_CODE_INVALID, for a format error with VALIDATION
+2 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with an unknown PD identifier, the other parameters are correct | Check the error message with the code PURPOSE_DECLARATIONS_NOT_FOUND
+3 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentGroupReference with an X-tee subsystem that does not match the subsystem used in the PD, the other input parameters are correct | Check the error message with the code PURPOSE_DECLARATIONS_NOT_FOUND
 
 ## Approving and declining consent
 
@@ -988,14 +1002,14 @@ In order to make sure that the Client and the Data Consent Service are able to e
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences on a set of inputs (personal identification code, PD identifier, X-tee subsystem) with valid prior consents | Verify that only Consent References with an APPROVED state with a PD identifier are returned.
-2 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences in the absence of valid consents for a given set of inputs, there are consents in other statuses (personal identification code, PD identifier, X-tee subsystem) | Verify that HTTP_NOT_FOUND is returned
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences on a set of inputs (personal identification code, PD identifier, X-tee subsystem) with valid prior consents | Verify that only Consent References with an APPROVED state with a PD identifier are returned.
+2 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences in the absence of valid consents for a given set of inputs, there are consents in other statuses (personal identification code, PD identifier, X-tee subsystem) | Verify that HTTP_NOT_FOUND is returned
 
 *Test case 9 Consent References query – alternative scenarios*
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences if there is no valid consent for the set of input parameters | Verify that HTTP_NOT_FOUND is returned
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/getConsentReferences if there is no valid consent for the set of input parameters | Verify that HTTP_NOT_FOUND is returned
 
 ## Validation of consents (Client Application and Data Provider)
 
@@ -1005,10 +1019,10 @@ Prerequisite: in order to validate consents, it is ideally necessary to create c
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching clientSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent data is returned (consentReference, consentExpiration, idCode, purposeDeclarationID)
-2 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent information is not returned
-3 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForDataProvider with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent data is returned (consentReference, ConsentExpiration, idCode, clientSubsystemIdentifier, serviceDeclarationID)
-4 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent has a status other than APPROVED | Verify that the consent information is not returned
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching clientSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent data is returned (consentReference, consentExpiration, idCode, purposeDeclarationID)
+2 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent information is not returned
+3 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForDataProvider with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent is in the APPROVED status | Verify that the consent data is returned (consentReference, ConsentExpiration, idCode, clientSubsystemIdentifier, serviceDeclarationID)
+4 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client/validateConsentForClient with matching dataProviderSubsystemIdentifier and consentReference if the corresponding consent has a status other than APPROVED | Verify that the consent information is not returned
 
 ## Reporting on successful data queries based on consents (Data Provider)
 
@@ -1018,8 +1032,8 @@ Prerequisite: there is a consent to be reported
 
 N | Activity | Expected result
 --- | --- | ---
-1 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport with the existing consentReference of the consent, and the subsystem in the X-tee query that matches the requesting subsystem. | Verify that a ‘success’ response is returned and it is possible to check for the presence of a reporting entry in the Data Consent Service
-2 | Launch https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport with a consentReference which does not exist and the subsystem in the X-tee query that matches the requesting subsystem. | Verify the error management, reporting entry does not appear in the Data Consent Service
+1 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/reporting/consent/createConsentReport with the existing consentReference of the consent, and the subsystem in the X-tee query that matches the requesting subsystem. | Verify that a ‘success’ response is returned and it is possible to check for the presence of a reporting entry in the Data Consent Service
+2 | Launch https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/ reporting/consent/createConsentReport with a consentReference which does not exist and the subsystem in the X-tee query that matches the requesting subsystem. | Verify the error management, reporting entry does not appear in the Data Consent Service
 
 # Instructions for using the Data Consent Service management interface
 

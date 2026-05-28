@@ -748,6 +748,13 @@ Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
 
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+
+
 ### getReportingHealth
 
 The query can be submitted to check the health status of the Data Consent Service reporting service.
@@ -778,6 +785,13 @@ curl -k -X GET \
 Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
+
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+
 
 # Instructions for the interface testing of the Legal Entity Data Consent Service
 

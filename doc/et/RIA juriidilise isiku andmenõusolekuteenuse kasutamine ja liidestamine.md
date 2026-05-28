@@ -748,6 +748,13 @@ Parameeter | Andmetüüp | Kirjeldus
 --- | --- | ---
 status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 
+**Veahaldus:**
+
+Vea võti | Veakood ja staatus | Vea kirjeldus
+--- | --- | ---
+error.validation | VALIDATION (400) | X-Road-Client päise puudumine, tühi väärtus või pikkus üle 255 märgi
+
+
 ### getReportingHealth
 
 Päringu abil saab kontrollida Andmenõusolekuteenuse raporteerimisteenuse seisundit.
@@ -778,6 +785,13 @@ curl -k -X GET \
 Parameeter | Andmetüüp | Kirjeldus
 --- | --- | ---
 status | string | Teenuse seisund. "UP" -- teenus on saadaval.
+
+**Veahaldus:**
+
+Vea võti | Veakood ja staatus | Vea kirjeldus
+--- | --- | ---
+error.validation | VALIDATION (400) | X-Road-Client päise puudumine, tühi väärtus või pikkus üle 255 märgi
+
 
 # Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt
 

@@ -100,7 +100,7 @@ consentReference | yes | string | Consent reference – a unique code correspond
 
 **Query example**
 
-`https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6`
+`https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client?consentReference=91e9844d-3b5e-4df8-9254-42316b1607b6`
 
 **Output**
 Parameter | Data type | Description

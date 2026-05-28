@@ -41,6 +41,8 @@ Date | Version | Description
     - [5.1.5 reportDataTransmission](#reportdatatransmission)
     - [5.1.6 getConsentGroupReferenceRepresentable](#getconsentgroupreferencerepresentable)
     - [5.1.7 postConsentFilterByStatus](#postconsentfilterbystatus)
+    - [5.1.8 consent/health](#consenthealth)
+    - [5.1.9 reporting/health](#reportinghealth)
 - [6. Instructions for the interface testing of the Data Consent Service](#instructions-for-the-interface-testing-of-the-data-consent-service)
   - [6.1 Creating a consent URL and displaying information on consents in the status 'requested' (primary and recurring)](#creating-a-consent-url-and-displaying-information-on-consents-in-the-status-requested-primary-and-recurring)
   - [6.2 Approving and declining consent](#approving-and-declining-consent)
@@ -859,6 +861,68 @@ purposeDeclarationId | string | Purpose Declaration identifier associated with t
 Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, data type does not match)
+
+### consent/health
+
+The query can be submitted to check the health status of the Data Consent Service.
+
+Used by: monitoring / X-Road consumers
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health
+
+**Example of a query command (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health"
+```
+
+**Response:**
+
+```
+{
+  "status": "UP"
+}
+```
+
+Parameter | Type of data | Description
+--- | --- | ---
+status | string | Service health status. "UP" -- the service is available.
+
+### reporting/health
+
+The query can be submitted to check the health status of the Data Consent Service reporting service.
+
+Used by: monitoring / X-Road consumers
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health
+
+**Example of a query command (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health"
+```
+
+**Response:**
+
+```
+{
+  "status": "UP"
+}
+```
+
+Parameter | Type of data | Description
+--- | --- | ---
+status | string | Service health status. "UP" -- the service is available.
 
 # Instructions for the interface testing of the Data Consent Service
 

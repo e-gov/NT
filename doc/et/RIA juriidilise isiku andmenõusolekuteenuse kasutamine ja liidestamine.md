@@ -32,6 +32,8 @@ Kuupäev | Versioon | Kirjeldus
     - [5.1.5 client](#client)
     - [5.1.6 dataprovider](#dataprovider)
     - [5.1.7 reportDataTransmission](#reportdatatransmission)
+    - [5.1.8 consent/health](#consenthealth)
+    - [5.1.9 reporting/health](#reportinghealth)
 - [6. Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-jurnt-testimiseks-liidestuja-poolt)
   - [6.1 Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
   - [6.2 Eesmärgideklaratsioonide pärimine (Teenusepakkuja)](#eesmärgideklaratsioonide-pärimine-teenusepakkuja)
@@ -714,6 +716,68 @@ Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
 error.http.404 | HTTP_NOT_FOUND (404) | ConsentReference ja X-tee client headeri jaoks puudub vaste
+
+### consent/health
+
+Päringu abil saab kontrollida Andmenõusolekuteenuse seisundit.
+
+Kasutab: monitooring/x-tee teenuse tarbija
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health
+
+**Päringu käsu näide (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/health"
+```
+
+**Vastus:**
+
+```
+{
+  "status": "UP"
+}
+```
+
+Parameeter | Andmetüüp | Kirjeldus
+--- | --- | ---
+status | string | Teenuse seisund. "UP" -- teenus on saadaval.
+
+### reporting/health
+
+Päringu abil saab kontrollida Andmenõusolekuteenuse raporteerimisteenuse seisundit.
+
+Kasutab: monitooring/x-tee teenuse tarbija
+
+**API URL:**
+
+https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health
+
+**Päringu käsu näide (curl):**
+
+```
+curl -k -X GET \
+-H "accept: application/json" \
+-H "X-Road-Client: ee-dev/GOV/70006317/consent" \
+"https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/reporting-stage/api/reporting/health"
+```
+
+**Vastus:**
+
+```
+{
+  "status": "UP"
+}
+```
+
+Parameeter | Andmetüüp | Kirjeldus
+--- | --- | ---
+status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 
 # Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt
 

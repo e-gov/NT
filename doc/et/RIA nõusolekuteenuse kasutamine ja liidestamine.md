@@ -253,7 +253,7 @@ sellest on teada Klientrakendusele.
 
 **Põhistsenaariumi jadadiagramm:**
 
-![Põhistsenaariumi jadadiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image1.png)
+![Põhistsenaariumi jadadiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image1.png)
 
 
 **Alternatiivsed stsenaariumid ja laiendused:**
@@ -536,7 +536,7 @@ Klientrakendusele kaitstud teenuse kaudu. Andmekogu peab raporteerima Andmenõus
 
 **Põhistsenaariumi jadadiagramm:**
 
-![Põhistsenaariumi jadadiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image2.png)
+![Põhistsenaariumi jadadiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image2.png)
 
 **Alternatiivsed stsenaariumid:**
 
@@ -571,7 +571,7 @@ Klientrakendusele kaitstud teenuse kaudu. Andmekogu peab raporteerima Andmenõus
 Järgnev diagramm kirjeldab nõusoleku võimalikke seisundeid ja
 nendevahelisi üleminekuid.
 
-![Nõusoleku seisundidiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image3.png)
+![Nõusoleku seisundidiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image3.png)
 
 # Andmenõusolekuteenusega liidestamine ja päringute tehniline kirjeldus
 
@@ -1283,7 +1283,7 @@ Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenu
 -   Juhul, kui Klientrakendus vajab mitmes teenusedeklaratsioonides kirjeldatud andmeid, peab deklareerima mitu vastavat eesmärgideklaratsiooni. Üks eesmärgideklaratsioon võib olla seotud ainult ühe teenusedeklaratsiooniga.
 
     
-![Loogilised seosed infosüsteemide ja deklaratsioonide vahel](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image4.png)
+![Loogilised seosed infosüsteemide ja deklaratsioonide vahel](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image4.png)
 
 ## Rollid
 
@@ -1319,14 +1319,14 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
 võimalik ainult siis, kui infosüsteemiga pole seotud ühtegi kehtiva
 teenusedeklaratsiooni.
 
-![Infosüsteemide nimekiri](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image5.jpg)
+![Infosüsteemide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image5.jpg)
 
 **Infosüsteemi lisamine**
 
 Uue infosüsteemi lisamise vorm. Sisestatavad andmed on detailselt
 kirjeldatud jaotises [7.2.2](#infosüsteemi-andmed).
 
-![Infosüsteemi lisamine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image6.jpg)
+![Infosüsteemi lisamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image6.jpg)
     
 **Infosüsteemi muutmine**
 
@@ -1335,7 +1335,7 @@ muutmine ei mõjuta sellega seotud teenusedeklaratsioone - seal jäävad
 endised andmed. Uued teenusedeklaratsioonid luuakse kasutades uued
 andmed.
 
-![Infosüsteemi muutmine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image7.jpg)
+![Infosüsteemi muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image7.jpg)
 
 ### Infosüsteemi andmed
     
@@ -1378,14 +1378,14 @@ nõusolekud kehtetuteks.
 deklaratsiooni esitamise vormi automaatselt täidetakse kloonitava
 deklaratsiooni andmetega edasiseks redigeerimiseks.
 
-![Teenusedeklaratsionide nimekiri](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image8.jpg)
+![Teenusedeklaratsionide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image8.jpg)
 
 **Teenusedeklaratsiooni esitamine**
 
 Uue teenusedeklaratsiooni esitamise vorm. Sisestatavad andmed on
 detailselt kirjeldatud jaotises [7.3.2.](#teenusedeklaratsiooni-andmed)
 
-![Teenusedeklaratsioni esitamine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image9.jpg)
+![Teenusedeklaratsioni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image9.jpg)
 
 **Teenusedeklaratsiooni detailvaade**
 
@@ -1395,7 +1395,7 @@ kehtivat nõusolekut on seotud antud teenusedeklaratsiooniga. Detailvaate
 kaudu saab avaldada soovi muuta kehtiva deklaratsiooni andmed, vajutades
 nuppu \"Muuda deklaratsiooni andmed\".
 
-![Teenusedeklaratsioni detailvaade](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image10.jpeg)
+![Teenusedeklaratsioni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image10.jpeg)
 
 **Teenusedeklaratsiooni muutmine**
 
@@ -1403,7 +1403,7 @@ Vaade, mis võimaldab kehtiva teenusedeklaratsiooni andmed osaliselt
 muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 [7.3.2.](#teenusedeklaratsiooni-andmed)
 
-![Teenusedeklaratsioni muutmine](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image11.jpeg)
+![Teenusedeklaratsioni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image11.jpeg)
 
 ### Teenusedeklaratsiooni andmed
 
@@ -1434,7 +1434,7 @@ Staatus | TD olek. Võimalikud olekud: KEHTIV ja KEHTETU’ (vt. jaotis 7.2.3.) 
 
 ### Teenusedeklaratsiooni seisundidiagramm
 
-![Teenusedeklaratsiooni seisundidiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image12.png)
+![Teenusedeklaratsiooni seisundidiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image12.png)
 
 ## Eesmärgideklaratsioonide haldus
 
@@ -1467,14 +1467,14 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
     jaoks - uue deklaratsiooni esitamise vormi automaatselt täidetakse
     kloonitava deklaratsiooni andmetega edasiseks redigeerimiseks.
 
-![Eesmärgideklaratsioonide nimekiri](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image13.jpg)
+![Eesmärgideklaratsioonide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image13.jpg)
 
 **Eesmärgideklaratsiooni esitamine**
 
 Uue eesmärgideklaratsiooni esitamise vorm. Sisestatavad andmed on
 detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni esitamine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
+![Eesmärgideklaratsiooni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
 
 **Eesmärgideklaratsiooni detailvaade**
 
@@ -1485,7 +1485,7 @@ kehtiva deklaratsiooni andmed, vajutades nuppu \"Muuda deklaratsiooni
 andmed\". „Laadi alla" nuppu vajutades saab alla laadida
 eesmärgideklaratsiooni andmed CSV formaadis.
 
-![Eesmärgideklaratsiooni detailvaade](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
+![Eesmärgideklaratsiooni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
 
 **Eesmärgideklaratsiooni muutmine**
 
@@ -1493,7 +1493,7 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmed osaliselt
 muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni muutmine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
+![Eesmärgideklaratsiooni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
 
 ### Eesmärgideklaratsiooni andmed
 
@@ -1517,7 +1517,7 @@ Staatus | ED olek. Võimalikud olekud: KEHTIV ja KEHTETU (vt. jaotis 7.3.3.) | k
 
 ### Eesmärgideklaratsiooni seisundidiagramm
 
-![Eesmärgideklaratsiooni seisundidiagramm](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image17.png)
+![Eesmärgideklaratsiooni seisundidiagramm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image17.png)
     
 ## Statistika
 
@@ -1546,7 +1546,7 @@ Statistika tulemuste tabelis saab näha statistikat vastavalt valitud
 Infosüsteemi ja/või andmete saaja järgi. Võimaldab statistika andmeid
 sorteerida erinevate tulpade järgi.
 
-![Statistika väljund](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image31.png)
+![Statistika väljund](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image31.png)
 
 ### Statistika andmestik
 
@@ -1629,13 +1629,13 @@ Enne Andmenõusolekuteenusesse sattumist autendib Andmesubjekt või
 Andmesubjekti esindaja ennast TARA kaudu, kasutades ühte pakutavatest 
 sisselogimisviisidest.
 
-![TARA](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/autentimise%20avakuva.PNG)
+![TARA](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/autentimise%20avakuva.PNG)
 
 Pärast autentimist näeb Andmesubjekt või Andmesubjekti esindaja 
 nõusolekutaotlusi. Antud näitel küsitakse nõusolekut ainult ühe 
 andmekomplekti edastamisele: Tervise konsultatsiooni andmeid.
 
-![Nõusolekutaotlused](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus.PNG)
+![Nõusolekutaotlused](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus.PNG)
 
 Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
 kohta.
@@ -1643,19 +1643,19 @@ kohta.
 PS! Kui nõusolekut antakse esindatava eest, siis nõusoleku andjaks on
 esindatav ehk laps.
 
-![Nõusoleku andja,andmete edastaja, andmete saaja](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Infov%C3%A4ljad%20koos.PNG)
+![Nõusoleku andja,andmete edastaja, andmete saaja](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Infov%C3%A4ljad%20koos.PNG)
 
 Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekt või 
 Andmesubjekti esindaja valida, kas ta lubab või ei luba kirjeldatud 
 andmekomplekti edastamist. Kui lubab, siis staatuse silt ja nupp 
 muutuvad rohelisteks.
 
-![Luban](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20luban.PNG)
+![Luban](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20luban.PNG)
 
 Kui Andmesubjekt või Andmesubjekti esindaja ei luba kirjeldatud 
 andmekomplekti edastada, siis muutuvad staatuse silt ja nupp punasteks.
 
-![Ei luba](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20ei%20luba.PNG)
+![Ei luba](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20ei%20luba.PNG)
 
 Enne „Kinnitan" nupu vajutamist saab Andmesubjekt või Andmesubjekti 
 esindaja oma otsuseid samal lehel muuta.
@@ -1670,7 +1670,7 @@ allkirjastada digitaalselt.
 Kui kõik valikud on tehtud, suunatakse Andmesubjekti või Andmesubjekti
 esindaja tagasi Klientrakendusesse.
 
-![Kinnitan](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20antud.PNG)
+![Kinnitan](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20antud.PNG)
     
 ### Pärast suunamist
 
@@ -1703,7 +1703,7 @@ sisselogimist. Haldusliides koosneb neljast alamlehest:
 
 Alamleht annab üldise info Andmenõusolekuteenusest.
 
-![Andmenõusolekuteenusest](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image26.jpeg)
+![Andmenõusolekuteenusest](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image26.jpeg)
 
 ### Minu nõusolekud
 
@@ -1719,27 +1719,27 @@ automaatselt Rahvastikuregistrist.
 Nõusolekuid saab filtreerida staatuse, lapse (vahelehel „Lapsed") ja
 märksõna järgi. Nõusolekute tabel on sorteeritav.
 
-![Minu nõusolekud](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image27.jpeg)
-![Lapse nõusolekud](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image32.png)
+![Minu nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image27.jpeg)
+![Lapse nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image32.png)
 
 Tabeli reale vajutades saab näha nõusoleku detaile ning kehtiva
 nõusoleku puhul nuppu „loobun nõusolekust", mille abil saab nõusoleku
 tagasi võtta ning juhul, kui nõusoleku pikendamine on lubatud, siis
 nuppu „Pikenda", millega saab nõusolekut pikendada.
 
-![Nõusoleku detailid ja loobumine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20portaalis.PNG)
+![Nõusoleku detailid ja loobumine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20portaalis.PNG)
 
 Kui nõusoleku kinnitas või allkirjastas Andmesubjekti esindaja (sh ka
 loobus), siis nõusoleku detailandmetel kuvatakse
 kinnitaja/allkirjastaja nime.
 
-![Esindaja kinnitas](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image33.png)
+![Esindaja kinnitas](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image33.png)
 
 Kehtetu nõusoleku detailides saab näha põhjust, miks nõusolek ei kehti
 (nõusolek on tagasi võetud / nõusolek on aegunud / andmeedastus on
 lõppenud).
 
-![Nõusoleku kehtivuse lõppemise põhjus](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image29.jpg)
+![Nõusoleku kehtivuse lõppemise põhjus](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image29.jpg)
 
 #### Nõusolekust loobumine
 
@@ -1750,12 +1750,12 @@ Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusolekust
 loobumisel digitaalne allkirjastamine nõutud, siis nõusolekust
 loobumine tuleb allkirjastada digitaalselt.
 
-![Loobu või pikenda](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image34.png)
+![Loobu või pikenda](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image34.png)
 
 Kui nõusolekust loobutakse, siis muudetakse nõusolek kehtetuks ja
 kasutajale kuvatakse teadet „Nõusolek on tagasi võetud".
 
-![Loobutud nõusolek](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image35.png)
+![Loobutud nõusolek](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image35.png)
 
 Kui nõusolekust loobus Andmesubjekti esindaja, siis nõusoleku
 detailandmetesse kuvatakse nõusolekust loobujaks esindaja nime (vt pilti üleval pool).
@@ -1771,7 +1771,7 @@ ei saa.
 
 Andmesubjektile kuvatakse nõusolekutaotlus.
 
-![Pikendamine](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20pikendamine.PNG)
+![Pikendamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20pikendamine.PNG)
 
 Andmesubjekt saab kalendrist valida kehtivuse lõpu kuupäeva. Vaikimisi
 kuvatakse võimalik maksimum kuupäev, mis võetakse
@@ -1800,13 +1800,13 @@ Informatsioon andmete edastamisest saab otsida märksõna, lapse
 (vahelehel „Lapsed") järgi ning filtreerida aja perioodi järgi. Tabel
 on sorteeritav.
 
-![Edastatud andmed](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image30.jpeg)
+![Edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image30.jpeg)
 
 „Lapsed" vahelehel kuvatakse lapsi, kes on alaealised ja kelle suhtes
 omatakse täielikku isikuhooldusõigust. Laste info päritakse
 automaatselt Rahvastikuregistrist.
 
-![Lapse edastatud andmed](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image37.png)
+![Lapse edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image37.png)
 
 ### Kasutustingimused
 

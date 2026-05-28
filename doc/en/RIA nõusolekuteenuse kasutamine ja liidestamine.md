@@ -165,7 +165,7 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 
 **Baseline scenario sequence diagram:**
 
-![Baseline scenario sequence diagram](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image1.png)
+![Baseline scenario sequence diagram](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image1.png)
 
 **Alternative scenarios and extensions:**
 
@@ -322,7 +322,7 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 
 **Baseline scenario sequence diagram:**
 
-![Baseline scenario sequence diagram](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image2.png)
+![Baseline scenario sequence diagram](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image2.png)
 
 **Alternative scenarios:**
 
@@ -350,7 +350,7 @@ The chapter contains two main use cases related to the Data Provider and the Cli
 
 The following diagram describes the possible statuses of the consent and the transitions between them.
 
-![Consent status diagram](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image3.png)
+![Consent status diagram](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image3.png)
 
 # Interfacing with the Data Consent Service and the technical specifications of queries
 
@@ -973,7 +973,7 @@ The Data Consent Service management interface is designed for the management of 
 
 - In the case where the Client requires the data described in more than one Service Declaration, several corresponding Purpose Declarations must be declared. A single Purpose Declaration may be associated with only one Service Declaration.
 
-![Logical associations between information systems and declarations](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image4.png)
+![Logical associations between information systems and declarations](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image4.png)
 
 ## Roles
 
@@ -1000,19 +1000,19 @@ The following actions can be performed on each declaration:
 
 ‘Delete’ – perform a logical deletion of the information system. The deletion is only possible if there are no valid Service Declarations associated with the information system.
 
-![List of information systems](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image5.jpg)
+![List of information systems](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image5.jpg)
 
 **Adding an information system**
 
 The form for adding a new information system. The data to be entered is described in detail in section [7.2.2](#infosüsteemi-andmed).
 
-![Adding an information system](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image6.jpg)
+![Adding an information system](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image6.jpg)
 
 **Modifying an information system**
 
 A view that allows you to modify the data of the information system. Changing the data of the information system does not affect the associated Service Declarations – the data will remain as it is. New Service Declarations will be created using the new data.
 
-![Modifying an information system](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image7.jpg)
+![Modifying an information system](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image7.jpg)
 
 ### Information system data
 
@@ -1045,25 +1045,25 @@ The following actions can be performed on each declaration:
 
 ‘Clone’ – use the declaration as a template for a new declaration – the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
-![List of Service Declarations](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image8.jpg)
+![List of Service Declarations](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image8.jpg)
 
 **Submitting a Service Declaration**
 
 The form for submitting a new Service Declaration. The data to be entered is described in detail in section [7.3.2.](#service-declaration-data)
 
-![Submission of a Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image9.jpg)
+![Submission of a Service Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image9.jpg)
 
 **Detailed view of a Service Declaration**
 
 It displays the data associated with the Service Declaration – both basic and metadata. It also displays the number of valid Purpose Declarations and the number of valid consents associated with a given Service Declaration.&nbsp;In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the ‘Modify declaration data’ button.
 
-![Detailed view of a Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image10.jpeg)
+![Detailed view of a Service Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image10.jpeg)
 
 **Modifying a Service Declaration**
 
 A view that allows to partially modify the data of a valid Service Declaration. Fields which may/may not be changed are described in section [7.3.2.](#service-declaration-data)
 
-![Modifying a Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image11.jpeg)
+![Modifying a Service Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image11.jpeg)
 
 ### Service Declaration data
 
@@ -1094,7 +1094,7 @@ A view that allows to partially modify the data of a valid Service Declaration. 
 
 ### Status diagram of the Service Declaration
 
-![Status diagram of the Service Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image12.png)
+![Status diagram of the Service Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image12.png)
 
 ## Purpose Declarations management
 
@@ -1116,25 +1116,25 @@ The following actions can be performed on each declaration:
 
 - ‘*Clone*’ – use the declaration as a template for a new declaration – the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
-![List of Purpose Declarations](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image13.jpg)
+![List of Purpose Declarations](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image13.jpg)
 
 **Submitting a Purpose Declaration**
 
 Form for submitting a new Purpose Declaration. The data to be entered is described in detail in section [7.4.2.](#purpose-declaration-data)
 
-![Submitting a Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
+![Submitting a Purpose Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
 
 **Detailed view of a Purpose Declaration**
 
 It displays the data associated with the Purpose Declaration – both basic and metadata. &nbsp;It also displays the number of valid consents associated with a given Purpose Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the ‘Modify declaration data’ button. By clicking on the ‘Download’ button, it is possible to download the Purpose Declaration data in CSV format.
 
-![Detailed view of a Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
+![Detailed view of a Purpose Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
 
 **Modifying a Purpose Declaration**
 
 A view that allows to partially modify the data of a valid Purpose Declaration. Fields which may/may not be changed are described in section [7.4.2.](#purpose-declaration-data)
 
-![Modifying a Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/refs/heads/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
+![Modifying a Purpose Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
 
 ### Purpose Declaration data
 
@@ -1158,7 +1158,7 @@ A view that allows to partially modify the data of a valid Purpose Declaration. 
 
 ### Status diagram of the Purpose Declaration
 
-![Status diagram of the Purpose Declaration](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image17.png)
+![Status diagram of the Purpose Declaration](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image17.png)
 
 ## Statistics
 
@@ -1174,7 +1174,7 @@ The information system and/or the name of the data recipient must be selected to
 
 In the statistics results table, you can view statistics by selected information system and/or data recipient. It allows you to sort statistical data by different columns.
 
-![Statistics output](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image31.png)
+![Statistics output](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image31.png)
 
 ### Statistical data
 
@@ -1236,25 +1236,25 @@ Sample text:
 
 Before accessing the Data Consent Service, the Data Subject or Representative authenticates themselves via TARA, using one of the login methods provided.
 
-![TARA](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/autentimise%20avakuva.PNG)
+![TARA](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/autentimise%20avakuva.PNG)
 
 After authentication, the Data Subject or the Representative will see the consent requests. In this example, consent is requested for the transfer of only one set of data: Health consultation data.
 
-![Consent requests](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus.PNG)
+![Consent requests](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus.PNG)
 
 By clicking on the names of the parties, you can see detailed information about each party.
 
 Please note! If consent is given on behalf of a represented person, the person giving consent is the represented person, i.e. the child.
 
-![Person giving consent, data supplier, data recipient](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/Infov%C3%A4ljad%20koos.PNG)
+![Person giving consent, data supplier, data recipient](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Infov%C3%A4ljad%20koos.PNG)
 
 Once the details of the consent in the status ‘requested’ have been reviewed, the Data Subject or Representative can choose whether or not to consent to the transfer of the described data set. If they do, the status label and button will turn green.
 
-![Allow](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20luban.PNG)
+![Allow](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20luban.PNG)
 
 If the Data Subject or Representative does not authorise the transfer of the described data set, the status label and the button will turn red.
 
-![Do not allow](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20taotlus%20ei%20luba.PNG)
+![Do not allow](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20ei%20luba.PNG)
 
 The Data Subject or Representative can change their decisions on the same page before pressing the ‘Confirm’ button.
 
@@ -1264,7 +1264,7 @@ Please note! If a digital signature is required by the Data Provider when consen
 
 Once all the choices have been made, the Data Subject or the Representative will be redirected back to the Client.
 
-![Confirm](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20antud.PNG)
+![Confirm](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20antud.PNG)
 
 ### After being redirected
 
@@ -1282,7 +1282,7 @@ The consent management interface is part of the eesti.ee portal and the Data Sub
 
 This subpage provides general information about the Data Consent Service.
 
-![About the Data Consent Service](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image26.jpeg)
+![About the Data Consent Service](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image26.jpeg)
 
 ### My consents
 
@@ -1292,19 +1292,19 @@ The ‘Children’ tab only shows children who are minors and subject to full ph
 
 Consents can be filtered by status, child (in the ‘Children’ tab), and keyword. The table of consents is sortable.
 
-![My consents](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image27.jpeg) ![Consents from the child](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image32.png)
+![My consents](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image27.jpeg) ![Consents from the child](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image32.png)
 
 Clicking on a row in the table will show the details of the consent and, in the case of valid consents, a ‘Withdraw consent’ button to withdraw consent and, if extension of consent is allowed, an ‘Extend’ button to extend consent.
 
-![Consent details and withdrawal](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/N%C3%B5usolek%20portaalis.PNG)
+![Consent details and withdrawal](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20portaalis.PNG)
 
 If the consent has been confirmed or signed (or withdrawn) by a Representative, the name of the person who confirmed/signed the consent will be displayed in the consent details.
 
-![Confirmed by Representative](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image33.png)
+![Confirmed by Representative](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image33.png)
 
 In the details of an invalid consent, you can see the reason why the consent is not valid (consent withdrawn / consent expired / data transfer expired).
 
-![Reason for expiry of consent](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image29.jpg)
+![Reason for expiry of consent](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image29.jpg)
 
 #### Withdrawal of consent
 
@@ -1312,11 +1312,11 @@ The Data Subject and the Representative can withdraw consent by clicking on the 
 
 If a digital signature is required by the Data Provider when consent is withdrawn through the Service Declaration, the withdrawal of consent must be signed digitally.
 
-![Withdraw or extend](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image34.png)
+![Withdraw or extend](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image34.png)
 
 If the consent is withdrawn, the consent will become invalid and the user will see the message ‘Consent withdrawn’.
 
-![Withdrawn consent](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image35.png)
+![Withdrawn consent](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image35.png)
 
 If a Representative withdrew the consent, the name of the Representative who withdrew the consent will be displayed in the consent details (see image above).
 
@@ -1328,7 +1328,7 @@ Please note! A Representative cannot extend the consents of the Data Subject (ch
 
 A consent in the status ‘requested’ is displayed to the Data Subject.
 
-![Extension](https://raw.githubusercontent.com/e-gov/NT/refs/heads/documentation-change/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/NT%20pikendamine.PNG)
+![Extension](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20pikendamine.PNG)
 
 The Data Subject can choose the expiry date from the calendar. By default, the maximum possible date will be displayed, which will be taken to be the shortest of the maximum expiry date of the Service Declaration and the expiry date of the Purpose Declaration.
 
@@ -1344,11 +1344,11 @@ This sub-page provides an overview of which successful data queries were made on
 
 Information on data transfer can be searched by keyword or child (under the ‘Children’ tab) and filtered by time period. The table is sortable.
 
-![Data transmitted](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image30.jpeg)
+![Data transmitted](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image30.jpeg)
 
 The ‘Children’ tab shows children who are minors and subject to full physical custody. Information about children is automatically retrieved from the population register.
 
-![Data transmitted by the child](https://raw.githubusercontent.com/e-gov/NT/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/dokumendis%20kasutatud%20pildid/image37.png)
+![Data transmitted by the child](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image37.png)
 
 ### Terms of use
 

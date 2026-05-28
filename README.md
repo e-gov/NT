@@ -7,7 +7,9 @@ ET | [EN](https://github.com/e-gov/NT/blob/master/EN.md)
 Andmenõusolekuteenus on Riigi Infosüsteemi Ameti arendatav lahendus, mis võimaldab andmesubjektil anda kolmandale osapoolele nõusolek enda isikuandmete kasutamiseks.
 
 ## Andmenõusolekuteenuse kasutusjuhend partnerile
-[Andmenõusolekuteenuse kasutamine ja liidestamine](https://github.com/e-gov/NT/blob/master/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
+- [Andmenõusolekuteenuse kasutamine ja liidestamine](doc/et/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
+- [Juriidilise isiku andmenõusolekuteenuse kasutamine ja liidestamine](doc/et/RIA%20juriidilise%20isiku%20andmen%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine.md)
+- [Lihtsustatud andmenõusolekuteenuse kasutamine ja liidestamine](doc/et/Lihtsustatud%20andmen%C3%B5usoleku%20teenuse%20dok.md)
 
 ## Andmenõusoleku andmise kasutusjuhu prototüüp 
 

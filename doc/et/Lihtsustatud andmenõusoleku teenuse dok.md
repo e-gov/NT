@@ -1,22 +1,29 @@
+# Lihtsustatud andmenõusoleku teenuse kasutamine ja liidestamine
+
+21.04.2026
+
+Versioon 0.6
+
+---
 Versiooni ajalugu
 
-| Versioon | Kuupäev| Kirjeldus
-| ---------- | --- | -----------
-| 0.1| 12.06.2025 | Dokument loodud.
-| 0.2| 11.09.2025 | Dokument täiendatud.
-| 0.3| 01.11.2025 | Dokument muudetud.
-| 0.4| 06.01.2026 | Dokument muudetud.
-| 0.5| 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.
-| 0.6| 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi
+Versioon | Kuupäev | Kirjeldus
+--- | --- | ---
+0.1 | 12.06.2025 | Dokument loodud.
+0.2 | 11.09.2025 | Dokument täiendatud.
+0.3 | 01.11.2025 | Dokument muudetud.
+0.4 | 06.01.2026 | Dokument muudetud.
+0.5 | 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.
+0.6 | 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi
+<!-- markdownlint-disable MD033 -->
 
-
-## Sisukord
-* [Üldinfo](#%C3%BCldinfo)
-* [POST /api/consent/references](#post-apiconsentreferences)
-* [GET /api/consent/validation/client](#get-apiconsentvalidationclient)
-* [POST /api/consent/third-party](#postapiconsentthird-party)
-* [POST /api/consent/third-party/container](#post-apiconsentthird-partycontainer)
-* [Veahaldus](#veahaldus)
+# **Sisukord**
+- [Üldinfo](#üldinfo)
+- [POST /api/consent/references](#post-apiconsentreferences)
+- [GET /api/consent/validation/client](#get-apiconsentvalidationclient)
+- [POST /api/consent/third-party](#post-apiconsentthird-party)
+- [POST /api/consent/third-party/container](#post-apiconsentthird-partycontainer)
+- [Veahaldus](#veahaldus)
 
 ## Üldinfo
 
@@ -29,13 +36,13 @@ Autentimine: Kõikide Andmenõusolekuteenusele jõudnud päringute puhul kontrol
 Nõusolekuteenusele dokumendi lisamiseks on aega kaks päeva ja dokumendi allkirjastamiseks on aega 24 tundi ehk 1 päev.
 
 Andmetüübid:
-* String tüüpi parameetrid on UTF-8 kodeeringuga sümbolid.
-* Number tüüpi parameetrid on ASCII koodide jada vahemikus 47 - 57 (numbrid 0-9).
-* Timestamp tüüpi parameetrid on ISO8601 formaadis timestampid.
+- String tüüpi parameetrid on UTF-8 kodeeringuga sümbolid.
+- Number tüüpi parameetrid on ASCII koodide jada vahemikus 47 - 57 (numbrid 0-9).
+- Timestamp tüüpi parameetrid on ISO8601 formaadis timestampid.
 
 Veebiteenuse URLid:
-* LIVE: https://\<turvaserveri-aadress\>/r1/EE/GOV/70006317/consent/consent/\... 
-* STAGE: https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/\... 
+- LIVE: https://\<turvaserveri-aadress\>/r1/EE/GOV/70006317/consent/consent/\... 
+- STAGE: https://\<turvaserveri-aadress\>/r1/ee-dev/GOV/70006317/consent/consent-stage/\... 
 
 Lihtsustatud andmenõusoekuteenuse sammud.
 Pilt on illustratiivne, et milline võib välja näha lihtsustatud allkirjastamise protsess. Tegelik protsess sõltub konkreetses asutuses juurutatud äriprotsessidest.
@@ -49,7 +56,7 @@ API URL:  https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent
 
 **Sisend**
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | jah | string | Andmesubjekti isikukood.
 purposeDeclarationBusinessIdentifiers | jah | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu).
 
@@ -69,7 +76,7 @@ Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees autenditud K
 
 **Väljund**
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string | Tagastatakse ainult need eesmärgideklaratsioonid, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED).
 consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel.
 
@@ -83,11 +90,11 @@ consentReference | string | Kehtiva nõusoleku nõusolekuviide –  unikaalne ko
 ## GET /api/consent/validation/client
 Päringu abil saab küsida Andmenõusolekuteenuselt nõusoleku kehtivust. Lihtsustatud andmenõusolekuteenuse kasutamisel on see teenus vabatahtlik ja kasutatakse valideerimiseks. Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama, mis on määratud nõusolekuga seotud eesmärgideklaratsioonis.
 
-API URL: https:///r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
+API URL: https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-stage/api/consent/validation/client
 
 **Sisend**
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentReference | jah | string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida.
 
 **Päringu näide**
@@ -96,7 +103,7 @@ consentReference | jah | string | Nõusolekuviide – unikaalne kood, mis vastab
 
 **Väljund**
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse. 
 consentExpiration | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp.
 idCode | string | Andmesubjekti isikukood.
@@ -121,7 +128,7 @@ API URL: https://<turvaserveri-aadress>/r1/ee-dev/GOV/70006317/consent/consent-s
 
 **Sisend**
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | jah | string | Andmesubjekti isikukood.
 purposeDeclarationBusinessIdentifiers | jah | array of String | Eesmärgideklaratsiooni identifikaator. Saab olla mitu.
 language | ei | string | Keelekood, mis määrab andmete keele. Kasutatakse kahetähelisi koode (nt "en" – inglise, "et" – eesti). Vaikimisi väärtus "et". 
@@ -141,7 +148,7 @@ language | ei | string | Keelekood, mis määrab andmete keele. Kasutatakse kahe
 Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastus koosneb massiivist, mis sisaldab nii allkirjastamata konteinerit, mis sisaldab PDFi kui ka eraldi nõusolekutaotluse faili PDF kujul, mille klient lisab ise konteinerisse ja saadab allkirjastatult tagasi. 
 
 Parameeter | Andmetüüp | Kirjeldus
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Otsuse ootel nõusoleku UUID.
 idCode | string | Isikukood.
 firstName | string | Eesnimi.
@@ -249,7 +256,7 @@ Andmenõusolekuteenus töötleb sisse tulnud päringut. Päringu töötlemise k�
 Päringu sisendiks antakse nõusoleku(te) UUID ja digitaalselt allkirjastatud DigiDoc konteiner(id). Sisend koosneb massiivist, mis sisaldab üks kuni mitu allkirjastatud nõusolekut. Üks nõusolek koosneb nõusoleku UUID väärtusest ja allkirjastatud digikonteinerist, milles nõusoleku fail pdf kujul.
 
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentConfirmReference | jah | string | Otsuse ootel nõusoleku UUID.
 file | jah | string | Allkirjastatud nõusolek (DigiDoc konteiner ASICE formaadis).  Stringi sees  base64 kodeeritud fail. NB! Faili nimi konteineris on "Nousolek.pdf". Konteineris on ainult nõusoleku PDF fail, rohkem faile konteineris olla ei tohi.
 
@@ -264,7 +271,7 @@ file | jah | string | Allkirjastatud nõusolek (DigiDoc konteiner ASICE formaadi
 **Väljund**
 Päringu vastuseks on massiiv, mis sisaldab iga nõusoleku kohta vastust andmete töötlemise õnnestumise/mitteõnnestumise kohta. Massiiv koosneb otsuse ootel nõusoleku UUID väärtusest, staatusest (Status) ning errorCode väärtusest, kui andmete töötlemine ebaõnnestub.
 Parameeter | On kohustuslik? | Andmetüüp | Kirjeldus
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentConfirmReference | jah | string | Otsuse ootel nõusoleku UUID.
 status | jah | string | Kui andmete töötlemine õnnestub, tagastatakse staatuseks „OK“; Kui andmete töötlemine ei õnnestunud, tagastatakse staatuseks „ERROR“, koos vastav errorCode väärtusega. 
 errorCode | jah | string | „HTTP_NOT_FOUND“ - X-road client ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis; CONSENT_VALIDATE_INVALID – sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga. CONSENT_NOT_FOUND – sisendis antud UUID ei leidu andmebaasist.
@@ -283,7 +290,7 @@ errorCode | jah | string | „HTTP_NOT_FOUND“ - X-road client ei ole sama, mis
 
 ## Veahaldus
 HTTP kood | Veakood | Kirjeldus
------------- | ------------- | ------------ 
+--- | --- | ---
 200 | OK | Päring õnnestus ja väljastatakse vastava päringu väljund.
 400 | VALIDATION FAILURE | Valideerimise ebaõnnestumine, kohustuslikud väljad on tühjad.
 400 | BAD REQUEST | Vigane päringu sisu.

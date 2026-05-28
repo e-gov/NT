@@ -1,22 +1,29 @@
-Versiooni ajalugu
+# Using and interfacing the Simplified Data Consent Service
 
-| Version | Date| Description
-| ---------- | --- | -----------
-| 0.1| 12 July 2025| Document created.
-| 0.2| 11 September 2025 | Document updated.
-| 0.3| 01 November 2025| Document revised.
-| 0.4| 06 January 2026| Document revised.
-| 0.5| 28 January 2026| Document update. Error code updates.
-| 0.6| 21 April 2026| First name and last name removed from the /api/consent/third-party service input.
+21 April 2026
 
+Version 0.6
 
-## Sisukord
-* [General info](#%C3%BCldinfo)
-* [POST /api/consent/references](#post-apiconsentreferences)
-* [GET /api/consent/validation/client](#get-apiconsentvalidationclient)
-* [POST /api/consent/third-party](#postapiconsentthird-party)
-* [POST /api/consent/third-party/container](#post-apiconsentthird-partycontainer)
-* [Error management](#error-management)
+---
+Version history
+
+Version | Date | Description
+--- | --- | ---
+0.1 | 12 July 2025 | Document created.
+0.2 | 11 September 2025 | Document updated.
+0.3 | 01 November 2025 | Document revised.
+0.4 | 06 January 2026 | Document revised.
+0.5 | 28 January 2026 | Document update. Error code updates.
+0.6 | 21 April 2026 | First name and last name removed from the /api/consent/third-party service input.
+<!-- markdownlint-disable MD033 -->
+
+# **Table of Contents**
+- [General info](#general-info)
+- [POST /api/consent/references](#post-apiconsentreferences)
+- [GET /api/consent/validation/client](#get-apiconsentvalidationclient)
+- [POST /api/consent/third-party](#post-apiconsentthird-party)
+- [POST /api/consent/third-party/container](#post-apiconsentthird-partycontainer)
+- [Error management](#error-management)
 
 ## General info
 
@@ -29,13 +36,13 @@ Authentication: All queries sent to the Data Consent Service are checked to ensu
 You have two days to add a document to the consent service and 24 hours, or one day, to sign the document.
 
 Data types:
-* String type parameters are UTF-8 encoded symbols.
-* Number type parameters are ASCII code sequences in the range 47-57 (numbers 0-9).
-* Timestamp type parameters are timestamps in ISO8601 format.
+- String type parameters are UTF-8 encoded symbols.
+- Number type parameters are ASCII code sequences in the range 47-57 (numbers 0-9).
+- Timestamp type parameters are timestamps in ISO8601 format.
 
 Web service URLs:
-* LIVE:  https://<security-server-address>/r1/EE/GOV/70006317/consent/consent/...
-* STAGE: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/...
+- LIVE:  https://<security-server-address>/r1/EE/GOV/70006317/consent/consent/...
+- STAGE: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consent-stage/...
 
 Steps for simplified data request service.
 The image is illustrative, showing what a simplified signing process might look like. The actual process depends on the business processes implemented in the specific institution.
@@ -49,7 +56,7 @@ API URL:  https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/conse
 
 **Input**
 Parameter | Is it mandatory?| Data type | Description
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | yes | string | Personal identification code of the data subject.
 purposeDeclarationBusinessIdentifiers | yes | array of strings | Declaration of objectives identifier (there may be several).
 
@@ -70,7 +77,7 @@ When receiving a query, the Data Consent Service checks that the identifier of t
 
 **Output**
 Parameter | Data type | Description
------------- | ------------ | -------------
+--- | --- | ---
 purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string | Only those declarations of intent for which valid consent has been found (status APPROVED) will be returned.
 consentReference | string | Valid consent reference –  a unique code used to validate the validity of consent.
 
@@ -88,7 +95,7 @@ API URL: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consen
 
 **Input**
 Parameter | Is it mandatory? | Data type | Description
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentReference | yes | string | Consent reference – a unique code corresponding to the consent whose validity is to be validated.
 
 **Query example**
@@ -97,7 +104,7 @@ consentReference | yes | string | Consent reference – a unique code correspond
 
 **Output**
 Parameter | Data type | Description
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Consent reference – a unique code corresponding to the consent whose validity is being validated. 
 consentExpiration | timestamp (ISO 8601) | End of consent validity period.
 idCode | string | Personal identification code of the data subject.
@@ -122,7 +129,7 @@ API URL: https://<security-server-address>/r1/ee-dev/GOV/70006317/consent/consen
 
 **Input**
 Parameter | Is it mandatory? | Data type | Description
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 idCode | yes | string | Personal identification code of the data subject.
 purposeDeclarationBusinessIdentifiers | yes | array of String | Identifier of the statement of objectives. There can be several.
 language | no | string | 	Language code that determines the language of the data. Two-letter codes are used (e.g., "en" for English, "et" for Estonian). The default value is "et". 
@@ -142,7 +149,7 @@ language | no | string | 	Language code that determines the language of the data
 The response to the request is a dataset of consent request(s) in JSON format. The response consists of an array that includes both an unsigned container containing a PDF and a separate consent request file in PDF format, which the client adds to the container themselves and sends back signed.
 
 Parameter | Data type | Description
------------- | ------------ | -------------
+--- | --- | ---
 consentReference | string | Consent UUID pending decision.
 idCode | string | Personal identification number.
 firstName | string | First name.
@@ -250,7 +257,7 @@ The data consent service processes the incoming query. During query processing, 
 The query input consists of the UUID of the consent(s) and digitally signed DigiDoc container(s). The input consists of an array containing one or more signed consents. One consent consists of the consent UUID value and a signed digital container containing the consent file in pdf format.
 
 Parameter | Is it mandatory? | Data type | Description
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentConfirmReference | yes | string | Consent UUID pending decision.
 file | yes | string | Signed consent (DigiDoc container in ASICE format).  Base64-encoded file within the string. NB! The file name in the container is "Nousolek.pdf". The container only contains the consent PDF file; no other files are allowed in the container.
 
@@ -266,7 +273,7 @@ file | yes | string | Signed consent (DigiDoc container in ASICE format).  Base
 The response to the query is an array containing a response for each consent regarding the success/failure of data processing. The array consists of the UUID value of the consent awaiting a decision, the status, and the errorCode value if data processing fails.
 
 Parameter | Is it mandatory? | Data type | Description
------------- | ------------- | ------------ | -------------
+--- | --- | --- | ---
 consentConfirmReference | yes | string | Consent UUID pending decision.
 status | yes | string | If the data processing is successful, the status "OK" is returned; If the data processing is unsuccessful, the status "ERROR" is returned, together with the corresponding errorCode value. 
 errorCode | yes | string | 	
@@ -286,7 +293,7 @@ HTTP_NOT_FOUND - The X-road client is not the same as the one specified in the c
 
 ## Error management
 HTTP code | Error code | Description
------------- | ------------- | ------------ 
+--- | --- | ---
 200 | OK | The query was successful and the corresponding query output is displayed.
 400 | VALIDATION FAILURE | Validation failed, required fields are empty. 
 400 | BAD REQUEST | Incorrect query content.

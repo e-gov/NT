@@ -721,7 +721,7 @@ error.http.404 | HTTP_NOT_FOUND (404) | No match exists for the combination of C
 
 The query can be submitted to check the health status of the Data Consent Service.
 
-Used by: monitoring / X-Road consumers
+Used by: Client and Data Provider
 
 **API URL:**
 
@@ -759,7 +759,7 @@ error.validation | VALIDATION (400) | Missing, blank, or over 255 characters lon
 
 The query can be submitted to check the health status of the Data Consent Service reporting service.
 
-Used by: monitoring / X-Road consumers
+Used by: Data Provider
 
 **API URL:**
 

@@ -1080,7 +1080,7 @@ error.validation | VALIDATION (400) | Validatsiooni 체ldised veateated (kohustus
 
 P채ringu abil saab kontrollida Andmen천usolekuteenuse seisundit.
 
-Kasutab: monitooring/x-tee teenuse tarbija
+Kasutab: Klientrakendus ja Andmekogu
 
 **API URL:**
 
@@ -1118,7 +1118,7 @@ error.validation | VALIDATION (400) | X-Road-Client p채ise puudumine, t체hi v채�
 
 P채ringu abil saab kontrollida Andmen천usolekuteenuse raporteerimisteenuse seisundit.
 
-Kasutab: monitooring/x-tee teenuse tarbija
+Kasutab: Andmekogu
 
 **API URL:**
 

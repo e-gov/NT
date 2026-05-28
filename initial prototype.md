@@ -1,10 +1,10 @@
-## Esialgne prototüüp 
+## Esialgne prototüüp
 
 Esialgne prototüüp mõnes kohas erineb päris lahendusest, aga annab hea ülevaadet nõusolekuteenuse tomimisest.
 
 Prototüüp demonstreerib nõusolekuteenuse arhitektuuri ja protokolli toimimist, kasutades selleks kahte tõenäolist kasutusjuhtu tervisesektorist. Prototüübis on realiseeritud nii lõppkasutajavaated kui visualiseeritud osapoolte vahel liikuvad sõnumid, mis aitavad kaasa protokolli mõistmisele.
 
-Selguse huvides on prototüübis kasutatud osapooltena  Tervise infosüsteemi (andmekogu), TEHIKu poolt käitatavat nõusolekuteenust (nõusolekuteenus) ning fiktiivset ettevõtet HealthStartup (klientrakendus), mille vahel on realiseeritud nõusolekupõhine andmevahetus. Kasutajal on võimalik stsenaariumid läbi mängida eeldefineeritud valikuid kasutades nii lõppkasutaja (andmesubjekti) kui teiste eelmainitud skeemis osalevate osapoolte vaatest.
+Selguse huvides on prototüübis kasutatud osapooltena Tervise infosüsteemi (andmekogu), TEHIKu poolt käitatavat nõusolekuteenust (nõusolekuteenus) ning fiktiivset ettevõtet HealthStartup (klientrakendus), mille vahel on realiseeritud nõusolekupõhine andmevahetus. Kasutajal on võimalik stsenaariumid läbi mängida eeldefineeritud valikuid kasutades nii lõppkasutaja (andmesubjekti) kui teiste eelmainitud skeemis osalevate osapoolte vaatest.
 
 [Link brauseris avanevale prototüübile](https://e-gov.github.io/NT "prototüüp")
 

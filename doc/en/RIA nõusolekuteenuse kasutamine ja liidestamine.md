@@ -41,8 +41,8 @@ Date | Version | Description
     - [5.1.5 reportDataTransmission](#reportdatatransmission)
     - [5.1.6 getConsentGroupReferenceRepresentable](#getconsentgroupreferencerepresentable)
     - [5.1.7 postConsentFilterByStatus](#postconsentfilterbystatus)
-    - [5.1.8 consent/health](#consenthealth)
-    - [5.1.9 reporting/health](#reportinghealth)
+    - [5.1.8 getConsentHealth](#getconsenthealth)
+    - [5.1.9 getReportingHealth](#getreportinghealth)
 - [6. Instructions for the interface testing of the Data Consent Service](#instructions-for-the-interface-testing-of-the-data-consent-service)
   - [6.1 Creating a consent URL and displaying information on consents in the status 'requested' (primary and recurring)](#creating-a-consent-url-and-displaying-information-on-consents-in-the-status-requested-primary-and-recurring)
   - [6.2 Approving and declining consent](#approving-and-declining-consent)
@@ -862,7 +862,7 @@ Error key | Error code and status | Error description
 --- | --- | ---
 error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, data type does not match)
 
-### consent/health
+### getConsentHealth
 
 The query can be submitted to check the health status of the Data Consent Service.
 
@@ -893,7 +893,7 @@ Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
 
-### reporting/health
+### getReportingHealth
 
 The query can be submitted to check the health status of the Data Consent Service reporting service.
 

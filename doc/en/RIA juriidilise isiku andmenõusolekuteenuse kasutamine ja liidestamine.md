@@ -31,8 +31,8 @@ Date | Version | Description
     - [5.1.5 client](#client)
     - [5.1.6 dataprovider](#dataprovider)
     - [5.1.7 reportDataTransmission](#reportdatatransmission)
-    - [5.1.8 consent/health](#consenthealth)
-    - [5.1.9 reporting/health](#reportinghealth)
+    - [5.1.8 getConsentHealth](#getconsenthealth)
+    - [5.1.9 getReportingHealth](#getreportinghealth)
 - [6. Instructions for the interface testing of the Legal Entity Data Consent Service](#instructions-for-the-interface-testing-of-the-legal-entity-data-consent-service)
   - [6.1 Creating a consent URL](#creating-a-consent-url-and-displaying-information-on-consents-in-the-status-requested-primary-and-recurring)
   - [6.2 Querying Purpose Declarations (Client)](#querying-purpose-declarations-client)
@@ -717,7 +717,7 @@ Error key | Error code and status | Error description
 error.validation | VALIDATION (400) | Generic validation errors (mandatory fields not specified)
 error.http.404 | HTTP_NOT_FOUND (404) | No match exists for the combination of ConsentReference and the X-tee client header
 
-### consent/health
+### getConsentHealth
 
 The query can be submitted to check the health status of the Data Consent Service.
 
@@ -748,7 +748,7 @@ Parameter | Type of data | Description
 --- | --- | ---
 status | string | Service health status. "UP" -- the service is available.
 
-### reporting/health
+### getReportingHealth
 
 The query can be submitted to check the health status of the Data Consent Service reporting service.
 

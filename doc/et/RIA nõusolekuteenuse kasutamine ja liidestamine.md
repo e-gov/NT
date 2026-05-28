@@ -42,8 +42,8 @@ Kuupäev | Versioon | Kirjeldus
     - [5.1.5 reportDataTransmission](#reportdatatransmission)
     - [5.1.6 getConsentGroupReferenceRepresentable](#getconsentgroupreferencerepresentable)
     - [5.1.7 postConsentFilterByStatus](#postconsentfilterbystatus)
-    - [5.1.8 consent/health](#consenthealth)
-    - [5.1.9 reporting/health](#reportinghealth)
+    - [5.1.8 getConsentHealth](#getconsenthealth)
+    - [5.1.9 getReportingHealth](#getreportinghealth)
 - [6. Juhised andmenõusolekuteenuse testimiseks liidestuja poolt](#juhised-andmenõusolekuteenuse-testimiseks-liidestuja-poolt)
   - [6.1 Nõusolekute URL'i loomine ja nõusolekutaotluse informatsiooni kuvamine (esmane ja korduv)](#nõusolekute-urli-loomine-ja-nõusolekutaotluse-informatsiooni-kuvamine-esmane-ja-korduv)
   - [6.2 Nõusoleku andmine (*approve*) ja keeldumine/tagasivõtmine (*decline*)](#nõusoleku-andmine-approve-ja-keelduminetagasivõtmine-decline)
@@ -1076,7 +1076,7 @@ Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
 error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, andmetüüp ei vasta)
 
-### consent/health
+### getConsentHealth
 
 Päringu abil saab kontrollida Andmenõusolekuteenuse seisundit.
 
@@ -1107,7 +1107,7 @@ Parameeter | Andmetüüp | Kirjeldus
 --- | --- | ---
 status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 
-### reporting/health
+### getReportingHealth
 
 Päringu abil saab kontrollida Andmenõusolekuteenuse raporteerimisteenuse seisundit.
 

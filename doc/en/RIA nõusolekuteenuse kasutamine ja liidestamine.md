@@ -611,7 +611,13 @@ idCode | string | Personal identification code of the Data Subject. *Note:* the 
 clientSubsystemIdentifier | string | Identifier of the Client’s X-tee subsystem indicated in the Purpose Declaration. *Note:* the Data Provider must check that the Client’s subsystem authenticated in X-tee that sends the data query is the same as the one indicated in this parameter
 serviceDeclarationId | string | Service Declaration identifier associated with the consent. *Note:* the Data Provider must check that the Protected Service through which the Client is requesting data matches the Service Declaration identifier indicated in this parameter
 
-**Error management:** Error key | Error code and status | Error description ------------ | ------------ | ------------- error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric) error.http.404 | HTTP_NOT_FOUND (404) | The combination of dataProviderSubsystemIdentifier (Data Provider X-tee subsystem) and consentReference has no valid consent error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | The requested consent does not have the ‘approved’ status
+**Error management:**
+
+Error key | Error code and status | Error description
+--- | --- | ---
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified, personal identification code \<>&nbsp;11 characters, non-numeric)
+error.http.404 | HTTP_NOT_FOUND (404) | The combination of dataProviderSubsystemIdentifier (Data Provider X-tee subsystem) and consentReference has no valid consent
+error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | The requested consent does not have the ‘approved’ status
 
 ### reportDataTransmission
 
@@ -897,7 +903,8 @@ status | string | Service health status. "UP" -- the service is available.
 
 Error key | Error code and status | Error description
 --- | --- | ---
-error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+error.http.503 | SERVICE_UNAVAILABLE (503) | The service is unavailable (response: {"status": "DOWN"})
 
 
 ### getReportingHealth
@@ -935,7 +942,8 @@ status | string | Service health status. "UP" -- the service is available.
 
 Error key | Error code and status | Error description
 --- | --- | ---
-error.validation | VALIDATION (400) | Missing, blank, or over 255 characters long X-Road-Client header
+error.validation | VALIDATION (400) | Generic validation error messages (mandatory fields not specified)
+error.http.503 | SERVICE_UNAVAILABLE (503) | The service is unavailable (response: {"status": "DOWN"})
 
 
 # Instructions for the interface testing of the Data Consent Service

@@ -752,7 +752,8 @@ status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
-error.validation | VALIDATION (400) | X-Road-Client päise puudumine, tühi väärtus või pikkus üle 255 märgi
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
+error.http.503 | SERVICE_UNAVAILABLE (503) | Teenus ei ole saadaval (vastus: {"status": "DOWN"})
 
 
 ### getReportingHealth
@@ -790,7 +791,8 @@ status | string | Teenuse seisund. "UP" -- teenus on saadaval.
 
 Vea võti | Veakood ja staatus | Vea kirjeldus
 --- | --- | ---
-error.validation | VALIDATION (400) | X-Road-Client päise puudumine, tühi väärtus või pikkus üle 255 märgi
+error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata)
+error.http.503 | SERVICE_UNAVAILABLE (503) | Teenus ei ole saadaval (vastus: {"status": "DOWN"})
 
 
 # Juhised andmenõusolekuteenuse JURNT testimiseks liidestuja poolt

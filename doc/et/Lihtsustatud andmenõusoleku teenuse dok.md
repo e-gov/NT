@@ -318,6 +318,7 @@ Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastu
 | error.business.requested-consents-related-to-invalid-declarations | REQUESTED_CONSENTS_RELATED_TO_INVALID_DECLARATIONS (500) | Küsitud nõusolekud on seotud kehtetute eesmärgideklaratsioonidega. Vastavad äriidentifikaatorid on loetletud veateate kirjelduses.                                       |
 | error.business.all-requested-consents-have-already-been-approved  | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500)  | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED                                                                               |
 | error.business.data-subject-error                                 | DATA_SUBJECT_ERROR (500)                                 | Isik on kas teovõimetu või piiratud teovõimega                                                                                                                           |
+| error.business.third-party-flow-requires-signature-declaration    | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400)    | Vähemalt üks seotud teenusedeklaratsioonidest ei eelda allkirjastamist, mistõttu kolmanda osapoole nõusoleku andmise voogu ei saa kasutada                               |
 
 ## saveSignedContainerAndApproveConsents
 
@@ -392,19 +393,23 @@ Päringu vastuseks on massiiv, mis sisaldab iga nõusoleku kohta vastust andmete
 ]
 ```
 
-| Parameeter              | Andmetüüp | Kirjeldus                                                                                                                                                                                                                                                                                                                                       |
-| ----------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| consentConfirmReference | string    | Otsuse ootel nõusoleku UUID                                                                                                                                                                                                                                                                                                                     |
-| status                  | string    | Kui andmete töötlemine õnnestub, tagastatakse staatuseks "OK". Kui andmete töötlemine ei õnnestunud, tagastatakse staatuseks "ERROR", koos vastav errorCode väärtusega.                                                                                                                                                                         |
-| errorCode               | string    | Veateate info. Täidetakse ainult siis, kui status=ERROR. Võimalikud väärtused: "HTTP_NOT_FOUND" - X-tee klient ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis; "CONSENT_VALIDATE_INVALID" - sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga; "CONSENT_NOT_FOUND" - sisendis antud UUID ei leidu andmebaasist. |
+| Parameeter              | Andmetüüp | Kirjeldus                                                                                                                                                               |
+| ----------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference | string    | Otsuse ootel nõusoleku UUID                                                                                                                                             |
+| status                  | string    | Kui andmete töötlemine õnnestub, tagastatakse staatuseks "OK". Kui andmete töötlemine ei õnnestunud, tagastatakse staatuseks "ERROR", koos vastav errorCode väärtusega. |
+| errorCode               | string    | Veakoodi väärtus, kui status=ERROR. Võimalikud väärtused on toodud allpool **Veahaldus** alajaotuses.                                                                   |
 
 **Veahaldus:**
 
-| Vea võti         | Veakood ja staatus | Vea kirjeldus                                                    |
-| ---------------- | ------------------ | ---------------------------------------------------------------- |
-| error.validation | VALIDATION (400)   | Validatsiooni üldised veateated (kohustuslikud väljad määramata) |
+Üksikute nõusolekute töötlemise vead tagastatakse vastusekehas `status` ja `errorCode` väljades (üldine HTTP staatus jääb 200, vt Vastus).
 
-Üksikute nõusolekute töötlemise vead tagastatakse vastusekehas `status` ja `errorCode` väljades (HTTP staatus jääb 200, vt Vastus).
+| Vea võti                                                       | Veakood ja staatus                                    | Vea kirjeldus                                                           |
+| -------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------- |
+| error.validation                                               | VALIDATION (400)                                      | Validatsiooni üldised veateated (kohustuslikud väljad määramata)        |
+| error.http.404                                                 | HTTP_NOT_FOUND (404)                                  | X-tee klient ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis |
+| error.business.consent-validate-invalid                        | CONSENT_VALIDATE_INVALID (400)                        | Sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga   |
+| error.http.404                                                 | CONSENT_NOT_FOUND (404)                               | Sisendis antud UUID ei leidu andmebaasist                               |
+| error.business.third-party-flow-requires-signature-declaration | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400) | Nõusolekuga seotud teenusedeklaratsioon ei eelda allkirjastamist        |
 
 ## getConsentHealth
 

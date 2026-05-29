@@ -393,19 +393,23 @@ The response to the query is an array containing a response for each consent reg
 ]
 ```
 
-| Parameter               | Type of data | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ----------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| consentConfirmReference | string       | UUID of the consent pending decision                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| status                  | string       | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value.                                                                                                                                                                                                                                                                                                                                                                          |
-| errorCode               | string       | Error message info. Filled only when status=ERROR. Possible values: "HTTP_NOT_FOUND" - the X-tee client is not the same as the one in the Service Declaration associated with the consent; "CONSENT_VALIDATE_INVALID" - the consent data provided in the input does not match the consent in the database; "CONSENT_NOT_FOUND" - the UUID provided in the input cannot be found in the database; "THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION" - the Service Declaration associated with the consent does not require signature. |
+| Parameter               | Type of data | Description                                                                                                                                                 |
+| ----------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference | string       | UUID of the consent pending decision                                                                                                                        |
+| status                  | string       | If data processing succeeds, "OK" is returned as the status. If data processing fails, "ERROR" is returned together with the corresponding errorCode value. |
+| errorCode               | string       | Error code value when status=ERROR. See **Error management** for possible values.                                                                           |
 
 **Error management:**
 
-| Error key        | Error code and status | Error description                                                  |
-| ---------------- | --------------------- | ------------------------------------------------------------------ |
-| error.validation | VALIDATION (400)      | Generic validation error messages (mandatory fields not specified) |
+Per-consent processing errors are returned in the response body via the `status` and `errorCode` fields (the overall HTTP status stays 200, see Response).
 
-Per-consent processing errors are returned in the response body via the `status` and `errorCode` fields (the HTTP status stays 200, see Response).
+| Error key                                                      | Error code and status                                 | Error description                                                                                  |
+| -------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| error.validation                                               | VALIDATION (400)                                      | Generic validation error messages (mandatory fields not specified)                                 |
+| error.http.404                                                 | HTTP_NOT_FOUND (404)                                  | The X-tee client is not the same as the one in the Service Declaration associated with the consent |
+| error.business.consent-validate-invalid                        | CONSENT_VALIDATE_INVALID (400)                        | The consent data provided in the input does not match the consent in the database                  |
+| error.http.404                                                 | CONSENT_NOT_FOUND (404)                               | The UUID provided in the input cannot be found in the database                                     |
+| error.business.third-party-flow-requires-signature-declaration | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400) | The Service Declaration associated with the consent does not require signature                     |
 
 ## getConsentHealth
 

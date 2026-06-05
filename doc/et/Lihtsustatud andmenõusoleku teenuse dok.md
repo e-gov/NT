@@ -1,21 +1,22 @@
 # Lihtsustatud andmenõusoleku teenuse kasutamine ja liidestamine
 
-21.04.2026
+05.06.2026
 
-Versioon 0.6
+Versioon 0.7
 
 ---
 
 Versiooni ajalugu
 
-| Versioon | Kuupäev    | Kirjeldus                                                                   |
-| -------- | ---------- | --------------------------------------------------------------------------- |
-| 0.1      | 12.06.2025 | Dokument loodud.                                                            |
-| 0.2      | 11.09.2025 | Dokument täiendatud.                                                        |
-| 0.3      | 01.11.2025 | Dokument muudetud.                                                          |
-| 0.4      | 06.01.2026 | Dokument muudetud.                                                          |
-| 0.5      | 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.                                |
-| 0.6      | 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi |
+| Versioon | Kuupäev    | Kirjeldus                                                                                                                                                                                    |
+| -------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.1      | 12.06.2025 | Dokument loodud.                                                                                                                                                                             |
+| 0.2      | 11.09.2025 | Dokument täiendatud.                                                                                                                                                                         |
+| 0.3      | 01.11.2025 | Dokument muudetud.                                                                                                                                                                           |
+| 0.4      | 06.01.2026 | Dokument muudetud.                                                                                                                                                                           |
+| 0.5      | 28.01.2026 | Dokumendi täiendamine. Veakoodi täpsustused.                                                                                                                                                 |
+| 0.6      | 21.04.2026 | Eemaldatud teenuse /api/consent/third-party sisendist ees- ja perekonnanimi                                                                                                                  |
+| 0.7      | 05.06.2026 | Lisatud /api/consent/third-party sisendisse valikuline fileType (tagastatava faili tüübi valik). Stage keskkonnas (consent-stage) saab sisendis taas anda valikulised firstName ja lastName. |
 
 <!-- markdownlint-disable MD033 -->
 
@@ -211,11 +212,14 @@ curl -k -X POST \
 }
 ```
 
-| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                   |
-| ------------------------------------- | --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| idCode                                | jah             | string           | Andmesubjekti isikukood                                                                                                     |
-| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                      |
-| language                              | ei              | string           | Keelekood, mis määrab andmete keele. Toetatud väärtused: "et" - eesti, "en" - inglise, "ru" - vene. Vaikimisi väärtus "et". |
+| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                                                                                                                        |
+| ------------------------------------- | --------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | jah             | string           | Andmesubjekti isikukood                                                                                                                                                                                                          |
+| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                                                                                                                           |
+| language                              | ei              | string           | Keelekood, mis määrab andmete keele. Toetatud väärtused: "et" - eesti, "en" - inglise, "ru" - vene. Vaikimisi väärtus "et".                                                                                                      |
+| fileType                              | ei              | string           | Tagastatava faili tüüp. Kui määratud, tagastatakse vastuses ainult selle tüübiga fail. Võimalikud väärtused: "CONSENT_CONTAINER", "GENERATED_PDF". Kui määramata, tagastatakse mõlemad failid.                                   |
+| firstName                             | ei              | string           | Andmesubjekti eesnimi. Arvestatakse ainult stage keskkonnas (consent-stage) ja ainult koos perekonnanimega: siis kasutatakse nime päringust, mitte rahvastikuregistrist. Teovõimet kontrollitakse endiselt rahvastikuregistrist. |
+| lastName                              | ei              | string           | Andmesubjekti perekonnanimi. Arvestatakse ainult stage keskkonnas (consent-stage) ja ainult koos eesnimega (vt firstName).                                                                                                       |
 
 **Vastus:**
 
@@ -243,12 +247,12 @@ Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastu
     "validTo": "01.01.2024",
     "files": [
       {
-        "type": "CONSENT_CONTAINER",
-        "content": ".....base64 encoded asice container ....."
+        "fileType": "CONSENT_CONTAINER",
+        "fileContent": ".....base64 encoded asice container ....."
       },
       {
-        "type": "GENERATED_PDF",
-        "content": ".....base64 encoded consent pdf ....."
+        "fileType": "GENERATED_PDF",
+        "fileContent": ".....base64 encoded consent pdf ....."
       }
     ]
   },
@@ -272,40 +276,40 @@ Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastu
     "validTo": "01.01.2023",
     "files": [
       {
-        "type": "CONSENT_CONTAINER",
-        "content": ".....base64 encoded asice container ....."
+        "fileType": "CONSENT_CONTAINER",
+        "fileContent": ".....base64 encoded asice container ....."
       },
       {
-        "type": "GENERATED_PDF",
-        "content": ".....base64 encoded consent pdf ....."
+        "fileType": "GENERATED_PDF",
+        "fileContent": ".....base64 encoded consent pdf ....."
       }
     ]
   }
 ]
 ```
 
-| Parameeter                    | Andmetüüp | Kirjeldus                                                                   |
-| ----------------------------- | --------- | --------------------------------------------------------------------------- |
-| consentConfirmReference       | string    | Otsuse ootel nõusoleku UUID                                                 |
-| idCode                        | string    | Andmesubjekti isikukood                                                     |
-| firstName                     | string    | Eesnimi                                                                     |
-| lastName                      | string    | Perekonnanimi                                                               |
-| clientName                    | string    | Osapoole nimi (Klientrakendus), kellele nõusoleku alusel andmed edastatakse |
-| clientRegistryCode            | string    | Osapoole registrikood, kellele nõusoleku alusel andmed esitatakse           |
-| clientService                 | string    | Andmete saaja pakutav teenus                                                |
-| purposeDeclarationDescription | string    | Eesmärgideklaratsiooni kirjeldus (andmete kasutamise eesmärk)               |
-| serviceDeclarationName        | string    | Teenusedeklaratsiooni nimi                                                  |
-| serviceDeclarationDescription | string    | Andmete edastaja andmete kirjeldus / teenuse andmekoosseisu kirjeldus       |
-| dataProviderName              | string    | Andmekogu / infosüsteemi nimi                                               |
-| dataControllerName            | string    | Andmete edastaja vastutav töötleja                                          |
-| dataControllerRegistryCode    | string    | Andmete edastaja vastutava töötleja registrikood                            |
-| dataProcessorName             | string    | Andmete edastaja volitatud töötleja                                         |
-| dataProcessorRegistryCode     | string    | Andmete edastaja volitatud töötleja registrikood                            |
-| validFrom                     | string    | Nõusoleku kehtivus alates (timestamp sisuga string, nt 01.01.2022)          |
-| validTo                       | string    | Nõusoleku kehtivus kuni (timestamp sisuga string, nt 01.01.2023)            |
-| files                         | array     | Failide massiiv, mis sisaldab nii konteinerit kui ka PDF faili              |
-| type                          | string    | Faili tüüp. Võimalikud väärtused: CONSENT_CONTAINER või GENERATED_PDF       |
-| content                       | string    | Faili sisu kodeerituna Base64 vormingusse                                   |
+| Parameeter                    | Andmetüüp | Kirjeldus                                                                                                                                        |
+| ----------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| consentConfirmReference       | string    | Otsuse ootel nõusoleku UUID                                                                                                                      |
+| idCode                        | string    | Andmesubjekti isikukood                                                                                                                          |
+| firstName                     | string    | Eesnimi                                                                                                                                          |
+| lastName                      | string    | Perekonnanimi                                                                                                                                    |
+| clientName                    | string    | Osapoole nimi (Klientrakendus), kellele nõusoleku alusel andmed edastatakse                                                                      |
+| clientRegistryCode            | string    | Osapoole registrikood, kellele nõusoleku alusel andmed esitatakse                                                                                |
+| clientService                 | string    | Andmete saaja pakutav teenus                                                                                                                     |
+| purposeDeclarationDescription | string    | Eesmärgideklaratsiooni kirjeldus (andmete kasutamise eesmärk)                                                                                    |
+| serviceDeclarationName        | string    | Teenusedeklaratsiooni nimi                                                                                                                       |
+| serviceDeclarationDescription | string    | Andmete edastaja andmete kirjeldus / teenuse andmekoosseisu kirjeldus                                                                            |
+| dataProviderName              | string    | Andmekogu / infosüsteemi nimi                                                                                                                    |
+| dataControllerName            | string    | Andmete edastaja vastutav töötleja                                                                                                               |
+| dataControllerRegistryCode    | string    | Andmete edastaja vastutava töötleja registrikood                                                                                                 |
+| dataProcessorName             | string    | Andmete edastaja volitatud töötleja                                                                                                              |
+| dataProcessorRegistryCode     | string    | Andmete edastaja volitatud töötleja registrikood                                                                                                 |
+| validFrom                     | string    | Nõusoleku kehtivus alates (timestamp sisuga string, nt 01.01.2022)                                                                               |
+| validTo                       | string    | Nõusoleku kehtivus kuni (timestamp sisuga string, nt 01.01.2023)                                                                                 |
+| files                         | array     | Failide massiiv, mis sisaldab nii konteinerit kui ka PDF faili. Kui päringus oli määratud fileType, sisaldab massiiv ainult selle tüübiga faili. |
+| fileType                      | string    | Faili tüüp. Võimalikud väärtused: CONSENT_CONTAINER või GENERATED_PDF                                                                            |
+| fileContent                   | string    | Faili sisu kodeerituna Base64 vormingusse                                                                                                        |
 
 **Veahaldus:**
 
@@ -319,6 +323,7 @@ Päringu vastuseks antakse nõusolekutaotlus(t)e andmekomplekt JSON kujul. Vastu
 | error.business.all-requested-consents-have-already-been-approved  | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500)  | Nõusolekute mitmekordsel küsimisel juhul, kui kõik leitud nõusolekud on staatuses APPROVED                                                                               |
 | error.business.data-subject-error                                 | DATA_SUBJECT_ERROR (500)                                 | Isik on kas teovõimetu või piiratud teovõimega                                                                                                                           |
 | error.business.third-party-flow-requires-signature-declaration    | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400)    | Vähemalt üks seotud teenusedeklaratsioonidest ei eelda allkirjastamist, mistõttu kolmanda osapoole nõusoleku andmise voogu ei saa kasutada                               |
+| error.business.file-type-invalid                                  | FILE_TYPE_INVALID (400)                                  | Sisendis antud fileType väärtus ei ole lubatud (lubatud väärtused: CONSENT_CONTAINER, GENERATED_PDF)                                                                     |
 
 ## saveSignedContainerAndApproveConsents
 

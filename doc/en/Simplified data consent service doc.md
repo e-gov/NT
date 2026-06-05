@@ -8,14 +8,14 @@ Version 0.7
 
 Version history
 
-| Version | Date              | Description                                                                       |
-| ------- | ----------------- | --------------------------------------------------------------------------------- |
-| 0.1     | 12 July 2025      | Document created.                                                                 |
-| 0.2     | 11 September 2025 | Document updated.                                                                 |
-| 0.3     | 01 November 2025  | Document revised.                                                                 |
-| 0.4     | 06 January 2026   | Document revised.                                                                 |
-| 0.5     | 28 January 2026   | Document update. Error code updates.                                              |
-| 0.6     | 21 April 2026     | First name and last name removed from the /api/consent/third-party service input. |
+| Version | Date              | Description                                                                                                                                                                                                              |
+| ------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0.1     | 12 July 2025      | Document created.                                                                                                                                                                                                        |
+| 0.2     | 11 September 2025 | Document updated.                                                                                                                                                                                                        |
+| 0.3     | 01 November 2025  | Document revised.                                                                                                                                                                                                        |
+| 0.4     | 06 January 2026   | Document revised.                                                                                                                                                                                                        |
+| 0.5     | 28 January 2026   | Document update. Error code updates.                                                                                                                                                                                     |
+| 0.6     | 21 April 2026     | First name and last name removed from the /api/consent/third-party service input.                                                                                                                                        |
 | 0.7     | 05 June 2026      | Added an optional fileType field to the /api/consent/third-party input (to choose the returned file type). In the stage environment (consent-stage), optional firstName and lastName can again be provided in the input. |
 
 <!-- markdownlint-disable MD033 -->
@@ -212,14 +212,14 @@ curl -k -X POST \
 }
 ```
 
-| Parameter                             | Is it mandatory? | Type of data     | Description                                                                                                                                           |
-| ------------------------------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| idCode                                | yes              | string           | Personal identification code of the Data Subject                                                                                                      |
-| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one)                                                                                                 |
-| language                              | no               | string           | Language code that determines the language of the data. Supported values: "et" - Estonian, "en" - English, "ru" - Russian. The default value is "et". |
-| fileType                              | no               | string           | The file type to return. If set, only the file of that type is returned in the response. Possible values: "CONSENT_CONTAINER", "GENERATED_PDF". If omitted, both files are returned. |
+| Parameter                             | Is it mandatory? | Type of data     | Description                                                                                                                                                                                                                                                                      |
+| ------------------------------------- | ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | yes              | string           | Personal identification code of the Data Subject                                                                                                                                                                                                                                 |
+| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one)                                                                                                                                                                                                                            |
+| language                              | no               | string           | Language code that determines the language of the data. Supported values: "et" - Estonian, "en" - English, "ru" - Russian. The default value is "et".                                                                                                                            |
+| fileType                              | no               | string           | The file type to return. If set, only the file of that type is returned in the response. Possible values: "CONSENT_CONTAINER", "GENERATED_PDF". If omitted, both files are returned.                                                                                             |
 | firstName                             | no               | string           | First name of the Data Subject. Honoured only in the stage environment (consent-stage) and only together with lastName: the name is then taken from the request instead of the population registry. Legal capacity (teovõime) is still verified against the population registry. |
-| lastName                              | no               | string           | Last name of the Data Subject. Honoured only in the stage environment (consent-stage) and only together with firstName (see firstName). |
+| lastName                              | no               | string           | Last name of the Data Subject. Honoured only in the stage environment (consent-stage) and only together with firstName (see firstName).                                                                                                                                          |
 
 **Response:**
 
@@ -288,28 +288,28 @@ The response to the query is a consent request data set in JSON format. The resp
 ]
 ```
 
-| Parameter                     | Type of data | Description                                                                                       |
-| ----------------------------- | ------------ | ------------------------------------------------------------------------------------------------- |
-| consentConfirmReference       | string       | UUID of the consent pending decision                                                              |
-| idCode                        | string       | Personal identification code of the Data Subject                                                  |
-| firstName                     | string       | First name                                                                                        |
-| lastName                      | string       | Last name                                                                                         |
-| clientName                    | string       | Name of the party (Client) to which the data is transmitted on the basis of the consent           |
-| clientRegistryCode            | string       | Registry code of the party to which the data is transmitted on the basis of the consent           |
-| clientService                 | string       | Service provided by the data recipient                                                            |
-| purposeDeclarationDescription | string       | Description of the Purpose Declaration (purpose of data use)                                      |
-| serviceDeclarationName        | string       | Name of the Service Declaration                                                                   |
-| serviceDeclarationDescription | string       | Description of the data transmitted by the data transmitter / description of the service data set |
-| dataProviderName              | string       | Name of the Data Provider / information system                                                    |
-| dataControllerName            | string       | Data controller of the data transmitter                                                           |
-| dataControllerRegistryCode    | string       | Registry code of the data controller of the data transmitter                                      |
-| dataProcessorName             | string       | Data processor of the data transmitter                                                            |
-| dataProcessorRegistryCode     | string       | Registry code of the data processor of the data transmitter                                       |
-| validFrom                     | string       | Consent validity from (timestamp-content string, e.g. 01.01.2022)                                 |
-| validTo                       | string       | Consent validity until (timestamp-content string, e.g. 01.01.2023)                                |
+| Parameter                     | Type of data | Description                                                                                                                                       |
+| ----------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentConfirmReference       | string       | UUID of the consent pending decision                                                                                                              |
+| idCode                        | string       | Personal identification code of the Data Subject                                                                                                  |
+| firstName                     | string       | First name                                                                                                                                        |
+| lastName                      | string       | Last name                                                                                                                                         |
+| clientName                    | string       | Name of the party (Client) to which the data is transmitted on the basis of the consent                                                           |
+| clientRegistryCode            | string       | Registry code of the party to which the data is transmitted on the basis of the consent                                                           |
+| clientService                 | string       | Service provided by the data recipient                                                                                                            |
+| purposeDeclarationDescription | string       | Description of the Purpose Declaration (purpose of data use)                                                                                      |
+| serviceDeclarationName        | string       | Name of the Service Declaration                                                                                                                   |
+| serviceDeclarationDescription | string       | Description of the data transmitted by the data transmitter / description of the service data set                                                 |
+| dataProviderName              | string       | Name of the Data Provider / information system                                                                                                    |
+| dataControllerName            | string       | Data controller of the data transmitter                                                                                                           |
+| dataControllerRegistryCode    | string       | Registry code of the data controller of the data transmitter                                                                                      |
+| dataProcessorName             | string       | Data processor of the data transmitter                                                                                                            |
+| dataProcessorRegistryCode     | string       | Registry code of the data processor of the data transmitter                                                                                       |
+| validFrom                     | string       | Consent validity from (timestamp-content string, e.g. 01.01.2022)                                                                                 |
+| validTo                       | string       | Consent validity until (timestamp-content string, e.g. 01.01.2023)                                                                                |
 | files                         | array        | Array of files containing both the container and the PDF file. If fileType was set in the request, the array contains only the file of that type. |
-| fileType                      | string       | File type. Possible values: CONSENT_CONTAINER or GENERATED_PDF                                    |
-| fileContent                   | string       | File contents encoded in Base64 format                                                            |
+| fileType                      | string       | File type. Possible values: CONSENT_CONTAINER or GENERATED_PDF                                                                                    |
+| fileContent                   | string       | File contents encoded in Base64 format                                                                                                            |
 
 **Error management:**
 
@@ -323,7 +323,7 @@ The response to the query is a consent request data set in JSON format. The resp
 | error.business.all-requested-consents-have-already-been-approved  | ALL_REQUESTED_CONSENTS_HAVE_ALREADY_BEEN_APPROVED (500)  | When asking for multiple consents, all the consents found are with the status APPROVED                                                                                              |
 | error.business.data-subject-error                                 | DATA_SUBJECT_ERROR (500)                                 | The person is either incapacitated or with limited active legal capacity                                                                                                            |
 | error.business.third-party-flow-requires-signature-declaration    | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400)    | At least one of the related Service Declarations does not require signature, so the third party consent flow cannot be used                                                         |
-| error.business.file-type-invalid                                  | FILE_TYPE_INVALID (400)                                  | The fileType value provided in the input is not allowed (allowed values: CONSENT_CONTAINER, GENERATED_PDF)                                                                         |
+| error.business.file-type-invalid                                  | FILE_TYPE_INVALID (400)                                  | The fileType value provided in the input is not allowed (allowed values: CONSENT_CONTAINER, GENERATED_PDF)                                                                          |
 
 ## saveSignedContainerAndApproveConsents
 

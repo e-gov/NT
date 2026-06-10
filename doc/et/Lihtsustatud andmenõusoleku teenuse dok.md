@@ -412,7 +412,13 @@ Päringu vastuseks on massiiv, mis sisaldab iga nõusoleku kohta vastust andmete
 | -------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------- |
 | error.validation                                               | VALIDATION (400)                                      | Validatsiooni üldised veateated (kohustuslikud väljad määramata)        |
 | error.http.404                                                 | HTTP_NOT_FOUND (404)                                  | X-tee klient ei ole sama, mis nõusolekuga seotud teenusedeklaratsioonis |
-| error.business.consent-validate-invalid                        | CONSENT_VALIDATE_INVALID (400)                        | Sisendis antud nõusoleku andmed ei ühti andmebaasis oleva nõusolekuga   |
+| error.business.consent-container-unreadable                    | CONSENT_CONTAINER_UNREADABLE (400)                    | Allkirjastatud konteinerit ei õnnestunud lugeda või avada               |
+| error.business.consent-signature-invalid                       | CONSENT_SIGNATURE_INVALID (400)                       | Konteiner peab sisaldama täpselt ühte kehtivat allkirja                 |
+| error.business.consent-signer-not-personal                     | CONSENT_SIGNER_NOT_PERSONAL (400)                     | Konteinerit ei allkirjastatud isikliku sertifikaadiga                   |
+| error.business.consent-signer-mismatch                         | CONSENT_SIGNER_MISMATCH (400)                         | Allkirjastaja ei ühti nõusoleku andmesubjektiga                         |
+| error.business.consent-signed-document-mismatch                | CONSENT_SIGNED_DOCUMENT_MISMATCH (400)                | Allkirjastatud dokument ei ühti väljastatud dokumendiga                 |
+| error.business.consent-signature-too-old                       | CONSENT_SIGNATURE_TOO_OLD (400)                       | Allkiri loodi väljaspool lubatud ajavahemikku                           |
+| error.business.consent-signed-container-processing-failed      | CONSENT_SIGNED_CONTAINER_PROCESSING_FAILED (500)      | Konteineri töötlemisel tekkis ootamatu viga                             |
 | error.http.404                                                 | CONSENT_NOT_FOUND (404)                               | Sisendis antud UUID ei leidu andmebaasist                               |
 | error.business.third-party-flow-requires-signature-declaration | THIRD_PARTY_FLOW_REQUIRES_SIGNATURE_DECLARATION (400) | Nõusolekuga seotud teenusedeklaratsioon ei eelda allkirjastamist        |
 

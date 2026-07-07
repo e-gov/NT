@@ -670,12 +670,10 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 }
 ```
 
-| Parameeter | Andmetüüp | Kirjeldus |
-| ---------- | --------- | --------- |
-
-purposeDeclarationBusinessIdentifier
-(näidises: "ED_KAKS") | string | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu). Tagastatakse ainult need, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED)
-consentReference | string | Kehtiva nõusoleku nõusolekuviide – unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel
+| Parameeter                                                 | Andmetüüp | Kirjeldus                                                                                                                                            |
+| ---------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| purposeDeclarationBusinessIdentifier (näidises: "ED_KAKS") | string    | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu). Tagastatakse ainult need, mille jaoks on leitud kehtiv nõusolek (staatuses APPROVED) |
+| consentReference                                           | string    | Kehtiva nõusoleku nõusolekuviide – unikaalne kood, mida kasutatakse nõusoleku kehtivuse valideerimisel                                               |
 
 **Veahaldus:**
 

@@ -788,20 +788,21 @@ teenusedeklaratsiooniga IDga TD_KAKS)
 }
 ```
 
-| Parameeter                | Andmetüüp            | Kirjeldus                                                                                                                                                                                                                                                 |
-| ------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| consentReference          | string               | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.                                                                                                                                                                  |
-| consentExpiration         | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp                                                                                                                                                                                                                                |
-| idCode                    | string               | Andmesubjekti isikukood. _Märkus:_ Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse päring andmete järele sisaldab sama isikukoodi, mis on märatud selles parameetris                                                                     |
-| clientSubsystemIdentifier | string               | Eesmärgideklaratsioonis määratud klientrakenduse x-tee alamsüsteemi identifikaator. _Märkus:_ Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse alamsüsteem, mis saadab päringu andmete järele, on sama, mis on märatud selles parameetris |
-| serviceDeclarationId      | string               | Nõusolekuga seotud teenusedeklaratsiooni identifikaator. _Märkus:_ Andmekogu peab kontrollima, et kaitstud teenus, mille kaudu Klientrakendus küsib andmed vastab selles parameetris määratud teenusedeklaratsiooni identifikaatorile                     |
+| Parameeter                | Andmetüüp            | Kirjeldus                                                                                                                                                                                                                                                  |
+| ------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentReference          | string               | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust valideeritakse.                                                                                                                                                                   |
+| consentExpiration         | timestamp (ISO 8601) | Nõusoleku kehtivusaja lõpp                                                                                                                                                                                                                                 |
+| idCode                    | string               | Andmesubjekti isikukood. _Märkus:_ Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse päring andmete järele sisaldab sama isikukoodi, mis on määratud selles parameetris                                                                     |
+| clientSubsystemIdentifier | string               | Eesmärgideklaratsioonis määratud klientrakenduse x-tee alamsüsteemi identifikaator. _Märkus:_ Andmekogu peab kontrollima, et x-tees autenditud Klientrakenduse alamsüsteem, mis saadab päringu andmete järele, on sama, mis on määratud selles parameetris |
+| serviceDeclarationId      | string               | Nõusolekuga seotud teenusedeklaratsiooni identifikaator. _Märkus:_ Andmekogu peab kontrollima, et kaitstud teenus, mille kaudu Klientrakendus küsib andmed vastab selles parameetris määratud teenusedeklaratsiooni identifikaatorile                      |
 
 **Veahaldus:**
-Vea võti | Veakood ja staatus | Vea kirjeldus
---- | --- | ---
-error.validation | VALIDATION (400) | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)
-error.http.404 | HTTP_NOT_FOUND (404) | dataProviderSubsystemIdentifier (Andmekogu x-tee alamsüsteemi) ja ConsentReference kombinatsiooni kohta puudub kehtiv nõusolek
-error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED
+
+| Vea võti                                       | Veakood ja staatus                    | Vea kirjeldus                                                                                                                  |
+| ---------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| error.validation                               | VALIDATION (400)                      | Validatsiooni üldised veateated (kohustuslikud väljad määramata, isikukood <>11 märki, mittenumbriline)                        |
+| error.http.404                                 | HTTP_NOT_FOUND (404)                  | dataProviderSubsystemIdentifier (Andmekogu x-tee alamsüsteemi) ja ConsentReference kombinatsiooni kohta puudub kehtiv nõusolek |
+| error.business.consent-validate-invalid-status | CONSENT_VALIDATE_INVALID_STATUS (500) | Küsitud nõusolek ei ole staatuses APPROVED                                                                                     |
 
 ### reportDataTransmission
 
@@ -995,11 +996,10 @@ curl -X POST \
 }
 ```
 
-| Parameeter        | On kohustuslik?        | Andmetüüp                                                                                                                                                                       | Kirjeldus                                                                                                                               |
-| ----------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| consentStatus     | jah                    | array of string                                                                                                                                                                 | viide otsitavate nõusolekute staatusele. Väärtused: VALID, INVALID.                                                                     |
-| consentReferences | jah, ei tohi olla tühi | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivuse soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000. |
-| consentReferences | jah                    | array of string                                                                                                                                                                 | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest |
+| Parameeter        | On kohustuslik?        | Andmetüüp       | Kirjeldus                                                                                                                                                                       |
+| ----------------- | ---------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| consentStatus     | jah                    | array of string | viide otsitavate nõusolekute staatusele. Väärtused: VALID, INVALID.                                                                                                             |
+| consentReferences | jah, ei tohi olla tühi | array of string | Nõusolekuviide – unikaalne kood, mis vastab nõusolekule, mille kehtivust soovitakse valideerida. Edastatakse loetelu nõusolekuviidetest. Maksimaalne kirjete arv päringus 5000. |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
@@ -1474,13 +1474,13 @@ järgi. 
 
 Iga deklaratsiooniga saab teha järgmised tegevused:
 
-- *\"Vaata\"* - ava deklaratsiooni detailvaade kõikide selle andmetega
+- _\"Vaata\"_ - ava deklaratsiooni detailvaade kõikide selle andmetega
 
-- *\"Muuda kehtetuks\"* - muuda eesmärgideklaratsiooni staatus
+- _\"Muuda kehtetuks\"_ - muuda eesmärgideklaratsiooni staatus
   KEHTETUks ja muuda kehtetuks ka kõik selle deklaratsiooniga seotud
   nõusolekud.
 
-- *\"Klooni\"* - kasuta deklaratsioon mallina uue deklaratsiooni
+- _\"Klooni\"_ - kasuta deklaratsioon mallina uue deklaratsiooni
   jaoks - uue deklaratsiooni esitamise vormi automaatselt täidetakse
   kloonitava deklaratsiooni andmetega edasiseks redigeerimiseks.
 

@@ -341,7 +341,7 @@ The Data Consent Service processes the incoming query. During query processing, 
 
 - Whether the X-tee client that made the query matches the one in the database in the Service Declaration associated with the consent.
 - Whether the verification fields found in the database entry by UUID match the consent information.
-- Whether the signed DigiDoc container and signature are valid.
+- Whether the signed DigiDoc container and all its signatures are valid. The container must contain exactly one personal signature, given by the data subject. Additional e-seals, such as the service provider's own seal, are allowed.
 - Whether the PDF hash in the DigiDoc container matches the PDF hash in the database container.
 - Whether the signature has been provided within the last hour (the time period is adjustable with the system parameter `allowedSignatureTimeInMinutes` = 24 hours).
 - Whether the personal data in the signature (personal identification code, first name, last name) matches the information in the database.
@@ -413,7 +413,7 @@ Per-consent processing errors are returned in the response body via the `status`
 | error.validation                                               | VALIDATION (400)                                      | Generic validation error messages (mandatory fields not specified)                                 |
 | error.http.404                                                 | HTTP_NOT_FOUND (404)                                  | The X-tee client is not the same as the one in the Service Declaration associated with the consent |
 | error.business.consent-container-unreadable                    | CONSENT_CONTAINER_UNREADABLE (400)                    | The signed container could not be read or parsed                                                   |
-| error.business.consent-signature-invalid                       | CONSENT_SIGNATURE_INVALID (400)                       | The container must contain exactly one valid signature                                             |
+| error.business.consent-signature-invalid                       | CONSENT_SIGNATURE_INVALID (400)                       | The container must contain exactly one personal signature and all signatures must be valid         |
 | error.business.consent-signer-not-personal                     | CONSENT_SIGNER_NOT_PERSONAL (400)                     | The container was not signed with a personal certificate                                           |
 | error.business.consent-signer-mismatch                         | CONSENT_SIGNER_MISMATCH (400)                         | The signer does not match the consent's data subject                                               |
 | error.business.consent-signed-document-mismatch                | CONSENT_SIGNED_DOCUMENT_MISMATCH (400)                | The signed document does not match the issued document                                             |

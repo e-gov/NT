@@ -1301,6 +1301,12 @@ Andmenõusolekuteenuse haldusliides on mõeldud eesmärgideklaratsioonide, teenu
 
 ![Loogilised seosed infosüsteemide ja deklaratsioonide vahel](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image4.png)
 
+**Avaleht ja navigeerimine**
+
+Pärast sisselogimist avaneb avaleht. Avalehel on nupud uue teenusedeklaratsiooni ja eesmärgideklaratsiooni lisamiseks, plokk „Tähelepanu vajab", kus on kehtivad deklaratsioonid, mille kehtivus lõpeb järgmise 90 päeva jooksul, kehtivate teenuse- ja eesmärgideklaratsioonide ning hallatavate infosüsteemide arv ja viimati muudetud deklaratsioonid. Vasakpoolses menüüs on haldusliidese vaated. Päises saab vahetada kasutajaliidese keelt (eesti või inglise) ja lülitada sisse tumeda kujunduse.
+
+![Avaleht](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/avaleht.png)
+
 ## Rollid
 
 | Roll                                       | Kirjeldus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Millised vaated näeb                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -1334,14 +1340,14 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
 võimalik ainult siis, kui infosüsteemiga pole seotud ühtegi kehtiva
 teenusedeklaratsiooni.
 
-![Infosüsteemide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image5.jpg)
+![Infosüsteemide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemide-nimekiri.png)
 
 **Infosüsteemi lisamine**
 
 Uue infosüsteemi lisamise vorm. Sisestatavad andmed on detailselt
 kirjeldatud jaotises [7.2.2](#infosüsteemi-andmed).
 
-![Infosüsteemi lisamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image6.jpg)
+![Infosüsteemi lisamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemi-lisamine.png)
 
 **Infosüsteemi muutmine**
 
@@ -1350,7 +1356,7 @@ muutmine ei mõjuta sellega seotud teenusedeklaratsioone - seal jäävad
 endised andmed. Uued teenusedeklaratsioonid luuakse kasutades uued
 andmed.
 
-![Infosüsteemi muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image7.jpg)
+![Infosüsteemi muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemi-muutmine.png)
 
 ### Infosüsteemi andmed
 
@@ -1377,9 +1383,7 @@ haldusliideses on seotud järgmised vaated:
 
 **Teenusedeklaratsioonide nimekiri**
 
-Ülevaade kõikidest esitatud teenusedeklaratsioonidest. Võimaldab
-deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi
-ning filtreerida infosüsteemide ja staatuste järgi.
+Ülevaade kõikidest esitatud teenusedeklaratsioonidest. Võimaldab deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi ning otsida ja filtreerida identifikaatori, nime, teenust pakkuva infosüsteemi, staatuse, teenusedeklaratsiooni tüübi (eraisiku või juriidilise isiku andmed), allkirjastamise nõude, esitamise kuupäeva ja kehtivuse lõppkuupäeva järgi. Tegevuste nupud on tabeli viimases veerus.
 
 Iga deklaratsiooniga saab teha järgmised tegevused:
 
@@ -1393,14 +1397,20 @@ nõusolekud kehtetuteks.
 deklaratsiooni esitamise vormi automaatselt täidetakse kloonitava
 deklaratsiooni andmetega edasiseks redigeerimiseks.
 
-![Teenusedeklaratsionide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image8.jpg)
+![Teenusedeklaratsioonide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsioonide-nimekiri.png)
 
 **Teenusedeklaratsiooni esitamine**
 
 Uue teenusedeklaratsiooni esitamise vorm. Sisestatavad andmed on
 detailselt kirjeldatud jaotises [7.3.2.](#teenusedeklaratsiooni-andmed)
 
-![Teenusedeklaratsioni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image9.jpg)
+![Teenusedeklaratsiooni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-esitamine.png)
+
+**Tõlked**
+
+Teenusedeklaratsiooni esitamise ja muutmise vormi ülaosas saab valida keele (ET, EN, RU). Eestikeelses vaates (ET) täidetakse kõik väljad. EN ja RU vaates saab sisestada teenusedeklaratsiooni nime ja teenuse andmekoosseisu kirjelduse tõlke, mida kuvatakse andmesubjektile vastavas keeles. Ülejäänud väljad on nendes vaadetes ainult vaatamiseks. Tõlgitud nime salvestamiseks tuleb samas keeles täita ka teenuse andmekoosseisu kirjeldus.
+
+![Teenusedeklaratsiooni tõlked](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-tolked.png)
 
 **Teenusedeklaratsiooni detailvaade**
 
@@ -1410,7 +1420,7 @@ kehtivat nõusolekut on seotud antud teenusedeklaratsiooniga. Detailvaate
 kaudu saab avaldada soovi muuta kehtiva deklaratsiooni andmed, vajutades
 nuppu \"Muuda deklaratsiooni andmed\".
 
-![Teenusedeklaratsioni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image10.jpeg)
+![Teenusedeklaratsiooni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-detailvaade.png)
 
 **Teenusedeklaratsiooni muutmine**
 
@@ -1418,7 +1428,7 @@ Vaade, mis võimaldab kehtiva teenusedeklaratsiooni andmed osaliselt
 muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 [7.3.2.](#teenusedeklaratsiooni-andmed)
 
-![Teenusedeklaratsioni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image11.jpeg)
+![Teenusedeklaratsiooni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-muutmine.png)
 
 ### Teenusedeklaratsiooni andmed
 
@@ -1437,9 +1447,9 @@ muuta. Millised väljad tohib/ei tohi muuta on kirjeldatud jaotises
 | Teenuse andmekoosseisu kirjeldus              | Teenuse inimloetav kirjeldus. Tagastatavad andmed, teenuse sisu jne. Kuvatakse nõusoleku andmisel andmesubjektile.                                                                                                                                                                                                                | Immuniseerimistega seotud andmed: <br /> • haigus mille vastu immuniseeriti, <br /> • immuniseerimise kuupäev, <br /> • immuunpreparaat, <br /> • partii number, <br /> • manustatud annus, <br /> • mitmes annus, <br /> • järgmine immuniseerimine alates, <br /> • tervishoiuasutus, <br /> • immunpreparaadi ATC kood ja toimeaine(te) nimetus(ed). <br /> | Jah              |
 | Nõusoleku maksimaalne kehtivusaeg             | Mitu päeva maksimaalselt saab kehtida andmesubjekti nõusolek alates nõusoleku andmise hetkest. Selle põhjal arvutatakse nõusoleku kehtivusaja lõppkuupäev, mida näidetakse andmesubjektile nõusoleku andmisel.                                                                                                                    | 60                                                                                                                                                                                                                                                                                                                                                             | Jah              |
 | Teenusedeklaratsiooni kehtivusaja lõppkuupäev | TD kehtivusaja lõppkuupäev võib olla määramata (siis TD kehtib kuni selle muudetakse kehtetuks manuaalselt) või konkreetne valitud kuupäev (kui TD kehtivusaeg lõppeb, siis ka seotud ED muutuvad kehtetuteks)                                                                                                                    | 15.05.2022                                                                                                                                                                                                                                                                                                                                                     | Jah              |
-| Nõusolek vajab allkirja:                      | Kas nõusolek tuleb digitaalselt allkirjastada. <br />Peale märke tegemist ja deklaratsiooni esitamist enam märget muuta ei saa. <br />Kui valik on märgistatud, kuvatakse järgnevad valikud: <br /> • Nõusolek vajab loobumisel allkirja; <br /> • Genereeri nõusoleku metaandmetest JSON.                                        | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ei               |
-| Nõusolek vajab loobumisel allkirja            | Kas nõusoleku loobumisel tuleb nõusolek digitaalselt allkirjastada. <br />Peale märke tegemist ja deklaratsiooni esitamist enam märget muuta ei saa.                                                                                                                                                                              | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ei               |
-| Genereeri nõusoleku metaandmetest JSON        | Kas nõusoleku allkirjastamisel genereeritakse nõusoleku metaandmetest JSON fail ja tõstetakse DigiDoc konteinerisse. <br />Peale märke tegemist ja deklaratsiooni esitamist enam märget muuta ei saa.                                                                                                                             | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ei               |
+| Nõusolek vajab allkirja:                      | Kas nõusolek tuleb digitaalselt allkirjastada. <br />Märke saab lisada ka hiljem deklaratsiooni muutmisel, kuid kord salvestatud märget eemaldada ei saa. <br />Kui valik on märgistatud, kuvatakse järgnevad valikud: <br /> • Nõusolek vajab loobumisel allkirja; <br /> • Genereeri nõusoleku metaandmetest JSON.              | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ainult märkida   |
+| Nõusolek vajab loobumisel allkirja            | Kas nõusoleku loobumisel tuleb nõusolek digitaalselt allkirjastada. <br />Märke saab lisada ka hiljem deklaratsiooni muutmisel, kuid kord salvestatud märget eemaldada ei saa.                                                                                                                                                    | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ainult märkida   |
+| Genereeri nõusoleku metaandmetest JSON        | Kas nõusoleku allkirjastamisel genereeritakse nõusoleku metaandmetest JSON fail ja tõstetakse DigiDoc konteinerisse. <br />Märke saab lisada ka hiljem deklaratsiooni muutmisel, kuid kord salvestatud märget eemaldada ei saa.                                                                                                   | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Ainult märkida   |
 | Nõusoleku pikendamine lubatud                 | Kas kinnitatud/allkirjastatud nõusolekute pikendamine on lubatud                                                                                                                                                                                                                                                                  | Jah/ei                                                                                                                                                                                                                                                                                                                                                         | Jah              |
 | Deklaratsiooni esitamise kuupäev              | TD loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast.                                                                                                                                                                                                                                                          | 09.06.2023                                                                                                                                                                                                                                                                                                                                                     | Ei               |
 | Deklaratsiooni vormi täitis                   | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis TD esitamise vormi.                                                                                                                                                                                                                                               | Mart Mets (Infosüsteemi haldur)                                                                                                                                                                                                                                                                                                                                | Ei               |
@@ -1465,10 +1475,7 @@ haldusliideses on seotud järgmised vaated:
 
 **Eesmärgideklaratsioonide nimekiri** 
 
-Ülevaade kõikidest esitatud eesmärgideklaratsioonidest. Võimaldab
-deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi,
-filtreerida staatuste järgi ning otsida deklaratsioone deklareerija nime
-järgi. 
+Ülevaade kõikidest esitatud eesmärgideklaratsioonidest. Võimaldab deklaratsioonide nimekirja sorteerida erinevate tulpade andmete järgi, otsida andmete saaja nime ja registrikoodi, eesmärgideklaratsiooni identifikaatori ja nime, teenust pakkuva infosüsteemi ning teenusedeklaratsiooni identifikaatori järgi ning filtreerida teenusedeklaratsiooni tüübi ja staatuse järgi. Tegevuste nupud on tabeli viimases veerus. 
 
 Iga deklaratsiooniga saab teha järgmised tegevused:
 
@@ -1482,14 +1489,14 @@ Iga deklaratsiooniga saab teha järgmised tegevused:
   jaoks - uue deklaratsiooni esitamise vormi automaatselt täidetakse
   kloonitava deklaratsiooni andmetega edasiseks redigeerimiseks.
 
-![Eesmärgideklaratsioonide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image13.jpg)
+![Eesmärgideklaratsioonide nimekiri](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsioonide-nimekiri.png)
 
 **Eesmärgideklaratsiooni esitamine**
 
 Uue eesmärgideklaratsiooni esitamise vorm. Sisestatavad andmed on
-detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed)
+detailselt kirjeldatud jaotises [7.4.2.](#eesmärgideklaratsiooni-andmed) Andmete saaja valitakse nime järgi otsides. Ka eesmärgideklaratsiooni vormil saab valida keele (ET, EN, RU): keelepõhised on väljad „Andmete saaja pakutav teenus", „Andmete kasutamise eesmärk" ja „Andmekaitsetingimused".
 
-![Eesmärgideklaratsiooni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20esitamine.PNG)
+![Eesmärgideklaratsiooni esitamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-esitamine.png)
 
 **Eesmärgideklaratsiooni detailvaade**
 
@@ -1497,10 +1504,15 @@ Kuvab eesmärgideklaratsiooniga seotud andmed - nii põhiandmed kui ka
 metaandmed.  Samuti, kuvab mitu kehtivat nõusolekut on seotud antud
 eesmärgideklaratsiooniga. Detailvaate kaudu saab avaldada soovi muuta
 kehtiva deklaratsiooni andmed, vajutades nuppu \"Muuda deklaratsiooni
-andmed\". „Laadi alla" nuppu vajutades saab alla laadida
-eesmärgideklaratsiooni andmed CSV formaadis.
+andmed\". „Ekspordi CSV" nuppu vajutades saab eesmärgideklaratsiooni andmed CSV formaadis alla laadida. Nupuga „Uuenda äriregistrist" saab andmete saaja nime äriregistri andmete järgi uuendada: enne kinnitamist kuvatakse praegune nimi, äriregistris olev nimi ja mõjutatud eesmärgideklaratsioonide arv.
 
-![Eesmärgideklaratsiooni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20detailvaade.PNG)
+![Eesmärgideklaratsiooni detailvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-detailvaade.png)
+
+**Nõusoleku PDF eelvaade**
+
+Kui kasutatav teenusedeklaratsioon nõuab nõusoleku allkirjastamist, on eesmärgideklaratsiooni esitamise vormil ja detailvaates nupp „Nõusoleku PDF eelvaade". Selle kaudu saab andmesubjektile allkirjastamiseks kuvatava nõusoleku PDF-dokumendi avada uues aknas („Ava uues aknas") või alla laadida („Laadi alla").
+
+![Nõusoleku PDF eelvaade](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-pdf-eelvaade.png)
 
 **Eesmärgideklaratsiooni muutmine**
 
@@ -1508,7 +1520,7 @@ Vaade, mis võimaldab kehtiva eesmärgideklaratsiooni andmed osaliselt
 muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 [7.4.2.](#eesmärgideklaratsiooni-andmed)
 
-![Eesmärgideklaratsiooni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Eesm%C3%A4rgideklaratsiooni%20muutmine.PNG)
+![Eesmärgideklaratsiooni muutmine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-muutmine.png)
 
 ### Eesmärgideklaratsiooni andmed
 
@@ -1522,7 +1534,7 @@ muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 | Eesmärgideklaratsiooni identifikaator                      | Eesmärgideklaratsiooni inimloetav unikaalne tunnus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | healthstartup_immuniseerimisa ndmed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Ei               |
 | Eesmärgideklaratsiooni nimi                                | Deklareeritava andmete kasutamise eesmärgi inimloetav lühike nimi.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Health Startup immuniseerimisandmed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Jah              |
 | Andmete kasutamise eesmärk                                 | Andmesubjekti andmete kasutamise eesmärgi kirjeldus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Kui lubate Tervise infosüsteemil enda immuniseerimisandmed Health Startup OÜ-le edastada, võimaldab see teile pakkuda vaktsineerimiste nõustamise ja meeldetuletuse teenust Immu. <br /> <br /> Health Startup OÜ kasutab Tervise infosüsteemist saadud immuniseerimisandmeid isikliku vaktsineerimisvajaduste hindamiseks ning koostab nende põhjal vajaliku vaktsineerimisplaani, ühendades kasutaja sisestatud andmed riiklikult kogutud immuniseerimisandmetega. Nii saab võimalikuks vaktsineerimissoovituste pakkumine isiku asukoha, reisiplaanide, tervisliku seisundi, prognoositava puugihooaja jm sisendinfo põhjal, arvestades alati isiku seniseid immuniseerimisi. <br /> <br /> Health Startup OÜ kasutab Tervise infosüsteemist pärit immuniseerimisandmeid ainult ülalkirjeldatud teenuse Immu pakkumiseks ning kustutab kõik isikuandmed kasutaja sellekohasel soovil. | Jah              |
-| Andmete saaja andmekaitsetingimused                        | Klientrakenduse või selle äriteenuse andmekaitsetingimused (lisada lingina)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | https://andmekaitsetingimused.ee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Jah              |
+| Andmete saaja andmekaitsetingimused                        | Klientrakenduse või selle äriteenuse andmekaitsetingimused. Vabatekst, mis täidetakse iga keele jaoks eraldi; tekstis sisalduv URL kuvatakse klõpsatava lingina.                                                                                                                                                                                                                                                                                                                                                                                                                                                  | https://andmekaitsetingimused.ee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Jah              |
 | Eesmärgideklaratsiooni kehtivusaja lõppkuupäev             | ED kehtivusaja lõppkuupäevaks määratakse kas või sama kuupäev, mis on TD kehtivusaja lõppkupäev (võib olla ka "määramata"), või valitakse eraldi kuupäeva ED jaoks.                                                                                                                                                                                                                                                                                                                                                                                                                                               | määramata                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Ei               |
 | Deklaratsiooni esitamise kuupäev (määratakse automaatselt) | ED loomise kuupäev. ED alati hakkab kehtima alates esitamise kuupäevast.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | 09.06.2023                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Ei               |
 | Deklaratsiooni vormi täitis (määratakse automaatselt)      | Infosüsteemide haldur (tema nimi ja roll süsteemis), kes täitis ED esitamise vormi.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Mart Mets (Infosüsteemi haldur)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Ei               |
@@ -1561,7 +1573,7 @@ Statistika tulemuste tabelis saab näha statistikat vastavalt valitud
 Infosüsteemi ja/või andmete saaja järgi. Võimaldab statistika andmeid
 sorteerida erinevate tulpade järgi.
 
-![Statistika väljund](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image31.png)
+![Statistika väljund](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/haldusliides/statistika.png)
 
 ## Statistika andmestik
 

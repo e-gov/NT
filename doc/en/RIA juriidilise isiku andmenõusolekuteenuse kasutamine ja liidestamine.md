@@ -940,6 +940,12 @@ The Data Consent Service management interface is designed for the management of 
 
 ![Logical associations between information systems and declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image4.png)
 
+**Home page and navigation**
+
+After logging in, the home page opens. It has buttons for adding a new Service Declaration and Purpose Declaration, a 'Needs attention' block listing valid declarations that expire within the next 90 days, the number of valid Service and Purpose Declarations and managed information systems, and the most recently modified declarations. The menu on the left leads to the views of the management interface. In the header, you can change the user interface language (Estonian or English) and switch on the dark theme.
+
+![Home page](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/avaleht.png)
+
 ## Roles
 
 | Role                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | What views are seen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -965,19 +971,19 @@ The following actions can be performed on each declaration:
 
 'Delete' - perform a logical deletion of the information system. The deletion is only possible if there are no valid Service Declarations associated with the information system.
 
-![List of information systems](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image5.jpg)
+![List of information systems](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemide-nimekiri.png)
 
 **Adding an information system**
 
 The form for adding a new information system. The data to be entered is described in detail in section [7.2.2](#information-system-data).
 
-![Adding an information system](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image6.jpg)
+![Adding an information system](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemi-lisamine.png)
 
 **Modifying an information system**
 
 A view that allows you to modify the data of the information system. Changing the data of the information system does not affect the associated Service Declarations - the data will remain as it is. New Service Declarations will be created using the new data.
 
-![Modifying an information system](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image6.jpg)
+![Modifying an information system](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/infosusteemi-muutmine.png)
 
 ### Information system data
 
@@ -1000,7 +1006,7 @@ The following views are associated with the submission and management of Service
 
 **List of Service Declarations**
 
-Overview of all submitted Service Declarations. It allows the list of declarations to be sorted by the data in the different columns and filtered by information systems and statuses.
+Overview of all submitted Service Declarations. It allows the list of declarations to be sorted by the data in the different columns, and searched and filtered by identifier, name, providing information system, status, Service Declaration type (data of a private person or of a legal entity), signature requirement, submission date and end date of validity. The action buttons are in the last column of the table.
 
 The following actions can be performed on each declaration:
 
@@ -1010,25 +1016,31 @@ The following actions can be performed on each declaration:
 
 'Clone' - use the declaration as a template for a new declaration - the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
-![List of Service Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%208.png)
+![List of Service Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsioonide-nimekiri.png)
 
 **Submitting a Service Declaration**
 
 The form for submitting a new Service Declaration. The data to be entered is described in detail in section [7.3.2.](#service-declaration-data)
 
-![Submission of a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%209.png)
+![Submitting a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-esitamine.png)
+
+**Translations**
+
+At the top of the Service Declaration submission and modification forms, you can select the language (ET, EN, RU). In the Estonian view (ET), all fields are filled in. In the EN and RU views, you can enter translations of the Service Declaration name and of the description of the data composition of the service, which are displayed to the Data Subject in that language. The other fields are read-only in these views. To save a translated name, the description of the data composition must also be filled in in the same language.
+
+![Service Declaration translations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-tolked.png)
 
 **Detailed view of a Service Declaration**
 
 It displays the data associated with the Service Declaration - both basic and metadata. It also displays the number of valid Purpose Declarations and the number of valid consents associated with a given Service Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button.
 
-![Detailed view of a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image10.png)
+![Detailed view of a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-detailvaade.png)
 
 **Modifying a Service Declaration**
 
 A view that allows to partially modify the data of a valid Service Declaration. Fields which may/may not be changed are described in section [7.3.2.](#service-declaration-data)
 
-![Modifying a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image11.png)
+![Modifying a Service Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/teenusedeklaratsiooni-muutmine.png)
 
 ### Service Declaration data
 
@@ -1047,10 +1059,10 @@ A view that allows to partially modify the data of a valid Service Declaration. 
 | Description of the data content of the service | Human-readable description of the service. Data to be returned, service content, etc. To be displayed when consent is given to the Data Subject.                                                                                                                                                                                                                                         | Data related to compiling ESG reports: <br /> • average energy consumption, <br /> • waste management volume, <br /> • assessment of working conditions. | Yes                |
 | Maximum period of validity of the consent      | Maximum number of days the Data Subject's consent can be valid from the moment the consent is given. On this basis, the expiry date of the consent is calculated and indicated to the Data Subject at the time of giving the consent.                                                                                                                                                    | 60                                                                                                                                                       | Yes                |
 | Expiry date of the Service Declaration         | The SD expiry date can be unspecified (the SD will be valid until it is manually invalidated) or a specific selected date (when the SD expires, the associated PD will also become invalid).                                                                                                                                                                                             | 15 May 2026                                                                                                                                              | Yes                |
-| Consent requires a signature:                  | Does the consent need to be digitally signed? <br />Once the entry has been made and the declaration has been submitted, the entry cannot be changed. <br />If the option is ticked, the following options are displayed: <br /> • Withdrawal of consent requires a signature; <br /> • Generate JSON from the consent metadata.                                                         | Yes/No                                                                                                                                                   | No                 |
-| Withdrawal of consent requires a signature     | If consent is withdrawn, it must be digitally signed. <br />Once the entry has been made and the declaration has been submitted, the entry cannot be changed.                                                                                                                                                                                                                            | Yes/No                                                                                                                                                   | No                 |
+| Consent requires a signature:                  | Does the consent need to be digitally signed? <br />The option can also be ticked later when modifying the declaration, but once saved it cannot be unticked. <br />If the option is ticked, the following options are displayed: <br /> • Withdrawal of consent requires a signature; <br /> • Generate JSON from the consent metadata.                                                 | Yes/No                                                                                                                                                   | Only ticking       |
+| Withdrawal of consent requires a signature     | If consent is withdrawn, it must be digitally signed. <br />The option can also be ticked later when modifying the declaration, but once saved it cannot be unticked.                                                                                                                                                                                                                    | Yes/No                                                                                                                                                   | Only ticking       |
 | Service for legal entity data                  | Whether the service is intended for the transmission of legal entity data.                                                                                                                                                                                                                                                                                                               | Yes/No                                                                                                                                                   | No                 |
-| Generate JSON from consent metadata            | Is a JSON file generated from the consent metadata when the consent is signed and uploaded to the DigiDoc container? <br />Once the entry has been made and the declaration has been submitted, the entry cannot be changed.                                                                                                                                                             | Yes/No                                                                                                                                                   | No                 |
+| Generate JSON from consent metadata            | Is a JSON file generated from the consent metadata when the consent is signed and uploaded to the DigiDoc container? <br />The option can also be ticked later when modifying the declaration, but once saved it cannot be unticked.                                                                                                                                                     | Yes/No                                                                                                                                                   | Only ticking       |
 | Extension of consent allowed                   | Is the extension of confirmed/signed consents allowed? <br /> Note: For legal entity data, the value is 'No' and is not editable.                                                                                                                                                                                                                                                        | Yes/No                                                                                                                                                   | No                 |
 | Date of declaration                            | Date of creation of the SD. The PD always enters into force as of the date of submission.                                                                                                                                                                                                                                                                                                | 9 June 2023                                                                                                                                              | No                 |
 | Declaration form completed by                  | The information systems administrator (name and role in the system) who completed the SD submission form.                                                                                                                                                                                                                                                                                | Mart Mets (Information System Administrator)                                                                                                             | No                 |
@@ -1072,7 +1084,7 @@ The following views are associated with the submission and management of Purpose
 
 **List of Purpose Declarations**
 
-Overview of all the Purpose Declarations that have been submitted. It allows to sort the list of declarations by the data in the various columns, filter by status, and search for declarations by the declarant's name.
+Overview of all the Purpose Declarations that have been submitted. It allows the list of declarations to be sorted by the data in the various columns, searched by the data recipient's name and registry code, Purpose Declaration identifier and name, providing information system and Service Declaration identifier, and filtered by Service Declaration type and status. The action buttons are in the last column of the table.
 
 The following actions can be performed on each declaration:
 
@@ -1082,25 +1094,31 @@ The following actions can be performed on each declaration:
 
 - '_Clone_' - use the declaration as a template for a new declaration - the new declaration submission form will be automatically filled with the data of the cloned declaration for further editing.
 
-![List of Purpose Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2013.png)
+![List of Purpose Declarations](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsioonide-nimekiri.png)
 
 **Submitting a Purpose Declaration**
 
-Form for submitting a new Purpose Declaration. The data to be entered is described in detail in section [7.4.2.](#purpose-declaration-data)
+Form for submitting a new Purpose Declaration. The data to be entered is described in detail in section [7.4.2.](#purpose-declaration-data) The data recipient is selected by searching by name. The Purpose Declaration form also has the language selection (ET, EN, RU): the fields 'Service provided by the data recipient', 'Purpose of the use of data' and 'Data protection conditions' are language-specific.
 
-![Submitting a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2014.png)
+![Submitting a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-esitamine.png)
 
 **Detailed view of a Purpose Declaration**
 
-It displays the data associated with the Purpose Declaration - both basic and metadata. It also displays the number of valid consents associated with a given Purpose Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button. By clicking on the 'Download' button, it is possible to download the Purpose Declaration data in CSV format.
+It displays the data associated with the Purpose Declaration - both basic and metadata. It also displays the number of valid consents associated with a given Purpose Declaration. In the detailed view, a request can be made to modify the data of a valid declaration by clicking on the 'Modify declaration data' button. By clicking on the 'Export CSV' button, it is possible to download the Purpose Declaration data in CSV format. The 'Refresh from the business registry' button updates the data recipient's name from the business registry: before confirming, the current name, the name in the business registry and the number of affected Purpose Declarations are displayed.
 
-![Detailed view of a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2015.png)
+![Detailed view of a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-detailvaade.png)
+
+**Consent PDF preview**
+
+If the Service Declaration used requires the consent to be signed, the Purpose Declaration submission form and detailed view have a 'Preview consent PDF' button. It opens the PDF document of the consent that the Data Subject is asked to sign in a new tab ('Open in a new tab') or downloads it ('Download').
+
+![Consent PDF preview](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-pdf-eelvaade.png)
 
 **Modifying a Purpose Declaration**
 
 A view that allows to partially modify the data of a valid Purpose Declaration. Fields which may/may not be changed are described in section [7.4.2.](#purpose-declaration-data)
 
-![Modifying a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2016.png)
+![Modifying a Purpose Declaration](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/eesmargideklaratsiooni-muutmine.png)
 
 ### Purpose Declaration data
 
@@ -1114,7 +1132,7 @@ A view that allows to partially modify the data of a valid Purpose Declaration. 
 | Identifier of the Purpose Declaration                   | Unique human-readable identifier of the Purpose Declaration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | ARUANNE_KOOST                                                                                                                                                                                                                                                                                                                                                                                        | No                 |
 | Name of the Purpose Declaration                         | A human-readable short name of the purpose of the use of the data to be declared.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | ESG report                                                                                                                                                                                                                                                                                                                                                                                           | Yes                |
 | Purpose of the use of data                              | Description of the purposes for which the Data Subject's data are used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | If you allow the Environmental Indicators information system to transmit your company's data to the company Aruanded AS, this will allow it to provide you with the service of compiling an ESG report.<br /> Aruanded AS uses the data received from the Environmental Indicators information system to assess your company's sustainability and, based on this, compiles the necessary ESG report. | Yes                |
-| Data protection conditions of the recipient of the data | Data protection conditions for the Client or its business service (to be included as a link)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | https://andmekaitsetingimused.ee                                                                                                                                                                                                                                                                                                                                                                     | Yes                |
+| Data protection conditions of the recipient of the data | Data protection conditions for the Client or its business service. Free text, filled in separately for each language; a URL in the text is displayed as a clickable link.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | https://andmekaitsetingimused.ee                                                                                                                                                                                                                                                                                                                                                                     | Yes                |
 | Expiry date of the Purpose Declaration                  | The expiry date of the PD is either set to the same date as the expiry date of the SD (it can also be 'unspecified'), or a separate date is selected for the PD.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | undetermined                                                                                                                                                                                                                                                                                                                                                                                         | No                 |
 | Date of declaration (determined automatically)          | Date of creation of the PD. The PD always enters into force as of the date of submission.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 9 June 2023                                                                                                                                                                                                                                                                                                                                                                                          | No                 |
 | Declaration form filled by (determined automatically)   | The information systems administrator (name and role in the system) who completed the PD submission form.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Mart Mets (Information System Administrator)                                                                                                                                                                                                                                                                                                                                                         | No                 |
@@ -1140,7 +1158,7 @@ The information system and/or the name of the data recipient must be selected to
 
 In the statistics results table, you can view statistics by selected information system and/or data recipient. It allows you to sort statistical data by different columns.
 
-![Statistics output](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2018.png)
+![Statistics output](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/haldusliides/statistika.png)
 
 ## Statistical data
 

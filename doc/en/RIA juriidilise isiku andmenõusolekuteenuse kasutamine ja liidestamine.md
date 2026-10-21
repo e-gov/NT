@@ -1195,7 +1195,7 @@ The following table describes the data that a consent contains.
 
 # User interface of the Legal Entity Data Consent Service
 
-The user interface of the Legal Entity Data Consent Service JURNT, intended for regular users, is implemented as a separate web application that forms part of the eesti.ee Business Portal. The JURNT user interface is intended for the Representative(s) of legal-entity Data Subjects and Client representative(s), and consists of four parts: granting consents, managing consents, requesting consents, and an overview of data transmitted on the basis of consents. After logging in to eesti.ee as a representative of a legal entity, the user finds these under the Data Consent menu item, in the subpages 'Pending consents', 'All consents', 'Requesting consents', and 'Data transmitted'. Whether a subpage is visible depends on the existence of the corresponding user role.
+The user interface of the Legal Entity Data Consent Service JURNT, intended for regular users, is implemented as a separate web application that forms part of the eesti.ee Business Portal. The JURNT user interface is intended for the Representative(s) of legal-entity Data Subjects and Client representative(s), and consists of four parts: granting consents, managing consents, requesting consents, and an overview of data transmitted on the basis of consents. After logging in to eesti.ee as a representative of a legal entity, the user finds these under the Data Consent menu item, in the subpages 'Pending consents', 'All consents', 'Request consents', and 'Transferred data'. Whether a subpage is visible depends on the existence of the corresponding user role.
 
 ## Approving consent
 
@@ -1231,18 +1231,18 @@ The Representative of a legal-entity Data Subject can review consent requests an
 
 ![TARA](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2019.png)
 
-After selecting the represented company, the user can open the Pending consents subpage under the Data Consent menu item, where the list view of pending consent requests targeted at them is displayed, with the first, most recent consent request open.
+After selecting the represented company, the user can open the 'Pending consents' subpage under the Data Consent menu item, where the list view of pending consent requests targeted at them is displayed, with the first, most recent consent request open. At the top of the page is an information box ('Please be informed that:'). The list shows who uses the data, the sender of the data, the data, the date requested, the validity end date and the status ('Decision pending').
 
-![Consent requests](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant1.png)
+![Consent requests](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/pending-consents.png)
 
-After reviewing the details of the consent request, the Representative can choose whether to allow or not allow the described data set to be transmitted with data concerning the legal entity they represent. If they allow, the status label and button turn green and the 'Confirm' button becomes active.
-If the Representative does not allow the described data set to be transmitted, the status label and button turn red and the 'Confirm' button becomes active.
+After reviewing the details of the consent request, the Representative can use the 'Reject' and 'Allow' buttons to choose whether to allow or not allow the described data set to be transmitted with data concerning the legal entity they represent. If they choose 'Allow', the button turns green and the 'I confirm' button becomes active.
+If the Representative chooses 'Reject', the button turns red and the 'I confirm' button becomes active. After 'I confirm' is pressed, the status label of the request changes according to the choice.
 
-![Allow](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant2.png)
+![Reject](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/pending-decline.png)
 
-PS! If the Data Provider has required a digital signature for granting consent in the Service Declaration, the consent must be digitally signed.
+PS! If the Data Provider has required a digital signature for granting consent in the Service Declaration, the consent must be digitally signed. When 'Allow' is chosen, the 'I confirm' button is replaced by the 'Sign digitally' button.
 
-![Do not allow](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant3.png)
+![Allow and sign](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/pending-allow-sign.png)
 
 ### Client actions after redirection
 
@@ -1254,39 +1254,39 @@ If some consents are missing, the Client requests a new link from the Data Conse
 
 ## Consents management
 
-The Representative of a legal-entity Data Subject finds the consent management options after logging in, under the Data Consent menu item, in the 'All consents' subpage. As a representative of a legal entity, the user can see all the consents they have approved or withdrawn from as the Representative of the given Data Subject, both valid and invalid. This page does not display consent requests (status 'Pending decision'), which can be seen in the 'Pending consents' subpage.
+The Representative of a legal-entity Data Subject finds the consent management options after logging in, under the Data Consent menu item, in the 'All consents' subpage. As a representative of a legal entity, the user can see all the consents they have approved or withdrawn from as the Representative of the given Data Subject, both valid and invalid. This page does not display consent requests (status 'Decision pending'), which can be seen in the 'Pending consents' subpage.
 
-Consents can be filtered by data recipient, data transmitter, data name, consent number and dates (Valid from, Valid until). The consent table is sortable by a single column.
+Consents can be searched by keyword ('Find keyword') and, under the 'More filters' link, filtered by status ('Status') and validity period ('Valid during'). The consent table is sortable.
 
-![My consents](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant4.png)
+![All consents](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/all-consents.png)
 
-Clicking a row in the table opens the consent details view together with the 'Withdraw consent' button for a valid consent. This button allows the consent to be withdrawn. A coloured line in front of the consent details indicates the status.
+Clicking a row in the table opens the consent details view together with the 'Withdraw consent' button for a valid consent. This button allows the consent to be withdrawn. The details view also has a 'View transfers' link, which opens the transfers made on the basis of that consent in the 'Transferred data' subpage.
 
-![Consent details and withdrawal](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant5.png)
+![Consent details and withdrawal](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/all-consent-details.png)
 
 If the Representative approved or signed the consent (including the withdrawal), the consent details show the name of the approver/signer.
 
 ### Withdrawal of consent
 
-The Representative of a legal-entity Data Subject can withdraw consent using the 'Withdraw consent' button. Withdrawal is available for consents that are valid (status 'approved'). The user must confirm the withdrawal so that it does not happen by accident.
+The Representative of a legal-entity Data Subject can withdraw consent using the 'Withdraw consent' button. Withdrawal is available for consents that are valid (status 'Approved'). Clicking the button opens the 'Withdrawal of consent' window, where the user must confirm the withdrawal with the 'Yes, withdraw' button so that it does not happen by accident. The 'Cancel' button closes the window without withdrawing.
 
 If the Data Provider has required digital signing for the withdrawal of consent through the Service Declaration, the withdrawal of consent must be signed digitally.
 
-![Withdraw or extend](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant6.png)
+![Withdrawal of consent](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/withdraw-dialog.png)
 
 ## Requesting consent
 
-After logging in to the eesti.ee portal, the Representative of a legal-entity Client finds, under the Data Consent menu item, in the 'Requesting consents' tab, the option to submit consent requests to potential service users. The list shows all consent requests submitted by the logged-in user, regardless of the consent status.
+After logging in to the eesti.ee portal, the Representative of a legal-entity Client finds, under the Data Consent menu item, in the 'Request consents' tab, the option to submit consent requests to potential service users. The list shows all consent requests submitted by the logged-in user, regardless of the consent status.
 
-![View consents](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant7.png)
+![View consents](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/ask-consents.png)
 
-After using the '+ Create consent request' button, a pop-up window is displayed to the user for composing the consent request input data. A precondition for submitting a request is that the represented legal entity has a contract with some data provider (Data Provider) that has valid data service(s) (Purpose Declaration(s)) for that legal entity.
+After using the 'Create consent request' button, the 'Submit request' pop-up window is displayed to the user for composing the consent request input data. A precondition for submitting a request is that the represented legal entity has a contract with some data provider (Data Provider) that has valid data service(s) (Purpose Declaration(s)) for that legal entity.
 
-The user searches for the legal entity about whom data is to be obtained, selects the data provider, data service and the purpose of sharing data from drop-down menus, and submits the request.
+The user searches for the legal entity about whom data is to be obtained, selects the data provider, data service and the purpose of data use from drop-down menus, and submits the request with the 'Submit request' button. The 'Cancel' button closes the pop-up window without submitting the request.
 
-![Submitting a request](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant8.png)
+![Submitting a request](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/ask-create-dialog.png)
 
-Once the user has submitted the consent request, the pop-up window closes and a new request is added to the consent requests list with the status 'Pending decision'. The consents management functionality also works on this subpage as described in the previous Consents management section.
+Once the user has submitted the consent request, the pop-up window closes and a new request is added to the consent requests list with the status 'Decision pending'. Opening a row of the list shows the details of the request; there is no withdrawal button on this subpage, and consent can be withdrawn in the 'All consents' subpage.
 
 ### Requesting consents via the Client Application
 
@@ -1298,8 +1298,8 @@ The Client can obtain the consent references for valid consents using the **stat
 
 ## Data transmitted
 
-The 'Data transmitted' subpage provides an overview of which successful data queries have been made on the basis of the Data Subject's consents and allows the data transmissions concerning the legal entity they represent to be monitored.
+The 'Transferred data' subpage provides an overview of which successful data queries have been made on the basis of the Data Subject's consents and allows the data transmissions concerning the legal entity they represent to be monitored.
 
-![Data transmitted](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant9.png)
+![Data transmitted](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/en/transfers-company.png)
 
-The view displays by default a list of the most recent data transmissions, according to the selected number under 'Show at once'. The user can specify a time period for which the transmitted data of interest is shown, or also search by keyword(s) across the three alphabetical content columns.
+The view displays by default a list of the most recent data transmissions, according to the selected number under 'Show per page'. Under the 'More filters' link, the user can specify a time period ('Period') for which the transmitted data of interest is shown, or also search by keyword ('Find keyword'). Each row of the table has an 'Open consent' link.

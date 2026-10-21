@@ -191,7 +191,7 @@ sellest on teada Klientrakendusele.
 
 4.  Andmenõusolekuteenuse poolt genereeritud lingi kaudu suunatakse Andmesubjekt nõusolekuid andma. Andmesubjekt logib sisse kasutades TARA autentimist.
 
-5.  Andmesubjekt vaatab läbi nõusolekutaotlused, kinnitab need, millega nõustub, ja lükkab tagasi need, millega ei nõustu. Kui valikud on tehtud, vajutab ta nuppu „Kinnitan".
+5.  Andmesubjekt vaatab läbi nõusolekutaotlused, kinnitab need, millega nõustub, ja lükkab tagasi need, millega ei nõustu. Kui valikud on tehtud, vajutab ta iga nõusolekutaotluse juures nuppu „Kinnitan".
 
 6.  Andmenõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks nõusolekuteks ning omistab neile nõusolekuviited. Andmenõusolekuteenus suunab Andmesubjekti tagasi Klientrakendusesse.
 
@@ -328,7 +328,8 @@ nõusolekud kehtivad ning sellest on teada Klientrakendusele.
 
 5.  Andmesubjekt esindaja vaatab läbi Andmesubjekti nõusolekutaotlused,
     kinnitab need, millega nõustub, ja lükkab tagasi need, millega ei
-    nõustu. Kui valikud on tehtud, vajutab ta nuppu „Kinnitan“.
+    nõustu. Kui valikud on tehtud, vajutab ta iga nõusolekutaotluse juures nuppu
+    „Kinnitan“.
 
 6.  Andmenõusolekuteenus muudab kinnitatud nõusolekutaotlused kehtivateks
     nõusolekuteks ning omistab neile nõusolekuviited. Andmenõusolekuteenus
@@ -1527,8 +1528,8 @@ muuta. Milliseid välju tohib/ei tohi muuta on kirjeldatud jaotises
 | Välja nimi                                                 | Kirjeldus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Näidisväärtus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Saab muuta?      |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | Andmete saaja nimi                                         | Klientrakenduse (ED deklareerija) ettevõte/asutuse ametlik nimi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Health Startup OÜ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Ei               |
-| Andmete saaja registrikood                                 | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 12819685                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Ei               |
-| Andmenõusolekuteenust kasutav alamsüsteem                  | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.                                                                                                                                                                                                                                                                    | EE/COM/12819685/immu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Ei               |
+| Andmete saaja registrikood                                 | Klientrakenduse (ED deklareerija) ettevõte/asutuse registrikood                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 19123455                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Ei               |
+| Andmenõusolekuteenust kasutav alamsüsteem                  | Kliendirakenduse alamsüsteem, mis hakkab pöörduma Andmenõusolekuteenusesse. Parameeter, mille järgi kontrollitakse, et Andmenõusolekuteenuse poole pöörduv x-tees autenditud Kliendirakenduse alamsüsteem on õige osapool sellise päringu tegemiseks. Rippmenüü sisaldab kõike alamsüsteeme x-tee kataloogist ja toetab autocomplete otsingut.                                                                                                                                                                                                                                                                    | EE/COM/19123455/immu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Ei               |
 | Andmete saaja pakutav teenus                               | Klientrakenduse või selle äriteenuse kaubanduslik nimi. Annab Andmesubjektile info, milline konkreetne äriteenus/infosüsteem hakkab kasutama tema isikuandmeid.                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Immu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Ei               |
 | Kasutatav teenusedeklaratsioon                             | Teenusedeklaratsioon (infosüsteemi nimi-TD identifikaator), millega deklareeritakse eesmärgi täitmiseks vajalikke andmeid pakkuvat kaitstud teenust. <br /> <br /> Teenusedeklaratsiooni (TD) valimine toimub kahe sammuga: <br /> <br /> 1) Infosüsteemi (millega on seotud TD) valimine - rippmenüü, mis sisaldab "Infosüsteemide halduse" kaudu lisatud infosüsteemide nimed. <br /> <br /> 2) TD identifikaatori valimine - rippmenüü, mis sisaldab eelmises sammus valitud infosüsteemiga seotud kehtivate teenusedeklaratsioonide identifikaatorid. <br /> <br /> Ühe ED-ga võib olla seotud ainult üks TD. | Tervise Infosüsteem-hl7_immuniseerimisandmed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Ei               |
 | Eesmärgideklaratsiooni identifikaator                      | Eesmärgideklaratsiooni inimloetav unikaalne tunnus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | healthstartup_immuniseerimisa ndmed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Ei               |
@@ -1658,46 +1659,59 @@ sisselogimisviisidest.
 
 ![TARA](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/autentimise%20avakuva.PNG)
 
-Pärast autentimist näeb Andmesubjekt või Andmesubjekti esindaja
-nõusolekutaotlusi. Antud näitel küsitakse nõusolekut ainult ühe
-andmekomplekti edastamisele: Tervise konsultatsiooni andmeid.
+Pärast autentimist avaneb Andmesubjektile või Andmesubjekti esindajale
+leht „Nõusolek isikuandmete edastamiseks". Lehe ülaosas on teabeplokk
+„Teadke, et:" ning selle all on iga nõusolekutaotlus eraldi kaardina.
+Kaardil on näha andmekomplekti nimetus, andmete saaja, andmeid kasutav
+teenus, andmete edastaja ja staatus „Otsuse ootel". Esimene taotlus on
+avatud, teised saab avada lingiga „Ava detailid".
 
-![Nõusolekutaotlused](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus.PNG)
+![Nõusolekutaotlused](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-request.png)
 
-Osapoolte nimede peale vajutades saab näha detailset infot iga osapoole
-kohta.
+Avatud taotlusel kuvatakse andmete kasutamise eesmärk, andmete kirjeldus
+ja andmekaitsetingimused ning osapoolte andmed kolmes osas: „Andmete
+jagaja", „Andmete saaja" ja „Andmete edastaja". Samas on näha nõusoleku
+kehtivus („Kehtib alates", „Kehtib kuni") ja nõusoleku number.
 
-PS! Kui nõusolekut antakse esindatava eest, siis nõusoleku andjaks on
-esindatav ehk laps.
+PS! Kui nõusolekut antakse esindatava eest, siis nõusoleku andjaks
+(andmete jagajaks) on esindatav ehk laps.
 
-![Nõusoleku andja,andmete edastaja, andmete saaja](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/Infov%C3%A4ljad%20koos.PNG)
+Pärast nõusolekutaotluse detailidega tutvumist valib Andmesubjekt või
+Andmesubjekti esindaja nuppude „Ei luba" ja „Luban" seast, kas ta lubab
+või ei luba kirjeldatud andmekomplekti edastamist. Kui ta valib „Luban",
+siis nupp ja kaardi staatuse silt muutuvad roheliseks ning silt näitab
+„Luban". Nupp „Kinnitan" muutub aktiivseks.
 
-Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekt või
-Andmesubjekti esindaja valida, kas ta lubab või ei luba kirjeldatud
-andmekomplekti edastamist. Kui lubab, siis staatuse silt ja nupp
-muutuvad rohelisteks.
+![Luban](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-request-allow.png)
 
-![Luban](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20luban.PNG)
+Kui Andmesubjekt või Andmesubjekti esindaja valib „Ei luba", siis nupp ja
+kaardi staatuse silt muutuvad punaseks ning silt näitab „Ei luba".
 
-Kui Andmesubjekt või Andmesubjekti esindaja ei luba kirjeldatud
-andmekomplekti edastada, siis muutuvad staatuse silt ja nupp punasteks.
-
-![Ei luba](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20taotlus%20ei%20luba.PNG)
+![Ei luba](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-request-decline.png)
 
 Enne „Kinnitan" nupu vajutamist saab Andmesubjekt või Andmesubjekti
-esindaja oma otsuseid samal lehel muuta.
+esindaja oma valikut samas taotluses muuta.
 
-Kui valikud on tehtud, vajutab Andmesubjekt või Andmesubjekti esindaja
-nuppu „Kinnitan". Andmenõusolekuteenus teeb antud nõusolekud kehtivateks.
+Valiku kinnitab Andmesubjekt või Andmesubjekti esindaja iga taotluse
+juures eraldi nupuga „Kinnitan". Kinnitatud taotluse kaardil kuvatakse
+märge „Kinnitatud" ning valikut samal lehel enam muuta ei saa. Seejärel
+avatakse järgmine kinnitamata taotlus. Lehe allosas näitab loendur
+(näiteks „Otsustatud 1/3"), mitu taotlust on otsustatud.
+Andmenõusolekuteenus teeb antud nõusolekud kehtivateks.
 
 PS! Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusoleku
 andmisel digitaalne allkirjastamine nõutud, siis nõusoleku tuleb
-allkirjastada digitaalselt.
+allkirjastada digitaalselt. Valiku „Luban" korral on nupu „Kinnitan"
+asemel nupp „Allkirjastan digitaalselt", mis avab allkirjastamisviisi
+valiku (Mobiil-ID, ID-kaart, Smart-ID).
 
-Kui kõik valikud on tehtud, suunatakse Andmesubjekti või Andmesubjekti
-esindaja tagasi Klientrakendusesse.
+Kui kõik taotlused on kinnitatud, kuvatakse teade „Kõik otsused on
+tehtud. Suuname teid tagasi teenusepakkuja juurde." ja nupp „Tagasi
+teenusepakkuja juurde". Andmesubjekt või Andmesubjekti esindaja
+suunatakse mõne sekundi pärast automaatselt tagasi Klientrakendusse;
+nupuga saab seda teha kohe.
 
-![Kinnitan](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20antud.PNG)
+![Kinnitan](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-request-confirmed.png)
 
 ### Pärast suunamist
 
@@ -1723,7 +1737,7 @@ või Andmesubjekti esindaja puuduvaid nõusolekuid andma.
 Nõusolekute haldusliides on osa eesti.ee portaalist ja Andmesubjekt
 või Andmesubjekti esindaja leiab selle navigatsiooni menüüst pärast
 sisselogimist. Haldusliides koosneb neljast alamlehest:
-„Andmenõusolekuteenusest", „Minu nõusolekud", „Andmete kasutus",
+„Andmenõusolekuteenusest", „Minu nõusolekud", „Edastatud andmed",
 „Kasutustingimused".
 
 ### Andmenõusolekuteenusest
@@ -1743,79 +1757,94 @@ Andmesubjekti esindaja poolt - nii kehtivaid kui ka kehtetuid.
 suhtes omatakse täielikku isikuhooldusõigust. Laste info päritakse
 automaatselt Rahvastikuregistrist.
 
-Nõusolekuid saab filtreerida staatuse, lapse (vahelehel „Lapsed") ja
-märksõna järgi. Nõusolekute tabel on sorteeritav.
+Nõusolekuid saab otsida märksõna järgi („Otsi märksõna") ning lingi
+„Rohkem filtreid" alt filtreerida oleku („Olek") ja kehtivusaja („Kehtis
+ajavahemikus") järgi. Vahelehel „Lapsed" tuleb enne rippmenüüst („Laps")
+valida laps, kelle nõusolekuid soovitakse vaadata. Nõusolekute tabel on
+sorteeritav.
 
-![Minu nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image27.jpeg)
-![Lapse nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image32.png)
+![Minu nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/my-consents.png)
+![Lapse nõusolekud](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/my-consents-children.png)
 
 Tabeli reale vajutades saab näha nõusoleku detaile ning kehtiva
-nõusoleku puhul nuppu „loobun nõusolekust", mille abil saab nõusoleku
+nõusoleku puhul nuppu „Loobun nõusolekust", mille abil saab nõusoleku
 tagasi võtta ning juhul, kui nõusoleku pikendamine on lubatud, siis
-nuppu „Pikenda", millega saab nõusolekut pikendada.
+nuppu „Pikenda nõusolek", millega saab nõusolekut pikendada. Detailides
+on ka link „Vaata edastusi", mis avab selle nõusoleku alusel tehtud
+edastused alamlehel „Edastatud andmed".
 
-![Nõusoleku detailid ja loobumine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/N%C3%B5usolek%20portaalis.PNG)
+![Nõusoleku detailid ja loobumine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-details.png)
 
 Kui nõusoleku kinnitas või allkirjastas Andmesubjekti esindaja (sh ka
 loobus), siis nõusoleku detailandmetel kuvatakse
-kinnitaja/allkirjastaja nime.
+kinnitaja/allkirjastaja nime (väli „Nõusoleku kinnitaja/allkirjastaja").
 
-![Esindaja kinnitas](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image33.png)
+![Esindaja kinnitas](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-approver-withdrawer.png)
 
 Kehtetu nõusoleku detailides saab näha põhjust, miks nõusolek ei kehti
 (nõusolek on tagasi võetud / nõusolek on aegunud / andmeedastus on
 lõppenud).
 
-![Nõusoleku kehtivuse lõppemise põhjus](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image29.jpg)
+![Nõusoleku kehtivuse lõppemise põhjus](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-expired-notice.png)
 
 #### Nõusolekust loobumine
 
 Andmesubjekt ja Andmesubjekti esindaja saavad nõusolekust loobuda
 nupust „Loobun nõusolekust". Loobuda saab nõusolekust, mis on kehtiv.
+Nupu vajutamisel avaneb aken „Nõusolekust loobumine", kus tuleb loobumine
+kinnitada nupuga „Jah, loobun"; nupp „Katkestan" sulgeb akna ilma
+loobumata.
 
 Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusolekust
 loobumisel digitaalne allkirjastamine nõutud, siis nõusolekust
 loobumine tuleb allkirjastada digitaalselt.
 
-![Loobu või pikenda](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image34.png)
+![Loobu või pikenda](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-withdraw-extend-buttons.png)
 
-Kui nõusolekust loobutakse, siis muudetakse nõusolek kehtetuks ja
-kasutajale kuvatakse teadet „Nõusolek on tagasi võetud".
+Kui nõusolekust loobutakse, siis muudetakse nõusolek kehtetuks (olek
+„Loobutud"). Nõusoleku detailides kuvatakse teade „Nõusolekust loobumine
+oli edukas!" ning kehtetu nõusoleku detailides on põhjusena näha „Nõusolek
+on tagasi võetud".
 
-![Loobutud nõusolek](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image35.png)
+![Loobutud nõusolek](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-withdrawn-notice.png)
 
 Kui nõusolekust loobus Andmesubjekti esindaja, siis nõusoleku
-detailandmetesse kuvatakse nõusolekust loobujaks esindaja nime (vt pilti üleval pool).
+detailandmetesse kuvatakse nõusolekust loobujaks esindaja nime (väli
+„Nõusolekust loobuja"; vt pilti üleval pool).
 
 #### Nõusoleku pikendamine
 
 Täisealine ja teovõimeline Andmesubjekt saab nõusolekut pikendada
-nupust „Pikenda". Pikendada saab nõusolekut, mis on kehtiv ning mille
+nupust „Pikenda nõusolek". Pikendada saab nõusolekut, mis on kehtiv ning mille
 pikendamine on andmekogu poolt lubatud läbi teenusedeklaratsiooni.
 
 PS! Andmesubjekti esindaja Andmesubjekti (lapse) nõusolekuid pikendada
 ei saa.
 
-Andmesubjektile kuvatakse nõusolekutaotlus.
+Avaneb aken „Nõusolek isikuandmete edastamiseks", kus on sama
+nõusolekutaotluse kaart nagu nõusoleku andmisel. Akna ülaosas hoiatab
+teade, et nõusoleku sisu võib olla muutunud.
 
-![Pikendamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/NT%20pikendamine.PNG)
+![Pikendamine](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/consent-extend-dialog.png)
 
-Andmesubjekt saab kalendrist valida kehtivuse lõpu kuupäeva. Vaikimisi
-kuvatakse võimalik maksimum kuupäev, mis võetakse
+Andmesubjekt saab väljal „Kehtib kuni" kehtivuse lõpu kuupäeva
+sisestada või kalendrist valida. Vaikimisi kuvatakse võimalik maksimum kuupäev, mis võetakse
 teenusedeklaratsiooni maksimum kehtivusaja ning eesmärgideklaratsiooni
 kehtivusaja lõpp järgi kõige lühem kuupäeva.
 
 Kui Andmesubjekt on nõusolekutaotlusega tutvunud ning määranud
-kehtivuse kuupäeva, saab Andmesubjekt valida kas ta lubab või ei luba
-kirjeldatud andmekomplekti edastamist ning kinnitada nõusolek.
+kehtivuse kuupäeva, saab Andmesubjekt nuppudega „Ei luba" ja „Luban"
+valida, kas ta lubab või ei luba kirjeldatud andmekomplekti
+edastamist, ning kinnitada valiku nupuga „Kinnitan".
 
 Kui nõusoleku pikendamisega nõustuti (tehti märge „Luban") ning
 kinnitati, siis Andmenõusolekuteenus teeb antud nõusoleku kehtivaks ning
 eelmise, mille pealt nõusoleku pikendamist alustati kehtetuks.
 
 Kui nõusoleku pikendamisega ei nõustutud (tehti märge „Ei luba") ning
-kinnitati (sh aken suleti ristist), siis tegevus katkestatakse ning
-nõusolekut ei pikendata.
+kinnitati, siis aken sulgub, tegevus katkestatakse ning nõusolekut ei
+pikendata. Sama juhtub, kui aken suletakse ristist või nupuga
+„Katkestan".
 
 ### Edastatud andmed
 
@@ -1823,17 +1852,18 @@ Alamleht annab ülevaate sellest, millised edukad andmepäringud olid
 tehtud Andmesubjekti nõusolekute alusel ja võimaldab jälgida enda ja
 lapse/laste isikuandmete edastamist.
 
-Informatsioon andmete edastamisest saab otsida märksõna, lapse
-(vahelehel „Lapsed") järgi ning filtreerida aja perioodi järgi. Tabel
-on sorteeritav.
+Informatsiooni andmete edastamise kohta saab otsida märksõna järgi („Otsi
+märksõna") ning lingi „Rohkem filtreid" alt filtreerida aja perioodi
+(„Ajavahemik") järgi. Vahelehel „Lapsed" tuleb enne rippmenüüst („Laps")
+valida laps. Tabel on sorteeritav. Tabeli real on link „Ava nõusolek".
 
-![Edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image30.jpeg)
+![Edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/transfers.png)
 
 „Lapsed" vahelehel kuvatakse lapsi, kes on alaealised ja kelle suhtes
 omatakse täielikku isikuhooldusõigust. Laste info päritakse
 automaatselt Rahvastikuregistrist.
 
-![Lapse edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/image37.png)
+![Lapse edastatud andmed](../img/RIA%20n%C3%B5usolekuteenuse%20kasutamine%20ja%20liidestamine/portaal/et/transfers-children.png)
 
 ### Kasutustingimused
 

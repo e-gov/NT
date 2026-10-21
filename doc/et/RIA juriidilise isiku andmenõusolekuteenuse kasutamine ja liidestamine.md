@@ -1193,7 +1193,7 @@ Järgmine tabel kirjeldab andmeid, mida nõusolek sisaldab.
 
 # Andmenõusolekuteenuse kasutajaliides
 
-Andmenõusolekuteenuse JURNT tavakasutajale mõeldud kasutajaliides on realiseeritud eraldiseisva veebirakendusena, mis moodustab osa eesti.ee Ettevõtjaportaalist. JURNT kasutajaliides on mõeldud juriidilisest isikust Andmesubjekti esindaja(te)le ja Teenusepakkuja esindaja(te)le ning koosneb neljast osast: nõusolekute andmine, nõusolekute haldus, nõusolekute küsimine ja ülevaade nõusolekute põhjal edastatud andmetest. Kasutaja leiab need peale juriidilise isiku esindajana eesti.ee sisselogimist menüüpunkti Andmenõusolek alt alamlehtedelt "Ootel nõusolekud", Kõik nõusolekud", "Nõusolekute küsimine" ja "Edastatud andmed". Alamlehe nägemine sõltub vastava kasutajarolli olemasolust.
+Andmenõusolekuteenuse JURNT tavakasutajale mõeldud kasutajaliides on realiseeritud eraldiseisva veebirakendusena, mis moodustab osa eesti.ee Ettevõtjaportaalist. JURNT kasutajaliides on mõeldud juriidilisest isikust Andmesubjekti esindaja(te)le ja Teenusepakkuja esindaja(te)le ning koosneb neljast osast: nõusolekute andmine, nõusolekute haldus, nõusolekute küsimine ja ülevaade nõusolekute põhjal edastatud andmetest. Kasutaja leiab need peale juriidilise isiku esindajana eesti.ee sisselogimist menüüpunkti Andmenõusolek alt alamlehtedelt "Ootel nõusolekud", "Kõik nõusolekud", "Nõusolekute küsimine" ja "Edastatud andmed". Alamlehe nägemine sõltub vastava kasutajarolli olemasolust.
 
 ## Nõusoleku andmine
 
@@ -1227,18 +1227,18 @@ Juriidilisest isikust Andmesubjekti esindaja saab tutvuda nõusolekutaotlustega 
 
 ![TARA](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/image%2019.png)
 
-Peale esindatava ettevõtte valikut saab kasutaja avada Andmenõusoleku menüüpunkti alt Ootel nõusolekute alamlehe, kus kuvatakse temale suunatud ootel nõusolekutaotluste loetelu vaade, nii et esimene, kõige uuem nõusolekutaotlus on avatud.
+Peale esindatava ettevõtte valikut saab kasutaja avada Andmenõusoleku menüüpunkti alt alamlehe "Ootel nõusolekud", kus kuvatakse temale suunatud ootel nõusolekutaotluste loetelu vaade, nii et esimene, kõige uuem nõusolekutaotlus on avatud. Lehe ülaosas on teabeplokk "Teadke, et:". Loetelus on näha andmeid kasutav isik, andmete edastaja, andmed, küsimise kuupäev, kehtivusaja lõpp ja olek ("Otsuse ootel").
 
-![Nõusolekutaotlused](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant1.png)
+![Nõusolekutaotlused](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/pending-consents.png)
 
-Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekti esindaja valida, kas ta lubab või ei luba kirjeldatud andmekomplekti edastamist oma esindatava juriidilise isiku kohta käivate andmetega. Kui lubab, siis staatuse silt ja nupp muutuvad rohelisteks ning nupp "Kinnitan" aktiivseks.
-Kui Andmesubjekti esindaja ei luba kirjeldatud andmekomplekti edastada, siis muutuvad staatuse silt ja nupp punasteks ning nupp "Kinnitan" aktiivseks.
+Pärast nõusolekutaotluse detailidega tutvumist saab Andmesubjekti esindaja nuppudega "Ei luba" ja "Luban" valida, kas ta lubab või ei luba kirjeldatud andmekomplekti edastamist oma esindatava juriidilise isiku kohta käivate andmetega. Kui valitakse "Luban", siis nupp muutub roheliseks ning nupp "Kinnitan" muutub aktiivseks.
+Kui Andmesubjekti esindaja valib "Ei luba", siis nupp muutub punaseks ning nupp "Kinnitan" muutub aktiivseks. Pärast "Kinnitan" vajutamist muutub taotluse staatuse silt vastavalt valikule.
 
-![Luban](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant2.png)
+![Ei luba](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/pending-decline.png)
 
-PS! Kui andmekogu poolt on teenusedeklaratsioonis nõusoleku andmisel digitaalne allkirjastamine nõutud, siis tuleb nõusolek digitaalselt allkirjastada.
+PS! Kui andmekogu poolt on teenusedeklaratsioonis nõusoleku andmisel digitaalne allkirjastamine nõutud, siis tuleb nõusolek digitaalselt allkirjastada. Valiku "Luban" korral on nupu "Kinnitan" asemel nupp "Allkirjastan digitaalselt".
 
-![Ei luba](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant3.png)
+![Luban ja allkirjastamine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/pending-allow-sign.png)
 
 ### Klientrakenduse tegevused peale suunamist
 
@@ -1252,37 +1252,37 @@ Kui mõned nõusolekud on puudu, küsib Klientrakendus Andmenõusolekuteenusest 
 
 Nõusolekute haldusvõimalused leiab juriidilisest isikust Andmesubjekti esindaja peale sisselogimist menüüpunkti Andmenõusolek alt alamlehelt "Kõik nõusolekud". Kasutaja saab juriidilise isiku esindajana näha kõiki nõusolekuid, mida ta on antud Andmesubjekti esindajana kinnitanud või millest loobunud, nii kehtivaid kui kehtetuid. Sellel lehel ei kuvata nõusolekutaotlusi (staatus Otsuse ootel), mida näeb alamlehel "Ootel nõusolekud".
 
-Nõusolekuid saab filtreerida andmete saaja, andmete edastaja, andmete nimetuse, nõusoleku numbri ja kuupäevade (Kehtib alates, Kehtib kuni) järgi. Nõusolekute tabel on sorteeritav ühe veeru alusel.
+Nõusolekuid saab otsida märksõna järgi ("Otsi märksõna") ning lingi "Rohkem filtreid" alt filtreerida oleku ("Olek") ja kehtivusaja ("Kehtis ajavahemikus") järgi. Nõusolekute tabel on sorteeritav.
 
-![Minu nõusolekud](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant4.png)
+![Kõik nõusolekud](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/all-consents.png)
 
-Tabeli reale vajutades avaneb nõusoleku detailide vaade koos nupuga „Loobun nõusolekust“ kehtiva nõusoleku puhul. Selle nupu abil saab nõusoleku tagasi võtta. Värviline joon nõusoleku detailandmete ees viitab staatusele.
+Tabeli reale vajutades avaneb nõusoleku detailide vaade koos nupuga „Loobun nõusolekust“ kehtiva nõusoleku puhul. Selle nupu abil saab nõusoleku tagasi võtta. Detailvaates on ka link „Vaata edastusi“, mis avab selle nõusoleku alusel tehtud edastused alamlehel "Edastatud andmed".
 
-![Nõusoleku detailid ja loobumine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant5.png)
+![Nõusoleku detailid ja loobumine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/all-consent-details.png)
 
 Kui Andmesubjekti esindaja kinnitas või allkirjastas nõusoleku (sh ka loobus), siis nõusoleku detailandmetel kuvatakse kinnitaja/allkirjastaja nimi.
 
 ### Nõusolekust loobumine
 
-Juriidilisest isikust Andmesubjekti esindaja saab nõusolekust loobuda nupust „Loobun nõusolekust“. Loobuda saab nõusolekust, mis on kehtiv (staatus Kinnitatud). Nõusolekust loobumine tuleb kasutajal üle kinnitada, et see ei tekiks kogemata.
+Juriidilisest isikust Andmesubjekti esindaja saab nõusolekust loobuda nupust „Loobun nõusolekust“. Loobuda saab nõusolekust, mis on kehtiv (staatus Kinnitatud). Nupu vajutamisel avaneb aken „Nõusolekust loobumine“, kus tuleb loobumine kinnitada nupuga „Jah, loobun“, et see ei tekiks kogemata. Nupp „Katkestan“ sulgeb akna ilma loobumata.
 
 Kui andmekogu poolt läbi teenusedeklaratsiooni on nõusolekust loobumisel digitaalne allkirjastamine nõutud, siis nõusolekust loobumine tuleb allkirjastada digitaalselt.
 
-![Loobu või pikenda](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant6.png)
+![Nõusolekust loobumine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/withdraw-dialog.png)
 
 ## Nõusoleku küsimine
 
 Juriidilisest isikust Teenusepakkuja esindaja leiab peale eesti.ee portaali sisselogimist menüüpunkti Andmenõusolek alt vahelehelt "Nõusolekute küsimine" võimaluse potentsiaalsetele teenuse kasutajatele nõusolekupäringute tegemiseks. Loetelus on näha kõik sisseloginud kasutaja poolt tehtud nõusolekupäringud sõltumata nõusoleku staatusest.
 
-![Vaadata nõusolekuid](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant7.png)
+![Vaadata nõusolekuid](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/ask-consents.png)
 
-Nupu "+ Loo nõusoleku päring" kasutamise järel kuvatakse kasutajale hüpikaken nõusolekupäringu sisendandmete koostamiseks. Päringu tegemise eelduseks on, et esindataval juriidilisel isikul on olemas leping mõne andmete pakkujaga (andmekoguga), millel on olemas selle juriidilise isiku jaoks kehtiv(ad) andmeteenus(ed) (eesmärgideklaratsioon(id)).
+Nupu "Loo nõusoleku päring" kasutamise järel kuvatakse kasutajale hüpikaken "Päringu esitamine" nõusolekupäringu sisendandmete koostamiseks. Päringu tegemise eelduseks on, et esindataval juriidilisel isikul on olemas leping mõne andmete pakkujaga (andmekoguga), millel on olemas selle juriidilise isiku jaoks kehtiv(ad) andmeteenus(ed) (eesmärgideklaratsioon(id)).
 
-Kasutaja otsib juriidilise isiku, kelle kohta soovitakse andmeid saada, valib rippmenüüdest andmete pakkuja, andmeteenuse ja andmete jagamise eesmärgi ning esitab päringu.
+Kasutaja otsib juriidilise isiku, kelle kohta soovitakse andmeid saada, valib rippmenüüdest andmete pakkuja, andmeteenuse ja andmete kasutamise eesmärgi ning esitab päringu nupuga "Esitan päringu". Nupp "Katkestan" sulgeb hüpikakna päringut esitamata.
 
-![Päringu esitamine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant8.png)
+![Päringu esitamine](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/ask-create-dialog.png)
 
-Kui kasutaja on nõusolekupäringu ära esitanud, sulgub hüpikaken ja nõusolekupäringu loetelusse on juurde tekkinud uus päring staatuses "Otsuse ootel". Nõusolekute haldamise funktsionaalsus toimib ka sellel valamlehel nagu kirjeldatud eelnevas jaotises Nõusolekute haldus.
+Kui kasutaja on nõusolekupäringu ära esitanud, sulgub hüpikaken ja nõusolekupäringu loetelusse on juurde tekkinud uus päring staatuses "Otsuse ootel". Päringu rea avamisel kuvatakse päringu detailid; nõusolekust loobumise nuppu sellel alamlehel ei ole, loobuda saab alamlehel "Kõik nõusolekud".
 
 ### Nõusolekute küsimine Klientrakenduse kaudu
 
@@ -1296,6 +1296,6 @@ Kehtivate nõusolekute kohta saab Klientrakendus nõusolekuviited kasutades teen
 
 Alamleht "Edastatud andmed" annab ülevaate sellest, millised edukad andmepäringud on tehtud Andmesubjekti nõusolekute alusel ja võimaldab jälgida enda esindatava juriidilise isiku kohta käivate andmete edastamisi.
 
-![Edastatud andmed](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/ant9.png)
+![Edastatud andmed](../img/RIA%20juriidilise%20isiku%20kasutamine%20ja%20liidestamine/portaal/et/transfers-company.png)
 
-Vaatel kuvatakse vaikimisi loetelu viimastest andmeedastusest, vastavalt valitud arvule "Näita korraga". Kasutaja saab ette anda ajavahemiku, mille jooksul edastatud andmed teda huvitavad, või ka otsida märksõna(de) alusel kolme alfabeetilise sisuga veeru põhjal.
+Vaatel kuvatakse vaikimisi loetelu viimastest andmeedastusest, vastavalt valitud arvule "Kuva korraga". Kasutaja saab lingi "Rohkem filtreid" alt ette anda ajavahemiku ("Ajavahemik"), mille jooksul edastatud andmed teda huvitavad, või ka otsida märksõna järgi ("Otsi märksõna"). Tabeli real on link "Ava nõusolek".

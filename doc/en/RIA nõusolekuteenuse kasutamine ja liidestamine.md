@@ -401,11 +401,11 @@ curl -k  \
 }
 ```
 
-| Parameter                             | Is it mandatory? | Type of data     | Description                                           |
-| ------------------------------------- | ---------------- | ---------------- | ----------------------------------------------------- |
-| idCode                                | yes              | string           | Personal identification code of the Data Subject      |
-| callback                              | yes              | string           | Client redirecting URL                                |
-| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one) |
+| Parameter                             | Is it mandatory? | Type of data     | Description                                                                                                                                                                                     |
+| ------------------------------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | yes              | string           | Personal identification code of the Data Subject                                                                                                                                                |
+| callback                              | yes              | string           | Client redirecting URL. The Data Consent Service stores it with the consent request and returns the Data Subject to it unchanged after the decision. The consent request URL does not carry it. |
+| purposeDeclarationBusinessIdentifiers | yes              | array of strings | Purpose Declaration identifier (can be more than one)                                                                                                                                           |
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client’s X-tee subsystem authenticated in the X-tee is the same as specified in the Purpose Declaration(s).
 
@@ -414,7 +414,7 @@ curl -k  \
 ```
 {
   "consentGroupReference": "dd74ed1b-a00f-4232-8b25-914d6ecbcb30"
-  "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30&callback=https://www.ria.ee"
+  "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30"
 }
 ```
 
@@ -710,7 +710,7 @@ curl -X POST \
 | representativeIdCode                  | yes              | string           | Personal identification code of the Representative                                                                                                                                                                                         |
 | representeeIdCode                     | yes              | string           | Personal identification code of the represented person or Data Subject                                                                                                                                                                     |
 | relationType                          | yes              | string           | The represented person’s relationship with the Representative. E.g. if a parent (representative) represents a child (represented person), then the relationship type is ‘CHILD’. <br /> Possible values (value of the classifier): ‘CHILD’ |
-| callback                              | yes              | string           | Client redirecting URL                                                                                                                                                                                                                     |
+| callback                              | yes              | string           | Client redirecting URL. The Data Consent Service stores it with the consent request and returns the Representative to it unchanged after the decision. The consent request URL does not carry it.                                          |
 | purposeDeclarationBusinessIdentifiers | yes              | array of strings | Valid Purpose Declaration identifier (can be more than one)                                                                                                                                                                                |
 
 **Important!**&nbsp;Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client’s X-tee subsystem authenticated in the X-tee is the same as specified in the Purpose Declaration(s).
@@ -720,7 +720,7 @@ curl -X POST \
 ```
 {
   "url":
-  "https://www.arendus.eesti.ee/nousolek/et/consent-request?reference=0e6d7675-0588-4413-a835-cd22ebf582c3&callback=https://www.ria.ee\",
+  "https://www.arendus.eesti.ee/nousolek/et/consent-request?reference=0e6d7675-0588-4413-a835-cd22ebf582c3\",
   "consentGroupReference":"0e6d7675-0588-4413-a835-cd22ebf582c3"
 }
 ```

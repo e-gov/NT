@@ -526,11 +526,11 @@ curl -k  \
 }
 ```
 
-| Parameter                            | Is it mandatory? | Type of data | Description                                        |
-| ------------------------------------ | ---------------- | ------------ | -------------------------------------------------- |
-| purposeDeclarationBusinessIdentifier | yes              | string       | Identifier of the legal entity Purpose Declaration |
-| regCode                              | yes              | string       | Registry code of the legal-entity Data Subject     |
-| callback                             | yes              | string       | Client redirecting URL                             |
+| Parameter                            | Is it mandatory? | Type of data | Description                                                                                                                                                                                            |
+| ------------------------------------ | ---------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| purposeDeclarationBusinessIdentifier | yes              | string       | Identifier of the legal entity Purpose Declaration                                                                                                                                                     |
+| regCode                              | yes              | string       | Registry code of the legal-entity Data Subject                                                                                                                                                         |
+| callback                             | yes              | string       | Client redirecting URL. The Data Consent Service stores it with the consent request and returns the Representative to it unchanged after the last decision. The consent request URL does not carry it. |
 
 **Important!** Upon receipt of the query, the Data Consent Service verifies that the identifier of the Client's X-tee subsystem authenticated in the X-tee is the same as specified in the Purpose Declaration.
 

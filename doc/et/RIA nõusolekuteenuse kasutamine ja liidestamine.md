@@ -582,11 +582,11 @@ curl -k  \
 }
 ```
 
-| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                              |
-| ------------------------------------- | --------------- | ---------------- | ------------------------------------------------------ |
-| idCode                                | jah             | string           | Andmesubjekti isikukood                                |
-| callback                              | jah             | string           | Klientrakenduse tagasisuunamise URL                    |
-| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu) |
+| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                                                                                                                          |
+| ------------------------------------- | --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| idCode                                | jah             | string           | Andmesubjekti isikukood                                                                                                                                                                                                            |
+| callback                              | jah             | string           | Klientrakenduse tagasisuunamise URL. Andmenõusolekuteenus salvestab selle koos nõusolekutaotlusega ja suunab Andmesubjekti pärast otsuse tegemist sellele aadressile muutmata kujul tagasi. Nõusolekutaotluse URL seda ei sisalda. |
+| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                                                                                                                             |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
@@ -597,7 +597,7 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 ```
 {
   "consentGroupReference": "dd74ed1b-a00f-4232-8b25-914d6ecbcb30"
-  "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30&callback=https://www.ria.ee"
+  "url":"http://www.arendus.eesti.ee/nousolek/consent-request?reference=dd74ed1b-a00f-4232-8b25-914d6ecbcb30"
 }
 ```
 
@@ -914,13 +914,13 @@ curl -X POST \
 }
 ```
 
-| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                                                                |
-| ------------------------------------- | --------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| representativeIdCode                  | jah             | string           | Esindaja isikukood                                                                                                                                                       |
-| representeeIdCode                     | jah             | string           | Esindatava ehk Andmesubjekti isikukood                                                                                                                                   |
-| relationType                          | jah             | string           | Esindatava seos esindajaga. Nt lapsevanem (esindaja) esindab last (esindatav), siis seose tüüp on „LAPS". <br /> Võimalikud väärtused (klassifikaatori väärtus): „LAPS". |
-| callback                              | jah             | string           | Klientrakenduses tagasisuunamise URL                                                                                                                                     |
-| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                                                           |
+| Parameeter                            | On kohustuslik? | Andmetüüp        | Kirjeldus                                                                                                                                                                                                                                    |
+| ------------------------------------- | --------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| representativeIdCode                  | jah             | string           | Esindaja isikukood                                                                                                                                                                                                                           |
+| representeeIdCode                     | jah             | string           | Esindatava ehk Andmesubjekti isikukood                                                                                                                                                                                                       |
+| relationType                          | jah             | string           | Esindatava seos esindajaga. Nt lapsevanem (esindaja) esindab last (esindatav), siis seose tüüp on „LAPS". <br /> Võimalikud väärtused (klassifikaatori väärtus): „LAPS".                                                                     |
+| callback                              | jah             | string           | Klientrakenduses tagasisuunamise URL. Andmenõusolekuteenus salvestab selle koos nõusolekutaotlusega ja suunab Andmesubjekti esindaja pärast otsuse tegemist sellele aadressile muutmata kujul tagasi. Nõusolekutaotluse URL seda ei sisalda. |
+| purposeDeclarationBusinessIdentifiers | jah             | array of strings | Kehtiva eesmärgideklaratsiooni identifikaator (võib olla mitu)                                                                                                                                                                               |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees
 autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama,
@@ -931,7 +931,7 @@ mis on määratud eesmärgideklaratsiooni(de)s.
 ```
 {
   "url":
-  "https://www.arendus.eesti.ee/nousolek/et/consent-request?reference=0e6d7675-0588-4413-a835-cd22ebf582c3&callback=https://www.ria.ee\",
+  "https://www.arendus.eesti.ee/nousolek/et/consent-request?reference=0e6d7675-0588-4413-a835-cd22ebf582c3\",
   "consentGroupReference":"0e6d7675-0588-4413-a835-cd22ebf582c3"
 }
 ```

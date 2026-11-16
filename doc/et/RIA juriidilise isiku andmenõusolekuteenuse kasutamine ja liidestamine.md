@@ -524,11 +524,11 @@ curl -k  \
 }
 ```
 
-| Parameeter                           | On kohustuslik? | Andmetüüp | Kirjeldus                                               |
-| ------------------------------------ | --------------- | --------- | ------------------------------------------------------- |
-| purposeDeclarationBusinessIdentifier | jah             | string    | Juriidilise isiku eesmärgideklaratsiooni identifikaator |
-| regCode                              | jah             | string    | Juriidilistest isikutest andmesubjekti registrikood     |
-| callback                             | jah             | string    | Klientrakenduse tagasisuunamise URL                     |
+| Parameeter                           | On kohustuslik? | Andmetüüp | Kirjeldus                                                                                                                                                                                                                                           |
+| ------------------------------------ | --------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| purposeDeclarationBusinessIdentifier | jah             | string    | Juriidilise isiku eesmärgideklaratsiooni identifikaator                                                                                                                                                                                             |
+| regCode                              | jah             | string    | Juriidilistest isikutest andmesubjekti registrikood                                                                                                                                                                                                 |
+| callback                             | jah             | string    | Klientrakenduse tagasisuunamise URL. Andmenõusolekuteenus salvestab selle koos nõusolekutaotlusega ja suunab Andmesubjekti esindaja pärast viimase otsuse tegemist sellele aadressile muutmata kujul tagasi. Nõusolekutaotluse URL seda ei sisalda. |
 
 **Tähtis!** Päringu kättesaamisel Andmenõusolekuteenus kontrollib, et x-tees autenditud Klientrakenduse x-tee alamsüsteemi identifikaator on sama, mis on määratud eesmärgideklaratsioonis.
 
